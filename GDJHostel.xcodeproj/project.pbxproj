@@ -1,0 +1,397 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BD30C5171EFDDCE70032FE64 /* HostelInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD30C5161EFDDCE70032FE64 /* HostelInformationController.m */; };
+		BD30C51A1EFDE5240032FE64 /* MenuComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = BD30C5191EFDE5240032FE64 /* MenuComponent.m */; };
+		BD5C3EBC1EFD4BA000616400 /* HostelAreaMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5C3EBB1EFD4BA000616400 /* HostelAreaMapViewController.m */; };
+		BD5C3EC01EFD4C9000616400 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5C3EBF1EFD4C9000616400 /* MapKit.framework */; };
+		BD5C3EC41EFD516E00616400 /* OverlayConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5C3EC31EFD516E00616400 /* OverlayConfiguration.m */; };
+		BD5C3EC61EFD53FC00616400 /* Seoul.geojson in Resources */ = {isa = PBXBuildFile; fileRef = BD5C3EC51EFD53FC00616400 /* Seoul.geojson */; };
+		BD5C3EC81EFD542500616400 /* PlacemarksNearHostel.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD5C3EC71EFD542500616400 /* PlacemarksNearHostel.plist */; };
+		BD5C3ECA1EFD579100616400 /* StoryboardA.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD5C3EC91EFD579100616400 /* StoryboardA.storyboard */; };
+		BD902CDA1EFD31F600DD1034 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CD91EFD31F600DD1034 /* main.m */; };
+		BD902CDD1EFD31F600DD1034 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CDC1EFD31F600DD1034 /* AppDelegate.m */; };
+		BD902CE01EFD31F600DD1034 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CDF1EFD31F600DD1034 /* ViewController.m */; };
+		BD902CE31EFD31F600DD1034 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD902CE11EFD31F600DD1034 /* Main.storyboard */; };
+		BD902CE51EFD31F600DD1034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD902CE41EFD31F600DD1034 /* Assets.xcassets */; };
+		BD902CE81EFD31F600DD1034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD902CE61EFD31F600DD1034 /* LaunchScreen.storyboard */; };
+		BD902CF01EFD325100DD1034 /* HostelArea.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD902CEF1EFD325100DD1034 /* HostelArea.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BD30C5151EFDDCD50032FE64 /* HostelInformationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostelInformationController.h; sourceTree = "<group>"; };
+		BD30C5161EFDDCE70032FE64 /* HostelInformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelInformationController.m; sourceTree = "<group>"; };
+		BD30C5181EFDE5160032FE64 /* MenuComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuComponent.h; sourceTree = "<group>"; };
+		BD30C5191EFDE5240032FE64 /* MenuComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuComponent.m; sourceTree = "<group>"; };
+		BD5C3EBA1EFD4B9100616400 /* HostelAreaMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostelAreaMapViewController.h; sourceTree = "<group>"; };
+		BD5C3EBB1EFD4BA000616400 /* HostelAreaMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelAreaMapViewController.m; sourceTree = "<group>"; };
+		BD5C3EBF1EFD4C9000616400 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BD5C3EC11EFD515200616400 /* OverlayConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverlayConfiguration.h; sourceTree = "<group>"; };
+		BD5C3EC31EFD516E00616400 /* OverlayConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayConfiguration.m; sourceTree = "<group>"; };
+		BD5C3EC51EFD53FC00616400 /* Seoul.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Seoul.geojson; sourceTree = "<group>"; };
+		BD5C3EC71EFD542500616400 /* PlacemarksNearHostel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlacemarksNearHostel.plist; sourceTree = "<group>"; };
+		BD5C3EC91EFD579100616400 /* StoryboardA.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryboardA.storyboard; sourceTree = "<group>"; };
+		BD902CD51EFD31F600DD1034 /* GDJHostel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDJHostel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD902CD91EFD31F600DD1034 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BD902CDB1EFD31F600DD1034 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BD902CDC1EFD31F600DD1034 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BD902CDE1EFD31F600DD1034 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BD902CDF1EFD31F600DD1034 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BD902CE21EFD31F600DD1034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BD902CE41EFD31F600DD1034 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD902CE71EFD31F600DD1034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BD902CE91EFD31F600DD1034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD902CEF1EFD325100DD1034 /* HostelArea.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HostelArea.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BD902CD21EFD31F600DD1034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD5C3EC01EFD4C9000616400 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BD5C3EBD1EFD4BA400616400 /* HostelAreaMapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BD5C3EBA1EFD4B9100616400 /* HostelAreaMapViewController.h */,
+				BD5C3EBB1EFD4BA000616400 /* HostelAreaMapViewController.m */,
+			);
+			name = HostelAreaMapViewController;
+			sourceTree = "<group>";
+		};
+		BD5C3EBE1EFD4C9000616400 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD5C3EBF1EFD4C9000616400 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD5C3EC21EFD515600616400 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				BD5C3EC11EFD515200616400 /* OverlayConfiguration.h */,
+				BD5C3EC31EFD516E00616400 /* OverlayConfiguration.m */,
+			);
+			name = DataModels;
+			sourceTree = "<group>";
+		};
+		BD902CCC1EFD31F600DD1034 = {
+			isa = PBXGroup;
+			children = (
+				BD902CD71EFD31F600DD1034 /* GDJHostel */,
+				BD902CD61EFD31F600DD1034 /* Products */,
+				BD5C3EBE1EFD4C9000616400 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BD902CD61EFD31F600DD1034 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD902CD51EFD31F600DD1034 /* GDJHostel.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD902CD71EFD31F600DD1034 /* GDJHostel */ = {
+			isa = PBXGroup;
+			children = (
+				BD5C3EC21EFD515600616400 /* DataModels */,
+				BD5C3EBD1EFD4BA400616400 /* HostelAreaMapViewController */,
+				BD902CDB1EFD31F600DD1034 /* AppDelegate.h */,
+				BD902CDC1EFD31F600DD1034 /* AppDelegate.m */,
+				BD902CDE1EFD31F600DD1034 /* ViewController.h */,
+				BD902CDF1EFD31F600DD1034 /* ViewController.m */,
+				BD5C3EC91EFD579100616400 /* StoryboardA.storyboard */,
+				BD902CE11EFD31F600DD1034 /* Main.storyboard */,
+				BD902CE41EFD31F600DD1034 /* Assets.xcassets */,
+				BD902CE61EFD31F600DD1034 /* LaunchScreen.storyboard */,
+				BD902CE91EFD31F600DD1034 /* Info.plist */,
+				BD5C3EC71EFD542500616400 /* PlacemarksNearHostel.plist */,
+				BD5C3EC51EFD53FC00616400 /* Seoul.geojson */,
+				BD902CD81EFD31F600DD1034 /* Supporting Files */,
+				BD902CEF1EFD325100DD1034 /* HostelArea.plist */,
+				BD30C5151EFDDCD50032FE64 /* HostelInformationController.h */,
+				BD30C5161EFDDCE70032FE64 /* HostelInformationController.m */,
+				BD30C5181EFDE5160032FE64 /* MenuComponent.h */,
+				BD30C5191EFDE5240032FE64 /* MenuComponent.m */,
+			);
+			path = GDJHostel;
+			sourceTree = "<group>";
+		};
+		BD902CD81EFD31F600DD1034 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BD902CD91EFD31F600DD1034 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BD902CD41EFD31F600DD1034 /* GDJHostel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD902CEC1EFD31F600DD1034 /* Build configuration list for PBXNativeTarget "GDJHostel" */;
+			buildPhases = (
+				BD902CD11EFD31F600DD1034 /* Sources */,
+				BD902CD21EFD31F600DD1034 /* Frameworks */,
+				BD902CD31EFD31F600DD1034 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GDJHostel;
+			productName = GDJHostel;
+			productReference = BD902CD51EFD31F600DD1034 /* GDJHostel.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD902CCD1EFD31F600DD1034 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = AlexMakedonski;
+				TargetAttributes = {
+					BD902CD41EFD31F600DD1034 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = T9J39WJJ9G;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = BD902CD01EFD31F600DD1034 /* Build configuration list for PBXProject "GDJHostel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BD902CCC1EFD31F600DD1034;
+			productRefGroup = BD902CD61EFD31F600DD1034 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD902CD41EFD31F600DD1034 /* GDJHostel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BD902CD31EFD31F600DD1034 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD902CE81EFD31F600DD1034 /* LaunchScreen.storyboard in Resources */,
+				BD902CE51EFD31F600DD1034 /* Assets.xcassets in Resources */,
+				BD5C3EC81EFD542500616400 /* PlacemarksNearHostel.plist in Resources */,
+				BD5C3EC61EFD53FC00616400 /* Seoul.geojson in Resources */,
+				BD902CE31EFD31F600DD1034 /* Main.storyboard in Resources */,
+				BD5C3ECA1EFD579100616400 /* StoryboardA.storyboard in Resources */,
+				BD902CF01EFD325100DD1034 /* HostelArea.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BD902CD11EFD31F600DD1034 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD902CE01EFD31F600DD1034 /* ViewController.m in Sources */,
+				BD30C5171EFDDCE70032FE64 /* HostelInformationController.m in Sources */,
+				BD5C3EBC1EFD4BA000616400 /* HostelAreaMapViewController.m in Sources */,
+				BD30C51A1EFDE5240032FE64 /* MenuComponent.m in Sources */,
+				BD902CDD1EFD31F600DD1034 /* AppDelegate.m in Sources */,
+				BD902CDA1EFD31F600DD1034 /* main.m in Sources */,
+				BD5C3EC41EFD516E00616400 /* OverlayConfiguration.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BD902CE11EFD31F600DD1034 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD902CE21EFD31F600DD1034 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BD902CE61EFD31F600DD1034 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD902CE71EFD31F600DD1034 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BD902CEA1EFD31F600DD1034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BD902CEB1EFD31F600DD1034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BD902CED1EFD31F600DD1034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
+				INFOPLIST_FILE = GDJHostel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AlexMakedonski.GDJHostel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BD902CEE1EFD31F600DD1034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
+				INFOPLIST_FILE = GDJHostel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AlexMakedonski.GDJHostel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD902CD01EFD31F600DD1034 /* Build configuration list for PBXProject "GDJHostel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD902CEA1EFD31F600DD1034 /* Debug */,
+				BD902CEB1EFD31F600DD1034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD902CEC1EFD31F600DD1034 /* Build configuration list for PBXNativeTarget "GDJHostel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD902CED1EFD31F600DD1034 /* Debug */,
+				BD902CEE1EFD31F600DD1034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD902CCD1EFD31F600DD1034 /* Project object */;
+}

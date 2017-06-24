@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>0</integer>
+		<key>location</key>
+		<string>{,}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string>Near Ediya Coffee</string>
+		<key>type</key>
+		<integer>3</integer>
+		<key>location</key>
+		<string>{37.5428,126.9529}</string>
+		<key>address</key>
+		<string>56-37 Sin-gongdeokdong</string>
+		<key>title</key>
+		<string>Pharmacy</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string>Near Welltz Tower</string>
+		<key>type</key>
+		<integer>7</integer>
+		<key>location</key>
+		<string>{37.5430,126.9531}</string>
+		<key>address</key>
+		<string>56-34 Sin-gongdeokdong</string>
+		<key>title</key>
+		<string>Dunkin Donuts</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string>On 2nd Floor</string>
+		<key>type</key>
+		<integer>4</integer>
+		<key>location</key>
+		<string>{37.5434,126.9526}</string>
+		<key>address</key>
+		<string>53-3 Sin-gongdeokdong</string>
+		<key>title</key>
+		<string>Skin/Facial/Cosmetic Clinics</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string>On 2nd Floor</string>
+		<key>type</key>
+		<integer>4</integer>
+		<key>location</key>
+		<string>{37.5435,126.9522} </string>
+		<key>address</key>
+		<string>Gongdeokdong</string>
+		<key>title</key>
+		<string>JS Clinic</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string>In basement floor</string>
+		<key>type</key>
+		<integer>8</integer>
+		<key>location</key>
+		<string>{37.5434,126.9526}</string>
+		<key>address</key>
+		<string>57-8 Sin-gongdeokdong</string>
+		<key>title</key>
+		<string>Electronic Cigarette Store</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string>In basement</string>
+		<key>type</key>
+		<integer>8</integer>
+		<key>location</key>
+		<string>{37.5434,126.9527}</string>
+		<key>address</key>
+		<string>57-8 Sin-gongdeokdong</string>
+		<key>title</key>
+		<string>Dry Cleaning</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string>In basement</string>
+		<key>type</key>
+		<integer>8</integer>
+		<key>location</key>
+		<string>{37.5434,126.9527}</string>
+		<key>address</key>
+		<string>57-8 Sin-gongdeokdong</string>
+		<key>title</key>
+		<string>Supplies Store</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string>In basement</string>
+		<key>type</key>
+		<integer>0</integer>
+		<key>location</key>
+		<string>{37.5434,126.9528}</string>
+		<key>address</key>
+		<string>167 Sin-gongdeokdong</string>
+		<key>title</key>
+		<string>Internet Bar</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string>In basement</string>
+		<key>type</key>
+		<integer>7</integer>
+		<key>location</key>
+		<string>{37.5434,126.9528}</string>
+		<key>address</key>
+		<string>167 Sin-gongdeokdong</string>
+		<key>title</key>
+		<string>Go Hong Restaurant</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string>In basement</string>
+		<key>type</key>
+		<integer>4</integer>
+		<key>location</key>
+		<string>{37.5434,126.9528}</string>
+		<key>address</key>
+		<string>167 Sin-gongdeokdong</string>
+		<key>title</key>
+		<string>Skin Care Clinic</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string>In basement</string>
+		<key>type</key>
+		<integer>4</integer>
+		<key>location</key>
+		<string>{37.5433,126.9526}</string>
+		<key>address</key>
+		<string>57-8 Sin-gongdeokgong</string>
+		<key>title</key>
+		<string>Lee Yeonju Hairshop</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string>1st Floor, Inside</string>
+		<key>type</key>
+		<integer>4</integer>
+		<key>location</key>
+		<string>{37.5443,126.9537}</string>
+		<key>address</key>
+		<string>22 Mallijaero</string>
+		<key>title</key>
+		<string>The Clige Hair</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string>1st Floor, Inside</string>
+		<key>type</key>
+		<integer>4</integer>
+		<key>location</key>
+		<string>{37.5442,126.9537}</string>
+		<key>address</key>
+		<string>24-20 Sin-gongdeokdong</string>
+		<key>title</key>
+		<string>Anne&apos;s Nail</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string>Semi-Outdoor Entrance</string>
+		<key>type</key>
+		<integer>9</integer>
+		<key>location</key>
+		<string>{37.5445,126.9542}</string>
+		<key>address</key>
+		<string>24-6 Sin-gongdeokdong</string>
+		<key>title</key>
+		<string>Hwa Dong Pub</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>0</integer>
+		<key>location</key>
+		<string>{,}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>0</integer>
+		<key>location</key>
+		<string>{,}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>0</integer>
+		<key>location</key>
+		<string>{,}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>0</integer>
+		<key>location</key>
+		<string>{,}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>0</integer>
+		<key>location</key>
+		<string>{,}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>0</integer>
+		<key>location</key>
+		<string>{,}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string></string>
+	</dict>
+</array>
+</plist>
