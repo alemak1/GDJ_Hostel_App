@@ -9,11 +9,16 @@
 #import "AppDelegate.h"
 
 #import "HostelInformationController.h"
+#import "KoreanAudioPhraseController.h"
+#import "HostelCollectionController.h"
+#import "HostelFlowLayout.h"
 
 @interface AppDelegate ()
 
 typedef enum TESTABLE_VIEWCONTROLLERS{
-    HOSTEL_INFORMATION_CONTROLLER
+    HOSTEL_INFORMATION_CONTROLLER,
+    KOREAN_AUDIO_PHRASE_CONTROLLER,
+    HOSTEL_COLLECTION_CONTROLLER
 } TESTABLE_VIEWCONTROLLERS;
 
 @end
@@ -30,7 +35,7 @@ static BOOL willInitiateFromStoryBoard = false;
     if(!willInitiateFromStoryBoard){
         self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
         
-        UIViewController* rootViewController = [self getTestableViewController:HOSTEL_INFORMATION_CONTROLLER];
+        UIViewController* rootViewController = [self getTestableViewController:HOSTEL_COLLECTION_CONTROLLER];
         
         [self.window setRootViewController:rootViewController];
         
@@ -72,6 +77,11 @@ static BOOL willInitiateFromStoryBoard = false;
 
 -(UIViewController*) getTestableViewController:(TESTABLE_VIEWCONTROLLERS)testableViewControllerType{
     
+    
+    HostelFlowLayout* hostelFlowLayout = [[HostelFlowLayout alloc]initWithPresetVerticalConfigurationA];
+    
+
+    
     UIViewController* testableViewController = nil;
     
     
@@ -79,6 +89,11 @@ static BOOL willInitiateFromStoryBoard = false;
         case HOSTEL_INFORMATION_CONTROLLER:
             testableViewController = [[HostelInformationController alloc] init];
             break;
+        case KOREAN_AUDIO_PHRASE_CONTROLLER:
+            testableViewController = [[UINavigationController alloc] initWithRootViewController:[[KoreanAudioPhraseController alloc] init]];
+            break;
+        case HOSTEL_COLLECTION_CONTROLLER:
+            testableViewController = [[HostelCollectionController alloc] initWithCollectionViewLayout:hostelFlowLayout];;
         default:
             break;
      

@@ -28,6 +28,8 @@
 
 @property (nonatomic, strong) NSString *name;
 
+
+
 - (instancetype)initWithFilename:(NSString *)filename;
 
 @end

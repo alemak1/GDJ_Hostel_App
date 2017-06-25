@@ -229,16 +229,16 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fF2-ld-p7Q">
                                 <rect key="frame" x="0.0" y="137" width="375" height="333.5"/>
                                 <connections>
-                                    <outlet property="delegate" destination="XsF-MM-hbA" id="shb-ve-OXq"/>
+                                    <outlet property="delegate" destination="XsF-MM-hbA" id="9bJ-Cm-zPh"/>
                                 </connections>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egb-nV-Ajp">
-                                <rect key="frame" x="25" y="485.5" width="130" height="19.5"/>
+                                <rect key="frame" x="25" y="485.5" width="144.5" height="22.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Distance to Hostel:">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="Baskerville"/>
+                                            <font key="NSFont" size="17" name="Futura-Medium"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -246,35 +246,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRq-8i-6eH">
-                                <rect key="frame" x="290" y="484.5" width="45" height="21"/>
+                                <rect key="frame" x="290" y="486.5" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNu-It-tBJ">
-                                <rect key="frame" x="290" y="518.5" width="45" height="21"/>
+                                <rect key="frame" x="290" y="524.5" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdO-da-kyv">
-                                <rect key="frame" x="165" y="549.5" width="45" height="107.5"/>
+                                <rect key="frame" x="165" y="621" width="45" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="dismissCurrentViewController:" destination="XsF-MM-hbA" eventType="touchUpInside" id="caW-Fm-OCe"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Travelling Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjZ-Rw-SvF">
-                                <rect key="frame" x="25" y="520" width="187" height="19.5"/>
-                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="17"/>
+                                <rect key="frame" x="25" y="523" width="199" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5v-FX-Vwf">
-                                <rect key="frame" x="81" y="30" width="213" height="22.5"/>
+                                <rect key="frame" x="94" y="30" width="187.5" height="30.5"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Distance to Ina's Hostel">
+                                    <fragment content="Directions to GDJ Hostel">
                                         <attributes>
                                             <color key="NSColor" red="0.015089261345565319" green="0.0053467247635126114" blue="0.99359077215194702" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="Futura-Bold"/>
+                                            <font key="NSFont" size="25" name="Futura-CondensedMedium"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -282,7 +285,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fU3-HH-Yic">
-                                <rect key="frame" x="102.5" y="67.5" width="170" height="29"/>
+                                <rect key="frame" x="102.5" y="75.5" width="170" height="29"/>
                                 <segments>
                                     <segment title="Walk"/>
                                     <segment title="Transit"/>
@@ -292,6 +295,16 @@
                                     <action selector="makeRequestForNewTransportationType:" destination="XsF-MM-hbA" eventType="valueChanged" id="h24-2c-ngD"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSg-Gb-f0B">
+                                <rect key="frame" x="75" y="569" width="164" height="30"/>
+                                <state key="normal" title="View Directions in Maps"/>
+                                <connections>
+                                    <action selector="viewDirectionsToHostelWithMapsApp:" destination="XsF-MM-hbA" eventType="touchUpInside" id="NE3-m0-etP"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="routeA" translatesAutoresizingMaskIntoConstraints="NO" id="Tu2-uU-QFA">
+                                <rect key="frame" x="247" y="574" width="20" height="20"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90980392160000001" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -303,11 +316,14 @@
                             <constraint firstItem="fF2-ld-p7Q" firstAttribute="centerY" secondItem="WVL-sK-mEy" secondAttribute="centerY" constant="-30" id="9Uh-iw-Tx5"/>
                             <constraint firstItem="RdO-da-kyv" firstAttribute="centerX" secondItem="WVL-sK-mEy" secondAttribute="centerX" id="CvD-gP-4fB"/>
                             <constraint firstItem="fU3-HH-Yic" firstAttribute="centerX" secondItem="WVL-sK-mEy" secondAttribute="centerX" id="Des-M2-a7v"/>
-                            <constraint firstItem="RdO-da-kyv" firstAttribute="top" secondItem="AjZ-Rw-SvF" secondAttribute="bottom" constant="10" id="GD8-KF-G44"/>
+                            <constraint firstItem="nSg-Gb-f0B" firstAttribute="top" secondItem="AjZ-Rw-SvF" secondAttribute="bottom" constant="23.5" id="JET-vl-Dut"/>
                             <constraint firstItem="egb-nV-Ajp" firstAttribute="baseline" secondItem="YRq-8i-6eH" secondAttribute="baseline" id="MsV-8g-hEX"/>
                             <constraint firstItem="AjZ-Rw-SvF" firstAttribute="top" secondItem="egb-nV-Ajp" secondAttribute="bottom" constant="15" id="QBw-3V-Tut"/>
                             <constraint firstItem="w5v-FX-Vwf" firstAttribute="centerX" secondItem="WVL-sK-mEy" secondAttribute="centerX" id="RQq-HH-FSJ"/>
+                            <constraint firstItem="nSg-Gb-f0B" firstAttribute="leading" secondItem="AjZ-Rw-SvF" secondAttribute="leading" constant="50" id="asg-BG-Dwe"/>
                             <constraint firstItem="egb-nV-Ajp" firstAttribute="top" secondItem="fF2-ld-p7Q" secondAttribute="bottom" constant="15" id="d8U-4D-Kil"/>
+                            <constraint firstItem="nSg-Gb-f0B" firstAttribute="centerY" secondItem="Tu2-uU-QFA" secondAttribute="centerY" id="d9v-29-sde"/>
+                            <constraint firstItem="Tu2-uU-QFA" firstAttribute="leading" secondItem="nSg-Gb-f0B" secondAttribute="trailing" constant="8" id="dDJ-Ge-oio"/>
                             <constraint firstItem="GnH-zA-ipR" firstAttribute="top" secondItem="RdO-da-kyv" secondAttribute="bottom" constant="10" id="dYB-gY-P28"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YRq-8i-6eH" secondAttribute="trailing" constant="24" id="fhW-uy-PZS"/>
                             <constraint firstItem="fU3-HH-Yic" firstAttribute="top" secondItem="w5v-FX-Vwf" secondAttribute="bottom" constant="15" id="hCy-Lf-bNN"/>
@@ -318,14 +334,14 @@
                     </view>
                     <connections>
                         <outlet property="distanceToHostelIndicator" destination="YRq-8i-6eH" id="esZ-05-plM"/>
-                        <outlet property="routeDisplayMap" destination="fF2-ld-p7Q" id="Esb-01-lfr"/>
+                        <outlet property="routeDisplayMap" destination="fF2-ld-p7Q" id="CRd-4v-kEM"/>
                         <outlet property="transportationMode" destination="fU3-HH-Yic" id="Uay-kt-Jxm"/>
                         <outlet property="travelTimeIndicator" destination="bNu-It-tBJ" id="Xev-LI-hvL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCj-BU-Ofl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1545" y="-1913"/>
+            <point key="canvasLocation" x="-2412" y="-1976"/>
         </scene>
         <!--Hostel Scroll View Controller-->
         <scene sceneID="yGz-Xm-smo">
@@ -393,7 +409,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Search Nearby Locations">
                                         <attributes>
-                                            <font key="NSFont" size="17" name="Copperplate"/>
+                                            <font key="NSFont" size="17" name="Futura-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -401,18 +417,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qr9-w3-x5E">
-                                <rect key="frame" x="0.0" y="99" width="375" height="455.5"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="445"/>
                                 <connections>
                                     <outlet property="delegate" destination="1sy-i1-5sf" id="y5b-89-OVH"/>
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dyz-jV-VNr">
-                                <rect key="frame" x="158.5" y="615.5" width="58" height="36.5"/>
+                                <rect key="frame" x="161" y="609" width="53" height="43"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Back">
                                             <attributes>
-                                                <font key="NSFont" size="24" name="Copperplate"/>
+                                                <font key="NSFont" size="24" name="Futura-Medium"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -423,24 +439,24 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NA0-dH-3Bz">
-                                <rect key="frame" x="103.5" y="574.5" width="208" height="26"/>
+                                <rect key="frame" x="113" y="564" width="189" height="30"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Get Directions in Apple Maps">
                                             <attributes>
                                                 <color key="NSColor" red="0.090196078430000007" green="0.1058823529" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="14" name="Copperplate"/>
+                                                <font key="NSFont" size="14" name="Futura-Medium"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="getDirectionsInMaps:" destination="1sy-i1-5sf" eventType="touchUpInside" id="PFK-NX-nUT"/>
+                                    <action selector="getDirectionsInMaps:" destination="1sy-i1-5sf" eventType="touchUpInside" id="rf7-03-0QW"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="routeA" translatesAutoresizingMaskIntoConstraints="NO" id="3ov-CF-THE">
-                                <rect key="frame" x="68.5" y="578" width="20" height="20"/>
+                                <rect key="frame" x="78" y="569.5" width="20" height="20"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90980392156862744" green="0.5490196078431373" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
@@ -464,13 +480,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="locationSearchBar" destination="Xmy-Fv-vbQ" id="DJ3-QZ-4ZW"/>
+                        <outlet property="locationSearchBar" destination="Xmy-Fv-vbQ" id="XDe-Nf-HBz"/>
                         <outlet property="mainMapView" destination="qr9-w3-x5E" id="SUF-Qc-XAx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PB8-ij-klO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9353" y="-2210"/>
+            <point key="canvasLocation" x="-10090" y="-2206"/>
         </scene>
         <!--Hostel Local Area Map Controller-->
         <scene sceneID="Hg6-bp-v13">
@@ -564,7 +580,7 @@
         <!--Directions Menu Controller-->
         <scene sceneID="0RP-bK-zDM">
             <objects>
-                <viewController id="h18-7e-0Gb" customClass="DirectionsMenuController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DirectionsMenuController" id="h18-7e-0Gb" customClass="DirectionsMenuController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oxu-ZR-IpQ"/>
                         <viewControllerLayoutGuide type="bottom" id="Io3-Qk-lhk"/>
@@ -574,13 +590,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="WallLogo" translatesAutoresizingMaskIntoConstraints="NO" id="zCN-JG-U4e">
-                                <rect key="frame" x="-2" y="0.0" width="379" height="314"/>
+                                <rect key="frame" x="-2" y="0.0" width="379" height="0.0"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="BuildingOutside_1" translatesAutoresizingMaskIntoConstraints="NO" id="ZdD-NL-xY0">
-                                <rect key="frame" x="-2" y="314" width="379" height="355"/>
+                                <rect key="frame" x="-2" y="0.0" width="379" height="669"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selectionBarA" translatesAutoresizingMaskIntoConstraints="NO" id="7ld-EI-uUW">
-                                <rect key="frame" x="9" y="281.5" width="356.5" height="103"/>
+                                <rect key="frame" x="9.5" y="282" width="356" height="103"/>
                             </imageView>
                             <pickerView contentMode="scaleAspectFit" verticalCompressionResistancePriority="760" translatesAutoresizingMaskIntoConstraints="NO" id="Jkx-OZ-H7Q">
                                 <rect key="frame" x="-10" y="225.5" width="395" height="216"/>
@@ -589,21 +605,37 @@
                                     <outlet property="delegate" destination="h18-7e-0Gb" id="VMl-t6-Rbm"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVg-iu-ngp">
-                                <rect key="frame" x="271" y="591" width="104" height="40"/>
-                                <state key="normal" image="arrowRight">
-                                    <color key="titleColor" red="0.090196078430000007" green="0.1058823529" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="1" green="0.94933005159999995" blue="0.6579589844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JVg-iu-ngp">
+                                <rect key="frame" x="236.5" y="597" width="112.5" height="40"/>
+                                <size key="titleShadowOffset" width="3" height="3"/>
+                                <state key="normal" backgroundImage="arrowRight">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Continue">
+                                            <attributes>
+                                                <color key="NSColor" red="0.41631280729999998" green="0.558976319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="16" name="Futura-Medium"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
                                     <action selector="showSelectedViewController:" destination="h18-7e-0Gb" eventType="touchUpInside" id="fBs-MC-Zpq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9t-oY-Bg0">
-                                <rect key="frame" x="16" y="591" width="104" height="40"/>
-                                <state key="normal" image="arrowLeft">
-                                    <color key="titleColor" red="0.090196078430000007" green="0.1058823529" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="1" green="0.94933005159999995" blue="0.6579589844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K9t-oY-Bg0">
+                                <rect key="frame" x="26" y="597" width="112.5" height="40"/>
+                                <size key="titleShadowOffset" width="3" height="3"/>
+                                <state key="normal" backgroundImage="arrowLeft">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Back">
+                                            <attributes>
+                                                <color key="NSColor" red="0.41631280729999998" green="0.558976319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="16" name="Futura-Medium"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
                                     <action selector="dismissViewController:" destination="h18-7e-0Gb" eventType="touchUpInside" id="KUZ-Gj-7pg"/>
@@ -614,12 +646,14 @@
                         <constraints>
                             <constraint firstItem="zCN-JG-U4e" firstAttribute="top" secondItem="fdg-cN-TAH" secondAttribute="top" id="01r-Bb-bGL"/>
                             <constraint firstItem="zCN-JG-U4e" firstAttribute="width" secondItem="fdg-cN-TAH" secondAttribute="width" id="0KP-l5-Vr3"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="K9t-oY-Bg0" secondAttribute="leading" constant="20" id="0kN-kE-DCa"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JVg-iu-ngp" secondAttribute="trailing" constant="20" id="7WH-t1-ASy"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="K9t-oY-Bg0" secondAttribute="leading" constant="-10" id="0kN-kE-DCa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JVg-iu-ngp" secondAttribute="trailing" constant="10" id="7WH-t1-ASy"/>
                             <constraint firstItem="ZdD-NL-xY0" firstAttribute="leading" secondItem="fdg-cN-TAH" secondAttribute="leading" constant="-2" id="9wh-3t-V6F"/>
                             <constraint firstItem="7ld-EI-uUW" firstAttribute="centerY" secondItem="fdg-cN-TAH" secondAttribute="centerY" id="Fej-BA-DIO"/>
+                            <constraint firstItem="JVg-iu-ngp" firstAttribute="width" secondItem="fdg-cN-TAH" secondAttribute="width" multiplier="0.3" id="Ido-Kh-QhB"/>
                             <constraint firstItem="Io3-Qk-lhk" firstAttribute="top" secondItem="ZdD-NL-xY0" secondAttribute="bottom" constant="-2" id="Mvc-hj-zxQ"/>
                             <constraint firstItem="zCN-JG-U4e" firstAttribute="height" secondItem="fdg-cN-TAH" secondAttribute="height" multiplier="0.2" id="P4u-nP-7Bk"/>
+                            <constraint firstItem="K9t-oY-Bg0" firstAttribute="width" secondItem="fdg-cN-TAH" secondAttribute="width" multiplier="0.3" id="V0Y-vb-RX3"/>
                             <constraint firstItem="Jkx-OZ-H7Q" firstAttribute="leading" secondItem="fdg-cN-TAH" secondAttribute="leading" constant="-10" id="efc-PH-do0"/>
                             <constraint firstAttribute="trailing" secondItem="ZdD-NL-xY0" secondAttribute="trailing" constant="-2" id="fFm-Iw-vFv"/>
                             <constraint firstItem="Io3-Qk-lhk" firstAttribute="top" secondItem="JVg-iu-ngp" secondAttribute="bottom" constant="30" id="ga2-6i-ot8"/>
@@ -636,16 +670,16 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="wDG-dS-3DW"/>
                                 <exclude reference="0KP-l5-Vr3"/>
                                 <exclude reference="P4u-nP-7Bk"/>
-                                <exclude reference="wDG-dS-3DW"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="wDG-dS-3DW"/>
                                 <exclude reference="0KP-l5-Vr3"/>
                                 <include reference="P4u-nP-7Bk"/>
-                                <include reference="wDG-dS-3DW"/>
                             </mask>
                         </variation>
                     </view>
@@ -809,9 +843,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BuildingOutside_1" width="533" height="355"/>
+        <image name="BuildingOutside_1" width="1600" height="1067"/>
         <image name="RoomNo1_1" width="1600" height="1067"/>
-        <image name="WallLogo" width="1024" height="682"/>
+        <image name="WallLogo" width="3072" height="2048"/>
         <image name="arrowLeft" width="50" height="40"/>
         <image name="arrowRight" width="50" height="40"/>
         <image name="routeA" width="20" height="20"/>

@@ -60,17 +60,71 @@
 
 - (void)showMenu:(UIGestureRecognizer *)gestureRecognizer {
     [self.menuComponent showMenuWithSelectionHandler:^(NSInteger selectedOptionIndex) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"UIKit Dynamics Menu"
-                message:[NSString stringWithFormat:@"You selected option #%d", selectedOptionIndex + 1]
-                delegate:nil
-                cancelButtonTitle:nil
-                otherButtonTitles:@"Okay", nil];
-        [alert show];
+        
+        UIStoryboard* storyBoardA = [UIStoryboard storyboardWithName:@"StoryboardA" bundle:nil];
+        
+        UIViewController* requestedViewController;
+        
+        switch (selectedOptionIndex) {
+            case 0:
+                //Information about hostel
+                requestedViewController = [self getInformationControllerFromStoryBoard];
+                NSLog(@"You selected option %d",(int)selectedOptionIndex);
+                break;
+            case 1:
+                //Directions
+                 requestedViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"DirectionsMenuController"];
+                    NSLog(@"You selected option %d",(int)selectedOptionIndex);
+
+                break;
+            case 2:
+                //Contact info
+                 requestedViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"DirectionsMenuController"];
+                    NSLog(@"You selected option %d",(int)selectedOptionIndex);
+
+                break;
+            case 3:
+                //Seoul tourism
+                 requestedViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"DirectionsMenuController"];
+                    NSLog(@"You selected option %d",(int)selectedOptionIndex);
+
+                break;
+            case 4:
+                //Acknowledgements
+                 requestedViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"DirectionsMenuController"];
+                NSLog(@"You selected option %d",(int)selectedOptionIndex);
+
+                break;
+            default:
+                break;
+        }
+        
+        [self showViewController:requestedViewController sender:nil];
+
     }];
 }
 
 -(void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection{
     [self.menuComponent resetMenuView:[self traitCollection]];
+}
+
+-(UIViewController*)getInformationControllerFromStoryBoard{
+    
+    // decide which kind of content we need based on the device idiom,
+    // when we load the proper storyboard, the "ContentController" class will take it from here
+    UIStoryboard* mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    
+    NSString *storyBoardIdentifier = @"PadInformationController";
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        storyBoardIdentifier = @"PhoneInformationController";
+    }
+    
+    
+    return [mainStoryBoard instantiateViewControllerWithIdentifier:storyBoardIdentifier];
+    
 }
 
 @end

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Currency</key>
+	<array/>
+	<key>Health/Medical</key>
+	<array/>
+	<key>Directions</key>
+	<array/>
+	<key>Fun Phrases</key>
+	<array/>
+	<key>Banking</key>
+	<array/>
+	<key>Basic Phrases</key>
+	<array/>
+	<key>Restaurants and Food</key>
+	<array>
+		<dict>
+			<key>audiofilepath</key>
+			<string>give_me_the_kimchi_stew</string>
+			<key>original</key>
+			<string>I would like to order a kimchi stew.</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>give_me_one_more_side_dish</string>
+			<key>original</key>
+			<string>GIve me one more (side dish).</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>excuse_me_waiter_waitress</string>
+			<key>original</key>
+			<string>Excuse me, waiter/waitress...</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>how_much_is_the_bill</string>
+			<key>original</key>
+			<string>How much is the kimchi stew?</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>where_is_the_bathroom</string>
+			<key>original</key>
+			<string>where is the bathroom?</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>what_time_do_you_close</string>
+			<key>original</key>
+			<string>what time do you close?</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>it_was_very_tasty</string>
+			<key>original</key>
+			<string>That was a great meal!</string>
+		</dict>
+	</array>
+	<key>Transportation</key>
+	<array>
+		<dict>
+			<key>audiofilepath</key>
+			<string>transportation-0</string>
+			<key>original</key>
+			<string>Bus Station</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>transportation-1</string>
+			<key>original</key>
+			<string>What&apos;s the fastest way to the airport?</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>transportation-2</string>
+			<key>original</key>
+			<string>How far is the subway station from here?</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>how_can_i_buy_a_subway_ticket</string>
+			<key>original</key>
+			<string>How can I buy a subway ticket?</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>transportation-4</string>
+			<key>original</key>
+			<string>Subway Station</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>transportation-5</string>
+			<key>original</key>
+			<string>Where is the subway station?</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>transportation-6</string>
+			<key>original</key>
+			<string>How do I get to the bus station?</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>transportation-7</string>
+			<key>original</key>
+			<string>Could you explain how to go to Seoul Tower?</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>transportation-8</string>
+			<key>original</key>
+			<string>Can I get there by walking?</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>how_long_does_it_take</string>
+			<key>original</key>
+			<string>How long does it take?</string>
+		</dict>
+		<dict>
+			<key>audiofilepath</key>
+			<string>transportation-10</string>
+			<key>original</key>
+			<string>Where can I buy the ticket?</string>
+		</dict>
+	</array>
+</dict>
+</plist>

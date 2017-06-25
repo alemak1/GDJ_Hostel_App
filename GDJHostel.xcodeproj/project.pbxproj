@@ -7,8 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD2995B11EFE68EB009E64BF /* SurvivalWordsPhrases.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD2995B01EFE68EB009E64BF /* SurvivalWordsPhrases.plist */; };
+		BD2CAA8E1EFFCCEF00C0E540 /* HostelFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA8D1EFFCCEF00C0E540 /* HostelFlowLayout.m */; };
+		BD2CAA911EFFCD6200C0E540 /* HostelCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA901EFFCD6200C0E540 /* HostelCollectionController.m */; };
+		BD2CAA941EFFD0EC00C0E540 /* HostelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA931EFFD0EC00C0E540 /* HostelCollectionViewCell.m */; };
+		BD2CAA981EFFDDB500C0E540 /* TouristSiteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA971EFFDDB500C0E540 /* TouristSiteCollectionViewCell.m */; };
+		BD2CAA9B1EFFE59800C0E540 /* TouristSiteConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA9A1EFFE59800C0E540 /* TouristSiteConfiguration.m */; };
+		BD2CAA9D1EFFE7D700C0E540 /* SeoulTouristSites.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD2CAA9C1EFFE7D700C0E540 /* SeoulTouristSites.plist */; };
+		BD2CAAA01EFFE80900C0E540 /* TouristSiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA9F1EFFE80900C0E540 /* TouristSiteManager.m */; };
+		BD2EA76F1EFFB1E300A8572B /* FeatureScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EA76E1EFFB1E300A8572B /* FeatureScrollViewController.m */; };
+		BD2EA7721EFFC28F00A8572B /* ContactScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EA7711EFFC28F00A8572B /* ContactScrollViewController.m */; };
+		BD2EA7751EFFC4CB00A8572B /* RoomInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EA7741EFFC4CB00A8572B /* RoomInfoController.m */; };
+		BD305BA41EFF888100F9F2B9 /* Alpha Dance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD305BA31EFF888100F9F2B9 /* Alpha Dance.mp3 */; };
+		BD305BB41EFF8CB500F9F2B9 /* transportation-0.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BA91EFF8CB500F9F2B9 /* transportation-0.caf */; };
+		BD305BB51EFF8CB500F9F2B9 /* transportation-1.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BAA1EFF8CB500F9F2B9 /* transportation-1.caf */; };
+		BD305BB61EFF8CB500F9F2B9 /* transportation-2.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BAB1EFF8CB500F9F2B9 /* transportation-2.caf */; };
+		BD305BB71EFF8CB500F9F2B9 /* transportation-3.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BAC1EFF8CB500F9F2B9 /* transportation-3.caf */; };
+		BD305BB81EFF8CB500F9F2B9 /* transportation-4.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BAD1EFF8CB500F9F2B9 /* transportation-4.caf */; };
+		BD305BB91EFF8CB500F9F2B9 /* transportation-5.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BAE1EFF8CB500F9F2B9 /* transportation-5.caf */; };
+		BD305BBA1EFF8CB500F9F2B9 /* transportation-6.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BAF1EFF8CB500F9F2B9 /* transportation-6.caf */; };
+		BD305BBB1EFF8CB500F9F2B9 /* transportation-7.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BB01EFF8CB500F9F2B9 /* transportation-7.caf */; };
+		BD305BBC1EFF8CB500F9F2B9 /* transportation-8.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BB11EFF8CB500F9F2B9 /* transportation-8.caf */; };
+		BD305BBD1EFF8CB500F9F2B9 /* transportation-9.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BB21EFF8CB500F9F2B9 /* transportation-9.caf */; };
+		BD305BBE1EFF8CB500F9F2B9 /* transportation-10.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BB31EFF8CB500F9F2B9 /* transportation-10.caf */; };
+		BD305BC01EFF8CC700F9F2B9 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BBF1EFF8CC700F9F2B9 /* background-music-aac.caf */; };
 		BD30C5171EFDDCE70032FE64 /* HostelInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD30C5161EFDDCE70032FE64 /* HostelInformationController.m */; };
 		BD30C51A1EFDE5240032FE64 /* MenuComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = BD30C5191EFDE5240032FE64 /* MenuComponent.m */; };
+		BD3117DB1EFE800900D6A5D6 /* content_iPhone.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD3117DA1EFE800900D6A5D6 /* content_iPhone.plist */; };
+		BD3279401F00124F0007FD64 /* ParkRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD32793F1F00124F0007FD64 /* ParkRoute.plist */; };
+		BD375DCB1EFE98910002525F /* ScrollableInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD375DCA1EFE98910002525F /* ScrollableInfoController.m */; };
+		BD3844A61EFE450800F2E981 /* DirectionsMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3844A51EFE450800F2E981 /* DirectionsMenuController.m */; };
+		BD3844AB1EFE4FD300F2E981 /* HostelLocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3844A81EFE4FD300F2E981 /* HostelLocationAnnotation.m */; };
+		BD3844AC1EFE4FD300F2E981 /* HostelLocationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3844AA1EFE4FD300F2E981 /* HostelLocationAnnotationView.m */; };
+		BD3844AF1EFE526300F2E981 /* LocationSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3844AE1EFE526300F2E981 /* LocationSearchController.m */; };
+		BD3844B31EFE579B00F2E981 /* ToHostelDirectionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3844B21EFE579B00F2E981 /* ToHostelDirectionsController.m */; };
 		BD5C3EBC1EFD4BA000616400 /* HostelAreaMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5C3EBB1EFD4BA000616400 /* HostelAreaMapViewController.m */; };
 		BD5C3EC01EFD4C9000616400 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5C3EBF1EFD4C9000616400 /* MapKit.framework */; };
 		BD5C3EC41EFD516E00616400 /* OverlayConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5C3EC31EFD516E00616400 /* OverlayConfiguration.m */; };
@@ -22,13 +54,62 @@
 		BD902CE51EFD31F600DD1034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD902CE41EFD31F600DD1034 /* Assets.xcassets */; };
 		BD902CE81EFD31F600DD1034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD902CE61EFD31F600DD1034 /* LaunchScreen.storyboard */; };
 		BD902CF01EFD325100DD1034 /* HostelArea.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD902CEF1EFD325100DD1034 /* HostelArea.plist */; };
+		BDA32EE21EFF39DB0087BF19 /* KoreanAudioPhraseController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA32EE11EFF39DB0087BF19 /* KoreanAudioPhraseController.m */; };
+		BDA32F071EFF45910087BF19 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA32F061EFF45910087BF19 /* AudioController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD2995B01EFE68EB009E64BF /* SurvivalWordsPhrases.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SurvivalWordsPhrases.plist; sourceTree = "<group>"; };
+		BD2CAA8C1EFFCCE200C0E540 /* HostelFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostelFlowLayout.h; sourceTree = "<group>"; };
+		BD2CAA8D1EFFCCEF00C0E540 /* HostelFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelFlowLayout.m; sourceTree = "<group>"; };
+		BD2CAA8F1EFFCD4E00C0E540 /* HostelCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostelCollectionController.h; sourceTree = "<group>"; };
+		BD2CAA901EFFCD6200C0E540 /* HostelCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelCollectionController.m; sourceTree = "<group>"; };
+		BD2CAA921EFFD0BF00C0E540 /* HostelCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostelCollectionViewCell.h; sourceTree = "<group>"; };
+		BD2CAA931EFFD0EC00C0E540 /* HostelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelCollectionViewCell.m; sourceTree = "<group>"; };
+		BD2CAA961EFFDDA000C0E540 /* TouristSiteCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristSiteCollectionViewCell.h; sourceTree = "<group>"; };
+		BD2CAA971EFFDDB500C0E540 /* TouristSiteCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristSiteCollectionViewCell.m; sourceTree = "<group>"; };
+		BD2CAA991EFFE56200C0E540 /* TouristSiteConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristSiteConfiguration.h; sourceTree = "<group>"; };
+		BD2CAA9A1EFFE59800C0E540 /* TouristSiteConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristSiteConfiguration.m; sourceTree = "<group>"; };
+		BD2CAA9C1EFFE7D700C0E540 /* SeoulTouristSites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SeoulTouristSites.plist; sourceTree = "<group>"; };
+		BD2CAA9E1EFFE7FF00C0E540 /* TouristSiteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristSiteManager.h; sourceTree = "<group>"; };
+		BD2CAA9F1EFFE80900C0E540 /* TouristSiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristSiteManager.m; sourceTree = "<group>"; };
+		BD2EA76D1EFFB1D500A8572B /* FeatureScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureScrollViewController.h; sourceTree = "<group>"; };
+		BD2EA76E1EFFB1E300A8572B /* FeatureScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureScrollViewController.m; sourceTree = "<group>"; };
+		BD2EA7701EFFC28200A8572B /* ContactScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactScrollViewController.h; sourceTree = "<group>"; };
+		BD2EA7711EFFC28F00A8572B /* ContactScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactScrollViewController.m; sourceTree = "<group>"; };
+		BD2EA7731EFFC4BD00A8572B /* RoomInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoomInfoController.h; sourceTree = "<group>"; };
+		BD2EA7741EFFC4CB00A8572B /* RoomInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomInfoController.m; sourceTree = "<group>"; };
+		BD305BA31EFF888100F9F2B9 /* Alpha Dance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Alpha Dance.mp3"; sourceTree = "<group>"; };
+		BD305BA91EFF8CB500F9F2B9 /* transportation-0.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-0.caf"; sourceTree = "<group>"; };
+		BD305BAA1EFF8CB500F9F2B9 /* transportation-1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-1.caf"; sourceTree = "<group>"; };
+		BD305BAB1EFF8CB500F9F2B9 /* transportation-2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-2.caf"; sourceTree = "<group>"; };
+		BD305BAC1EFF8CB500F9F2B9 /* transportation-3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-3.caf"; sourceTree = "<group>"; };
+		BD305BAD1EFF8CB500F9F2B9 /* transportation-4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-4.caf"; sourceTree = "<group>"; };
+		BD305BAE1EFF8CB500F9F2B9 /* transportation-5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-5.caf"; sourceTree = "<group>"; };
+		BD305BAF1EFF8CB500F9F2B9 /* transportation-6.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-6.caf"; sourceTree = "<group>"; };
+		BD305BB01EFF8CB500F9F2B9 /* transportation-7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-7.caf"; sourceTree = "<group>"; };
+		BD305BB11EFF8CB500F9F2B9 /* transportation-8.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-8.caf"; sourceTree = "<group>"; };
+		BD305BB21EFF8CB500F9F2B9 /* transportation-9.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-9.caf"; sourceTree = "<group>"; };
+		BD305BB31EFF8CB500F9F2B9 /* transportation-10.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-10.caf"; sourceTree = "<group>"; };
+		BD305BBF1EFF8CC700F9F2B9 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
 		BD30C5151EFDDCD50032FE64 /* HostelInformationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostelInformationController.h; sourceTree = "<group>"; };
 		BD30C5161EFDDCE70032FE64 /* HostelInformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelInformationController.m; sourceTree = "<group>"; };
 		BD30C5181EFDE5160032FE64 /* MenuComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuComponent.h; sourceTree = "<group>"; };
 		BD30C5191EFDE5240032FE64 /* MenuComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuComponent.m; sourceTree = "<group>"; };
+		BD3117DA1EFE800900D6A5D6 /* content_iPhone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = content_iPhone.plist; sourceTree = "<group>"; };
+		BD32793F1F00124F0007FD64 /* ParkRoute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ParkRoute.plist; sourceTree = "<group>"; };
+		BD375DC91EFE98830002525F /* ScrollableInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollableInfoController.h; sourceTree = "<group>"; };
+		BD375DCA1EFE98910002525F /* ScrollableInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollableInfoController.m; sourceTree = "<group>"; };
+		BD3844A41EFE450800F2E981 /* DirectionsMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionsMenuController.h; sourceTree = "<group>"; };
+		BD3844A51EFE450800F2E981 /* DirectionsMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionsMenuController.m; sourceTree = "<group>"; };
+		BD3844A71EFE4FD300F2E981 /* HostelLocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostelLocationAnnotation.h; sourceTree = "<group>"; };
+		BD3844A81EFE4FD300F2E981 /* HostelLocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelLocationAnnotation.m; sourceTree = "<group>"; };
+		BD3844A91EFE4FD300F2E981 /* HostelLocationAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostelLocationAnnotationView.h; sourceTree = "<group>"; };
+		BD3844AA1EFE4FD300F2E981 /* HostelLocationAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelLocationAnnotationView.m; sourceTree = "<group>"; };
+		BD3844AD1EFE526300F2E981 /* LocationSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSearchController.h; sourceTree = "<group>"; };
+		BD3844AE1EFE526300F2E981 /* LocationSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSearchController.m; sourceTree = "<group>"; };
+		BD3844B11EFE579B00F2E981 /* ToHostelDirectionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToHostelDirectionsController.h; sourceTree = "<group>"; };
+		BD3844B21EFE579B00F2E981 /* ToHostelDirectionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToHostelDirectionsController.m; sourceTree = "<group>"; };
 		BD5C3EBA1EFD4B9100616400 /* HostelAreaMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostelAreaMapViewController.h; sourceTree = "<group>"; };
 		BD5C3EBB1EFD4BA000616400 /* HostelAreaMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelAreaMapViewController.m; sourceTree = "<group>"; };
 		BD5C3EBF1EFD4C9000616400 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -48,6 +129,10 @@
 		BD902CE71EFD31F600DD1034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD902CE91EFD31F600DD1034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD902CEF1EFD325100DD1034 /* HostelArea.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HostelArea.plist; sourceTree = "<group>"; };
+		BDA32EE01EFF39CA0087BF19 /* KoreanAudioPhraseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KoreanAudioPhraseController.h; sourceTree = "<group>"; };
+		BDA32EE11EFF39DB0087BF19 /* KoreanAudioPhraseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KoreanAudioPhraseController.m; sourceTree = "<group>"; };
+		BDA32F051EFF45850087BF19 /* AudioController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
+		BDA32F061EFF45910087BF19 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +147,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD2CAA951EFFDD8600C0E540 /* TouristSitesCollectionController */ = {
+			isa = PBXGroup;
+			children = (
+				BD2CAA961EFFDDA000C0E540 /* TouristSiteCollectionViewCell.h */,
+				BD2CAA971EFFDDB500C0E540 /* TouristSiteCollectionViewCell.m */,
+				BD2CAA991EFFE56200C0E540 /* TouristSiteConfiguration.h */,
+				BD2CAA9A1EFFE59800C0E540 /* TouristSiteConfiguration.m */,
+				BD2CAA9C1EFFE7D700C0E540 /* SeoulTouristSites.plist */,
+				BD2CAA9E1EFFE7FF00C0E540 /* TouristSiteManager.h */,
+				BD2CAA9F1EFFE80900C0E540 /* TouristSiteManager.m */,
+				BD32793F1F00124F0007FD64 /* ParkRoute.plist */,
+			);
+			name = TouristSitesCollectionController;
+			sourceTree = "<group>";
+		};
+		BD3117D31EFE7EC000D6A5D6 /* InformationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BD3117DA1EFE800900D6A5D6 /* content_iPhone.plist */,
+				BD375DCA1EFE98910002525F /* ScrollableInfoController.m */,
+				BD375DC91EFE98830002525F /* ScrollableInfoController.h */,
+				BD2EA76D1EFFB1D500A8572B /* FeatureScrollViewController.h */,
+				BD2EA76E1EFFB1E300A8572B /* FeatureScrollViewController.m */,
+				BD2EA7701EFFC28200A8572B /* ContactScrollViewController.h */,
+				BD2EA7711EFFC28F00A8572B /* ContactScrollViewController.m */,
+				BD2EA7731EFFC4BD00A8572B /* RoomInfoController.h */,
+				BD2EA7741EFFC4CB00A8572B /* RoomInfoController.m */,
+				BD2CAA8C1EFFCCE200C0E540 /* HostelFlowLayout.h */,
+				BD2CAA8D1EFFCCEF00C0E540 /* HostelFlowLayout.m */,
+				BD2CAA8F1EFFCD4E00C0E540 /* HostelCollectionController.h */,
+				BD2CAA901EFFCD6200C0E540 /* HostelCollectionController.m */,
+				BD2CAA921EFFD0BF00C0E540 /* HostelCollectionViewCell.h */,
+				BD2CAA931EFFD0EC00C0E540 /* HostelCollectionViewCell.m */,
+			);
+			name = InformationControllers;
+			sourceTree = "<group>";
+		};
+		BD3844B01EFE52C800F2E981 /* NavigationAidControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BD3844B11EFE579B00F2E981 /* ToHostelDirectionsController.h */,
+				BD3844B21EFE579B00F2E981 /* ToHostelDirectionsController.m */,
+				BD3844A41EFE450800F2E981 /* DirectionsMenuController.h */,
+				BD3844A51EFE450800F2E981 /* DirectionsMenuController.m */,
+				BD3844AD1EFE526300F2E981 /* LocationSearchController.h */,
+				BD3844AE1EFE526300F2E981 /* LocationSearchController.m */,
+			);
+			name = NavigationAidControllers;
+			sourceTree = "<group>";
+		};
 		BD5C3EBD1EFD4BA400616400 /* HostelAreaMapViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +217,10 @@
 		BD5C3EC21EFD515600616400 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				BD3844A71EFE4FD300F2E981 /* HostelLocationAnnotation.h */,
+				BD3844A81EFE4FD300F2E981 /* HostelLocationAnnotation.m */,
+				BD3844A91EFE4FD300F2E981 /* HostelLocationAnnotationView.h */,
+				BD3844AA1EFE4FD300F2E981 /* HostelLocationAnnotationView.m */,
 				BD5C3EC11EFD515200616400 /* OverlayConfiguration.h */,
 				BD5C3EC31EFD516E00616400 /* OverlayConfiguration.m */,
 			);
@@ -108,6 +247,11 @@
 		BD902CD71EFD31F600DD1034 /* GDJHostel */ = {
 			isa = PBXGroup;
 			children = (
+				BD2CAA951EFFDD8600C0E540 /* TouristSitesCollectionController */,
+				BDA32EE31EFF41220087BF19 /* AudioFiles */,
+				BDA32EDF1EFF39AE0087BF19 /* KoreanPhraseController */,
+				BD3117D31EFE7EC000D6A5D6 /* InformationControllers */,
+				BD3844B01EFE52C800F2E981 /* NavigationAidControllers */,
 				BD5C3EC21EFD515600616400 /* DataModels */,
 				BD5C3EBD1EFD4BA400616400 /* HostelAreaMapViewController */,
 				BD902CDB1EFD31F600DD1034 /* AppDelegate.h */,
@@ -137,6 +281,38 @@
 				BD902CD91EFD31F600DD1034 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BDA32EDF1EFF39AE0087BF19 /* KoreanPhraseController */ = {
+			isa = PBXGroup;
+			children = (
+				BD2995B01EFE68EB009E64BF /* SurvivalWordsPhrases.plist */,
+				BDA32EE01EFF39CA0087BF19 /* KoreanAudioPhraseController.h */,
+				BDA32EE11EFF39DB0087BF19 /* KoreanAudioPhraseController.m */,
+				BDA32F051EFF45850087BF19 /* AudioController.h */,
+				BDA32F061EFF45910087BF19 /* AudioController.m */,
+			);
+			name = KoreanPhraseController;
+			sourceTree = "<group>";
+		};
+		BDA32EE31EFF41220087BF19 /* AudioFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BD305BBF1EFF8CC700F9F2B9 /* background-music-aac.caf */,
+				BD305BA91EFF8CB500F9F2B9 /* transportation-0.caf */,
+				BD305BAA1EFF8CB500F9F2B9 /* transportation-1.caf */,
+				BD305BAB1EFF8CB500F9F2B9 /* transportation-2.caf */,
+				BD305BAC1EFF8CB500F9F2B9 /* transportation-3.caf */,
+				BD305BAD1EFF8CB500F9F2B9 /* transportation-4.caf */,
+				BD305BAE1EFF8CB500F9F2B9 /* transportation-5.caf */,
+				BD305BAF1EFF8CB500F9F2B9 /* transportation-6.caf */,
+				BD305BB01EFF8CB500F9F2B9 /* transportation-7.caf */,
+				BD305BB11EFF8CB500F9F2B9 /* transportation-8.caf */,
+				BD305BB21EFF8CB500F9F2B9 /* transportation-9.caf */,
+				BD305BB31EFF8CB500F9F2B9 /* transportation-10.caf */,
+				BD305BA31EFF888100F9F2B9 /* Alpha Dance.mp3 */,
+			);
+			name = AudioFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,12 +380,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD902CE81EFD31F600DD1034 /* LaunchScreen.storyboard in Resources */,
+				BD305BB81EFF8CB500F9F2B9 /* transportation-4.caf in Resources */,
+				BD305BBE1EFF8CB500F9F2B9 /* transportation-10.caf in Resources */,
 				BD902CE51EFD31F600DD1034 /* Assets.xcassets in Resources */,
 				BD5C3EC81EFD542500616400 /* PlacemarksNearHostel.plist in Resources */,
+				BD305BBD1EFF8CB500F9F2B9 /* transportation-9.caf in Resources */,
+				BD305BBC1EFF8CB500F9F2B9 /* transportation-8.caf in Resources */,
+				BD3117DB1EFE800900D6A5D6 /* content_iPhone.plist in Resources */,
+				BD305BB71EFF8CB500F9F2B9 /* transportation-3.caf in Resources */,
+				BD305BB51EFF8CB500F9F2B9 /* transportation-1.caf in Resources */,
 				BD5C3EC61EFD53FC00616400 /* Seoul.geojson in Resources */,
+				BD305BB61EFF8CB500F9F2B9 /* transportation-2.caf in Resources */,
 				BD902CE31EFD31F600DD1034 /* Main.storyboard in Resources */,
+				BD2CAA9D1EFFE7D700C0E540 /* SeoulTouristSites.plist in Resources */,
+				BD3279401F00124F0007FD64 /* ParkRoute.plist in Resources */,
+				BD305BB41EFF8CB500F9F2B9 /* transportation-0.caf in Resources */,
+				BD305BBB1EFF8CB500F9F2B9 /* transportation-7.caf in Resources */,
+				BD2995B11EFE68EB009E64BF /* SurvivalWordsPhrases.plist in Resources */,
+				BD305BC01EFF8CC700F9F2B9 /* background-music-aac.caf in Resources */,
 				BD5C3ECA1EFD579100616400 /* StoryboardA.storyboard in Resources */,
+				BD305BA41EFF888100F9F2B9 /* Alpha Dance.mp3 in Resources */,
 				BD902CF01EFD325100DD1034 /* HostelArea.plist in Resources */,
+				BD305BBA1EFF8CB500F9F2B9 /* transportation-6.caf in Resources */,
+				BD305BB91EFF8CB500F9F2B9 /* transportation-5.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,13 +413,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDA32F071EFF45910087BF19 /* AudioController.m in Sources */,
+				BD2CAAA01EFFE80900C0E540 /* TouristSiteManager.m in Sources */,
+				BD2CAA941EFFD0EC00C0E540 /* HostelCollectionViewCell.m in Sources */,
+				BD375DCB1EFE98910002525F /* ScrollableInfoController.m in Sources */,
+				BD2EA76F1EFFB1E300A8572B /* FeatureScrollViewController.m in Sources */,
 				BD902CE01EFD31F600DD1034 /* ViewController.m in Sources */,
+				BD2CAA8E1EFFCCEF00C0E540 /* HostelFlowLayout.m in Sources */,
+				BD2EA7751EFFC4CB00A8572B /* RoomInfoController.m in Sources */,
+				BD2CAA911EFFCD6200C0E540 /* HostelCollectionController.m in Sources */,
+				BD3844AC1EFE4FD300F2E981 /* HostelLocationAnnotationView.m in Sources */,
 				BD30C5171EFDDCE70032FE64 /* HostelInformationController.m in Sources */,
+				BD3844A61EFE450800F2E981 /* DirectionsMenuController.m in Sources */,
 				BD5C3EBC1EFD4BA000616400 /* HostelAreaMapViewController.m in Sources */,
+				BD2CAA9B1EFFE59800C0E540 /* TouristSiteConfiguration.m in Sources */,
+				BD3844AB1EFE4FD300F2E981 /* HostelLocationAnnotation.m in Sources */,
+				BD3844AF1EFE526300F2E981 /* LocationSearchController.m in Sources */,
+				BD2CAA981EFFDDB500C0E540 /* TouristSiteCollectionViewCell.m in Sources */,
+				BD3844B31EFE579B00F2E981 /* ToHostelDirectionsController.m in Sources */,
+				BD2EA7721EFFC28F00A8572B /* ContactScrollViewController.m in Sources */,
 				BD30C51A1EFDE5240032FE64 /* MenuComponent.m in Sources */,
 				BD902CDD1EFD31F600DD1034 /* AppDelegate.m in Sources */,
 				BD902CDA1EFD31F600DD1034 /* main.m in Sources */,
 				BD5C3EC41EFD516E00616400 /* OverlayConfiguration.m in Sources */,
+				BDA32EE21EFF39DB0087BF19 /* KoreanAudioPhraseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

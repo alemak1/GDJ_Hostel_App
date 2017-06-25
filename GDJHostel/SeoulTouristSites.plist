@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>specialNote</key>
+		<string>Last admission is 1 hour before closing.</string>
+		<key>physicalAddress</key>
+		<string>29, Itaewon-ro, Yongsan-gu, Seoul
+29, Itaewon-ro, Yongsan-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>http://english.visitkorea.or.kr/enu/ATR/SI_EN_3_1_1_1.jsp?cid=268131</string>
+		<key>daysClosed</key>
+		<array>
+			<integer>1</integer>
+		</array>
+		<key>closingTime</key>
+		<integer>18</integer>
+		<key>openingTime</key>
+		<integer>9</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>The War Memorial of Korea, located in Yongsan-gu, Seoul, exhibits and preserve materials related to the Korean War and serves as a national moral educational venue. It was established to commemorate the noble sacrifice of patriotic martyrs by the War Memorial Service Korea Society on June 10, 1994. </string>
+		<key>name</key>
+		<string>War Memorial of Korea</string>
+		<key>title</key>
+		<string>War Memorial of Korea</string>
+		<key>boundary</key>
+		<array>
+			<string>{37.5347732,126.9750333}</string>
+			<string>{37.5349012,126.9769113}</string>
+			<string>{37.5379002,126.9768253}</string>
+			<string>{37.5377221,126.9745618}</string>
+			<string>{37.5368401,126.9745728}</string>
+			<string>{37.5364691,126.9742077}</string>
+			<string>{37.5364431,126.9744227}</string>
+			<string>{37.5355161,126.9745297}</string>
+			<string>{37.5354332,126.9737253}</string>
+			<string>{37.5347692,126.9737683}</string>
+		</array>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5346752,126.9729423}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5379972,126.9767193}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5378702,126.9728973}</string>
+		<key>midCoord</key>
+		<string>{37.5369453,126.9761048}</string>
+	</dict>
+	<dict>
+		<key>webAddress</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string></string>
+		<key>description</key>
+		<string>Namsan Seoul Tower was the first tower-type tourism spot in Korea. The top of the tower is at almost 480m above sea level, including Namsan Mountain (243m) and the tower’s own height (236.7m), making it one of the tallest towers in the Orient. It is comprised of Seoul Tower Plaza, recently opened to public access after 40 years, and N Seoul Tower, operated by CJ Foodville since 2005.</string>
+		<key>admissionFee</key>
+		<real>10000</real>
+		<key>closingTime</key>
+		<integer>23</integer>
+		<key>openingTime</key>
+		<integer>10</integer>
+		<key>specialNote</key>
+		<string>On Saturdays, it is open  1 hour longer than usual and closes at 12 p.m. Children get a discount for admission.</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>title</key>
+		<string>Namsan Seoul Tower Observatory</string>
+		<key>name</key>
+		<string>Namsan Seoul Tower Observatory</string>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5470642,126.9837413}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5542692,126.9825403}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5544602,126.9905653}</string>
+		<key>boundary</key>
+		<array>
+			<string>{37.5509592,126.9860923}</string>
+			<string>{37.5511212,126.9865433}</string>
+			<string>{37.5514022,126.9867043}</string>
+			<string>{37.5514452,126.9863503}</string>
+			<string>{37.5517172,126.9862213}</string>
+			<string>{37.5517682,126.9857173}</string>
+			<string>{37.5526362,126.9852773}</string>
+			<string>{37.5526282,126.9848373}</string>
+			<string>{37.5517602,126.9850733}</string>
+			<string>{37.5511312,126.9847833}</string>
+			<string>{37.5507062,126.9854373}</string>
+		</array>
+	</dict>
+	<dict>
+		<key>specialNote</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string></string>
+		<key>webAddress</key>
+		<string></string>
+		<key>daysClosed</key>
+		<array>
+			<integer>1</integer>
+		</array>
+		<key>closingTime</key>
+		<integer>23</integer>
+		<key>openingTime</key>
+		<integer>10</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Namsan Seoul Tower was the first tower-type tourism spot in Korea. The top of the tower is at almost 480m above sea level, including Namsan Mountain (243m) and the tower’s own height (236.7m), making it one of the tallest towers in the Orient. It is comprised of Seoul Tower Plaza, recently opened to public access after 40 years, and N Seoul Tower, operated by CJ Foodville since 2005.</string>
+		<key>name</key>
+		<string>Namsan Cable Car</string>
+		<key>title</key>
+		<string>Namsan Cable Car</string>
+		<key>boundary</key>
+		<array>
+			<string>{37.5509592,126.9860923}</string>
+			<string>{37.5511212,126.9865433}</string>
+			<string>{37.5514022,126.9867043}</string>
+			<string>{37.5514452,126.9863503}</string>
+			<string>{37.5517172,126.9862213}</string>
+			<string>{37.5517682,126.9857173}</string>
+			<string>{37.5526362,126.9852773}</string>
+			<string>{37.5526282,126.9848373}</string>
+			<string>{37.5517602,126.9850733}</string>
+			<string>{37.5511312,126.9847833}</string>
+			<string>{37.5507062,126.9854373}</string>
+		</array>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5470642,126.9837413}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5544602,126.9905653}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5542692,126.9825403}</string>
+		<key>midCoord</key>
+		<string>{37.5511736,126.9838492}</string>
+	</dict>
+	<dict>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>description</key>
+		<string>Namsan Seoul Tower was the first tower-type tourism spot in Korea. The top of the tower is at almost 480m above sea level, including Namsan Mountain (243m) and the tower’s own height (236.7m), making it one of the tallest towers in the Orient. It is comprised of Seoul Tower Plaza, recently opened to public access after 40 years, and N Seoul Tower, operated by CJ Foodville since 2005.</string>
+		<key>webAddress</key>
+		<string>seoultower.co.kr</string>
+		<key>physicalAddress</key>
+		<string>105, Namsangongwon-gil, Yongsan-gu, Seoul
+</string>
+		<key>name</key>
+		<string>Namsan Seoul Tower</string>
+		<key>title</key>
+		<string>Namsan Seoul Tower</string>
+		<key>midCoord</key>
+		<string>{37.5511736,126.9838492}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5542692,126.9825403}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5544602,126.9905653}</string>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5470642,126.9837413}</string>
+		<key>boundary</key>
+		<array>
+			<string>{37.5509592,126.9860923}</string>
+			<string>{37.5511212,126.9865433}</string>
+			<string>{37.5514022,126.9867043}</string>
+			<string>{37.5514452,126.9863503}</string>
+			<string>{37.5517172,126.9862213}</string>
+			<string>{37.5517682,126.9857173}</string>
+			<string>{37.5526362,126.9852773}</string>
+			<string>{37.5526282,126.9848373}</string>
+			<string>{37.5517602,126.9850733}</string>
+			<string>{37.5511312,126.9847833}</string>
+			<string>{37.5507062,126.9854373}</string>
+		</array>
+	</dict>
+</array>
+</plist>
