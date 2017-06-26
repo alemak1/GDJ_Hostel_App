@@ -227,13 +227,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fF2-ld-p7Q">
-                                <rect key="frame" x="0.0" y="137" width="375" height="333.5"/>
+                                <rect key="frame" x="0.0" y="97" width="375" height="333.5"/>
                                 <connections>
                                     <outlet property="delegate" destination="XsF-MM-hbA" id="9bJ-Cm-zPh"/>
                                 </connections>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egb-nV-Ajp">
-                                <rect key="frame" x="25" y="485.5" width="144.5" height="22.5"/>
+                                <rect key="frame" x="25" y="445.5" width="144.5" height="22.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Distance to Hostel:">
                                         <attributes>
@@ -246,13 +246,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRq-8i-6eH">
-                                <rect key="frame" x="290" y="486.5" width="45" height="21"/>
+                                <rect key="frame" x="290" y="446.5" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNu-It-tBJ">
-                                <rect key="frame" x="290" y="524.5" width="45" height="21"/>
+                                <rect key="frame" x="290" y="484.5" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -266,13 +266,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Travelling Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjZ-Rw-SvF">
-                                <rect key="frame" x="25" y="523" width="199" height="22.5"/>
+                                <rect key="frame" x="25" y="483" width="199" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5v-FX-Vwf">
-                                <rect key="frame" x="94" y="30" width="187.5" height="30.5"/>
+                                <rect key="frame" x="94" y="16.5" width="187.5" height="30.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Directions to GDJ Hostel">
                                         <attributes>
@@ -285,7 +285,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fU3-HH-Yic">
-                                <rect key="frame" x="102.5" y="75.5" width="170" height="29"/>
+                                <rect key="frame" x="102.5" y="59" width="170" height="29"/>
                                 <segments>
                                     <segment title="Walk"/>
                                     <segment title="Transit"/>
@@ -296,37 +296,37 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSg-Gb-f0B">
-                                <rect key="frame" x="75" y="569" width="164" height="30"/>
+                                <rect key="frame" x="75" y="529" width="164" height="30"/>
                                 <state key="normal" title="View Directions in Maps"/>
                                 <connections>
                                     <action selector="viewDirectionsToHostelWithMapsApp:" destination="XsF-MM-hbA" eventType="touchUpInside" id="NE3-m0-etP"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="routeA" translatesAutoresizingMaskIntoConstraints="NO" id="Tu2-uU-QFA">
-                                <rect key="frame" x="247" y="574" width="20" height="20"/>
+                                <rect key="frame" x="247" y="534" width="20" height="20"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90980392160000001" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="w5v-FX-Vwf" firstAttribute="top" secondItem="E3g-St-yeZ" secondAttribute="bottom" constant="10" id="3he-oV-r4A"/>
                             <constraint firstItem="egb-nV-Ajp" firstAttribute="leading" secondItem="WVL-sK-mEy" secondAttribute="leadingMargin" constant="9" id="4vI-wk-2Lm"/>
                             <constraint firstItem="AjZ-Rw-SvF" firstAttribute="baseline" secondItem="bNu-It-tBJ" secondAttribute="baseline" id="6OR-bd-15h"/>
                             <constraint firstItem="fF2-ld-p7Q" firstAttribute="height" secondItem="WVL-sK-mEy" secondAttribute="height" multiplier="0.5" id="7XL-bV-51q"/>
                             <constraint firstItem="fF2-ld-p7Q" firstAttribute="width" secondItem="WVL-sK-mEy" secondAttribute="width" id="87D-SY-y3c"/>
-                            <constraint firstItem="fF2-ld-p7Q" firstAttribute="centerY" secondItem="WVL-sK-mEy" secondAttribute="centerY" constant="-30" id="9Uh-iw-Tx5"/>
+                            <constraint firstItem="fF2-ld-p7Q" firstAttribute="centerY" secondItem="WVL-sK-mEy" secondAttribute="centerY" constant="-70" id="9Uh-iw-Tx5"/>
                             <constraint firstItem="RdO-da-kyv" firstAttribute="centerX" secondItem="WVL-sK-mEy" secondAttribute="centerX" id="CvD-gP-4fB"/>
                             <constraint firstItem="fU3-HH-Yic" firstAttribute="centerX" secondItem="WVL-sK-mEy" secondAttribute="centerX" id="Des-M2-a7v"/>
                             <constraint firstItem="nSg-Gb-f0B" firstAttribute="top" secondItem="AjZ-Rw-SvF" secondAttribute="bottom" constant="23.5" id="JET-vl-Dut"/>
                             <constraint firstItem="egb-nV-Ajp" firstAttribute="baseline" secondItem="YRq-8i-6eH" secondAttribute="baseline" id="MsV-8g-hEX"/>
                             <constraint firstItem="AjZ-Rw-SvF" firstAttribute="top" secondItem="egb-nV-Ajp" secondAttribute="bottom" constant="15" id="QBw-3V-Tut"/>
                             <constraint firstItem="w5v-FX-Vwf" firstAttribute="centerX" secondItem="WVL-sK-mEy" secondAttribute="centerX" id="RQq-HH-FSJ"/>
+                            <constraint firstItem="fF2-ld-p7Q" firstAttribute="top" secondItem="w5v-FX-Vwf" secondAttribute="bottom" constant="50" id="ZMX-gt-c2S"/>
                             <constraint firstItem="nSg-Gb-f0B" firstAttribute="leading" secondItem="AjZ-Rw-SvF" secondAttribute="leading" constant="50" id="asg-BG-Dwe"/>
                             <constraint firstItem="egb-nV-Ajp" firstAttribute="top" secondItem="fF2-ld-p7Q" secondAttribute="bottom" constant="15" id="d8U-4D-Kil"/>
                             <constraint firstItem="nSg-Gb-f0B" firstAttribute="centerY" secondItem="Tu2-uU-QFA" secondAttribute="centerY" id="d9v-29-sde"/>
                             <constraint firstItem="Tu2-uU-QFA" firstAttribute="leading" secondItem="nSg-Gb-f0B" secondAttribute="trailing" constant="8" id="dDJ-Ge-oio"/>
                             <constraint firstItem="GnH-zA-ipR" firstAttribute="top" secondItem="RdO-da-kyv" secondAttribute="bottom" constant="10" id="dYB-gY-P28"/>
+                            <constraint firstItem="fF2-ld-p7Q" firstAttribute="top" secondItem="fU3-HH-Yic" secondAttribute="bottom" constant="10" id="diN-nv-mmD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YRq-8i-6eH" secondAttribute="trailing" constant="24" id="fhW-uy-PZS"/>
-                            <constraint firstItem="fU3-HH-Yic" firstAttribute="top" secondItem="w5v-FX-Vwf" secondAttribute="bottom" constant="15" id="hCy-Lf-bNN"/>
                             <constraint firstItem="AjZ-Rw-SvF" firstAttribute="leading" secondItem="egb-nV-Ajp" secondAttribute="leading" id="km2-03-TnV"/>
                             <constraint firstItem="bNu-It-tBJ" firstAttribute="leading" secondItem="YRq-8i-6eH" secondAttribute="leading" id="x3f-C3-beG"/>
                             <constraint firstItem="fF2-ld-p7Q" firstAttribute="centerX" secondItem="WVL-sK-mEy" secondAttribute="centerX" id="z5h-B0-ja8"/>

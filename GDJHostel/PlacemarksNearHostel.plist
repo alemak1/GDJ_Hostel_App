@@ -4,17 +4,241 @@
 <array>
 	<dict>
 		<key>imagefilepath</key>
+		<string>mg_bank</string>
+		<key>subtitle</key>
+		<string>In the back alleys around hostel</string>
+		<key>type</key>
+		<integer>10</integer>
+		<key>location</key>
+		<string>{37.5419,126.9513}</string>
+		<key>address</key>
+		<string>183-2 Dohwadong</string>
+		<key>title</key>
+		<string>MG Bank</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>mg_bank</string>
+		<key>subtitle</key>
+		<string>In the back alleys around hostel</string>
+		<key>type</key>
+		<integer>10</integer>
+		<key>location</key>
+		<string>{37.5419,126.9513}</string>
+		<key>address</key>
+		<string>183-2 Dohwadong</string>
+		<key>title</key>
+		<string>MG Bank</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>izakaya</string>
+		<key>subtitle</key>
+		<string>In the back alleys around hostel</string>
+		<key>type</key>
+		<integer>9</integer>
+		<key>location</key>
+		<string>{37.5420,126.9519}</string>
+		<key>address</key>
+		<string>4 Saechangno4gil</string>
+		<key>title</key>
+		<string>Izakaya</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>shinhan_bank</string>
+		<key>subtitle</key>
+		<string>On busy street</string>
+		<key>type</key>
+		<integer>10</integer>
+		<key>location</key>
+		<string>{37.5413,126.9486}</string>
+		<key>address</key>
+		<string>563-2 Dohwadong</string>
+		<key>title</key>
+		<string>Shinhan Bank</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>sk_telecom_mapodaero</string>
+		<key>subtitle</key>
+		<string>On busy street</string>
+		<key>type</key>
+		<integer>5</integer>
+		<key>location</key>
+		<string>{37.5415,126.9486}</string>
+		<key>address</key>
+		<string>Mapodaero</string>
+		<key>title</key>
+		<string>SK Telecom</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>sk_telecom_mapodaero</string>
+		<key>subtitle</key>
+		<string>On busy street</string>
+		<key>type</key>
+		<integer>5</integer>
+		<key>location</key>
+		<string>{37.5415,126.9486}</string>
+		<key>address</key>
+		<string>Mapodaero</string>
+		<key>title</key>
+		<string>SK Telecom</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
 		<string></string>
 		<key>subtitle</key>
-		<string></string>
+		<string>Right next to Hana Bank</string>
 		<key>type</key>
-		<integer>0</integer>
+		<integer>4</integer>
 		<key>location</key>
-		<string>{,}</string>
+		<string>{37.5410,126.9474}</string>
 		<key>address</key>
-		<string></string>
+		<string>39-9 Dohwadong</string>
 		<key>title</key>
-		<string></string>
+		<string>Guinot Skin Care</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>hana_bank</string>
+		<key>subtitle</key>
+		<string>Hana Bank</string>
+		<key>type</key>
+		<integer>10</integer>
+		<key>location</key>
+		<string>{37.5410,126.9474}</string>
+		<key>address</key>
+		<string>39-9 Dohwadong</string>
+		<key>title</key>
+		<string>Hana Bank</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>i_love_pub</string>
+		<key>subtitle</key>
+		<string>I Love Pub</string>
+		<key>type</key>
+		<integer>9</integer>
+		<key>location</key>
+		<string>{37.5404,126.9478}</string>
+		<key>address</key>
+		<string>Dohwadong</string>
+		<key>title</key>
+		<string>I Love Pub</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>super_star_bar</string>
+		<key>subtitle</key>
+		<string>On the second floor</string>
+		<key>type</key>
+		<integer>9</integer>
+		<key>location</key>
+		<string>{37.5404,126.9485}</string>
+		<key>address</key>
+		<string>22 Dohwagil</string>
+		<key>title</key>
+		<string>Super Star Bar</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>super_star_bar</string>
+		<key>subtitle</key>
+		<string>On the second floor</string>
+		<key>type</key>
+		<integer>9</integer>
+		<key>location</key>
+		<string>{37.5404,126.9485}</string>
+		<key>address</key>
+		<string>22 Dohwagil</string>
+		<key>title</key>
+		<string>Super Star Bar</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>coffee_bene</string>
+		<key>subtitle</key>
+		<string>Coffee shop on intersection</string>
+		<key>type</key>
+		<integer>1</integer>
+		<key>location</key>
+		<string>{37.5406,126.9493}</string>
+		<key>address</key>
+		<string>6-51 Dohwadong</string>
+		<key>title</key>
+		<string>Coffee Bene</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>u_plus_square</string>
+		<key>subtitle</key>
+		<string>Help with mobile service/cell phones</string>
+		<key>type</key>
+		<integer>5</integer>
+		<key>location</key>
+		<string>{37.5404,126.9498}</string>
+		<key>address</key>
+		<string>548 Dohwadong</string>
+		<key>title</key>
+		<string>U+ Square</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>sk_telecom_world_32_dohwagil</string>
+		<key>subtitle</key>
+		<string>Help with mobile service/cell phones</string>
+		<key>type</key>
+		<integer>5</integer>
+		<key>location</key>
+		<string>{37.5409,126.9498}</string>
+		<key>address</key>
+		<string>32 Dohwagil</string>
+		<key>title</key>
+		<string>SK Telecom World</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>sk_telecom_world_32_dohwagil</string>
+		<key>subtitle</key>
+		<string>SK Telecom World</string>
+		<key>type</key>
+		<integer>5</integer>
+		<key>location</key>
+		<string>{37.5409,126.9498}</string>
+		<key>address</key>
+		<string>32 Dohwagil</string>
+		<key>title</key>
+		<string>Tofu House</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>tofu_house</string>
+		<key>subtitle</key>
+		<string>Tofu Restaurant on intersection</string>
+		<key>type</key>
+		<integer>7</integer>
+		<key>location</key>
+		<string>{37.5412,126.9497}</string>
+		<key>address</key>
+		<string>7-1 Dohwadong</string>
+		<key>title</key>
+		<string>Tofu House</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>bobo_hair</string>
+		<key>subtitle</key>
+		<string>Hair Salon/Styling</string>
+		<key>type</key>
+		<integer>4</integer>
+		<key>location</key>
+		<string>{37.5412,126.9506}</string>
+		<key>address</key>
+		<string>7-1 Dohwadong</string>
+		<key>title</key>
+		<string>Bobo Hair</string>
 	</dict>
 	<dict>
 		<key>imagefilepath</key>

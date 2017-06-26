@@ -43,10 +43,10 @@
     /** Instantiate the feature view controller from the storyboard, add it as a child view controller, and add it view to the scroll view **/
     
     
-    HostelFlowLayout* hostelFlowLayout = [[HostelFlowLayout alloc]initWithPresetHorizontalConfigurationA];
+    UIStoryboard* mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    HostelCollectionController* hostelCollectionController = [[HostelCollectionController alloc] initWithCollectionViewLayout:hostelFlowLayout];
     
+    HostelCollectionController* hostelCollectionController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HostelCollectionViewController"];
     
     [self addChildViewController:hostelCollectionController];
     

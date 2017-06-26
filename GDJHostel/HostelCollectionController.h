@@ -12,7 +12,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface HostelCollectionController : UICollectionViewController<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface HostelCollectionController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDataSourcePrefetching>
 
 
 

@@ -10,15 +10,20 @@
 #import "TouristSiteCollectionViewCell.h"
 
 @interface TouristSiteCollectionViewCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *siteImageView;
+
+@property (weak, nonatomic) IBOutlet UIButton *getRouteButton;
 
 
-@property UIButton* getRouteButton;
-@property UIButton* seeDetailsButton;
+@property (weak, nonatomic) IBOutlet UIButton *getDetailsButton;
 
-@property UIImageView* siteImageView;
-@property UILabel* titleLabel;
-@property UILabel* distanceFromUserLabel;
-@property UILabel* travelingTimeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *travelTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+
+
 
 @end
 
@@ -30,70 +35,23 @@
     
     if(self){
         
-        _siteImageView = [[UIImageView alloc] initWithFrame:self.contentView.bounds];
-        [_siteImageView setContentMode:UIViewContentModeScaleAspectFill];
+        self.siteImageView.image = self.siteImage;
+        self.titleLabel.text = self.titleText;
         
-        [self.contentView addSubview:_siteImageView];
-        
-        CGRect titleFrame = [self getFrameAdjustedRelativeToContentViewWithXCoordOffset:0.05 andWithYCoordOffset:0.05 andWithWidthMultiplier:0.5 andWithHeightMultiplier:0.30];
-        
-        _titleLabel = [[UILabel alloc] initWithFrame:titleFrame];
-        
-        //TODO: Additional configuration for the label....
-        //...
-        //...
-        //...
-        //...   TODO: Set Label Text
-        
-        [self.contentView addSubview:_titleLabel];
-        
-        
-        CGRect distanceLabelFrame = [self getFrameAdjustedRelativeToContentViewWithXCoordOffset:.05 andWithYCoordOffset:0.30 andWithWidthMultiplier:0.20 andWithHeightMultiplier:0.20];
-        _distanceFromUserLabel = [[UILabel alloc] initWithFrame:distanceLabelFrame];
-        
-        //TODO: Additional configuration for the label...
-        
-        [self.contentView addSubview:_distanceFromUserLabel];
-        
-        CGRect travelingTimeLabelFrame = [self getFrameAdjustedRelativeToContentViewWithXCoordOffset:.05 andWithYCoordOffset:0.50 andWithWidthMultiplier:0.20 andWithHeightMultiplier:0.20];
-        _travelingTimeLabel = [[UILabel alloc] initWithFrame:travelingTimeLabelFrame];
-        
-        //TODO: Additional configuration for the label...
-        //....
-        //...
-        //....
-        //...
-        
-        [self.contentView addSubview:_travelingTimeLabel];
-        
-        
-        CGRect routeButtonFrame = [self getFrameAdjustedRelativeToContentViewWithXCoordOffset:0.25 andWithYCoordOffset:0.30 andWithWidthMultiplier:0.20 andWithHeightMultiplier:0.20];
-        
-        //TODO: Additional configuration for the button...
-        //....
-        //...
-        //....
-        
-        _getRouteButton = [[UIButton alloc] initWithFrame:routeButtonFrame];
-        
-        [self.contentView addSubview:_getRouteButton];
-
-        
-        CGRect detailsButtonFrame = [self getFrameAdjustedRelativeToContentViewWithXCoordOffset:0.25 andWithYCoordOffset:0.50 andWithWidthMultiplier:0.20 andWithHeightMultiplier:0.20];
-        
-        _seeDetailsButton = [[UIButton alloc] initWithFrame:detailsButtonFrame];
-        
-        //TODO: Additional configuration for the button....
-        //....
-        //....
-        //...
-        
-        [self.contentView addSubview:_seeDetailsButton];
-
     
     }
     
     return self;
+}
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    
+    self.siteImageView.image = self.siteImage;
+    self.titleLabel.text = self.titleText;
+    
+    
+    
 }
 
 -(CGRect) getFrameAdjustedRelativeToContentViewWithXCoordOffset:(CGFloat)xCoordinateOffset andWithYCoordOffset:(CGFloat)yCoordinateOffset andWithWidthMultiplier:(CGFloat)widthMultiplier andWithHeightMultiplier:(CGFloat)heightMultiplier{

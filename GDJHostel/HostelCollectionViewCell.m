@@ -58,8 +58,6 @@
     return [self.imageView image];
 }
 
--(void)dealloc{
-    [self removeObserver:self forKeyPath:@"imageName"];
-}
+
 
 @end

@@ -32,7 +32,7 @@
     
     [self.scrollView setDelegate:self];
     
-    [self.scrollView setContentSize:CGSizeMake(CGRectGetWidth(self.scrollView.frame), CGRectGetHeight(self.scrollView.frame)*1.80)];
+    [self.scrollView setContentSize:CGSizeMake(CGRectGetWidth(self.scrollView.frame), CGRectGetHeight(self.scrollView.frame)*3.00)];
 
     [self.scrollView setScrollsToTop:NO];
     [self.scrollView setPagingEnabled:NO];

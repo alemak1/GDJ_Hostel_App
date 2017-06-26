@@ -13,9 +13,10 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+
 @interface ToHostelDirectionsController : UIViewController<MKMapViewDelegate>
 
-
+@property MKDirectionsResponse* directionsResponse;
 
 @end
 

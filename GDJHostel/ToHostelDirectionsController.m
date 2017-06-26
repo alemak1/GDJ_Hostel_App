@@ -6,7 +6,6 @@
 //  Copyright © 2017 AlexMakedonski. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "ToHostelDirectionsController.h"
 
 @interface ToHostelDirectionsController ()
@@ -18,9 +17,6 @@ typedef enum TRANSPORTATION_MODE{
 }TRANSPORTATION_MODE;
 
 
-/** The directison response is set in a callback method, which is executed asynchrously on a background thread **/
-
-@property MKDirectionsResponse* directionsResponse;
 
 /** Primary MapView, which will show the route to the hostel from the user's starting location **/
 

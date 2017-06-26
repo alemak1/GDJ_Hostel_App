@@ -48,6 +48,7 @@
     
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * numberOfPages, self.scrollView.frame.size.height);
     
+    
     self.scrollView.delegate = self;
     
     self.scrollView.pagingEnabled = YES;
@@ -55,6 +56,8 @@
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.scrollsToTop = NO;
     self.scrollView.alwaysBounceVertical = NO;
+    self.scrollView.alwaysBounceHorizontal = YES;
+    self.scrollView.bounces = FALSE;
     
     [self loadImagesForScrollView];
     
@@ -134,9 +137,13 @@
     
     for(int i = 0; i < self.contentList.count; i++){
         
-        CGRect imageViewFrame = self.scrollView.frame;
+        CGRect imageViewFrame = self.scrollView.bounds;
+        CGFloat scrollViewFrameWidth = CGRectGetWidth(self.scrollView.bounds);
+        CGFloat adjustedScrollViewFrameWidth = scrollViewFrameWidth*1.2;
+        
         imageViewFrame.origin.y = 0;
-        imageViewFrame.origin.x = i * CGRectGetWidth(self.scrollView.frame);
+        imageViewFrame.origin.x = i * adjustedScrollViewFrameWidth;
+        imageViewFrame.size.width = adjustedScrollViewFrameWidth;
         
         UIImageView* imageView = [[UIImageView alloc] initWithFrame: imageViewFrame];
         [self.scrollView addSubview:imageView];
@@ -163,27 +170,28 @@
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
     // switch the indicator when more than 50% of the previous/next page is visible
+    
     CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
-    NSUInteger page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    
+    NSUInteger page = floor((self.scrollView.contentOffset.x/pageWidth));
     self.pageControl.currentPage = page;
+
+
     
-    CGFloat divisionResult = (self.scrollView.contentOffset.x/pageWidth) - page;
-    
-    if(divisionResult < 0.5){
-        [self goToPoint:page];
-    } else {
-        [self goToPoint:page+1];
-    }
+    [self goToPoint:page*pageWidth];
     
     
 }
+
+
 
 -(void)goToPoint:(CGFloat)xPoint{
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        [UIView animateWithDuration:2.00 delay:0.00 options:UIViewAnimationOptionCurveLinear animations:^{
+        [UIView animateWithDuration:0.20 delay:0.00 options:UIViewAnimationOptionCurveLinear animations:^{
         
             [self.scrollView setContentOffset:CGPointMake(xPoint, 0.00)];
             

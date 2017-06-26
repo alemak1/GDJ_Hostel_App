@@ -11,6 +11,7 @@
 #import "HostelInformationController.h"
 #import "KoreanAudioPhraseController.h"
 #import "HostelCollectionController.h"
+#import "TouristSiteCollectionViewController.h"
 #import "HostelFlowLayout.h"
 
 @interface AppDelegate ()
@@ -18,7 +19,8 @@
 typedef enum TESTABLE_VIEWCONTROLLERS{
     HOSTEL_INFORMATION_CONTROLLER,
     KOREAN_AUDIO_PHRASE_CONTROLLER,
-    HOSTEL_COLLECTION_CONTROLLER
+    HOSTEL_COLLECTION_CONTROLLER,
+    TOURIST_SITE_COLLECTION_VIEW_CONTROLLER
 } TESTABLE_VIEWCONTROLLERS;
 
 @end
@@ -35,7 +37,7 @@ static BOOL willInitiateFromStoryBoard = false;
     if(!willInitiateFromStoryBoard){
         self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
         
-        UIViewController* rootViewController = [self getTestableViewController:HOSTEL_COLLECTION_CONTROLLER];
+        UIViewController* rootViewController = [self getTestableViewController:HOSTEL_INFORMATION_CONTROLLER];
         
         [self.window setRootViewController:rootViewController];
         
@@ -81,6 +83,12 @@ static BOOL willInitiateFromStoryBoard = false;
     HostelFlowLayout* hostelFlowLayout = [[HostelFlowLayout alloc]initWithPresetVerticalConfigurationA];
     
 
+    UICollectionViewFlowLayout* flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    
+    [flowLayout setItemSize:CGSizeMake(300, 100)];
+    [flowLayout setMinimumLineSpacing:30.0];
+    [flowLayout setMinimumInteritemSpacing:40.0];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     UIViewController* testableViewController = nil;
     
@@ -93,7 +101,10 @@ static BOOL willInitiateFromStoryBoard = false;
             testableViewController = [[UINavigationController alloc] initWithRootViewController:[[KoreanAudioPhraseController alloc] init]];
             break;
         case HOSTEL_COLLECTION_CONTROLLER:
-            testableViewController = [[HostelCollectionController alloc] initWithCollectionViewLayout:hostelFlowLayout];;
+            testableViewController = [[HostelCollectionController alloc] init];
+            break;
+        case TOURIST_SITE_COLLECTION_VIEW_CONTROLLER:
+            break;
         default:
             break;
      
