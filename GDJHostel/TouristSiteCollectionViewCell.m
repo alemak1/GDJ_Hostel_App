@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TouristSiteCollectionViewCell.h"
+#import "UIView+HelperMethods.h"
 
 @interface TouristSiteCollectionViewCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *siteImageView;
@@ -27,45 +28,33 @@
 
 @end
 
+
+
 @implementation TouristSiteCollectionViewCell
 
--(instancetype)init{
-    
-    self = [super init];
-    
-    if(self){
-        
-        self.siteImageView.image = self.siteImage;
-        self.titleLabel.text = self.titleText;
-        
-    
-    }
-    
-    return self;
+
+/** Implement getters and setters for labels and image view **/
+
+
+
+-(void)setTitleText:(NSString *)titleText{
+    [self.titleLabel setText:titleText];
+    [self layoutIfNeeded];
 }
 
--(void)layoutSubviews{
-    [super layoutSubviews];
-    
-    self.siteImageView.image = self.siteImage;
-    self.titleLabel.text = self.titleText;
-    
-    
-    
+-(NSString *)titleText{
+    return [self.titleLabel text];
 }
 
--(CGRect) getFrameAdjustedRelativeToContentViewWithXCoordOffset:(CGFloat)xCoordinateOffset andWithYCoordOffset:(CGFloat)yCoordinateOffset andWithWidthMultiplier:(CGFloat)widthMultiplier andWithHeightMultiplier:(CGFloat)heightMultiplier{
+-(void)setSiteImage:(UIImage *)siteImage{
     
-    CGFloat contentViewWidth = CGRectGetWidth(self.contentView.frame);
-    CGFloat contentViewHeight = CGRectGetHeight(self.contentView.frame);
+    [self.siteImageView setImage:siteImage];
+    [self layoutIfNeeded];
+}
+
+-(UIImage *)siteImage{
     
-    CGRect contentViewFrame = self.contentView.frame;
-    
-    contentViewFrame.origin.x = contentViewWidth*xCoordinateOffset;
-    contentViewFrame.origin.y = contentViewHeight*yCoordinateOffset;
-    contentViewFrame.size = CGSizeMake(contentViewWidth*widthMultiplier, contentViewHeight*heightMultiplier);
-    
-    return contentViewFrame;
+    return [self.siteImageView image];
 }
 
 @end

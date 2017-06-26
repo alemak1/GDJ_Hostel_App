@@ -8,14 +8,15 @@
 
 #import "TouristSiteCollectionViewController.h"
 #import "TouristSiteCollectionViewCell.h"
+#import "UIView+HelperMethods.h"
 
-@interface TouristSiteCollectionViewController ()
+@interface TouristSiteCollectionViewController () <UICollectionViewDataSourcePrefetching>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionViewTop;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionViewMidTop;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionViewMidBottom;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionViewBottom;
-
+/**
+@property UILabel* titleLabel;
+@property UICollectionView* collectionView;
+**/
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (readonly) NSArray* debugImagePathArray;
 
@@ -24,31 +25,62 @@
 
 @implementation TouristSiteCollectionViewController
 
+/**
+
+-(instancetype)initWithTitleText:(NSString*)titleText{
+    
+    self = [self init];
+    
+    if(self){
+        
+        CGRect titleLabeFrame = [self.view getFrameAdjustedRelativeToContentViewWithXCoordOffset:0.0 andWithYCoordOffset:0.0 andWithWidthMultiplier:1.00 andWithHeightMultiplier:0.10];
+        
+        UILabel* titleLabel = [[UILabel alloc] initWithFrame:titleLabeFrame];
+        
+        [self setTitleLabel:titleLabel];
+        
+        [self.titleLabel setText:titleText];
+        
+        
+        CGRect collectionViewFrame = [self.view getFrameAdjustedRelativeToContentViewWithXCoordOffset:0.00 andWithYCoordOffset:0.10 andWithWidthMultiplier:1.00 andWithHeightMultiplier:1.00];
+        
+        UICollectionViewFlowLayout* flowLayoutObject = [[UICollectionViewFlowLayout alloc] init];
+        
+        [flowLayoutObject setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+        [flowLayoutObject setItemSize:CGSizeMake(200, 100)];
+        [flowLayoutObject setMinimumLineSpacing:20.0];
+        [flowLayoutObject setMinimumInteritemSpacing:30.0];
+        
+        UICollectionView* collectionView = [[UICollectionView alloc] initWithFrame:collectionViewFrame collectionViewLayout:flowLayoutObject];
+        
+        [self setCollectionView:collectionView];
+        
+        [self.view addSubview:self.titleLabel];
+        [self.view addSubview:self.collectionView];
+        
+        [self.view setBackgroundColor:[UIColor yellowColor]];
+        [self.collectionView setBackgroundColor:[UIColor blueColor]];
+ 
+
+    }
+    
+    return self;
+}
+ **/
+
+
 
 @synthesize debugImagePathArray = _debugImagePathArray;
 
--(void)viewWillLayoutSubviews{
-    
-    
-}
+
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self.collectionViewTop setDelegate:self];
-    [self.collectionViewTop setDataSource:self];
+    [self.collectionView setDelegate:self];
+    [self.collectionView setDataSource:self];
+    [self.collectionView setPrefetchDataSource:self];
     
-    [self.collectionViewMidTop setDataSource:self];
-    [self.collectionViewMidTop setDelegate:self];
     
-    [self.collectionViewMidBottom setDelegate:self];
-    [self.collectionViewMidBottom setDataSource:self];
     
-    [self.collectionViewBottom setDataSource:self];
-    [self.collectionViewBottom setDelegate:self];
-    
-    [self.collectionViewTop registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"TouristCollectionViewCell"];
-    [self.collectionViewMidTop registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"TouristCollectionViewCell"];
-    [self.collectionViewMidBottom registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"TouristCollectionViewCell"];
-    [self.collectionViewBottom registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"TouristCollectionViewCell"];
 }
 
 
@@ -57,52 +89,11 @@
     
 }
 
--(void)viewDidLoad{
-    
-    
-    NSLog(@"Collection View Top: %@",[self.collectionViewTop description]);
-    NSLog(@"Collection View MidTop: %@",[self.collectionViewMidTop description]);
-    NSLog(@"Collection View MidBottom: %@",[self.collectionViewMidBottom description]);
-    NSLog(@"Collection View Bottom: %@",[self.collectionViewBottom description]);
 
-
-    [self.collectionViewTop reloadData];
-    
-    [self.collectionViewMidTop reloadData];
-    
-    [self.collectionViewBottom reloadData];
-
-    [self.collectionViewBottom reloadData];
-
-    /** The containing view controller will act as both data source and delegate for all of the collection views in the view hierarchy; each collection view is distinguished by its tag identifier  **/
-   
-    
-    /**
-    [self.collectionView registerClass:[TouristSiteCollectionViewCell class] forCellWithReuseIdentifier:@"TouristSiteCollectionViewCell"];
-    
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"DefaultCell"];
-    
-    [self.collectionView setDelegate:self];
-    [self.collectionView setDataSource:self];
-     **/
-}
 
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    
-    switch (collectionView.tag) {
-        case 1:
-            return [self.debugImagePathArray count];
-        case 2:
-            return [self.debugImagePathArray count];
-        case 3:
-            return [self.debugImagePathArray count];
-        case 4:
-            return [self.debugImagePathArray count];
-        default:
-            break;
-    }
     
     return 10;
 
@@ -110,49 +101,18 @@
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     
-    
-    switch (collectionView.tag) {
-        case 1:
-            return 1;
-        case 2:
-            return 1;
-        case 3:
-            return 1;
-        case 4:
-            return 1;
-        default:
-            break;
-    }
-    
-    return 1;
+      return 1;
 
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    TouristSiteCollectionViewCell* cell;
+    TouristSiteCollectionViewCell* cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"TouristCollectionViewCell" forIndexPath:indexPath];
+
     
-    switch (collectionView.tag) {
-        case 1:
-            cell = [self.collectionViewTop dequeueReusableCellWithReuseIdentifier:@"TouristCollectionViewCell" forIndexPath:indexPath];
-            break;
-        case 2:
-            cell = [self.collectionViewMidTop dequeueReusableCellWithReuseIdentifier:@"TouristCollectionViewCell" forIndexPath:indexPath];
-            break;
-        case 3:
-            cell = [self.collectionViewMidBottom dequeueReusableCellWithReuseIdentifier:@"TouristCollectionViewCell" forIndexPath:indexPath];
-            break;
-        case 4:
-            cell = [self.collectionViewBottom dequeueReusableCellWithReuseIdentifier:@"TouristCollectionViewCell" forIndexPath:indexPath];
-            break;
-        default:
-            break;
-    }
-    
-    cell.siteImage = [UIImage imageNamed:@"RoomNo3_1"];
-    cell.titleText = @"Great Room";
     cell.backgroundColor = [UIColor orangeColor];
-    
+    [cell setSiteImage:[UIImage imageNamed:@"RoomNo2_1"]];
+    cell.titleText = @"A great tourist site";
     return cell;
     
 }
@@ -174,22 +134,23 @@
     return _debugImagePathArray;
 }
 
-/**
+
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    return CGSizeMake(200, 100);
+    return CGSizeMake(300, 200);
 }
 
 -(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
     
-    return 40.0;
+    return 20.0;
 }
 
 -(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
-    return 30.0;
+    
+    return 20.0;
 }
 
-**/
+
 
 @end

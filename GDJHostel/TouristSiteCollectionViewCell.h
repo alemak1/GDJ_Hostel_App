@@ -25,6 +25,8 @@
 @property UIImage* siteImage;
 @property NSString* titleText;
 
+
+
 @end
 
 #endif /* TouristSiteCollectionViewCell_h */

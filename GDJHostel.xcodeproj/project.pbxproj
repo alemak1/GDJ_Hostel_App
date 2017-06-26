@@ -32,6 +32,7 @@
 		BD30C5171EFDDCE70032FE64 /* HostelInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD30C5161EFDDCE70032FE64 /* HostelInformationController.m */; };
 		BD30C51A1EFDE5240032FE64 /* MenuComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = BD30C5191EFDE5240032FE64 /* MenuComponent.m */; };
 		BD3117DB1EFE800900D6A5D6 /* content_iPhone.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD3117DA1EFE800900D6A5D6 /* content_iPhone.plist */; };
+		BD312E021F01517B00FB90E3 /* UIView+HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BD312E011F01517B00FB90E3 /* UIView+HelperMethods.m */; };
 		BD3151141F00C844002332B8 /* TouristSiteCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3151131F00C844002332B8 /* TouristSiteCollectionViewController.m */; };
 		BD3279401F00124F0007FD64 /* ParkRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD32793F1F00124F0007FD64 /* ParkRoute.plist */; };
 		BD375DCB1EFE98910002525F /* ScrollableInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD375DCA1EFE98910002525F /* ScrollableInfoController.m */; };
@@ -100,6 +101,8 @@
 		BD30C5181EFDE5160032FE64 /* MenuComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuComponent.h; sourceTree = "<group>"; };
 		BD30C5191EFDE5240032FE64 /* MenuComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuComponent.m; sourceTree = "<group>"; };
 		BD3117DA1EFE800900D6A5D6 /* content_iPhone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = content_iPhone.plist; sourceTree = "<group>"; };
+		BD312E001F01517B00FB90E3 /* UIView+HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HelperMethods.h"; sourceTree = "<group>"; };
+		BD312E011F01517B00FB90E3 /* UIView+HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HelperMethods.m"; sourceTree = "<group>"; };
 		BD3151121F00C82F002332B8 /* TouristSiteCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristSiteCollectionViewController.h; sourceTree = "<group>"; };
 		BD3151131F00C844002332B8 /* TouristSiteCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristSiteCollectionViewController.m; sourceTree = "<group>"; };
 		BD32793F1F00124F0007FD64 /* ParkRoute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ParkRoute.plist; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				BD32793F1F00124F0007FD64 /* ParkRoute.plist */,
 				BD3151121F00C82F002332B8 /* TouristSiteCollectionViewController.h */,
 				BD3151131F00C844002332B8 /* TouristSiteCollectionViewController.m */,
+				BD312E001F01517B00FB90E3 /* UIView+HelperMethods.h */,
+				BD312E011F01517B00FB90E3 /* UIView+HelperMethods.m */,
 			);
 			name = TouristSitesCollectionController;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDF2348C1F0021BA00E9ED63 /* HostelCollectionViewCell.m in Sources */,
+				BD312E021F01517B00FB90E3 /* UIView+HelperMethods.m in Sources */,
 				BDF2348B1F00216600E9ED63 /* AudioController.m in Sources */,
 				BD375DCB1EFE98910002525F /* ScrollableInfoController.m in Sources */,
 				BD2EA76F1EFFB1E300A8572B /* FeatureScrollViewController.m in Sources */,
