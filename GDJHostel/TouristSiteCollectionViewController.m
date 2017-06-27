@@ -9,65 +9,20 @@
 #import "TouristSiteCollectionViewController.h"
 #import "TouristSiteCollectionViewCell.h"
 #import "UIView+HelperMethods.h"
+#import "TouristSiteManager.h"
 
 @interface TouristSiteCollectionViewController () <UICollectionViewDataSourcePrefetching>
 
-/**
-@property UILabel* titleLabel;
-@property UICollectionView* collectionView;
-**/
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (readonly) NSArray* debugImagePathArray;
+@property TouristSiteManager* siteManager;
 
 @end
 
 
 @implementation TouristSiteCollectionViewController
-
-/**
-
--(instancetype)initWithTitleText:(NSString*)titleText{
-    
-    self = [self init];
-    
-    if(self){
-        
-        CGRect titleLabeFrame = [self.view getFrameAdjustedRelativeToContentViewWithXCoordOffset:0.0 andWithYCoordOffset:0.0 andWithWidthMultiplier:1.00 andWithHeightMultiplier:0.10];
-        
-        UILabel* titleLabel = [[UILabel alloc] initWithFrame:titleLabeFrame];
-        
-        [self setTitleLabel:titleLabel];
-        
-        [self.titleLabel setText:titleText];
-        
-        
-        CGRect collectionViewFrame = [self.view getFrameAdjustedRelativeToContentViewWithXCoordOffset:0.00 andWithYCoordOffset:0.10 andWithWidthMultiplier:1.00 andWithHeightMultiplier:1.00];
-        
-        UICollectionViewFlowLayout* flowLayoutObject = [[UICollectionViewFlowLayout alloc] init];
-        
-        [flowLayoutObject setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-        [flowLayoutObject setItemSize:CGSizeMake(200, 100)];
-        [flowLayoutObject setMinimumLineSpacing:20.0];
-        [flowLayoutObject setMinimumInteritemSpacing:30.0];
-        
-        UICollectionView* collectionView = [[UICollectionView alloc] initWithFrame:collectionViewFrame collectionViewLayout:flowLayoutObject];
-        
-        [self setCollectionView:collectionView];
-        
-        [self.view addSubview:self.titleLabel];
-        [self.view addSubview:self.collectionView];
-        
-        [self.view setBackgroundColor:[UIColor yellowColor]];
-        [self.collectionView setBackgroundColor:[UIColor blueColor]];
- 
-
-    }
-    
-    return self;
-}
- **/
-
 
 
 @synthesize debugImagePathArray = _debugImagePathArray;
@@ -75,6 +30,11 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
+    
+    
+    self.siteManager = [[TouristSiteManager alloc] initWithFileName:@"SeoulTouristSites"];
+    NSLog(@"Site manager debug info: %@",[self.siteManager abbreviatedDebugDescription]);
+    
     [self.collectionView setDelegate:self];
     [self.collectionView setDataSource:self];
     [self.collectionView setPrefetchDataSource:self];
@@ -154,3 +114,47 @@
 
 
 @end
+
+/**
+ 
+ -(instancetype)initWithTitleText:(NSString*)titleText{
+ 
+ self = [self init];
+ 
+ if(self){
+ 
+ CGRect titleLabeFrame = [self.view getFrameAdjustedRelativeToContentViewWithXCoordOffset:0.0 andWithYCoordOffset:0.0 andWithWidthMultiplier:1.00 andWithHeightMultiplier:0.10];
+ 
+ UILabel* titleLabel = [[UILabel alloc] initWithFrame:titleLabeFrame];
+ 
+ [self setTitleLabel:titleLabel];
+ 
+ [self.titleLabel setText:titleText];
+ 
+ 
+ CGRect collectionViewFrame = [self.view getFrameAdjustedRelativeToContentViewWithXCoordOffset:0.00 andWithYCoordOffset:0.10 andWithWidthMultiplier:1.00 andWithHeightMultiplier:1.00];
+ 
+ UICollectionViewFlowLayout* flowLayoutObject = [[UICollectionViewFlowLayout alloc] init];
+ 
+ [flowLayoutObject setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+ [flowLayoutObject setItemSize:CGSizeMake(200, 100)];
+ [flowLayoutObject setMinimumLineSpacing:20.0];
+ [flowLayoutObject setMinimumInteritemSpacing:30.0];
+ 
+ UICollectionView* collectionView = [[UICollectionView alloc] initWithFrame:collectionViewFrame collectionViewLayout:flowLayoutObject];
+ 
+ [self setCollectionView:collectionView];
+ 
+ [self.view addSubview:self.titleLabel];
+ [self.view addSubview:self.collectionView];
+ 
+ [self.view setBackgroundColor:[UIColor yellowColor]];
+ [self.collectionView setBackgroundColor:[UIColor blueColor]];
+ 
+ 
+ }
+ 
+ return self;
+ }
+ **/
+

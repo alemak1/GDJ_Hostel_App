@@ -31,6 +31,7 @@
 
 
 - (instancetype)initWithFilename:(NSString *)filename;
+-(instancetype)initWithDictionary:(NSDictionary*)properties;
 
 @end
 

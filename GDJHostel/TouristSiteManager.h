@@ -16,7 +16,11 @@
 
 @interface TouristSiteManager : NSObject
 
-@property NSArray<TouristSiteConfiguration *>* touristSites;
+
+-(instancetype)initWithFileName:(NSString*)fileName;
+
+-(NSString*) abbreviatedDebugDescription;
+-(NSString*) detailedDebugDescription;
 
 @end
 

@@ -16,6 +16,7 @@
 
 -(CGRect) getFrameAdjustedRelativeToContentViewWithXCoordOffset:(CGFloat)xCoordinateOffset andWithYCoordOffset:(CGFloat)yCoordinateOffset andWithWidthMultiplier:(CGFloat)widthMultiplier andWithHeightMultiplier:(CGFloat)heightMultiplier{
     
+    
     CGFloat contentViewWidth = CGRectGetWidth(self.frame);
     CGFloat contentViewHeight = CGRectGetHeight(self.frame);
     
@@ -24,7 +25,6 @@
     insetFrame.origin.x = contentViewWidth*xCoordinateOffset;
     insetFrame.origin.y = contentViewHeight*yCoordinateOffset;
     insetFrame.size = CGSizeMake(contentViewWidth*widthMultiplier, contentViewHeight*heightMultiplier);
-    
     return insetFrame;
 }
 

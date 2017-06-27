@@ -50,6 +50,7 @@
 		BD68476C1F00F102004732FB /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6847691F00F102004732FB /* ImageManager.m */; };
 		BD68476D1F00F102004732FB /* ImageKeyConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = BD68476B1F00F102004732FB /* ImageKeyConstants.m */; };
 		BD6847711F010070004732FB /* ImageManagerB.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6847701F010070004732FB /* ImageManagerB.m */; };
+		BD7670DC1F02037000918A20 /* TouristSiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA9F1EFFE80900C0E540 /* TouristSiteManager.m */; };
 		BD902CDA1EFD31F600DD1034 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CD91EFD31F600DD1034 /* main.m */; };
 		BD902CDD1EFD31F600DD1034 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CDC1EFD31F600DD1034 /* AppDelegate.m */; };
 		BD902CE01EFD31F600DD1034 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CDF1EFD31F600DD1034 /* ViewController.m */; };
@@ -445,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD7670DC1F02037000918A20 /* TouristSiteManager.m in Sources */,
 				BDF2348C1F0021BA00E9ED63 /* HostelCollectionViewCell.m in Sources */,
 				BD312E021F01517B00FB90E3 /* UIView+HelperMethods.m in Sources */,
 				BDF2348B1F00216600E9ED63 /* AudioController.m in Sources */,

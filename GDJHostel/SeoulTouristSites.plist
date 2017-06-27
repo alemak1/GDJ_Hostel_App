@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>category</key>
+		<integer>2</integer>
 		<key>specialNote</key>
 		<string>Last admission is 1 hour before closing.</string>
 		<key>physicalAddress</key>
@@ -50,6 +52,8 @@
 		<string>{37.5369453,126.9761048}</string>
 	</dict>
 	<dict>
+		<key>category</key>
+		<integer>5</integer>
 		<key>webAddress</key>
 		<string></string>
 		<key>physicalAddress</key>
@@ -92,6 +96,8 @@
 		</array>
 	</dict>
 	<dict>
+		<key>category</key>
+		<integer>5</integer>
 		<key>specialNote</key>
 		<string></string>
 		<key>physicalAddress</key>
@@ -138,6 +144,8 @@
 		<string>{37.5511736,126.9838492}</string>
 	</dict>
 	<dict>
+		<key>category</key>
+		<integer>5</integer>
 		<key>daysClosed</key>
 		<array/>
 		<key>closingTime</key>

@@ -23,7 +23,7 @@ typedef enum DayOfWeek{
     THURSDAY,
     FRIDAY,
     SATURDAY,
-    SUNDARY
+    SUNDAY
 }DayOfWeek;
 
 
@@ -42,14 +42,17 @@ typedef enum TouristSiteCategory{
 /** User-Initialized Properties **/
 
 @property NSString* title;
-@property NSString* description;
+@property NSString* siteDescription;
 @property CGFloat admissionFee;
 
 @property int* daysClosed;
-@property NSDate* openingTime;
-@property NSDate* closingTime;
+@property TouristSiteCategory touristSiteCategory;
+
+@property NSNumber* openingTime;
+@property NSNumber* closingTime;
 @property NSString* physicalAddress;
 @property NSString* webAddress;
+@property NSString* specialNote;
 
 /** Computed properties determined dynamically based on local time and user location info **/
 
@@ -60,8 +63,13 @@ typedef enum TouristSiteCategory{
 @property (readonly) CGFloat distanceFromUser;
 @property (readonly) CGFloat travelingTimeFromUserLocation;
 
--(instancetype)initWithConfigurationDict:(NSDictionary*)configurationDictionary;
+/** Initializers **/
 
+-(instancetype)initWithConfigurationDict:(NSDictionary*)configurationDictionary;
+- (instancetype)initWithFilename:(NSString *)filename;
+
+-(NSString*)debugDescriptionA;
+-(NSString*)debugDescriptionB;
 
 @end
 
