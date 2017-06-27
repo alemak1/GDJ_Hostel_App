@@ -13,6 +13,7 @@
 @interface TouristSiteCategorySelectionController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+- (IBAction)returnToMainMenu:(UIBarButtonItem *)sender;
 
 
 @end
@@ -128,5 +129,11 @@
     
 }
 
+
+- (IBAction)returnToMainMenu:(UIBarButtonItem *)sender {
+    
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 @end

@@ -42,6 +42,9 @@
 @implementation TouristSiteCollectionViewCell
 
 
+
+
+
 /** Implement getters and setters for labels and image view **/
 
 
@@ -67,8 +70,19 @@
 }
 
 - (IBAction)getDirectionsForTouristSite:(id)sender {
+    
+    //Make  request in maps to get the directions to the site
 }
 
 - (IBAction)getDetailsForTouristSite:(id)sender {
+    
+    /** Since this collection view cell is a subview of a collecion view that is being managed by a viewcontroller, which in turn is a child view controller for paret view contrller that is the root view of a navigation controller, posting notification is best option to  transfer data **/
+    
+    //Send notification and pass data so that the TouristCategorySelectionController's navigation controller can present the detail controller
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"presentTouristSiteDetailNotification" object:self userInfo:nil];
 }
+
+
+
 @end

@@ -63,6 +63,8 @@
         
         UIStoryboard* storyBoardA = [UIStoryboard storyboardWithName:@"StoryboardA" bundle:nil];
         
+        UIStoryboard* mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
         UIViewController* requestedViewController;
         
         switch (selectedOptionIndex) {
@@ -85,7 +87,7 @@
                 break;
             case 3:
                 //Seoul tourism
-                 requestedViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"DirectionsMenuController"];
+                 requestedViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"SeoulTourismNavigationController"];
                     NSLog(@"You selected option %d",(int)selectedOptionIndex);
 
                 break;

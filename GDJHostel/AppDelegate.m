@@ -27,7 +27,7 @@ typedef enum TESTABLE_VIEWCONTROLLERS{
 
 @implementation AppDelegate
 
-static BOOL willInitiateFromStoryBoard = true;
+static BOOL willInitiateFromStoryBoard = false;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -37,7 +37,7 @@ static BOOL willInitiateFromStoryBoard = true;
     if(!willInitiateFromStoryBoard){
         self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
         
-        UIViewController* rootViewController = [self getTestableViewController:TOURIST_SITE_COLLECTION_VIEW_CONTROLLER];
+        UIViewController* rootViewController = [self getTestableViewController:HOSTEL_INFORMATION_CONTROLLER];
         
         [self.window setRootViewController:rootViewController];
         

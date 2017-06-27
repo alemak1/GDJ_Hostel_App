@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -298,13 +299,13 @@
                                         <rect key="frame" x="34.5" y="304.5" width="274.5" height="27"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="routeA" translatesAutoresizingMaskIntoConstraints="NO" id="aKs-qu-lBo">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="27"/>
+                                                <rect key="frame" x="0.5" y="0.0" width="30" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="q9J-ZF-ntQ"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="7J1-EG-BRN">
-                                                <rect key="frame" x="30" y="0.0" width="244.5" height="27"/>
+                                                <rect key="frame" x="30.5" y="0.0" width="244.5" height="27"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="     Get Route to Hostel in Apple Maps">
                                                         <attributes>
@@ -321,13 +322,13 @@
                                         <rect key="frame" x="29.5" y="333.5" width="284.5" height="27.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compassA" translatesAutoresizingMaskIntoConstraints="NO" id="HCO-SB-mOA">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="27.5"/>
+                                                <rect key="frame" x="0.5" y="0.0" width="30" height="27.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="ee7-aR-9Qg"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gpa-aq-uPT">
-                                                <rect key="frame" x="30" y="0.0" width="254.5" height="27.5"/>
+                                                <rect key="frame" x="30.5" y="0.0" width="254.5" height="27.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="     Get Route to Hostel in Google Maps">
                                                         <attributes>
@@ -367,13 +368,13 @@
                                         <rect key="frame" x="112" y="416.5" width="119.5" height="54.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coloredPhoneB" translatesAutoresizingMaskIntoConstraints="NO" id="YIB-G3-03U">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="54.5"/>
+                                                <rect key="frame" x="0.5" y="0.0" width="30" height="54.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="dzV-6b-nlD"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MB9-cX-kya" userLabel="Address">
-                                                <rect key="frame" x="30" y="0.0" width="89.5" height="54.5"/>
+                                                <rect key="frame" x="30.5" y="0.0" width="89.5" height="54.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="  Telephone">
                                                         <attributes>
@@ -991,7 +992,7 @@
         <!--TouristSiteDetailController-->
         <scene sceneID="d5r-6Q-GLp">
             <objects>
-                <viewController title="TouristSiteDetailController" id="bp0-gQ-Fjj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TouristSiteDetailController" title="TouristSiteDetailController" id="bp0-gQ-Fjj" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L34-16-J0C"/>
                         <viewControllerLayoutGuide type="bottom" id="Avq-KI-eyE"/>
@@ -999,30 +1000,112 @@
                     <view key="view" contentMode="scaleToFill" id="wLG-Gi-cZt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9mz-Eh-GCd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="267"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOv-ni-KXO">
+                                <rect key="frame" x="37" y="211" width="300" height="40"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Title Label for Tourist Site">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="Futura-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztt-tc-Jm1">
+                                <rect key="frame" x="9.5" y="351" width="356" height="133.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Description label, information about the tourists site">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Futura-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Operating Hours: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSZ-Jm-Csc">
+                                <rect key="frame" x="9" y="463" width="136" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admission Fee:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imq-Oa-GTA">
+                                <rect key="frame" x="9" y="482.5" width="116" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Physical Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boF-Lf-FC4">
+                                <rect key="frame" x="37" y="261" width="300" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSX-Ln-OVc">
+                                <rect key="frame" x="297" y="605" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="ROG-9p-DUZ"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="webSiteB"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note:...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJZ-c4-9CH">
+                                <rect key="frame" x="9" y="511" width="60.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days Closed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRg-Bu-RQR">
+                                <rect key="frame" x="222" y="463" width="100" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8Y-xE-9lM">
+                                <rect key="frame" x="233" y="605" width="94" height="40"/>
+                                <state key="normal" title="Button" image="compassB"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="tSX-Ln-OVc" secondAttribute="trailing" constant="22" id="1lw-SQ-qRu"/>
+                            <constraint firstItem="imq-Oa-GTA" firstAttribute="top" secondItem="gSZ-Jm-Csc" secondAttribute="bottom" constant="-1" id="9K3-Bi-fR5"/>
+                            <constraint firstItem="imq-Oa-GTA" firstAttribute="leading" secondItem="gSZ-Jm-Csc" secondAttribute="leading" id="CCP-0o-QdG"/>
+                            <constraint firstItem="gSZ-Jm-Csc" firstAttribute="top" secondItem="ztt-tc-Jm1" secondAttribute="bottom" constant="-21.5" id="CVb-R9-JmQ"/>
+                            <constraint firstItem="boF-Lf-FC4" firstAttribute="width" secondItem="kOv-ni-KXO" secondAttribute="width" id="CtB-V5-edP"/>
+                            <constraint firstItem="Avq-KI-eyE" firstAttribute="top" secondItem="tSX-Ln-OVc" secondAttribute="bottom" constant="22" id="GlI-mu-b6N"/>
+                            <constraint firstItem="ztt-tc-Jm1" firstAttribute="width" secondItem="9mz-Eh-GCd" secondAttribute="width" multiplier="0.95" id="Hwj-2C-bdJ"/>
+                            <constraint firstItem="ztt-tc-Jm1" firstAttribute="top" secondItem="9mz-Eh-GCd" secondAttribute="bottom" constant="20" id="Ir8-Q7-arv"/>
+                            <constraint firstItem="kOv-ni-KXO" firstAttribute="top" secondItem="9mz-Eh-GCd" secondAttribute="bottom" constant="-120" id="KfQ-dC-x1F"/>
+                            <constraint firstItem="aJZ-c4-9CH" firstAttribute="leading" secondItem="imq-Oa-GTA" secondAttribute="leading" id="MCF-IO-ygI"/>
+                            <constraint firstItem="aJZ-c4-9CH" firstAttribute="top" secondItem="imq-Oa-GTA" secondAttribute="bottom" constant="8" id="Nar-Zh-ftm"/>
+                            <constraint firstItem="ztt-tc-Jm1" firstAttribute="centerX" secondItem="9mz-Eh-GCd" secondAttribute="centerX" id="O2f-iY-1Qp"/>
+                            <constraint firstItem="9mz-Eh-GCd" firstAttribute="top" secondItem="L34-16-J0C" secondAttribute="bottom" id="SY8-3p-s8M"/>
+                            <constraint firstItem="boF-Lf-FC4" firstAttribute="leading" secondItem="kOv-ni-KXO" secondAttribute="leading" id="Slz-kN-qcg"/>
+                            <constraint firstItem="boF-Lf-FC4" firstAttribute="top" secondItem="kOv-ni-KXO" secondAttribute="bottom" constant="10" id="U4a-6K-7Ec"/>
+                            <constraint firstItem="XRg-Bu-RQR" firstAttribute="baseline" secondItem="gSZ-Jm-Csc" secondAttribute="baseline" id="Vf8-40-mUu"/>
+                            <constraint firstItem="boF-Lf-FC4" firstAttribute="height" secondItem="kOv-ni-KXO" secondAttribute="height" id="Xkl-pr-vQJ"/>
+                            <constraint firstItem="r8Y-xE-9lM" firstAttribute="centerY" secondItem="tSX-Ln-OVc" secondAttribute="centerY" id="aS3-3e-Shv"/>
+                            <constraint firstAttribute="trailing" secondItem="9mz-Eh-GCd" secondAttribute="trailing" id="dDZ-Ma-iBB"/>
+                            <constraint firstItem="XRg-Bu-RQR" firstAttribute="leading" secondItem="gSZ-Jm-Csc" secondAttribute="trailing" constant="77" id="fYz-8b-G6v"/>
+                            <constraint firstItem="9mz-Eh-GCd" firstAttribute="height" secondItem="wLG-Gi-cZt" secondAttribute="height" multiplier="0.4" id="jSs-qI-of4"/>
+                            <constraint firstItem="kOv-ni-KXO" firstAttribute="height" secondItem="9mz-Eh-GCd" secondAttribute="height" multiplier="0.15" id="lUq-AU-z6W"/>
+                            <constraint firstItem="kOv-ni-KXO" firstAttribute="width" secondItem="9mz-Eh-GCd" secondAttribute="width" multiplier="0.8" id="lvu-XD-9UT"/>
+                            <constraint firstItem="tSX-Ln-OVc" firstAttribute="leading" secondItem="r8Y-xE-9lM" secondAttribute="trailing" constant="-30" id="oMn-FC-Mpm"/>
+                            <constraint firstItem="ztt-tc-Jm1" firstAttribute="height" secondItem="wLG-Gi-cZt" secondAttribute="height" multiplier="0.2" id="oP0-Qe-UJs"/>
+                            <constraint firstItem="gSZ-Jm-Csc" firstAttribute="leading" secondItem="ztt-tc-Jm1" secondAttribute="leading" id="rgn-9p-adn"/>
+                            <constraint firstItem="kOv-ni-KXO" firstAttribute="centerX" secondItem="9mz-Eh-GCd" secondAttribute="centerX" id="x9R-YP-n64"/>
+                            <constraint firstItem="9mz-Eh-GCd" firstAttribute="leading" secondItem="wLG-Gi-cZt" secondAttribute="leading" id="y9G-9O-z0u"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OeF-Db-nq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1866" y="-2485"/>
-        </scene>
-        <!--TouristSiteDirectionsController-->
-        <scene sceneID="0ob-Or-T03">
-            <objects>
-                <viewController title="TouristSiteDirectionsController" id="nHt-Yo-vsV" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vLr-jv-Xgd"/>
-                        <viewControllerLayoutGuide type="bottom" id="6Jw-Iz-24a"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6FI-8V-Yew">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x09-IW-Xc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-874" y="-3033"/>
+            <point key="canvasLocation" x="-930.39999999999998" y="-2848.4257871064469"/>
         </scene>
         <!--Tourist Site Collection View Controller-->
         <scene sceneID="ATt-z8-BcV">
@@ -1065,17 +1148,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ScE-1f-tDG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="230"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNf-sC-Nsj">
-                                                    <rect key="frame" x="355" y="158" width="25" height="22"/>
+                                                    <rect key="frame" x="355" y="188" width="25" height="22"/>
                                                     <state key="normal" image="informationA"/>
                                                     <connections>
                                                         <action selector="getDetailsForTouristSite:" destination="Tgy-YI-9Mi" eventType="touchUpInside" id="F8w-fZ-oeN"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crQ-RR-axd">
-                                                    <rect key="frame" x="20" y="121" width="160" height="13"/>
+                                                    <rect key="frame" x="20" y="151" width="160" height="13"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Distance Indicator">
                                                             <attributes>
@@ -1087,7 +1170,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTP-OD-WCq">
-                                                    <rect key="frame" x="20" y="153" width="160" height="13"/>
+                                                    <rect key="frame" x="20" y="183" width="160" height="13"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Traveling Time Indicator">
                                                             <attributes>
@@ -1112,14 +1195,14 @@
                                                     <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCd-6j-tSg">
-                                                    <rect key="frame" x="355" y="122" width="25" height="22"/>
+                                                    <rect key="frame" x="355" y="152" width="25" height="22"/>
                                                     <state key="normal" title=" " image="routeA"/>
                                                     <connections>
                                                         <action selector="getDirectionsForTouristSite:" destination="Tgy-YI-9Mi" eventType="touchUpInside" id="7s8-5e-BcV"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ge-gE-ujj">
-                                                    <rect key="frame" x="302.5" y="127" width="44.5" height="13"/>
+                                                    <rect key="frame" x="302.5" y="157" width="44.5" height="13"/>
                                                     <gestureRecognizers/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Directions">
@@ -1133,7 +1216,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buO-fa-eID">
-                                                    <rect key="frame" x="302.5" y="162.5" width="52.5" height="13"/>
+                                                    <rect key="frame" x="302.5" y="192.5" width="52.5" height="13"/>
                                                     <gestureRecognizers/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Information">
@@ -1237,14 +1320,24 @@
                             <constraint firstItem="xlR-50-mda" firstAttribute="top" secondItem="y4G-2L-qhd" secondAttribute="bottom" id="njW-hO-TB6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vjc-kx-rt9"/>
+                    <navigationItem key="navigationItem" id="vjc-kx-rt9">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Main Menu" id="H9h-B2-BjT">
+                                <connections>
+                                    <action selector="returnToMainMenu:" destination="A01-ZA-Z48" id="WQX-T0-4oZ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="  Seoul Tourism" id="FUS-c1-Obr"/>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Back" id="IJF-4C-tnz"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="y4G-2L-qhd" id="C3R-Fj-oRi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuq-hT-c1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-386.39999999999998" y="-1789.6551724137933"/>
+            <point key="canvasLocation" x="20" y="-1899"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Wsf-om-1GK">
@@ -1285,7 +1378,7 @@
         <!--Navigation Controller-->
         <scene sceneID="cXV-dG-gGL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xSA-EY-f9L" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SeoulTourismNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="xSA-EY-f9L" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bTY-fc-d4e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1295,18 +1388,18 @@
                     <connections>
                         <segue destination="A01-ZA-Z48" kind="relationship" relationship="rootViewController" id="wso-AZ-0q2"/>
                         <segue destination="bp0-gQ-Fjj" kind="show" identifier="ShowTouristSiteDetailController" id="RhC-rA-JKw"/>
-                        <segue destination="nHt-Yo-vsV" kind="show" identifier="ShowTouristSiteDirections" id="rFJ-HJ-ahQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1BC-rG-FgM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431" y="-2770"/>
+            <point key="canvasLocation" x="511" y="-2848"/>
         </scene>
     </scenes>
     <resources>
         <image name="airportB" width="40" height="40"/>
         <image name="coloredPhoneB" width="40" height="40"/>
         <image name="compassA" width="20" height="20"/>
+        <image name="compassB" width="40" height="40"/>
         <image name="emailB" width="40" height="40"/>
         <image name="facebookB" width="40" height="40"/>
         <image name="familyB" width="40" height="38"/>

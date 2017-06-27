@@ -12,6 +12,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "TouristSiteCollectionViewCell.h"
+#import "TouristSiteConfiguration.h"
 
 /** For the Seoul Tourism Section, a CollectionView Cell will contain an image and title corresponding to the appropriate tourist site; it will also display the user's current distance to and traveling time to the said tourist stie, which are comptued using the user's location; in addition, each cell contains two buttons, one transitioning to a map route to the location, and the other transition to detail view about the tourist site; some details about whether the tourist site is currently open or close, or time to closing can be updated based on the current time; **/
 
@@ -24,6 +25,7 @@
 
 @property UIImage* siteImage;
 @property NSString* titleText;
+@property TouristSiteConfiguration* touristSiteConfigurationObject;
 
 
 
