@@ -54,6 +54,8 @@ typedef enum TouristSiteCategory{
 @property NSString* webAddress;
 @property NSString* specialNote;
 
+@property NSString* imagePath;
+
 /** Computed properties determined dynamically based on local time and user location info **/
 
 @property (readonly) BOOL isOpen;

@@ -33,7 +33,7 @@
     
     
     self.siteManager = [[TouristSiteManager alloc] initWithFileName:@"SeoulTouristSites"];
-    NSLog(@"Site manager debug info: %@",[self.siteManager abbreviatedDebugDescription]);
+    //NSLog(@"Site manager debug info: %@",[self.siteManager detailedDebugDescription]);
     
     [self.collectionView setDelegate:self];
     [self.collectionView setDataSource:self];

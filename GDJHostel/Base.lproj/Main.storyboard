@@ -1034,57 +1034,117 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNf-sC-Nsj">
                                                     <rect key="frame" x="305" y="158" width="25" height="22"/>
                                                     <state key="normal" image="informationA"/>
+                                                    <connections>
+                                                        <action selector="getDetailsForTouristSite:" destination="Tgy-YI-9Mi" eventType="touchUpInside" id="F8w-fZ-oeN"/>
+                                                    </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance Indicator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crQ-RR-axd">
-                                                    <rect key="frame" x="20" y="105" width="140" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crQ-RR-axd">
+                                                    <rect key="frame" x="20" y="121" width="140" height="13"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Distance Indicator">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.9659712211" green="1" blue="0.42817059880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="10" name="Futura-Medium"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traveling Time Indicator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTP-OD-WCq">
-                                                    <rect key="frame" x="20" y="145" width="140" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTP-OD-WCq">
+                                                    <rect key="frame" x="20" y="153" width="140" height="13"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Traveling Time Indicator">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.9659712211" green="1" blue="0.42817059880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="10" name="Futura-Medium"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tourist Site" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZ3-9B-RDq">
-                                                    <rect key="frame" x="20" y="20" width="102" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZ3-9B-RDq">
+                                                    <rect key="frame" x="20" y="20" width="245" height="32.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Tourist Site">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.9659712211" green="1" blue="0.42817059880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="24" name="Futura-Medium"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCd-6j-tSg">
-                                                    <rect key="frame" x="272" y="158" width="25" height="22"/>
+                                                    <rect key="frame" x="305" y="122" width="25" height="22"/>
                                                     <state key="normal" title=" " image="routeA"/>
+                                                    <connections>
+                                                        <action selector="getDirectionsForTouristSite:" destination="Tgy-YI-9Mi" eventType="touchUpInside" id="7s8-5e-BcV"/>
+                                                    </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ge-gE-ujj">
+                                                    <rect key="frame" x="252.5" y="127" width="44.5" height="13"/>
+                                                    <gestureRecognizers/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Directions">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.9659712211" green="1" blue="0.42817059880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="10" name="Futura-Medium"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buO-fa-eID">
+                                                    <rect key="frame" x="252.5" y="162.5" width="52.5" height="13"/>
+                                                    <gestureRecognizers/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Information">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.9659712211" green="1" blue="0.42817059880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="10" name="Futura-Medium"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="1" green="0.71672724160000001" blue="0.38075691010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="ScE-1f-tDG" firstAttribute="leading" secondItem="Tgy-YI-9Mi" secondAttribute="leading" id="0s6-QQ-0cC"/>
-                                            <constraint firstItem="pZ3-9B-RDq" firstAttribute="width" secondItem="Tgy-YI-9Mi" secondAttribute="width" multiplier="0.8" id="1lP-G5-eq7"/>
+                                            <constraint firstItem="pZ3-9B-RDq" firstAttribute="width" secondItem="Tgy-YI-9Mi" secondAttribute="width" multiplier="0.7" id="1lP-G5-eq7"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="bTP-OD-WCq" secondAttribute="bottom" constant="26" id="43M-Te-eha"/>
                                             <constraint firstItem="cCd-6j-tSg" firstAttribute="width" secondItem="kNf-sC-Nsj" secondAttribute="width" id="5DY-gr-Dsj"/>
+                                            <constraint firstItem="2ge-gE-ujj" firstAttribute="centerY" secondItem="cCd-6j-tSg" secondAttribute="centerY" id="B2D-do-mK5"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="kNf-sC-Nsj" secondAttribute="trailing" constant="12" id="CSo-Pi-iBh"/>
                                             <constraint firstAttribute="bottom" secondItem="ScE-1f-tDG" secondAttribute="bottom" id="DGP-s1-78J"/>
                                             <constraint firstItem="pZ3-9B-RDq" firstAttribute="top" secondItem="Tgy-YI-9Mi" secondAttribute="topMargin" constant="12" id="Enw-d4-YDT"/>
                                             <constraint firstItem="crQ-RR-axd" firstAttribute="leading" secondItem="bTP-OD-WCq" secondAttribute="leading" id="ITb-Z1-3Yh"/>
-                                            <constraint firstItem="cCd-6j-tSg" firstAttribute="centerY" secondItem="kNf-sC-Nsj" secondAttribute="centerY" id="K7e-4s-XiK"/>
                                             <constraint firstItem="ScE-1f-tDG" firstAttribute="top" secondItem="Tgy-YI-9Mi" secondAttribute="top" id="Odn-VE-59K"/>
                                             <constraint firstItem="pZ3-9B-RDq" firstAttribute="leading" secondItem="Tgy-YI-9Mi" secondAttribute="leadingMargin" constant="12" id="Q28-ny-6ZE"/>
+                                            <constraint firstItem="kNf-sC-Nsj" firstAttribute="top" secondItem="cCd-6j-tSg" secondAttribute="bottom" constant="14" id="SiE-CU-hfm"/>
+                                            <constraint firstItem="cCd-6j-tSg" firstAttribute="leading" secondItem="2ge-gE-ujj" secondAttribute="trailing" constant="8" id="Sxc-CZ-5EP"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="kNf-sC-Nsj" secondAttribute="bottom" constant="12" id="W6Q-Ik-Kl6"/>
                                             <constraint firstAttribute="trailing" secondItem="ScE-1f-tDG" secondAttribute="trailing" id="X0T-de-liK"/>
                                             <constraint firstItem="bTP-OD-WCq" firstAttribute="width" secondItem="crQ-RR-axd" secondAttribute="width" id="aYN-Hs-HU3"/>
                                             <constraint firstItem="crQ-RR-axd" firstAttribute="width" secondItem="Tgy-YI-9Mi" secondAttribute="width" multiplier="0.4" id="bjU-rJ-sjG"/>
+                                            <constraint firstItem="cCd-6j-tSg" firstAttribute="centerX" secondItem="kNf-sC-Nsj" secondAttribute="centerX" id="cTR-VH-Vt7"/>
+                                            <constraint firstItem="buO-fa-eID" firstAttribute="leading" secondItem="2ge-gE-ujj" secondAttribute="leading" id="cbt-Hp-cAa"/>
                                             <constraint firstItem="bTP-OD-WCq" firstAttribute="top" secondItem="crQ-RR-axd" secondAttribute="bottom" constant="19" id="iR4-kI-FTk"/>
                                             <constraint firstItem="bTP-OD-WCq" firstAttribute="leading" secondItem="Tgy-YI-9Mi" secondAttribute="leadingMargin" constant="12" id="l0S-lR-piT"/>
-                                            <constraint firstItem="kNf-sC-Nsj" firstAttribute="leading" secondItem="cCd-6j-tSg" secondAttribute="trailing" constant="8" id="m0Q-co-bU8"/>
                                             <constraint firstItem="cCd-6j-tSg" firstAttribute="height" secondItem="kNf-sC-Nsj" secondAttribute="height" id="ps2-hd-NmY"/>
+                                            <constraint firstItem="buO-fa-eID" firstAttribute="centerY" secondItem="kNf-sC-Nsj" secondAttribute="centerY" id="zuf-8K-Vhq"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="directionsLabel" destination="2ge-gE-ujj" id="3TI-gY-aBx"/>
                                             <outlet property="distanceLabel" destination="crQ-RR-axd" id="Eqk-y1-jRn"/>
                                             <outlet property="getDetailsButton" destination="kNf-sC-Nsj" id="XMl-ez-hXJ"/>
                                             <outlet property="getRouteButton" destination="cCd-6j-tSg" id="mEn-aR-OZd"/>
+                                            <outlet property="informationLabel" destination="buO-fa-eID" id="eqk-RT-fRr"/>
                                             <outlet property="siteImageView" destination="ScE-1f-tDG" id="80W-xG-2i5"/>
                                             <outlet property="titleLabel" destination="pZ3-9B-RDq" id="HQB-0X-UA7"/>
                                             <outlet property="travelTimeLabel" destination="bTP-OD-WCq" id="AEJ-Vm-fwp"/>
@@ -1114,7 +1174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eK3-jZ-cDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1662" y="-932"/>
+            <point key="canvasLocation" x="-1991.2" y="-922.48875562218893"/>
         </scene>
     </scenes>
     <resources>

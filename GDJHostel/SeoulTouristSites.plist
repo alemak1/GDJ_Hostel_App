@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>imagePath</key>
+		<string></string>
 		<key>category</key>
 		<integer>2</integer>
 		<key>specialNote</key>
@@ -52,6 +54,8 @@
 		<string>{37.5369453,126.9761048}</string>
 	</dict>
 	<dict>
+		<key>imagePath</key>
+		<string></string>
 		<key>category</key>
 		<integer>5</integer>
 		<key>webAddress</key>
@@ -96,6 +100,8 @@
 		</array>
 	</dict>
 	<dict>
+		<key>imagePath</key>
+		<string></string>
 		<key>category</key>
 		<integer>5</integer>
 		<key>specialNote</key>
@@ -144,6 +150,8 @@
 		<string>{37.5511736,126.9838492}</string>
 	</dict>
 	<dict>
+		<key>imagePath</key>
+		<string></string>
 		<key>category</key>
 		<integer>5</integer>
 		<key>daysClosed</key>

@@ -13,7 +13,7 @@
 @interface TouristSiteManager ()
 
 
-@property NSMutableArray<TouristSiteConfiguration*>* configurationArray;
+@property NSMutableArray* configurationArray;
 
 
 @end
@@ -31,18 +31,18 @@ NSArray* _touristSiteDictArray;
         NSString* path = [[NSBundle mainBundle] pathForResource:@"SeoulTouristSites" ofType:@"plist"];
     
         _touristSiteDictArray = [NSArray arrayWithContentsOfFile:path];
-    
-        NSLog(@"Tourist Dite Dict Array: %@", [_touristSiteDictArray description]);
+        
+        _configurationArray = [[NSMutableArray alloc] init];
         
         for(NSDictionary* dict in _touristSiteDictArray){
             TouristSiteConfiguration* touristSiteConfiguration = [[TouristSiteConfiguration alloc] initWithConfigurationDict:dict];
+            
         
-            [_configurationArray addObject:touristSiteConfiguration];
+            [self.configurationArray addObject:touristSiteConfiguration];
         }
     
     }
     
-    NSLog(@"Configuration Array: %@",_configurationArray);
     
     return self;
 }
@@ -73,6 +73,71 @@ NSArray* _touristSiteDictArray;
     
     return debugString;
 }
+
+//TODO: Use the predicate syntax to get arrays derived from the original set of tourist configuraiton objects
+
+- (NSMutableArray<TouristSiteConfiguration*>*)getArrayForTouristSiteCategory:(TouristSiteCategory)touristSiteCategory{
+    
+    NSPredicate* categoryPredicate = [NSPredicate predicateWithFormat:@"SELF"];
+    
+    NSMutableArray* copiedArray = [self.configurationArray copy];
+    
+    [copiedArray filterUsingPredicate:categoryPredicate];
+    
+    return copiedArray;
+    
+}
+
+
+- (NSMutableArray<TouristSiteConfiguration*>*)getArrayForMaximumTravelingTime:(CGFloat)maxTravelingTime{
+    
+    NSPredicate* categoryPredicate = [NSPredicate predicateWithFormat:@"SELF"];
+    
+    NSMutableArray* copiedArray = [self.configurationArray copy];
+    
+    [copiedArray filterUsingPredicate:categoryPredicate];
+    
+    return copiedArray;
+    
+}
+
+- (NSMutableArray<TouristSiteConfiguration*>*)getArrayForMinimumDistanceFromUser:(CGFloat)minimumDistance{
+    
+    NSPredicate* categoryPredicate = [NSPredicate predicateWithFormat:@"SELF"];
+    
+    NSMutableArray* copiedArray = [self.configurationArray copy];
+    
+    [copiedArray filterUsingPredicate:categoryPredicate];
+    
+    return copiedArray;
+    
+}
+
+- (NSMutableArray<TouristSiteConfiguration*>*)getArrayForAdmissionFee:(CGFloat)admissionFee{
+    
+    NSPredicate* categoryPredicate = [NSPredicate predicateWithFormat:@"SELF"];
+    
+    NSMutableArray* copiedArray = [self.configurationArray copy];
+    
+    [copiedArray filterUsingPredicate:categoryPredicate];
+    
+    return copiedArray;
+    
+}
+
+- (NSMutableArray<TouristSiteConfiguration*>*)getArrayForCurrentlyOpenSites{
+    
+    NSPredicate* categoryPredicate = [NSPredicate predicateWithFormat:@"SELF"];
+    
+    NSMutableArray* copiedArray = [self.configurationArray copy];
+    
+    [copiedArray filterUsingPredicate:categoryPredicate];
+    
+    return copiedArray;
+    
+}
+
+
 
 
 @end

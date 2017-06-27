@@ -11,6 +11,7 @@
 
 @implementation TouristSiteConfiguration
 
+/**
 @synthesize midCoordinate = _midCoordinate;
 @synthesize overlayBottomLeftCoordinate = _overlayBottomLeftCoordinate;
 @synthesize overlayBottomRightCoordinate = _overlayBottomRightCoordinate;
@@ -19,8 +20,9 @@
 @synthesize overlayBoundingMapRect = _overlayBoundingMapRect;
 @synthesize boundaryPointsCount = _boundaryPointsCount;
 @synthesize boundary = _boundary;
+**/
 
-int _numberOfDaysClosed = 0;
+NSUInteger _numberOfDaysClosed = 0;
 
 /** Tourist Objects can also be initialized from file directly, with the initializer implementation overriding that of the base class **/
 
@@ -36,8 +38,8 @@ int _numberOfDaysClosed = 0;
         _title = [configurationDictionary valueForKey:@"title"];
         _siteDescription = [configurationDictionary valueForKey:@"description"];
         _admissionFee = [[configurationDictionary valueForKey:@"admissionFee"] doubleValue];
-        _touristSiteCategory = [[configurationDictionary valueForKey:@"category"] integerValue];
-
+        _touristSiteCategory = (int)[[configurationDictionary valueForKey:@"category"] integerValue];
+        _imagePath = [configurationDictionary valueForKey:@"imagePath"];
         
         _openingTime = [configurationDictionary valueForKey:@"openingTime"];
         _closingTime = [configurationDictionary valueForKey:@"closingTime"];
@@ -49,11 +51,16 @@ int _numberOfDaysClosed = 0;
         
         
         NSArray* daysClosedArray = [configurationDictionary valueForKey:@"daysClosed"];
+        NSLog(@"Days Closed Array: %@",[daysClosedArray description]);
+        
         _numberOfDaysClosed = [daysClosedArray count];
+        
         _daysClosed = calloc(sizeof(int), _numberOfDaysClosed);
         
         for(int i = 0; i < _numberOfDaysClosed; i++){
-            _daysClosed[0] = (int)[daysClosedArray[i] integerValue];
+            NSLog(@"Value from daysClosedArray",[daysClosedArray[i] integerValue]);
+            _daysClosed[i] = [daysClosedArray[i] integerValue];
+            NSLog(@"%@ is closed on: %d",_title,_daysClosed[i]);
         }
         
     }
@@ -72,7 +79,7 @@ int _numberOfDaysClosed = 0;
         _title = [configurationDictionary valueForKey:@"title"];
         _siteDescription = [configurationDictionary valueForKey:@"description"];
         _admissionFee = [[configurationDictionary valueForKey:@"admissionFee"] doubleValue];
-        _touristSiteCategory = [[configurationDictionary valueForKey:@"category"] integerValue];
+        _touristSiteCategory = (int)[[configurationDictionary valueForKey:@"category"] integerValue];
 
         _openingTime = [configurationDictionary valueForKey:@"openingTime"];
         _closingTime = [configurationDictionary valueForKey:@"closingTime"];
@@ -80,21 +87,23 @@ int _numberOfDaysClosed = 0;
         _physicalAddress = [configurationDictionary valueForKey:@"physicalAddress"];
         _webAddress = [configurationDictionary valueForKey:@"webAddress"];
         _specialNote = [configurationDictionary valueForKey:@"specialNote"];
-        
+        _imagePath = [configurationDictionary valueForKey:@"imagePath"];
+
         
         
         NSArray* daysClosedArray = [configurationDictionary valueForKey:@"daysClosed"];
         _numberOfDaysClosed = [daysClosedArray count];
+        
         _daysClosed = calloc(sizeof(int), _numberOfDaysClosed);
         
         for(int i = 0; i < _numberOfDaysClosed; i++){
-            _daysClosed[0] = (int)[daysClosedArray[i] integerValue];
+            _daysClosed[i] = [daysClosedArray[i] integerValue];
+            
         }
-        
+       
     
     }
     
-    NSLog(@"Finished intializing a tourist configuration object %@",[self description]);
     
     return self;
     
@@ -112,7 +121,7 @@ int _numberOfDaysClosed = 0;
     
     for(int i = 0; i < _numberOfDaysClosed; i++){
         NSString* dayClosed = [self stringForDayOfWeek:_daysClosed[i]];
-        
+    
         rawString = [rawString stringByAppendingString:[NSString stringWithFormat:@"%@, ", dayClosed]];
     }
     

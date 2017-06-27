@@ -24,6 +24,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *travelTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 
+//Each tourist site cell has detail and directions buttons that perform segues whose string identifiers are configured to match tourist site names or ids; the view controllers that are presented modally can be configured in the storyboard and instantiated using the segue identifiers; tourist site detail and location information can be passed to the dstinationed view controller through the segue; in the prepare for segue method, set exposed properties (corresponding to site location and details) in the prepare for segue method
+
+- (IBAction)getDirectionsForTouristSite:(id)sender;
+
+- (IBAction)getDetailsForTouristSite:(id)sender;
+
+//TODO: Add tap gesture recognizers to these labels so that they call the same methods as their corresponding buttons
+@property (weak, nonatomic) IBOutlet UILabel *directionsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *informationLabel;
 
 
 @end
@@ -57,4 +66,9 @@
     return [self.siteImageView image];
 }
 
+- (IBAction)getDirectionsForTouristSite:(id)sender {
+}
+
+- (IBAction)getDetailsForTouristSite:(id)sender {
+}
 @end
