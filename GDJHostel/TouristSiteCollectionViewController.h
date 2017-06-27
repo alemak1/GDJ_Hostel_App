@@ -14,9 +14,8 @@
 
 @interface TouristSiteCollectionViewController : UIViewController<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 
-//@property NSString* titleLabelText;
+@property NSString* titleLabelText;
 
-//-(instancetype)initWithTitleText:(NSString*)titleText;
 
 @end
 

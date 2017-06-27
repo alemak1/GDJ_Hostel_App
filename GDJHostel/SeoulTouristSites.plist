@@ -194,5 +194,280 @@
 			<string>{37.5507062,126.9854373}</string>
 		</array>
 	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string></string>
+		<key>category</key>
+		<integer>8</integer>
+		<key>specialNote</key>
+		<string>Parking fee is 150 won.</string>
+		<key>physicalAddress</key>
+		<string>240, World Cup-ro, Mapo-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>new.sisul.or.kr </string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Seoul World Cup Stadium is shaped like a traditional Korean kite, and if seen from above, it looks as if a rectangular shield is being flown like a kite. The shape of the stadium represents flight towards victory, and it combines the hopes of the World Cup games and spirit and traditional culture of the Korean people. 
+The very first impression the stadium gives is that it is very large. It provides over 60,000 seats, and in fact, in terms of area and facility, it is the best in Asia. </string>
+		<key>name</key>
+		<string>Seoul World Cup Stadium</string>
+		<key>title</key>
+		<string>Seoul World Cup Stadium</string>
+		<key>boundary</key>
+		<array>
+			<string>{37.567217,126.8935}</string>
+			<string>{37.568246,126.893178}</string>
+			<string>{37.569547,126.893908}</string>
+			<string>{37.569828,126.895442}</string>
+			<string>{37.569284,126.896654}</string>
+			<string>{37.568264,126.897094}</string>
+			<string>{37.567124,126.896525}</string>
+			<string>{37.566631,126.895173}</string>
+			<string>{37.566631,126.895173}</string>
+		</array>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.566771,126.893453}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.569968,126.8911413}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.569968,126.89333}</string>
+		<key>midCoord</key>
+		<string>{37.5682588,126.8950834}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string></string>
+		<key>category</key>
+		<integer>0</integer>
+		<key>specialNote</key>
+		<string>Fees may be charged for special exhibits.</string>
+		<key>physicalAddress</key>
+		<string>400, World Cup buk-ro, Mapo-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>new.sisul.or.kr </string>
+		<key>daysClosed</key>
+		<array>
+			<integer>1</integer>
+		</array>
+		<key>closingTime</key>
+		<integer>19</integer>
+		<key>openingTime</key>
+		<integer>10</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>A museum dedicated to everything related to Korean films. Not only does the museum strives to collect, preserve, and screen Korean films, but it also Korea&apos;s largest archive of international and independent films. Visitors can watch and make films, and participate in special programs such as the filmmaking process experience and Children&apos;s Film Academy Awards</string>
+		<key>name</key>
+		<string>Korean Film Museum</string>
+		<key>title</key>
+		<string>Korean Film Museum</string>
+		<key>boundary</key>
+		<array>
+			<string>{37.580149,126.887382}</string>
+			<string>{37.580413,126.8872}</string>
+			<string>{37.58083,126.887672}</string>
+			<string>{37.580328,126.888326}</string>
+			<string>{37.580107,126.888197}</string>
+			<string>{37.579979,126.887693}</string>
+		</array>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.578313,126.885906}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.581816,126.890589}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.582207,126.885836}</string>
+		<key>midCoord</key>
+		<string>{37.5790354,126.8888522}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string></string>
+		<key>category</key>
+		<integer>9</integer>
+		<key>specialNote</key>
+		<string>Fees may be charged for special exhibits.</string>
+		<key>physicalAddress</key>
+		<string>366, World Cup buk-ro, Mapo-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>seouldmc.kr</string>
+		<key>daysClosed</key>
+		<array>
+			<integer>7</integer>
+		</array>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Located in Sangam-dong, Digital Media City is a cutting-edge digital media entertainment cluster covering an area of about 570,000㎡.
+
+Attractions and facilities at the DMC include the DMC Promotion Room, DMS (Digital Media Street), DMC Artpia, Digital Pavilion, and the Korea Cultural Contents Center (Korean Movie Museum).</string>
+		<key>name</key>
+		<string>Digital Media City</string>
+		<key>title</key>
+		<string>Digital Media City</string>
+		<key>boundary</key>
+		<array>
+			<string>{37.578083,126.897588}</string>
+			<string>{37.578593,126.898366}</string>
+			<string>{37.577921,126.898731}</string>
+			<string>{37.577623,126.898269}</string>
+		</array>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.577351,126.897282}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.578906,126.899256}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.577623,126.898269}</string>
+		<key>midCoord</key>
+		<string>{37.5779636,126.8982265}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string></string>
+		<key>category</key>
+		<integer>7</integer>
+		<key>specialNote</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string>243-60, World Cup-ro, Mapo-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>worldcuppark.seoul.go.kr </string>
+		<key>daysClosed</key>
+		<array>
+			<integer>7</integer>
+		</array>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Located in Sangam-dong, Digital Media City is a cutting-edge digital media entertainment cluster covering an area of about 570,000㎡.
+
+Attractions and facilities at the DMC include the DMC Promotion Room, DMS (Digital Media Street), DMC Artpia, Digital Pavilion, and the Korea Cultural Contents Center (Korean Movie Museum).</string>
+		<key>name</key>
+		<string>World Cup Park</string>
+		<key>title</key>
+		<string>World Cup Park</string>
+		<key>boundary</key>
+		<array>
+			<string>{37.562884,126.88577}</string>
+			<string>{37.564423,126.885824}</string>
+			<string>{37.566158,126.887331}</string>
+			<string>{37.565639,126.888511}</string>
+			<string>{37.564755,126.887578}</string>
+		</array>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.562722,126.885057}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5666,126.88944}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.562722,126.8828683}</string>
+		<key>midCoord</key>
+		<string>{37.5670679,126.8828353}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string></string>
+		<key>category</key>
+		<integer>7</integer>
+		<key>specialNote</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string></string>
+		<key>webAddress</key>
+		<string></string>
+		<key>daysClosed</key>
+		<array>
+			<integer>7</integer>
+		</array>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string></string>
+		<key>name</key>
+		<string>Pyounghwa Park</string>
+		<key>title</key>
+		<string>Pyounghwa Park</string>
+		<key>boundary</key>
+		<array>
+			<string>{37.561923,126.890583}</string>
+			<string>{37.561923,126.890583}</string>
+			<string>{37.561923,126.890583}</string>
+			<string>{37.5619655,126.8923639}</string>
+			<string>{37.563194,126.894925}</string>
+			<string>{37.562633,126.8947}</string>
+			<string>{37.562633,126.8947}</string>
+			<string>{37.562633,126.8947}</string>
+		</array>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.561017,126.890612}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.564162,126.89515}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.564307,126.890901}</string>
+		<key>midCoord</key>
+		<string>{37.562565,126.892715}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string></string>
+		<key>category</key>
+		<integer>3</integer>
+		<key>specialNote</key>
+		<string>Opening time is 10 p.m., and closing time is 6 p.m. the following day.</string>
+		<key>physicalAddress</key>
+		<string>274, Cheonggyecheon-ro, Jung-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>http://pyounghwa.com/eng 
+http://pyounghwa.com/eng 
+</string>
+		<key>daysClosed</key>
+		<array>
+			<integer>7</integer>
+		</array>
+		<key>closingTime</key>
+		<integer>18</integer>
+		<key>openingTime</key>
+		<integer>22</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>The Pyounghwa Fashion Town market in Dongdaemun has been selling fashion clothing and accessories for over 50 years ever since the end of the Korean War. It was here that in 1953 North Korean refugees started selling clothes made from US army uniforms. Their market was then named Pyounghwa, which means peace, in the hope that no other wars would be fought on Korean soil. The Pyounghwa Fashion Town was therefore the beginning of the 30,000 stores that now make up Dongdaemun Fashion Town, which is seen as one of the global centers of the fashion industry.</string>
+		<key>name</key>
+		<string>Pyounghwa Fashion Town</string>
+		<key>title</key>
+		<string>Pyounghwa Fashion Town</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.569065,127.004828}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.569975,127.007263}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.569065,127.004828}</string>
+		<key>midCoord</key>
+		<string>{37.5694549,127.0066594}</string>
+	</dict>
 </array>
 </plist>

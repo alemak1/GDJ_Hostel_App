@@ -19,6 +19,9 @@
 
 -(instancetype)initWithFileName:(NSString*)fileName;
 
+-(NSInteger)totalNumberOfTouristSitesInMasterArray;
+-(TouristSiteConfiguration*)getConfigurationObjectFromMasterArray:(NSInteger)index;
+
 -(NSString*) abbreviatedDebugDescription;
 -(NSString*) detailedDebugDescription;
 

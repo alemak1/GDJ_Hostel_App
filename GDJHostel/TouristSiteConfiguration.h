@@ -36,6 +36,9 @@ typedef enum TouristSiteCategory{
     RADIO_TOWER,
     NATURAL_SITE,
     PARK,
+    SPORT_STADIUM,
+    OTHER,
+    TOURIST_SITE_CATEGORY_END_INDEX
 }TouristSiteCategory;
 
 

@@ -13,6 +13,7 @@
 
 @interface TouristSiteCollectionViewController () <UICollectionViewDataSourcePrefetching>
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -45,7 +46,12 @@
 
 
 -(void)viewDidAppear:(BOOL)animated{
+    [self.titleLabel setText:self.titleLabelText];
+
     
+}
+
+-(void)viewDidLoad{
     
 }
 
@@ -55,7 +61,7 @@
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
     
-    return 10;
+    return [self.siteManager totalNumberOfTouristSitesInMasterArray];
 
 }
 
@@ -69,10 +75,11 @@
     
     TouristSiteCollectionViewCell* cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"TouristCollectionViewCell" forIndexPath:indexPath];
 
+    TouristSiteConfiguration* configurationObject = [self.siteManager getConfigurationObjectFromMasterArray:indexPath.row];
     
-    cell.backgroundColor = [UIColor orangeColor];
     [cell setSiteImage:[UIImage imageNamed:@"RoomNo2_1"]];
-    cell.titleText = @"A great tourist site";
+    cell.titleText = [configurationObject title];
+    
     return cell;
     
 }

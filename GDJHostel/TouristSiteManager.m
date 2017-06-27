@@ -74,67 +74,72 @@ NSArray* _touristSiteDictArray;
     return debugString;
 }
 
-//TODO: Use the predicate syntax to get arrays derived from the original set of tourist configuraiton objects
 
-- (NSMutableArray<TouristSiteConfiguration*>*)getArrayForTouristSiteCategory:(TouristSiteCategory)touristSiteCategory{
+#pragma mark COLLECTION VIEW DATA SOURCE METHODS 
+
+-(NSInteger)totalNumberOfTouristSitesInMasterArray{
+    return [self.configurationArray count];
+}
+
+-(TouristSiteConfiguration*)getConfigurationObjectFromMasterArray:(NSInteger)index{
     
-    NSPredicate* categoryPredicate = [NSPredicate predicateWithFormat:@"SELF"];
+    if(index >= [self.configurationArray count]){
+        return nil;
+    }
     
-    NSMutableArray* copiedArray = [self.configurationArray copy];
+    return [self.configurationArray objectAtIndex:index];
+}
+
+#pragma mark UTILITY FUNCTIONS FOR ARRAY FILTERING
+
+- (NSArray<TouristSiteConfiguration*>*)getArrayForTouristSiteCategory:(TouristSiteCategory)touristSiteCategory{
     
-    [copiedArray filterUsingPredicate:categoryPredicate];
     
-    return copiedArray;
+    return [self.configurationArray filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(TouristSiteConfiguration* configurationObject, NSDictionary *bindings) {
+        
+        return [configurationObject touristSiteCategory] == touristSiteCategory;
+    }
+                                                          ]];
     
 }
 
 
-- (NSMutableArray<TouristSiteConfiguration*>*)getArrayForMaximumTravelingTime:(CGFloat)maxTravelingTime{
+- (NSArray<TouristSiteConfiguration*>*)getArrayForMaximumTravelingTime:(CGFloat)maxTravelingTime{
     
-    NSPredicate* categoryPredicate = [NSPredicate predicateWithFormat:@"SELF"];
     
-    NSMutableArray* copiedArray = [self.configurationArray copy];
-    
-    [copiedArray filterUsingPredicate:categoryPredicate];
-    
-    return copiedArray;
-    
-}
-
-- (NSMutableArray<TouristSiteConfiguration*>*)getArrayForMinimumDistanceFromUser:(CGFloat)minimumDistance{
-    
-    NSPredicate* categoryPredicate = [NSPredicate predicateWithFormat:@"SELF"];
-    
-    NSMutableArray* copiedArray = [self.configurationArray copy];
-    
-    [copiedArray filterUsingPredicate:categoryPredicate];
-    
-    return copiedArray;
+    return [self.configurationArray filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(TouristSiteConfiguration* configurationObject, NSDictionary *bindings) {
+        
+        return [configurationObject travelingTimeFromUserLocation] < maxTravelingTime;
+    }
+    ]];
     
 }
 
-- (NSMutableArray<TouristSiteConfiguration*>*)getArrayForAdmissionFee:(CGFloat)admissionFee{
+
+- (NSArray<TouristSiteConfiguration*>*)getArrayForMaximumDistanceFromUser:(CGFloat)maximumDistanceFromUser{
     
-    NSPredicate* categoryPredicate = [NSPredicate predicateWithFormat:@"SELF"];
+    return [self.configurationArray filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(TouristSiteConfiguration* configurationObject,NSDictionary* bindings){
     
-    NSMutableArray* copiedArray = [self.configurationArray copy];
+        return [configurationObject distanceFromUser] < maximumDistanceFromUser;
     
-    [copiedArray filterUsingPredicate:categoryPredicate];
-    
-    return copiedArray;
+    }]];
     
 }
 
-- (NSMutableArray<TouristSiteConfiguration*>*)getArrayForCurrentlyOpenSites{
+- (NSArray<TouristSiteConfiguration*>*)getArrayForAdmissionFee:(CGFloat)admissionFee{
     
-    NSPredicate* categoryPredicate = [NSPredicate predicateWithFormat:@"SELF"];
+    return [self.configurationArray filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(TouristSiteConfiguration* configurationObject, NSDictionary* bindings){
     
-    NSMutableArray* copiedArray = [self.configurationArray copy];
+        return [configurationObject admissionFee] < admissionFee;
+    }]];
+}
+
+- (NSArray<TouristSiteConfiguration*>*)getArrayForCurrentlyOpenSites{
     
-    [copiedArray filterUsingPredicate:categoryPredicate];
+    return [self.configurationArray filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(TouristSiteConfiguration* configurationObject, NSDictionary* bindingss){
     
-    return copiedArray;
-    
+        return [configurationObject isOpen];
+    }]];
 }
 
 

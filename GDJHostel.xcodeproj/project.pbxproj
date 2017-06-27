@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD27B12E1F0250B700059152 /* TouristSiteCategorySelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD27B12D1F0250B700059152 /* TouristSiteCategorySelectionController.m */; };
 		BD2995B11EFE68EB009E64BF /* SurvivalWordsPhrases.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD2995B01EFE68EB009E64BF /* SurvivalWordsPhrases.plist */; };
 		BD2CAA8E1EFFCCEF00C0E540 /* HostelFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA8D1EFFCCEF00C0E540 /* HostelFlowLayout.m */; };
 		BD2CAA911EFFCD6200C0E540 /* HostelCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA901EFFCD6200C0E540 /* HostelCollectionController.m */; };
@@ -64,6 +65,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD27B1291F02505700059152 /* TouristSiteCategorySelectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristSiteCategorySelectionController.h; sourceTree = "<group>"; };
+		BD27B12D1F0250B700059152 /* TouristSiteCategorySelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristSiteCategorySelectionController.m; sourceTree = "<group>"; };
 		BD2995B01EFE68EB009E64BF /* SurvivalWordsPhrases.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SurvivalWordsPhrases.plist; sourceTree = "<group>"; };
 		BD2CAA8C1EFFCCE200C0E540 /* HostelFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostelFlowLayout.h; sourceTree = "<group>"; };
 		BD2CAA8D1EFFCCEF00C0E540 /* HostelFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelFlowLayout.m; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				BD3151131F00C844002332B8 /* TouristSiteCollectionViewController.m */,
 				BD312E001F01517B00FB90E3 /* UIView+HelperMethods.h */,
 				BD312E011F01517B00FB90E3 /* UIView+HelperMethods.m */,
+				BD27B1291F02505700059152 /* TouristSiteCategorySelectionController.h */,
+				BD27B12D1F0250B700059152 /* TouristSiteCategorySelectionController.m */,
 			);
 			name = TouristSitesCollectionController;
 			sourceTree = "<group>";
@@ -462,6 +467,7 @@
 				BD68476D1F00F102004732FB /* ImageKeyConstants.m in Sources */,
 				BD3844A61EFE450800F2E981 /* DirectionsMenuController.m in Sources */,
 				BD5C3EBC1EFD4BA000616400 /* HostelAreaMapViewController.m in Sources */,
+				BD27B12E1F0250B700059152 /* TouristSiteCategorySelectionController.m in Sources */,
 				BD2CAA9B1EFFE59800C0E540 /* TouristSiteConfiguration.m in Sources */,
 				BD3844AB1EFE4FD300F2E981 /* HostelLocationAnnotation.m in Sources */,
 				BD3844AF1EFE526300F2E981 /* LocationSearchController.m in Sources */,
