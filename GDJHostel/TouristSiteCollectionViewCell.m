@@ -44,51 +44,6 @@ static void *TouristConfigurationContext = &TouristConfigurationContext;
 /** The TouristSiteCollectionViewCell can observe it's tourist configuration object; make sure that tourist configuration object's computed properties also are KVO compliant **/
 
 
--(void)didMoveToWindow{
-    
-    /**
-    [self addObserver:self forKeyPath:@"touristSiteConfigurationObject.distanceFromUser" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:TouristConfigurationContext];
-    
-    NSLog(@"From didMoveToWindow: added the observer for tourist site configuration");
-     **/
-
-}
-
--(void)didMoveToSuperview{
-    /**
-    [self addObserver:self forKeyPath:@"touristSiteConfigurationObject.distanceFromUser" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:TouristConfigurationContext];
-    
-    NSLog(@"From didMoveToWindow: added the observer for tourist site configuration");
-     **/
-
-}
-
-
-
-
-
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    
-    if(context == TouristConfigurationContext){
-        NSLog(@"Updating the distance to site text in response to observed change in tourist configuration object...");
-        /**
-        [self setDistanceToSiteText:[self.touristSiteConfigurationObject distanceFromUserString]];
-         **/
-    }
-}
-
--(void)dealloc{
-    
-    /**
-    @try {
-        [self removeObserver:self forKeyPath:@"touristSiteConfiguration.distanceFromUser"];
-
-    } @catch (NSException *exception) {
-        NSLog(@"An exception occured: %@",[exception description]);
-    } 
-     
-     **/
-}
 
 /** Implement getters and setters for labels and image view **/
 
@@ -120,14 +75,11 @@ static void *TouristConfigurationContext = &TouristConfigurationContext;
 
 
 -(void)setTravelingTimeText:(NSString *)travelingTimeText{
-    NSString* labelString = @"Traveling Time: ";
-    
-    NSString* labelStringWithTime = [labelString stringByAppendingString:travelingTimeText];
     
     [self.travelTimeLabel setAdjustsFontSizeToFitWidth:YES];
     [self.travelTimeLabel setMinimumScaleFactor:0.50];
     
-    [self.travelTimeLabel setText:labelStringWithTime];
+    [self.travelTimeLabel setText:travelingTimeText];
 }
 
 -(NSString *)travelingTimeText{
@@ -176,6 +128,7 @@ static void *TouristConfigurationContext = &TouristConfigurationContext;
     /** Since this collection view cell is a subview of a collecion view that is being managed by a viewcontroller, which in turn is a child view controller for paret view contrller that is the root view of a navigation controller, posting notification is best option to  transfer data **/
     
     //Send notification and pass data so that the TouristCategorySelectionController's navigation controller can present the detail controller
+    
     NSDictionary* userInfoDict = [NSDictionary dictionaryWithObjectsAndKeys:self.touristSiteConfigurationObject,@"touristSiteConfiguration", nil];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"presentTouristSiteDetailNotification" object:self userInfo:userInfoDict];

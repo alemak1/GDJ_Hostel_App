@@ -229,10 +229,28 @@ CLLocation* _lastUpdatedUserLocation;
 
 -(BOOL)isOpen{
     
+    CGFloat openingTime = [self.openingTime doubleValue];
+    CGFloat closingTime = [self.closingTime doubleValue];
+    
+    /** If the site is open all hours, opening and closing time are less than zero **/
+    if(openingTime < 0.00 || closingTime < 0.00){
+        return true;
+    }
+    
     NSTimeInterval currentTimeInSeconds = self.currentDateForKoreaInSeconds;
+
+    /** If operating hours are from late evening to early morning the next time, then first check if opening time is greater than closing time (i.e. bars, clubs, and Pyoungwa Fashion town are typical examples) **/
+    
+    if(openingTime > closingTime){
+         return !(currentTimeInSeconds > self.closingTimeInSeconds) && (currentTimeInSeconds < self.openingTimeInSeconds);
+        
+    }
+    
+    /** For typical operating hours, where opening and closing time fall within the same 24-hour period, compare current time against closing and opening times **/
     
     return (currentTimeInSeconds > self.openingTimeInSeconds) && (currentTimeInSeconds < self.closingTimeInSeconds);
 }
+
 
 -(NSTimeInterval)timeUntilClosing{
     
@@ -240,6 +258,11 @@ CLLocation* _lastUpdatedUserLocation;
         return -1.00;
     }
     
+    if(self.openingTime > self.closingTime){
+        
+        //TODO: Not yet implemented
+        return -5000000;
+    }
     
     NSTimeInterval timeUntilClosing = [self closingTimeInSeconds] - [self currentDateForKoreaInSeconds];
     
@@ -252,6 +275,14 @@ CLLocation* _lastUpdatedUserLocation;
     
     if(self.isOpen){
         return -1.00;
+    }
+    
+    if(self.openingTime > self.closingTime){
+        //TODO: Not yet implemented
+        
+        return -5000000;
+
+        
     }
     
     return [self openingTimeInSeconds] - [self currentDateForKoreaInSeconds];
@@ -384,6 +415,12 @@ CLLocation* _lastUpdatedUserLocation;
     
     return [NSString timeHHMMSSFormattedStringFromTotalSeconds:self.travelingTimeFromUserLocation];
     
+    
+}
+
+-(int)numberOfDaysClosed{
+    
+    return _numberOfDaysClosed;
     
 }
 

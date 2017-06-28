@@ -13,18 +13,8 @@
 #import <MapKit/MapKit.h>
 
 #import "OverlayConfiguration.h"
-
+#import "DayOfWeek.h"
 @interface TouristSiteConfiguration : OverlayConfiguration
-
-typedef enum DayOfWeek{
-    MONDAY = 1,
-    TUESDAY,
-    WEDNESDAY,
-    THURSDAY,
-    FRIDAY,
-    SATURDAY,
-    SUNDAY
-}DayOfWeek;
 
 
 typedef enum TouristSiteCategory{
@@ -74,6 +64,7 @@ typedef enum TouristSiteCategory{
 
 @property (readonly) CGFloat distanceFromUser;
 @property (readonly) CGFloat travelingTimeFromUserLocation;
+@property (readonly) int numberOfDaysClosed;
 
 /** Initializers **/
 

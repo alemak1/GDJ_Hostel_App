@@ -119,6 +119,7 @@
 		BD31A5AF1F03931200C018DB /* SeoulTourismNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoulTourismNavigationController.h; sourceTree = "<group>"; };
 		BD31A5B01F03932100C018DB /* SeoulTourismNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeoulTourismNavigationController.m; sourceTree = "<group>"; };
 		BD32793F1F00124F0007FD64 /* ParkRoute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ParkRoute.plist; sourceTree = "<group>"; };
+		BD32E41D1F03A83F00F847B3 /* DayOfWeek.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DayOfWeek.h; sourceTree = "<group>"; };
 		BD375DC91EFE98830002525F /* ScrollableInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollableInfoController.h; sourceTree = "<group>"; };
 		BD375DCA1EFE98910002525F /* ScrollableInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollableInfoController.m; sourceTree = "<group>"; };
 		BD3844A41EFE450800F2E981 /* DirectionsMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionsMenuController.h; sourceTree = "<group>"; };
@@ -247,6 +248,7 @@
 				BD312E011F01517B00FB90E3 /* UIView+HelperMethods.m */,
 				BDF55EBB1F036906003FC663 /* NSString+HelperMethods.h */,
 				BDF55EBC1F036906003FC663 /* NSString+HelperMethods.m */,
+				BD32E41D1F03A83F00F847B3 /* DayOfWeek.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";

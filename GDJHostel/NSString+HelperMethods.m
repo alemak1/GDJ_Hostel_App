@@ -30,5 +30,26 @@
     return [NSString stringWithFormat:@"%02d:%02d:%02d",hours, minutes,seconds];
 }
 
++ (NSString*) getDayAbbreviation:(DayOfWeek)dayOfWeek{
+    
+    switch (dayOfWeek) {
+        case MONDAY:
+            return @"Mon";
+        case TUESDAY:
+            return @"Tues";
+        case WEDNESDAY:
+            return @"Wed";
+        case THURSDAY:
+            return @"Th";
+        case FRIDAY:
+            return @"Fri";
+        case SATURDAY:
+            return @"Sat";
+        case SUNDAY:
+            return @"Sun";
+        default:
+            return @"";
+    }
+}
 
 @end

@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DayOfWeek.h"
 
 @interface NSString (HelperMethods)
 
 + (NSString *)timeFormattedStringFromTotalSeconds:(int)totalSeconds;
 + (NSString *)timeHHMMSSFormattedStringFromTotalSeconds:(int)totalSeconds;
++ (NSString*) getDayAbbreviation:(DayOfWeek)dayOfWeek;
 
 @end

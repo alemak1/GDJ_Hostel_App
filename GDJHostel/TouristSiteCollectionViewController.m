@@ -83,7 +83,9 @@
     [cell setSiteImage:[UIImage imageNamed:@"RoomNo2_1"]];
     
     cell.titleText = [configurationObject title];
-    cell.travelingTimeText = [configurationObject travelingTimeFromUserLocationString];
+    
+    cell.travelingTimeText = [configurationObject isOpen] ? @"Open" : @"Closed";
+    
     cell.distanceToSiteText = [configurationObject distanceFromUserString];
     cell.touristSiteConfigurationObject = configurationObject;
 

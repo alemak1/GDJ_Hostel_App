@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SeoulTourismNavigationController.h"
 #import "TouristSiteConfiguration.h"
+#import "TouristSiteDetailInformationController.h"
 
 @interface SeoulTourismNavigationController ()
 
@@ -39,7 +40,11 @@
     
     if([segue.identifier isEqualToString:@"showTouristSiteDetailController"]){
         
-        NSLog(@"Configuration destination view controller with tourist information object with title: %@",[self.touristSiteConfiguration title]);
+        TouristSiteDetailInformationController* detailInfoController = (TouristSiteDetailInformationController*)segue.destinationViewController;
+        
+        [detailInfoController setTouristSiteConfiguration:self.touristSiteConfiguration];
+        
+       
         
         //TODO: configure the view controller with tourist configuration object
     }

@@ -77,7 +77,7 @@
     
     CGRect(^getControllerFrame)(void) = ^CGRect(void){
         
-        CGRect frame = CGRectMake(0.00, controllerIndex*controllerHeight+controllerHeight*0.20, scrollViewWidth, controllerHeight);
+        CGRect frame = CGRectMake(0.00, controllerIndex*controllerHeight+controllerHeight*0.05, scrollViewWidth, controllerHeight);
         
         return frame;
     };
