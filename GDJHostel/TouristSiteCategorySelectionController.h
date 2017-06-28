@@ -11,9 +11,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "TouristSiteManager.h"
+
 
 @interface TouristSiteCategorySelectionController : UIViewController
 
+@property TouristSiteManager* siteManager;
 
 @end
 

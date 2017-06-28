@@ -62,8 +62,12 @@ typedef enum TouristSiteCategory{
 /** Computed properties determined dynamically based on local time and user location info **/
 
 @property (readonly) BOOL isOpen;
-@property (readonly) NSDate* timeUntilClosing;
-@property (readonly) NSDate* timeUntilOpening;
+
+@property (readonly) NSString* timeUntilClosingString;
+@property (readonly) NSString* timeUntilOpeningString;
+
+@property (readonly) NSTimeInterval timeUntilClosing;
+@property (readonly) NSTimeInterval timeUntilOpening;
 
 @property (readonly) CGFloat distanceFromUser;
 @property (readonly) CGFloat travelingTimeFromUserLocation;
@@ -75,6 +79,9 @@ typedef enum TouristSiteCategory{
 
 -(NSString*)debugDescriptionA;
 -(NSString*)debugDescriptionB;
+
+-(CLRegion*) getRegionFromTouristConfiguration;
+
 
 @end
 

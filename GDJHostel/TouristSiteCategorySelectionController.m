@@ -9,11 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "TouristSiteCategorySelectionController.h"
 #import "TouristSiteCollectionViewController.h"
+#import "AppLocationManager.h"
 
 @interface TouristSiteCategorySelectionController ()
+
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)returnToMainMenu:(UIBarButtonItem *)sender;
+
 
 
 @end
@@ -24,6 +28,18 @@
 -(void)viewWillLayoutSubviews{
     
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    UserLocationManager* sharedLocationManager = [UserLocationManager sharedLocationManager];
+    
+    [sharedLocationManager requestAuthorizationAndStartUpdates];
+
+    self.siteManager = [[TouristSiteManager alloc] initWithFileName:@"SeoulTouristSites"];
+    
+    [sharedLocationManager startMonitoringForRegions:[self.siteManager getRegionsForAllTouristLocations]];
+
     
 }
 

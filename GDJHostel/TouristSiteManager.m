@@ -143,6 +143,19 @@ NSArray* _touristSiteDictArray;
 }
 
 
+-(NSArray<CLRegion*>*)getRegionsForAllTouristLocations{
+    
+    NSMutableArray* regionArray = [[NSMutableArray alloc] init];
+    
+    for(TouristSiteConfiguration* siteConfiguration in self.configurationArray){
+        
+        CLRegion* siteRegion = [siteConfiguration getRegionFromTouristConfiguration];
+        
+        [regionArray addObject:siteRegion];
+    }
+   
+    return [NSArray arrayWithArray:regionArray];
+}
 
 
 @end

@@ -22,6 +22,8 @@
 -(NSInteger)totalNumberOfTouristSitesInMasterArray;
 -(TouristSiteConfiguration*)getConfigurationObjectFromMasterArray:(NSInteger)index;
 
+-(NSArray<CLRegion*>*)getRegionsForAllTouristLocations;
+
 -(NSString*) abbreviatedDebugDescription;
 -(NSString*) detailedDebugDescription;
 

@@ -42,6 +42,8 @@
 		BD3844AC1EFE4FD300F2E981 /* HostelLocationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3844AA1EFE4FD300F2E981 /* HostelLocationAnnotationView.m */; };
 		BD3844AF1EFE526300F2E981 /* LocationSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3844AE1EFE526300F2E981 /* LocationSearchController.m */; };
 		BD3844B31EFE579B00F2E981 /* ToHostelDirectionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3844B21EFE579B00F2E981 /* ToHostelDirectionsController.m */; };
+		BD3A9C7A1F0280A1006D1CD8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3A9C791F0280A1006D1CD8 /* CoreLocation.framework */; };
+		BD3A9C7D1F02839E006D1CD8 /* AppLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3A9C7C1F02839E006D1CD8 /* AppLocationManager.m */; };
 		BD5C3EBC1EFD4BA000616400 /* HostelAreaMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5C3EBB1EFD4BA000616400 /* HostelAreaMapViewController.m */; };
 		BD5C3EC01EFD4C9000616400 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5C3EBF1EFD4C9000616400 /* MapKit.framework */; };
 		BD5C3EC41EFD516E00616400 /* OverlayConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5C3EC31EFD516E00616400 /* OverlayConfiguration.m */; };
@@ -62,6 +64,7 @@
 		BDA32EE21EFF39DB0087BF19 /* KoreanAudioPhraseController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA32EE11EFF39DB0087BF19 /* KoreanAudioPhraseController.m */; };
 		BDF2348B1F00216600E9ED63 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA32F061EFF45910087BF19 /* AudioController.m */; };
 		BDF2348C1F0021BA00E9ED63 /* HostelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA931EFFD0EC00C0E540 /* HostelCollectionViewCell.m */; };
+		BDF55EBD1F036906003FC663 /* NSString+HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF55EBC1F036906003FC663 /* NSString+HelperMethods.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +125,9 @@
 		BD3844AE1EFE526300F2E981 /* LocationSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSearchController.m; sourceTree = "<group>"; };
 		BD3844B11EFE579B00F2E981 /* ToHostelDirectionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToHostelDirectionsController.h; sourceTree = "<group>"; };
 		BD3844B21EFE579B00F2E981 /* ToHostelDirectionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToHostelDirectionsController.m; sourceTree = "<group>"; };
+		BD3A9C791F0280A1006D1CD8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BD3A9C7B1F028390006D1CD8 /* AppLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppLocationManager.h; sourceTree = "<group>"; };
+		BD3A9C7C1F02839E006D1CD8 /* AppLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppLocationManager.m; sourceTree = "<group>"; };
 		BD5C3EBA1EFD4B9100616400 /* HostelAreaMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostelAreaMapViewController.h; sourceTree = "<group>"; };
 		BD5C3EBB1EFD4BA000616400 /* HostelAreaMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelAreaMapViewController.m; sourceTree = "<group>"; };
 		BD5C3EBF1EFD4C9000616400 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -151,6 +157,8 @@
 		BDA32EE11EFF39DB0087BF19 /* KoreanAudioPhraseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KoreanAudioPhraseController.m; sourceTree = "<group>"; };
 		BDA32F051EFF45850087BF19 /* AudioController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
 		BDA32F061EFF45910087BF19 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
+		BDF55EBB1F036906003FC663 /* NSString+HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HelperMethods.h"; sourceTree = "<group>"; };
+		BDF55EBC1F036906003FC663 /* NSString+HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HelperMethods.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3A9C7A1F0280A1006D1CD8 /* CoreLocation.framework in Frameworks */,
 				BD5C3EC01EFD4C9000616400 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,10 +187,10 @@
 				BD32793F1F00124F0007FD64 /* ParkRoute.plist */,
 				BD3151121F00C82F002332B8 /* TouristSiteCollectionViewController.h */,
 				BD3151131F00C844002332B8 /* TouristSiteCollectionViewController.m */,
-				BD312E001F01517B00FB90E3 /* UIView+HelperMethods.h */,
-				BD312E011F01517B00FB90E3 /* UIView+HelperMethods.m */,
 				BD27B1291F02505700059152 /* TouristSiteCategorySelectionController.h */,
 				BD27B12D1F0250B700059152 /* TouristSiteCategorySelectionController.m */,
+				BD3A9C7B1F028390006D1CD8 /* AppLocationManager.h */,
+				BD3A9C7C1F02839E006D1CD8 /* AppLocationManager.m */,
 			);
 			name = TouristSitesCollectionController;
 			sourceTree = "<group>";
@@ -221,6 +230,17 @@
 			name = NavigationAidControllers;
 			sourceTree = "<group>";
 		};
+		BD3A9C7E1F028C64006D1CD8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BD312E001F01517B00FB90E3 /* UIView+HelperMethods.h */,
+				BD312E011F01517B00FB90E3 /* UIView+HelperMethods.m */,
+				BDF55EBB1F036906003FC663 /* NSString+HelperMethods.h */,
+				BDF55EBC1F036906003FC663 /* NSString+HelperMethods.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		BD5C3EBD1EFD4BA400616400 /* HostelAreaMapViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +253,7 @@
 		BD5C3EBE1EFD4C9000616400 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD3A9C791F0280A1006D1CD8 /* CoreLocation.framework */,
 				BD5C3EBF1EFD4C9000616400 /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -284,6 +305,7 @@
 		BD902CD71EFD31F600DD1034 /* GDJHostel */ = {
 			isa = PBXGroup;
 			children = (
+				BD3A9C7E1F028C64006D1CD8 /* Utils */,
 				BD68476E1F00F10F004732FB /* ImageCacheUtil */,
 				BD2CAA951EFFDD8600C0E540 /* TouristSitesCollectionController */,
 				BDA32EE31EFF41220087BF19 /* AudioFiles */,
@@ -461,7 +483,9 @@
 				BD2CAA8E1EFFCCEF00C0E540 /* HostelFlowLayout.m in Sources */,
 				BD2EA7751EFFC4CB00A8572B /* RoomInfoController.m in Sources */,
 				BD2CAA911EFFCD6200C0E540 /* HostelCollectionController.m in Sources */,
+				BDF55EBD1F036906003FC663 /* NSString+HelperMethods.m in Sources */,
 				BD3844AC1EFE4FD300F2E981 /* HostelLocationAnnotationView.m in Sources */,
+				BD3A9C7D1F02839E006D1CD8 /* AppLocationManager.m in Sources */,
 				BD30C5171EFDDCE70032FE64 /* HostelInformationController.m in Sources */,
 				BD3151141F00C844002332B8 /* TouristSiteCollectionViewController.m in Sources */,
 				BD68476D1F00F102004732FB /* ImageKeyConstants.m in Sources */,

@@ -10,6 +10,7 @@
 #import "TouristSiteCollectionViewCell.h"
 #import "UIView+HelperMethods.h"
 #import "TouristSiteManager.h"
+#import "TouristSiteCategorySelectionController.h"
 
 @interface TouristSiteCollectionViewController () <UICollectionViewDataSourcePrefetching>
 
@@ -32,8 +33,10 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
+    TouristSiteCategorySelectionController* parentController = (TouristSiteCategorySelectionController*)self.parentViewController;
+
     
-    self.siteManager = [[TouristSiteManager alloc] initWithFileName:@"SeoulTouristSites"];
+    self.siteManager = [parentController siteManager];
     //NSLog(@"Site manager debug info: %@",[self.siteManager detailedDebugDescription]);
     
     [self.collectionView setDelegate:self];

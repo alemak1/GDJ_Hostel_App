@@ -23,8 +23,11 @@
 
 @interface TouristSiteCollectionViewCell : UICollectionViewCell
 
+/**
 @property UIImage* siteImage;
 @property NSString* titleText;
+ **/
+
 @property TouristSiteConfiguration* touristSiteConfigurationObject;
 
 

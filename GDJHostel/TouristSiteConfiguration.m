@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "TouristSiteConfiguration.h"
+#import "NSString+HelperMethods.h"
+
+@interface TouristSiteConfiguration ()
+
+@property (readonly) NSDate* currentDateForKorea;
+@property (readonly) NSTimeInterval currentDateForKoreaInSeconds;
+
+@property (readonly) NSTimeInterval openingTimeInSeconds;
+@property (readonly) NSTimeInterval closingTimeInSeconds;
+
+@end
 
 @implementation TouristSiteConfiguration
 
@@ -23,6 +34,8 @@
 **/
 
 NSUInteger _numberOfDaysClosed = 0;
+CLLocation* _lastUpdatedUserLocation;
+
 
 /** Tourist Objects can also be initialized from file directly, with the initializer implementation overriding that of the base class **/
 
@@ -63,10 +76,15 @@ NSUInteger _numberOfDaysClosed = 0;
             NSLog(@"%@ is closed on: %d",_title,_daysClosed[i]);
         }
         
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUserLocation:) name:@"userLocationDidUpdateNotification" object:nil];
+        
+        
     }
     
     return self;
 }
+
 
 /** Since the TouristSiteManager is initialized from a plist file containing an array of dictionaries, each configuration object can be initialized with dictionary in order to facilitiate the initialization of the Tourist Object manager class **/
 
@@ -185,40 +203,167 @@ NSUInteger _numberOfDaysClosed = 0;
     return stringCategory;
 }
 
-/**
--(BOOL)isOpen{
-    //TODO: get current time, match against opening/closing hours
+/** Helper function to convert the TouristConfigurationObject to a CLRegion that can be monitored for entry and exit events **/
+
+-(CLRegion*) getRegionFromTouristConfiguration{
+    
+    CLLocation * midLocation = [[CLLocation alloc] initWithLatitude:self.midCoordinate.latitude longitude:self.midCoordinate.longitude];
+    
+    CLLocation * overlayTopRightLocation = [[CLLocation alloc] initWithLatitude:self.overlayTopRightCoordinate.latitude longitude:self.midCoordinate.longitude];
+    
+    
+    double regionRadius = [midLocation distanceFromLocation: overlayTopRightLocation];
+    
+    CLRegion* region = [[CLCircularRegion alloc] initWithCenter:self.midCoordinate radius:regionRadius identifier: self.title];
+    
+    [region setNotifyOnExit:YES];
+    [region setNotifyOnEntry:YES];
+    
+    return region;
+    
 }
 
--(NSDate *)timeUntilClosing{
+
+-(BOOL)isOpen{
+    
+    NSTimeInterval currentTimeInSeconds = self.currentDateForKoreaInSeconds;
+    
+    return (currentTimeInSeconds > self.openingTimeInSeconds) && (currentTimeInSeconds < self.closingTimeInSeconds);
+}
+
+-(NSTimeInterval)timeUntilClosing{
     
     if(!self.isOpen){
-        return nil;
+        return -1.00;
     }
     
-    //TODO: get current time, calculate difference between closing time and current time
+    
+    NSTimeInterval timeUntilClosing = [self closingTimeInSeconds] - [self currentDateForKoreaInSeconds];
+    
+    return timeUntilClosing;
+    
 }
 
 
--(NSDate *)timeUntilOpening{
+-(NSTimeInterval)timeUntilOpening{
     
     if(self.isOpen){
-        return nil;
+        return -1.00;
     }
     
-    //TODO: get current time, calculate difference between opening and current time
+    return [self openingTimeInSeconds] - [self currentDateForKoreaInSeconds];
+   
 }
 
+-(NSString *)timeUntilClosingString{
+    
+    return [NSString timeFormattedStringFromTotalSeconds:self.timeUntilClosing];
+}
+
+-(NSString*)timeUntilOpeningString{
+    return [NSString timeFormattedStringFromTotalSeconds:self.timeUntilOpening];
+}
 
 -(CGFloat)distanceFromUser{
     //TODO: get user's current location to calculate the distance to the site
+    CLLocation* touristSiteLocation = [[CLLocation alloc] initWithLatitude:self.midCoordinate.latitude longitude:self.midCoordinate.longitude];
+    
+    return [_lastUpdatedUserLocation distanceFromLocation:touristSiteLocation];
 }
 
 -(CGFloat)travelingTimeFromUserLocation{
     //TODO: get the user's current location to calculate the distance to the site
+    
+    MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc] init];
+    directionsRequest.transportType = MKDirectionsTransportTypeAny;
+    
+
+    MKPlacemark* userLocationPlacemark = [[MKPlacemark alloc] initWithCoordinate: CLLocationCoordinate2DMake(_lastUpdatedUserLocation.coordinate.latitude, _lastUpdatedUserLocation.coordinate.longitude)];
+    
+    MKMapItem* userLocationMapItem = [[MKMapItem alloc] initWithPlacemark:userLocationPlacemark];
+    
+    [directionsRequest setSource:userLocationMapItem];
+    
+    MKPlacemark* touristSitePlacemark = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(self.midCoordinate.latitude, self.midCoordinate.longitude)];
+    MKMapItem* touristSiteMapItem = [[MKMapItem alloc] initWithPlacemark:touristSitePlacemark];
+    
+    [directionsRequest setDestination: touristSiteMapItem];
+    
+    MKDirections *routeDirections = [[MKDirections alloc] initWithRequest:directionsRequest];
+    
+    
+    __block MKRoute* routeToTouristSite = nil;
+    
+    [routeDirections calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse * routeResponse, NSError *routeError) {
+        if (routeError) {
+            NSLog(@"Error: failed to calculate directions to tourist site %@",[routeError description]);
+        } else {
+            // The code doesn't request alternate routes, so add the single calculated route to
+            // a previously declared MKRoute property called walkingRoute.
+            routeToTouristSite = routeResponse.routes[0];
+        }
+    }];
+
+    NSTimeInterval travelTime = [routeToTouristSite expectedTravelTime];
+    
+    return travelTime;
+}
+
+-(void)updateUserLocation:(NSNotification*)userLocationDidUpdateNotification{
+    
+    NSDictionary* userInfoDict = [userLocationDidUpdateNotification userInfo];
+    
+    CLLocation* userLocation = (CLLocation*)[userInfoDict valueForKey:@"userLocation"];
+    
+    _lastUpdatedUserLocation = userLocation;
+    
 }
 
 
-**/
+-(NSDate *)currentDateForKorea{
+    NSDate* currentDate = [NSDate date];
+    
+    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
+    
+    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:currentDate];
+    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:currentDate];
+    NSTimeInterval timeInterval = destinationGMTOffset - sourceGMTOffset;
+    
+    return [NSDate dateWithTimeInterval:timeInterval sinceDate:currentDate];
+    
+}
+
+
+-(NSTimeInterval)openingTimeInSeconds{
+    
+    double openingTimeDecimal = [self.openingTime doubleValue];
+    
+    return openingTimeDecimal*(60*60);
+    
+}
+
+-(NSTimeInterval)closingTimeInSeconds{
+    double closingTimeDecimal = [self.closingTime doubleValue];
+    
+    return closingTimeDecimal*(60*60);
+}
+
+-(NSTimeInterval)currentDateForKoreaInSeconds{
+    
+    NSDate* koreaDate = [self currentDateForKorea];
+    
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* components = [calendar components:(NSCalendarUnitHour|NSCalendarUnitMinute) fromDate:koreaDate];
+    
+    NSInteger hour = [components hour];
+    NSInteger minutes = [components minute];
+    
+    return hour*3600+minutes*60;
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 @end

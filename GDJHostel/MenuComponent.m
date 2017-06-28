@@ -121,6 +121,25 @@
     titleLabel.numberOfLines = 0;
     titleLabel.adjustsFontSizeToFitWidth = true;
     [self.backgroundView addSubview:titleLabel];
+    
+    /** Display the local time in Korea **/
+    CGRect timeLabelFrame = CGRectMake(bgWidth*0.10, bgHeight*0.80, bgWidth*0.80, bgHeight*0.20);
+    
+    UILabel* timeLabel = [[UILabel alloc] initWithFrame:timeLabelFrame];
+    
+    NSDate* today = [NSDate date];
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"KST"]];
+    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    NSString* localDateString = [dateFormatter stringFromDate:today];
+    
+    [timeLabel setText:localDateString];
+    [timeLabel setFont:[UIFont fontWithName:@"Futura-CondensedMedium" size:30.0]];
+    [timeLabel setNumberOfLines:1];
+    [timeLabel setAdjustsFontSizeToFitWidth:YES];
+    [timeLabel setMinimumScaleFactor:0.50];
+    [self.backgroundView addSubview:timeLabel];
+    
 }
 
 -(void)setupOptionsTableView{
