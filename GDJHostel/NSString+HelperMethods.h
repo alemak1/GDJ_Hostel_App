@@ -11,5 +11,6 @@
 @interface NSString (HelperMethods)
 
 + (NSString *)timeFormattedStringFromTotalSeconds:(int)totalSeconds;
++ (NSString *)timeHHMMSSFormattedStringFromTotalSeconds:(int)totalSeconds;
 
 @end

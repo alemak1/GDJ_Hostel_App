@@ -81,8 +81,12 @@
     TouristSiteConfiguration* configurationObject = [self.siteManager getConfigurationObjectFromMasterArray:indexPath.row];
     
     [cell setSiteImage:[UIImage imageNamed:@"RoomNo2_1"]];
-    cell.titleText = [configurationObject title];
     
+    cell.titleText = [configurationObject title];
+    cell.travelingTimeText = [configurationObject travelingTimeFromUserLocationString];
+    cell.distanceToSiteText = [configurationObject distanceFromUserString];
+    cell.touristSiteConfigurationObject = configurationObject;
+
     return cell;
     
 }

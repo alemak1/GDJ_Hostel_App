@@ -299,13 +299,13 @@
                                         <rect key="frame" x="34.5" y="304.5" width="274.5" height="27"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="routeA" translatesAutoresizingMaskIntoConstraints="NO" id="aKs-qu-lBo">
-                                                <rect key="frame" x="0.5" y="0.0" width="30" height="27"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="q9J-ZF-ntQ"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="7J1-EG-BRN">
-                                                <rect key="frame" x="30.5" y="0.0" width="244.5" height="27"/>
+                                                <rect key="frame" x="30" y="0.0" width="244.5" height="27"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="     Get Route to Hostel in Apple Maps">
                                                         <attributes>
@@ -322,13 +322,13 @@
                                         <rect key="frame" x="29.5" y="333.5" width="284.5" height="27.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compassA" translatesAutoresizingMaskIntoConstraints="NO" id="HCO-SB-mOA">
-                                                <rect key="frame" x="0.5" y="0.0" width="30" height="27.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="27.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="ee7-aR-9Qg"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gpa-aq-uPT">
-                                                <rect key="frame" x="30.5" y="0.0" width="254.5" height="27.5"/>
+                                                <rect key="frame" x="30" y="0.0" width="254.5" height="27.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="     Get Route to Hostel in Google Maps">
                                                         <attributes>
@@ -368,13 +368,13 @@
                                         <rect key="frame" x="112" y="416.5" width="119.5" height="54.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coloredPhoneB" translatesAutoresizingMaskIntoConstraints="NO" id="YIB-G3-03U">
-                                                <rect key="frame" x="0.5" y="0.0" width="30" height="54.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="54.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="dzV-6b-nlD"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MB9-cX-kya" userLabel="Address">
-                                                <rect key="frame" x="30.5" y="0.0" width="89.5" height="54.5"/>
+                                                <rect key="frame" x="30" y="0.0" width="89.5" height="54.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="  Telephone">
                                                         <attributes>
@@ -992,7 +992,7 @@
         <!--TouristSiteDetailController-->
         <scene sceneID="d5r-6Q-GLp">
             <objects>
-                <viewController storyboardIdentifier="TouristSiteDetailController" title="TouristSiteDetailController" id="bp0-gQ-Fjj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TouristSiteDetailController" title="TouristSiteDetailController" id="bp0-gQ-Fjj" customClass="TouristSiteDetailInformationController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L34-16-J0C"/>
                         <viewControllerLayoutGuide type="bottom" id="Avq-KI-eyE"/>
@@ -1047,11 +1047,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSX-Ln-OVc">
-                                <rect key="frame" x="297" y="605" width="40" height="40"/>
+                                <rect key="frame" x="297" y="569.5" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="ROG-9p-DUZ"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="webSiteB"/>
+                                <connections>
+                                    <action selector="loadWebsiteButton:" destination="bp0-gQ-Fjj" eventType="touchUpInside" id="am4-lE-XG0"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note:...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJZ-c4-9CH">
                                 <rect key="frame" x="9" y="511" width="60.5" height="20.5"/>
@@ -1066,22 +1069,42 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8Y-xE-9lM">
-                                <rect key="frame" x="233" y="605" width="94" height="40"/>
+                                <rect key="frame" x="233" y="569.5" width="94" height="40"/>
                                 <state key="normal" title="Button" image="compassB"/>
+                                <connections>
+                                    <action selector="getDirectionsButton:" destination="bp0-gQ-Fjj" eventType="touchUpInside" id="VID-cg-AJx"/>
+                                </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vQP-9T-Fq4">
+                                <rect key="frame" x="108" y="536.5" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Open?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVd-Bn-j8F">
+                                <rect key="frame" x="9" y="541.5" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeUntil Closing/Opening" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngM-S0-1VT">
+                                <rect key="frame" x="9" y="578.5" width="206" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="tSX-Ln-OVc" secondAttribute="trailing" constant="22" id="1lw-SQ-qRu"/>
+                            <constraint firstItem="tSX-Ln-OVc" firstAttribute="baseline" secondItem="ngM-S0-1VT" secondAttribute="baseline" id="72O-Pn-bcS"/>
                             <constraint firstItem="imq-Oa-GTA" firstAttribute="top" secondItem="gSZ-Jm-Csc" secondAttribute="bottom" constant="-1" id="9K3-Bi-fR5"/>
                             <constraint firstItem="imq-Oa-GTA" firstAttribute="leading" secondItem="gSZ-Jm-Csc" secondAttribute="leading" id="CCP-0o-QdG"/>
                             <constraint firstItem="gSZ-Jm-Csc" firstAttribute="top" secondItem="ztt-tc-Jm1" secondAttribute="bottom" constant="-21.5" id="CVb-R9-JmQ"/>
                             <constraint firstItem="boF-Lf-FC4" firstAttribute="width" secondItem="kOv-ni-KXO" secondAttribute="width" id="CtB-V5-edP"/>
-                            <constraint firstItem="Avq-KI-eyE" firstAttribute="top" secondItem="tSX-Ln-OVc" secondAttribute="bottom" constant="22" id="GlI-mu-b6N"/>
                             <constraint firstItem="ztt-tc-Jm1" firstAttribute="width" secondItem="9mz-Eh-GCd" secondAttribute="width" multiplier="0.95" id="Hwj-2C-bdJ"/>
                             <constraint firstItem="ztt-tc-Jm1" firstAttribute="top" secondItem="9mz-Eh-GCd" secondAttribute="bottom" constant="20" id="Ir8-Q7-arv"/>
                             <constraint firstItem="kOv-ni-KXO" firstAttribute="top" secondItem="9mz-Eh-GCd" secondAttribute="bottom" constant="-120" id="KfQ-dC-x1F"/>
+                            <constraint firstItem="vQP-9T-Fq4" firstAttribute="leading" secondItem="gVd-Bn-j8F" secondAttribute="trailing" constant="32" id="L7n-Gd-Spr"/>
                             <constraint firstItem="aJZ-c4-9CH" firstAttribute="leading" secondItem="imq-Oa-GTA" secondAttribute="leading" id="MCF-IO-ygI"/>
+                            <constraint firstItem="gVd-Bn-j8F" firstAttribute="leading" secondItem="aJZ-c4-9CH" secondAttribute="leading" id="NaN-cp-4ID"/>
                             <constraint firstItem="aJZ-c4-9CH" firstAttribute="top" secondItem="imq-Oa-GTA" secondAttribute="bottom" constant="8" id="Nar-Zh-ftm"/>
                             <constraint firstItem="ztt-tc-Jm1" firstAttribute="centerX" secondItem="9mz-Eh-GCd" secondAttribute="centerX" id="O2f-iY-1Qp"/>
                             <constraint firstItem="9mz-Eh-GCd" firstAttribute="top" secondItem="L34-16-J0C" secondAttribute="bottom" id="SY8-3p-s8M"/>
@@ -1090,8 +1113,12 @@
                             <constraint firstItem="XRg-Bu-RQR" firstAttribute="baseline" secondItem="gSZ-Jm-Csc" secondAttribute="baseline" id="Vf8-40-mUu"/>
                             <constraint firstItem="boF-Lf-FC4" firstAttribute="height" secondItem="kOv-ni-KXO" secondAttribute="height" id="Xkl-pr-vQJ"/>
                             <constraint firstItem="r8Y-xE-9lM" firstAttribute="centerY" secondItem="tSX-Ln-OVc" secondAttribute="centerY" id="aS3-3e-Shv"/>
+                            <constraint firstItem="ngM-S0-1VT" firstAttribute="leading" secondItem="gVd-Bn-j8F" secondAttribute="leading" id="d4z-SA-Sz4"/>
                             <constraint firstAttribute="trailing" secondItem="9mz-Eh-GCd" secondAttribute="trailing" id="dDZ-Ma-iBB"/>
+                            <constraint firstItem="ngM-S0-1VT" firstAttribute="top" secondItem="gVd-Bn-j8F" secondAttribute="bottom" constant="16" id="fX6-Fd-2TK"/>
                             <constraint firstItem="XRg-Bu-RQR" firstAttribute="leading" secondItem="gSZ-Jm-Csc" secondAttribute="trailing" constant="77" id="fYz-8b-G6v"/>
+                            <constraint firstItem="gVd-Bn-j8F" firstAttribute="top" secondItem="aJZ-c4-9CH" secondAttribute="bottom" constant="10" id="gQm-FB-p1O"/>
+                            <constraint firstItem="gVd-Bn-j8F" firstAttribute="centerY" secondItem="vQP-9T-Fq4" secondAttribute="centerY" id="ikw-sS-WSN"/>
                             <constraint firstItem="9mz-Eh-GCd" firstAttribute="height" secondItem="wLG-Gi-cZt" secondAttribute="height" multiplier="0.4" id="jSs-qI-of4"/>
                             <constraint firstItem="kOv-ni-KXO" firstAttribute="height" secondItem="9mz-Eh-GCd" secondAttribute="height" multiplier="0.15" id="lUq-AU-z6W"/>
                             <constraint firstItem="kOv-ni-KXO" firstAttribute="width" secondItem="9mz-Eh-GCd" secondAttribute="width" multiplier="0.8" id="lvu-XD-9UT"/>
@@ -1102,10 +1129,19 @@
                             <constraint firstItem="9mz-Eh-GCd" firstAttribute="leading" secondItem="wLG-Gi-cZt" secondAttribute="leading" id="y9G-9O-z0u"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="boF-Lf-FC4" id="UL1-2u-oSV"/>
+                        <outlet property="admissionFeeLabel" destination="imq-Oa-GTA" id="ePp-po-A2l"/>
+                        <outlet property="descriptionLabel" destination="ztt-tc-Jm1" id="Axk-79-Fab"/>
+                        <outlet property="isOpenSwitch" destination="vQP-9T-Fq4" id="VnK-bQ-chF"/>
+                        <outlet property="operatingHoursLabel" destination="gSZ-Jm-Csc" id="LJS-35-W9c"/>
+                        <outlet property="siteImageView" destination="9mz-Eh-GCd" id="sRT-ce-451"/>
+                        <outlet property="titleLabel" destination="kOv-ni-KXO" id="tSQ-Z5-wuT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OeF-Db-nq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-930.39999999999998" y="-2848.4257871064469"/>
+            <point key="canvasLocation" x="-489" y="-2805"/>
         </scene>
         <!--Tourist Site Collection View Controller-->
         <scene sceneID="ATt-z8-BcV">
@@ -1375,10 +1411,10 @@
             </objects>
             <point key="canvasLocation" x="616.79999999999995" y="-896.40179910044981"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Seoul Tourism Navigation Controller-->
         <scene sceneID="cXV-dG-gGL">
             <objects>
-                <navigationController storyboardIdentifier="SeoulTourismNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="xSA-EY-f9L" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SeoulTourismNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="xSA-EY-f9L" customClass="SeoulTourismNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bTY-fc-d4e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1387,7 +1423,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="A01-ZA-Z48" kind="relationship" relationship="rootViewController" id="wso-AZ-0q2"/>
-                        <segue destination="bp0-gQ-Fjj" kind="show" identifier="ShowTouristSiteDetailController" id="RhC-rA-JKw"/>
+                        <segue destination="bp0-gQ-Fjj" kind="show" identifier="showTouristSiteDetailController" id="RhC-rA-JKw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1BC-rG-FgM" userLabel="First Responder" sceneMemberID="firstResponder"/>

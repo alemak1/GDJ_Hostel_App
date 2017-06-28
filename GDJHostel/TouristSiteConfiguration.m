@@ -119,6 +119,9 @@ CLLocation* _lastUpdatedUserLocation;
             
         }
        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUserLocation:) name:@"userLocationDidUpdateNotification" object:nil];
+        
+        
     
     }
     
@@ -268,7 +271,9 @@ CLLocation* _lastUpdatedUserLocation;
     //TODO: get user's current location to calculate the distance to the site
     CLLocation* touristSiteLocation = [[CLLocation alloc] initWithLatitude:self.midCoordinate.latitude longitude:self.midCoordinate.longitude];
     
-    return [_lastUpdatedUserLocation distanceFromLocation:touristSiteLocation];
+    CLLocationDistance distanceInMeters = [_lastUpdatedUserLocation distanceFromLocation:touristSiteLocation];
+    
+    return distanceInMeters/1000;
 }
 
 -(CGFloat)travelingTimeFromUserLocation{
@@ -320,20 +325,6 @@ CLLocation* _lastUpdatedUserLocation;
 }
 
 
--(NSDate *)currentDateForKorea{
-    NSDate* currentDate = [NSDate date];
-    
-    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
-    NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
-    
-    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:currentDate];
-    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:currentDate];
-    NSTimeInterval timeInterval = destinationGMTOffset - sourceGMTOffset;
-    
-    return [NSDate dateWithTimeInterval:timeInterval sinceDate:currentDate];
-    
-}
-
 
 -(NSTimeInterval)openingTimeInSeconds{
     
@@ -360,6 +351,87 @@ CLLocation* _lastUpdatedUserLocation;
     NSInteger minutes = [components minute];
     
     return hour*3600+minutes*60;
+}
+
+
+-(NSDate *)currentDateForKorea{
+    NSDate* currentDate = [NSDate date];
+    
+    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
+    
+    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:currentDate];
+    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:currentDate];
+    NSTimeInterval timeInterval = destinationGMTOffset - sourceGMTOffset;
+    
+    return [NSDate dateWithTimeInterval:timeInterval sinceDate:currentDate];
+    
+}
+
+
+/** distanceFromUserString and travelingTimeFromUserLocationString are computed properties whose values depend on distanceFromUser and travelingTimeFromUserLocation respectively **/
+
+-(NSString*)distanceFromUserString{
+    NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [numberFormatter setMaximumFractionDigits:2];
+    
+    return [numberFormatter stringFromNumber:[NSNumber numberWithFloat:self.distanceFromUser]];
+    
+}
+
+-(NSString*)travelingTimeFromUserLocationString{
+    
+    return [NSString timeHHMMSSFormattedStringFromTotalSeconds:self.travelingTimeFromUserLocation];
+    
+    
+}
+
+/**  Register dependent keys for KVO **/
++(NSSet<NSString *> *)keyPathsForValuesAffectingDistanceFromUserString{
+    return [NSSet setWithObjects:@"distanceFromUser", nil];
+}
+
++(NSSet<NSString *> *)keyPathsForValuesAffectingTravelingTimeFromUserLocationString{
+    return [NSSet setWithObjects:@"travelingTimeFromUserLocation", nil];
+}
+
++(NSSet<NSString *> *)keyPathsForValuesAffectingCurrentDateForKoreaInSeconds{
+    return [NSSet setWithObjects:@"currentDateForKorea", nil];
+}
+
+
++(NSSet<NSString *> *)keyPathsForValuesAffectingIsOpen{
+    
+    return [NSSet setWithObjects:@"currentDateForKoreaInSeconds",@"openingTimeInSeconds",@"closingTimeInSeconds",nil];
+}
+
++(NSSet<NSString *> *)keyPathsForValuesAffectingClosingTimeInSeconds{
+    return [NSSet setWithObjects:@"closingTime", nil];
+}
+
++(NSSet<NSString *> *)keyPathsForValuesAffectingOpeningTimeInSeconds{
+    return [NSSet setWithObjects:@"openingTime", nil];
+}
+
++(NSSet<NSString *> *)keyPathsForValuesAffectingTimeUntilOpening{
+    return [NSSet setWithObjects:@"openingTimeInSeconds",@"currentDateForKoreaInSeconds", nil];
+
+}
+
++(NSSet<NSString *> *)keyPathsForValuesAffectingTimeUntilClosing{
+    return [NSSet setWithObjects:@"closingTimeInSeconds",@"currentDateForKoreaInSeconds", nil];
+
+}
+
++(NSSet<NSString *> *)keyPathsForValuesAffectingTimeUntilClosingString{
+    return [NSSet setWithObjects:@"timeUntilClosing", nil];
+
+}
+
++(NSSet<NSString *> *)keyPathsForValuesAffectingTimeUntilOpeningString{
+    return [NSSet setWithObjects:@"timeUntilOpening", nil];
+
 }
 
 -(void)dealloc{

@@ -9,15 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "TouristSiteCollectionViewCell.h"
 #import "UIView+HelperMethods.h"
+#import "AppLocationManager.h"
 
 @interface TouristSiteCollectionViewCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *siteImageView;
 
 @property (weak, nonatomic) IBOutlet UIButton *getRouteButton;
-
-
 @property (weak, nonatomic) IBOutlet UIButton *getDetailsButton;
-
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
@@ -41,15 +39,66 @@
 
 @implementation TouristSiteCollectionViewCell
 
+static void *TouristConfigurationContext = &TouristConfigurationContext;
+
+/** The TouristSiteCollectionViewCell can observe it's tourist configuration object; make sure that tourist configuration object's computed properties also are KVO compliant **/
+
+
+-(void)didMoveToWindow{
+    
+    /**
+    [self addObserver:self forKeyPath:@"touristSiteConfigurationObject.distanceFromUser" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:TouristConfigurationContext];
+    
+    NSLog(@"From didMoveToWindow: added the observer for tourist site configuration");
+     **/
+
+}
+
+-(void)didMoveToSuperview{
+    /**
+    [self addObserver:self forKeyPath:@"touristSiteConfigurationObject.distanceFromUser" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:TouristConfigurationContext];
+    
+    NSLog(@"From didMoveToWindow: added the observer for tourist site configuration");
+     **/
+
+}
 
 
 
+
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    
+    if(context == TouristConfigurationContext){
+        NSLog(@"Updating the distance to site text in response to observed change in tourist configuration object...");
+        /**
+        [self setDistanceToSiteText:[self.touristSiteConfigurationObject distanceFromUserString]];
+         **/
+    }
+}
+
+-(void)dealloc{
+    
+    /**
+    @try {
+        [self removeObserver:self forKeyPath:@"touristSiteConfiguration.distanceFromUser"];
+
+    } @catch (NSException *exception) {
+        NSLog(@"An exception occured: %@",[exception description]);
+    } 
+     
+     **/
+}
 
 /** Implement getters and setters for labels and image view **/
 
 
 
 -(void)setTitleText:(NSString *)titleText{
+    
+    [self.titleLabel setAdjustsFontSizeToFitWidth:YES];
+    [self.titleLabel setMinimumScaleFactor:0.50];
+    
     [self.titleLabel setText:titleText];
     [self layoutIfNeeded];
 }
@@ -69,9 +118,57 @@
     return [self.siteImageView image];
 }
 
+
+-(void)setTravelingTimeText:(NSString *)travelingTimeText{
+    NSString* labelString = @"Traveling Time: ";
+    
+    NSString* labelStringWithTime = [labelString stringByAppendingString:travelingTimeText];
+    
+    [self.travelTimeLabel setAdjustsFontSizeToFitWidth:YES];
+    [self.travelTimeLabel setMinimumScaleFactor:0.50];
+    
+    [self.travelTimeLabel setText:labelStringWithTime];
+}
+
+-(NSString *)travelingTimeText{
+    return [self.travelTimeLabel text];
+}
+
+-(void)setDistanceToSiteText:(NSString *)distanceToSiteText{
+    NSString* labelString = @"Distance Away: ";
+    
+    NSString* labelStringWithDistance = [labelString stringByAppendingString:distanceToSiteText];
+    
+    labelStringWithDistance = [labelStringWithDistance stringByAppendingString:@" km"];
+    
+    [self.distanceLabel setText:labelStringWithDistance];
+    
+}
+
+-(NSString *)distanceToSiteText{
+    return [self.distanceLabel text];
+}
+
+
 - (IBAction)getDirectionsForTouristSite:(id)sender {
     
-    //Make  request in maps to get the directions to the site
+    
+    CLLocationDegrees toLatitude = self.touristSiteConfigurationObject.midCoordinate.latitude;
+    CLLocationDegrees toLongitude = self.touristSiteConfigurationObject.midCoordinate.longitude;
+    
+    MKPlacemark* toPlacemark = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(toLatitude, toLongitude)];
+    
+    MKMapItem* toMapItem = [[MKMapItem alloc] initWithPlacemark:toPlacemark];
+    
+    
+    // Create a region centered on the starting point with a 10km span
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(toPlacemark.coordinate, 10000, 10000);
+    
+    // Open the item in Maps, specifying the map region to display.
+    [MKMapItem openMapsWithItems:[NSArray arrayWithObject:toMapItem]
+                   launchOptions:[NSDictionary dictionaryWithObjectsAndKeys:
+                                  [NSValue valueWithMKCoordinate:region.center], MKLaunchOptionsMapCenterKey,
+                                  [NSValue valueWithMKCoordinateSpan:region.span], MKLaunchOptionsMapSpanKey, nil]];
 }
 
 - (IBAction)getDetailsForTouristSite:(id)sender {
@@ -79,8 +176,9 @@
     /** Since this collection view cell is a subview of a collecion view that is being managed by a viewcontroller, which in turn is a child view controller for paret view contrller that is the root view of a navigation controller, posting notification is best option to  transfer data **/
     
     //Send notification and pass data so that the TouristCategorySelectionController's navigation controller can present the detail controller
+    NSDictionary* userInfoDict = [NSDictionary dictionaryWithObjectsAndKeys:self.touristSiteConfigurationObject,@"touristSiteConfiguration", nil];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"presentTouristSiteDetailNotification" object:self userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"presentTouristSiteDetailNotification" object:self userInfo:userInfoDict];
 }
 
 

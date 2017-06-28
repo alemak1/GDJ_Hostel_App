@@ -69,6 +69,9 @@ typedef enum TouristSiteCategory{
 @property (readonly) NSTimeInterval timeUntilClosing;
 @property (readonly) NSTimeInterval timeUntilOpening;
 
+@property (readonly) NSString* distanceFromUserString;
+@property (readonly) NSString* travelingTimeFromUserLocationString;
+
 @property (readonly) CGFloat distanceFromUser;
 @property (readonly) CGFloat travelingTimeFromUserLocation;
 

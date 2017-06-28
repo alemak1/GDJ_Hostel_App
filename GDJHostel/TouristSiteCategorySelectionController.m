@@ -36,10 +36,29 @@
     
     [sharedLocationManager requestAuthorizationAndStartUpdates];
 
+    
     self.siteManager = [[TouristSiteManager alloc] initWithFileName:@"SeoulTouristSites"];
     
     [sharedLocationManager startMonitoringForRegions:[self.siteManager getRegionsForAllTouristLocations]];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushTSDetailInformationControllerForSelectedSite:) name:@"presentTouristSiteDetailNotification" object:nil];
 
+    
+}
+
+
+-(void) pushTSDetailInformationControllerForSelectedSite:(NSNotification*)notification{
+    
+    TouristSiteConfiguration* selectedTouristConfiguration = [[notification userInfo] valueForKey:@"touristSiteConfiguration"];
+    
+   
+    //Not yet implemented
+}
+
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
 }
 

@@ -2,19 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>location</string>
-	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>The app would like to determine your location in order to help you find your way to the hostel.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>The app would like to determine your location in order to help you find your way to the hostel.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeName</key>
+			<string>MKDirectionsRequest</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.apple.maps.directionsrequest</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconFiles</key>
+			<array/>
 			<key>CFBundleTypeName</key>
 			<string>MKDirectionsRequest</string>
 			<key>LSItemContentTypes</key>
@@ -48,6 +50,14 @@
 		<string>MKDirectionsModeSubway</string>
 		<string>MKDirectionsModeTaxi</string>
 		<string>MKDirectionsModeTrain</string>
+	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>The app would like to determine your location in order to help you find your way to the hostel.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The app would like to determine your location in order to help you find your way to the hostel.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
