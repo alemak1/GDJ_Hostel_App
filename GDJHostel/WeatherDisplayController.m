@@ -13,6 +13,7 @@
 #import "WFSManager.h"
 #import "WeatherIconManager.h"
 #import "WeatherConfiguration.h"
+#import "UIView+HelperMethods.h"
 
 @interface WeatherDisplayController () <UIPickerViewDelegate,UIPickerViewDataSource, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,NSURLSessionDelegate,NSURLSessionTaskDelegate,NSURLSessionDataDelegate>
 
@@ -65,6 +66,15 @@
 
 @property NSMutableArray<NSDictionary*>* jsonDictArray;
 @property NSMutableArray<WeatherConfiguration*>* jsonConfigurationArray;
+
+
+/** Navigation Buttons **/
+
+- (IBAction)dismissPresentedViewController:(UIBarButtonItem *)sender;
+
+- (IBAction)dismissForecastController:(UIBarButtonItem *)sender;
+
+
 
 @end
 
@@ -169,26 +179,48 @@ int backgroundSessionIndex = 0;
 
 -(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
     
-    return 50;
+    return CGRectGetHeight(pickerView.frame);
 }
 
 -(CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component{
     
-    return 100;
+    return CGRectGetWidth(pickerView.frame);
 }
 
 -(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     
+    /**
+    CGRect pickerViewFrame = pickerView.frame;
+    pickerViewFrame.size.width = CGRectGetWidth(pickerView.frame)*2;
+
+    UIView* mainView = [[UIView alloc] initWithFrame:pickerViewFrame];
+    
+     CGRect imageViewFrame = [mainView getFrameAdjustedRelativeToContentViewWithXCoordOffset:0.05 andWithYCoordOffset:0.05 andWithWidthMultiplier:0.70 andWithHeightMultiplier:0.70];
+    
+    UIImageView* imageView = [[UIImageView alloc] initWithFrame: imageViewFrame];
+    
+    [imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"city%ld",(long)row]]];
+    [imageView setContentMode:UIViewContentModeScaleAspectFit];
+    
+    [mainView addSubview:imageView];
+    
+    
+    CGRect labelViewFrame = [mainView getFrameAdjustedRelativeToContentViewWithXCoordOffset:0.7 andWithYCoordOffset:0.05 andWithWidthMultiplier:0.9 andWithHeightMultiplier:1.0];
+    
+    **/
+    
     NSString* labelText = [self.wfsManager getTitleForForecastSite:row];
+    UILabel* labelView = [[UILabel alloc] initWithFrame:pickerView.frame];
     
-    UILabel* labelView = [[UILabel alloc] init];
-    [labelView setFont:[UIFont fontWithName:@"Optima-Bold" size:30.0]];
-    [labelView setText:labelText];
+    NSAttributedString* attributedText = [[NSAttributedString alloc] initWithString:labelText attributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:5.00],NSKernAttributeName, [UIFont fontWithName:@"Optima-Bold" size:30.0],NSFontAttributeName,NSTextEffectLetterpressStyle,NSTextEffectAttributeName,nil]];
     
-    [labelView setFrame:self.locationPicker.frame];
+    [labelView setAttributedText:attributedText];
+    
+    [labelView setFrame:pickerView.frame];
     [labelView setTextAlignment:NSTextAlignmentCenter];
     [labelView setAdjustsFontSizeToFitWidth:YES];
     [labelView setMinimumScaleFactor:0.50];
+    
     
     return labelView;
     
@@ -592,6 +624,26 @@ int backgroundSessionIndex = 0;
     
 }
 
+
+- (IBAction)dismissPresentedViewController:(UIBarButtonItem *)sender {
+    
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)dismissForecastController:(UIBarButtonItem *)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if([segue.identifier isEqualToString:@"showWeatherDetailSegue"]){
+        //TODO: configure destination view controller and pass weather data to it
+        
+    }
+}
 
 
 
