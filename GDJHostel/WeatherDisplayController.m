@@ -190,29 +190,88 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
 #pragma mark ****** COLLECTION VIEW DATA SOURCE AND DELEGATE METHODS
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return (NSUInteger)[self.forecastPeriodSlider value];
+    
+    /** The number of JSON objects successfully downloadded from the weather API will determine the number of cells that need to be configured **/
+    
+    return [self.jsonDictArray count];
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }
-
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     WeatherCollectionCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCollectionCell" forIndexPath:indexPath];
     
-    cell.weatherIconName = @"cloudy";
-    cell.temperature = 98.45;
-    cell.precipitation = 12.99;
-    cell.visibility = 4;
-    cell.humidity = 0.55;
-    cell.cloudCover = 0.88;
-    cell.windSpeed = 22.34;
-    cell.date = [NSDate date];
-    
     return cell;
 }
 
+/**
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    WeatherCollectionCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCollectionCell" forIndexPath:indexPath];
+    
+    /**
+    NSDictionary* jsonDict = [self.jsonDictArray objectAtIndex:indexPath.row];
+    
+    NSLog(@"Information in JSON Dict: %@",[jsonDict description]);
+    
+    NSDictionary* dailyInfoDict = [jsonDict valueForKey:@"daily"];
+    
+    NSDictionary* configurationInfo = [[dailyInfoDict valueForKey:@"data"] objectAtIndex:0];
+    
+    NSLog(@"Configuration info dict: %@",[configurationInfo description]);
+    
+    NSTimeInterval unixDate = [[configurationInfo valueForKey:@"time"] doubleValue];
+    NSDate* formattedDate = [NSDate dateWithTimeIntervalSince1970:unixDate];
+    
+    NSLog(@"Date: %@",formattedDate);
+    
+    
+    NSString* iconName = [configurationInfo valueForKey:@"icon"];
+    
+    NSLog(@"Icon Name: %@", iconName);
+     **/
+    
+   // double temperature = [[configurationInfo valueForKey:@"temperature"] doubleValue];
+    
+   // NSLog(@"Temperature: %f",temperature);
+    
+  //  double humidity = [[configurationInfo valueForKey:@"humidity"] doubleValue];
+    
+   // NSLog(@"Humidity: %f",humidity);
+    
+  //  double precipitation = [[configurationInfo valueForKey:@"precipIntensity"] doubleValue];
+    
+   // NSLog(@"Precipitation: %f", precipitation);
+    
+    /**
+    double windSpeed = [[configurationInfo valueForKey:@"windSpeed"] doubleValue];
+    
+    NSLog(@"WindSpeed: %f", windSpeed);
+    
+    double cloudCover = [[configurationInfo valueForKey:@"cloudCover"] doubleValue];
+    
+    NSLog(@"Cloud Cover: %f",cloudCover);
+    
+    double visibility = [[configurationInfo valueForKey:@"visibility"] doubleValue];
+    
+    NSLog(@"Visibility: %ld",visibility);
+    **/
+    
+    //cell.weatherIconName = iconName;
+   // cell.temperature = temperature;
+   // cell.precipitation = precipitation;
+   // cell.visibility = visibility;
+   // cell.humidity = humidity;
+  //  cell.cloudCover = cloudCover;
+   // cell.windSpeed = windSpeed;
+   // cell.date = formattedDate;
+    
+    /**
+    return cell;
+}
+**/
 
 
 #pragma mark ******* URL SESSION MANAGEMENT HELPER METHODS
@@ -235,7 +294,7 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
 
 -(void) cancelPreviousURLSession{
     
-    if(self.sessionForWeatherDataRequests){
+    if(self.sessionForWeatherDataRequests != nil){
         [self.sessionForWeatherDataRequests invalidateAndCancel];
         self.sessionForWeatherDataRequests = nil;
     }
@@ -246,6 +305,12 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     
     self.sessionForWeatherDataRequests = [NSURLSession sessionWithConfiguration:self.sessionConfiguration];
     
+    /** Clear any previously downloaded JSON data **/
+    if(self.jsonDictArray){
+        
+        self.jsonDictArray = nil;
+    }
+    
     self.jsonDictArray = [[NSMutableArray alloc] init];
     
     WeatherDisplayController* __weak weakSelf = self;
@@ -254,16 +319,35 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
         
         [[self.sessionForWeatherDataRequests dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             
-            NSLog(@"Got response %@ with error %@.\n", response, error);
+            if(error){
+                NSLog(@"Error occurred while attempting to download JSON data %@",[error description]);
+                
+                return;
+            }
             
+        
             /** JSON Dictionaries for a particular session are added to stored array **/
             NSError* e = nil;
             
-            if(data){
-                NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&e];
+            NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
             
-                [weakSelf.jsonDictArray addObject:jsonDict];
+            if([httpResponse statusCode] != 200){
+                NSLog(@"Unabled to access URI, HTTP status code: %ld",[httpResponse statusCode]);
+                
+                return;
             }
+            
+            if(!data){
+                NSLog(@"No data available from JSON request to URI");
+                return;
+            }
+            
+            NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&e];
+                
+            [weakSelf.jsonDictArray addObject:jsonDict];
+            
+            
+         
             
         }] resume];
         
