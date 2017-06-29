@@ -13,7 +13,7 @@
 #import "WFSManager.h"
 #import "WeatherIconManager.h"
 
-@interface WeatherDisplayController () <UIPickerViewDelegate,UIPickerViewDataSource, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface WeatherDisplayController () <UIPickerViewDelegate,UIPickerViewDataSource, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,NSURLSessionDelegate,NSURLSessionTaskDelegate,NSURLSessionDataDelegate>
 
 
 /** Outlets and Actions **/
@@ -21,6 +21,10 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 - (IBAction)changedForecastDate:(UIDatePicker *)sender;
+
+
+
+- (IBAction)getWeatherForecast:(UIButton *)sender;
 
 
 
@@ -55,6 +59,9 @@
 
 @property NSURLSession* sessionForWeatherDataRequests;
 @property (readonly) NSURLSessionConfiguration* sessionConfiguration;
+@property (readonly) NSURLSessionConfiguration* backgroundSessionConfiguration;
+@property (readonly) NSOperationQueue* backgroundSessionOperationQueue;
+
 @property NSMutableArray<NSDictionary*>* jsonDictArray;
 
 @end
@@ -63,6 +70,8 @@
 
 static NSString* _baseURL = @"https://api.darksky.net/forecast/";
 static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
+NSOperationQueue* _backgroundOperationQueue;
+int backgroundSessionIndex = 0;
 
 -(void)viewWillAppear:(BOOL)animated{
     
@@ -83,7 +92,7 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     [self.childCollectionView setDelegate:self];
     [self.childCollectionView setDataSource:self];
     
-
+    
     [self.childCollectionView reloadData];
     
     /** Provide initial values for weather forecast **/
@@ -92,9 +101,9 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     [self.forecastPeriodSlider setValue:1.00];
     [self setCurrentlySelectedLocationCoordinate:CLLocationCoordinate2DMake(37.5616592, 126.8736235)];
     
-    /** Start an initial url session **/
+
     
-    [self getUpdatedJSONDataBasedOnAdjustedParameters];
+    
     
 }
 
@@ -107,11 +116,15 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
 
 - (IBAction)changedForecastDate:(UIDatePicker *)sender {
     
-    /** Start a new url session for the new forecast date **/
+  
+
+}
+
+- (IBAction)getWeatherForecast:(UIButton *)sender {
+    
     
     [self getUpdatedJSONDataBasedOnAdjustedParameters];
-
-
+    
 }
 
 
@@ -125,10 +138,6 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     
     [self.forecastPeriodLabel setText:forecastPeriodString];
     
-    /** Start a new url session for the new forecast date **/
-    
-    [self getUpdatedJSONDataBasedOnAdjustedParameters];
-    
 
     
 }
@@ -140,11 +149,7 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     self.currentlySelectedLocationCoordinate = [self.wfsManager getCoordinateForForecastSite:row];
     
     
-    /** Start a new URL session for the newly selected location  **/
-    
-    [self getUpdatedJSONDataBasedOnAdjustedParameters];
-    
-    
+   
 }
 
 
@@ -199,6 +204,8 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }
+
+/**
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     WeatherCollectionCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCollectionCell" forIndexPath:indexPath];
@@ -206,23 +213,23 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     return cell;
 }
 
-/**
+**/
+
+
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    WeatherCollectionCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCollectionCell" forIndexPath:indexPath];
+    WeatherCollectionCell* cell = [self.childCollectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCollectionCell" forIndexPath:indexPath];
     
-    /**
+    
     NSDictionary* jsonDict = [self.jsonDictArray objectAtIndex:indexPath.row];
-    
-    NSLog(@"Information in JSON Dict: %@",[jsonDict description]);
+
     
     NSDictionary* dailyInfoDict = [jsonDict valueForKey:@"daily"];
     
     NSDictionary* configurationInfo = [[dailyInfoDict valueForKey:@"data"] objectAtIndex:0];
     
-    NSLog(@"Configuration info dict: %@",[configurationInfo description]);
     
-    NSTimeInterval unixDate = [[configurationInfo valueForKey:@"time"] doubleValue];
+    NSTimeInterval unixDate = [[configurationInfo valueForKey:@"time"] longValue];
     NSDate* formattedDate = [NSDate dateWithTimeIntervalSince1970:unixDate];
     
     NSLog(@"Date: %@",formattedDate);
@@ -231,21 +238,19 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     NSString* iconName = [configurationInfo valueForKey:@"icon"];
     
     NSLog(@"Icon Name: %@", iconName);
-     **/
     
-   // double temperature = [[configurationInfo valueForKey:@"temperature"] doubleValue];
+    double temperature = [[configurationInfo valueForKey:@"temperatureMax"] doubleValue];
     
-   // NSLog(@"Temperature: %f",temperature);
+    NSLog(@"Temperature: %f",temperature);
     
-  //  double humidity = [[configurationInfo valueForKey:@"humidity"] doubleValue];
+    double humidity = [[configurationInfo valueForKey:@"humidity"] doubleValue];
     
-   // NSLog(@"Humidity: %f",humidity);
+    NSLog(@"Humidity: %f",humidity);
     
-  //  double precipitation = [[configurationInfo valueForKey:@"precipIntensity"] doubleValue];
+    double precipitation = [[configurationInfo valueForKey:@"precipIntensity"] doubleValue];
     
-   // NSLog(@"Precipitation: %f", precipitation);
+    NSLog(@"Precipitation: %f", precipitation);
     
-    /**
     double windSpeed = [[configurationInfo valueForKey:@"windSpeed"] doubleValue];
     
     NSLog(@"WindSpeed: %f", windSpeed);
@@ -254,27 +259,88 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     
     NSLog(@"Cloud Cover: %f",cloudCover);
     
-    double visibility = [[configurationInfo valueForKey:@"visibility"] doubleValue];
     
-    NSLog(@"Visibility: %ld",visibility);
-    **/
+    NSString* summaryText = [configurationInfo valueForKey:@"summary"];
     
-    //cell.weatherIconName = iconName;
-   // cell.temperature = temperature;
-   // cell.precipitation = precipitation;
-   // cell.visibility = visibility;
-   // cell.humidity = humidity;
-  //  cell.cloudCover = cloudCover;
-   // cell.windSpeed = windSpeed;
-   // cell.date = formattedDate;
+    NSLog(@"Summary text: %@",summaryText);
     
-    /**
+    cell.weatherIconName = iconName;
+    cell.temperature = temperature;
+    cell.precipitation = precipitation;
+    cell.humidity = humidity;
+    cell.cloudCover = cloudCover;
+    cell.windSpeed = windSpeed;
+    cell.date = formattedDate;
+    cell.summaryText = summaryText;
+
     return cell;
 }
-**/
+
 
 
 #pragma mark ******* URL SESSION MANAGEMENT HELPER METHODS
+
+
+-(void) createBackgroundURLSession{
+    
+    
+    if([self.backgroundSessionOperationQueue operationCount] > 0 || self.sessionForWeatherDataRequests != nil){
+        
+        //[self.backgroundSessionOperationQueue cancelAllOperations];
+        
+        [self.sessionForWeatherDataRequests invalidateAndCancel];
+        
+        self.jsonDictArray = nil;
+    }
+
+    
+    NSLog(@"Creating a new session with a new background session configuration");
+    
+    self.sessionForWeatherDataRequests = [NSURLSession sessionWithConfiguration:self.backgroundSessionConfiguration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    
+
+
+}
+
+
+-(void) addDataTasksToOperationQueue{
+    
+    /** Clear any previously downloaded JSON data **/
+    if(self.jsonDictArray){
+        
+        NSLog(@"Clearing old json data array...");
+        
+        self.jsonDictArray = nil;
+    }
+    
+    NSLog(@"Initializing new json data array...");
+    
+    self.jsonDictArray = [[NSMutableArray alloc] init];
+
+    
+    
+    NSLog(@"Preparing to create data tasks for urls");
+    
+    for(NSURL* url in [self getURLsForForecastPeriod]){
+        
+        NSLog(@"Creating data task for url: %@",[url absoluteString]);
+
+        NSURLRequest* urlRequest = [NSURLRequest requestWithURL:url];
+        
+        NSLog(@"URL request created %@",[urlRequest description]);
+        
+        NSURLSessionDataTask* dataTask = [self.sessionForWeatherDataRequests dataTaskWithRequest:urlRequest];
+        
+        NSLog(@"Data task created with data task identifier: %d",[dataTask taskIdentifier]);
+        
+        [dataTask resume];
+        
+    }
+
+}
+
+
+
 
 -(void)getUpdatedJSONDataBasedOnAdjustedParameters{
     
@@ -282,13 +348,7 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     
     [self createAndStartDataTasksForNewURLSession];
     
-    [self.childCollectionView reloadData];
-    
-    NSLog(@"Contents of the JSON data array");
-    
-    for(NSDictionary* dict in self.jsonDictArray){
-        NSLog(@"Contents of JSON Dict: %@",[dict description]);
-    }
+
     
 }
 
@@ -299,6 +359,7 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
         self.sessionForWeatherDataRequests = nil;
     }
 }
+
 
 
 -(void)createAndStartDataTasksForNewURLSession{
@@ -313,40 +374,40 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     
     self.jsonDictArray = [[NSMutableArray alloc] init];
     
-    WeatherDisplayController* __weak weakSelf = self;
-    
     for(NSURL* url in [self getURLsForForecastPeriod]){
         
         [[self.sessionForWeatherDataRequests dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             
-            if(error){
-                NSLog(@"Error occurred while attempting to download JSON data %@",[error description]);
-                
-                return;
-            }
-            
+            if(!error){
         
-            /** JSON Dictionaries for a particular session are added to stored array **/
-            NSError* e = nil;
+                if([response isKindOfClass:[NSHTTPURLResponse class]]){
+                    /** JSON Dictionaries for a particular session are added to stored array **/
+                    NSError* jsonError = nil;
             
-            NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
             
-            if([httpResponse statusCode] != 200){
-                NSLog(@"Unabled to access URI, HTTP status code: %ld",[httpResponse statusCode]);
+                    NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
+                    
+
                 
-                return;
+                    if(jsonError){
+                        NSLog(@"Error in parsing JSON data: %@",[jsonError description]);
+                    }else{
+                        
+                        [self.jsonDictArray addObject:jsonDict];
+
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            
+                            [self.childCollectionView reloadData];
+                        
+                        
+                        });
+                        
+                       
+                        
+
+                    }
+                }
             }
-            
-            if(!data){
-                NSLog(@"No data available from JSON request to URI");
-                return;
-            }
-            
-            NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&e];
-                
-            [weakSelf.jsonDictArray addObject:jsonDict];
-            
-            
          
             
         }] resume];
@@ -412,6 +473,9 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     return baseURLStringWithLocationParameters;
 }
 
+
+
+
 -(NSURLSessionConfiguration *)sessionConfiguration{
     
     /** The readonly sessionConfiguration provides a new instance of a default session configuration each time it is accessed **/
@@ -419,6 +483,23 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     return [NSURLSessionConfiguration defaultSessionConfiguration];
 }
 
+-(NSURLSessionConfiguration *)backgroundSessionConfiguration{
+    
+    backgroundSessionIndex++;
+    
+    NSString* backgroundSessionIdentifier = [NSString stringWithFormat:@"backgroundSession-%d",backgroundSessionIndex];
+    
+    return [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:backgroundSessionIdentifier];
+}
+
+
+-(NSOperationQueue *)backgroundSessionOperationQueue{
+    if(!_backgroundOperationQueue){
+        _backgroundOperationQueue = [[NSOperationQueue alloc] init];
+    }
+    
+    return _backgroundOperationQueue;
+}
 
 #pragma mark **** OTHER HELPER METHODS
 
@@ -432,5 +513,58 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
 
 - (IBAction)loadDarkSkyWebsite:(UITapGestureRecognizer *)sender {
 }
+
+#pragma mark ****** URL SESSION DELEGATE METHODS
+
+-(void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session{
+    NSLog(@"URL Session completed all tasks");
+
+    [self.childCollectionView reloadData];
+}
+
+-(void)URLSession:(NSURLSession *)session didBecomeInvalidWithError:(NSError *)error{
+    ;
+    NSLog(@"URL Session became invalid due to error: %@",[error description]);
+}
+
+
+#pragma mark ******* URL SESSION DATA TASK DELEGATE
+
+
+
+-(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error{
+    
+    if(error){
+        NSLog(@"The dataTask %@ encountered an error and failed to complete, error description: %@",[task description],[error description]);
+        
+        [self.backgroundSessionOperationQueue cancelAllOperations];
+        
+        [self.sessionForWeatherDataRequests invalidateAndCancel];
+        
+        self.jsonDictArray = nil;
+    }
+}
+
+
+#pragma mark ****** NSURL DATA DELEGATE
+
+-(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data{
+ 
+    
+    
+    NSError* e = nil;
+    
+    NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&e];
+    
+
+    [self.jsonDictArray addObject:jsonDict];
+    
+    
+    
+    
+}
+
+
+
 
 @end

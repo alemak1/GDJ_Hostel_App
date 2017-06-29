@@ -12,10 +12,10 @@
 
 @interface WeatherCollectionCell ()
 
+@property (weak, nonatomic) IBOutlet UILabel *summary;
 
 @property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
 
-@property (weak, nonatomic) IBOutlet UILabel *visibilityIndicator;
 
 @property (weak, nonatomic) IBOutlet UILabel *humidityIndicator;
 
@@ -41,11 +41,22 @@
 @synthesize temperature = _temperature;
 @synthesize  weatherIconName = _weatherIconName;
 @synthesize  precipitation = _precipitation;
-@synthesize visibility = _visibility;
 @synthesize cloudCover = _cloudCover;
 @synthesize date = _date;
+@synthesize summaryText = _summaryText;
 
 
+-(void)setSummaryText:(NSString *)summaryText{
+    
+    _summaryText = summaryText;
+    
+    [self.summary setText:summaryText];
+    
+}
+
+-(NSString *)summaryText{
+    return _summaryText;
+}
 
 -(void)setDate:(NSDate *)date{
     
@@ -89,24 +100,6 @@
 }
 
 
--(void)setVisibility:(double)visibility{
-    
-    _visibility = visibility;
-    
-    NSNumberFormatter* visibilityFormatter = [[NSNumberFormatter alloc] init];
-    [visibilityFormatter setMaximumFractionDigits:0];
-    [visibilityFormatter setMaximumIntegerDigits:2];
-    
-    NSString* visibilityNumberString = [visibilityFormatter stringFromNumber:[NSNumber numberWithDouble:visibility]];
-    NSString* visibilityString = [NSString stringWithFormat:@"Visibility: %@ miles",visibilityNumberString];
-    
-    [self.visibilityIndicator setText:visibilityString];
-    
-}
-
--(double)visibility{
-    return _visibility;
-}
 
 -(void)setPrecipitation:(double)precipitation{
     
