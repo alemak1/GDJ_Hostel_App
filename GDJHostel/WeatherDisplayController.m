@@ -38,16 +38,24 @@
 
 - (IBAction)loadDarkSkyWebsite:(UITapGestureRecognizer *)sender;
 
-
-/** Data Source **/
-
 @property CLLocationCoordinate2D currentlySelectedLocationCoordinate;
+
+
+/** Helper Properties for Configuring URL **/
+
 @property (readonly) NSString* currentRequestURI;
 @property (readonly) NSString* apiKey;
+
+/** Data Source **/
 
 @property WFSManager* wfsManager;
 
 
+/** Properties related to NSURL Session **/
+
+@property NSURLSession* sessionForWeatherDataRequests;
+@property (readonly) NSURLSessionConfiguration* sessionConfiguration;
+@property NSMutableArray<NSDictionary*>* jsonDictArray;
 
 @end
 
@@ -66,7 +74,6 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
 -(void)viewDidLoad{
     
     self.wfsManager = [[WFSManager alloc] initFromFileName:@"WeatherForecastSites"];
-    NSLog(@"Forecast Sites: %@",[self.wfsManager forecastSitesDescription]);
     
     
      WeatherForecastCollectionController* forecastCollectionController = (WeatherForecastCollectionController*)[self.childViewControllers objectAtIndex:0];
@@ -76,9 +83,18 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     [self.childCollectionView setDelegate:self];
     [self.childCollectionView setDataSource:self];
     
-    NSLog(@"Forecast Collection Controller Debug Info: %@",[forecastCollectionController description]);
-    
+
     [self.childCollectionView reloadData];
+    
+    /** Provide initial values for weather forecast **/
+    
+    [self.datePicker setDate:[NSDate date]];
+    [self.forecastPeriodSlider setValue:1.00];
+    [self setCurrentlySelectedLocationCoordinate:CLLocationCoordinate2DMake(37.5616592, 126.8736235)];
+    
+    /** Start an initial url session **/
+    
+    [self getUpdatedJSONDataBasedOnAdjustedParameters];
     
 }
 
@@ -87,20 +103,16 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     
 }
 
+#pragma mark **** METHODS THAT TRIGGER NEW URLSESSIONS 
+
 - (IBAction)changedForecastDate:(UIDatePicker *)sender {
-    NSLog(@"The selected date is: %@",[self.datePicker date]);
     
-    NSLog(@"Selected a new forecast date, new URI request is: %@", self.currentRequestURI);
+    /** Start a new url session for the new forecast date **/
+    
+    [self getUpdatedJSONDataBasedOnAdjustedParameters];
+
 
 }
-
--(NSTimeInterval) getUNIXDate{
-    
-    return [[self.datePicker date] timeIntervalSince1970];
-    
-}
-
-
 
 
 - (IBAction)changedForecastPeriod:(UISlider *)sender {
@@ -113,23 +125,31 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     
     [self.forecastPeriodLabel setText:forecastPeriodString];
     
-    NSLog(@"Selected a new forecast period, new URI request is: %@", self.currentRequestURI);
+    /** Start a new url session for the new forecast date **/
+    
+    [self getUpdatedJSONDataBasedOnAdjustedParameters];
+    
 
-    [self.childCollectionView reloadData];
     
 }
 
-
-
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     
-    NSLog(@"Selected row %d",row);
     
     
     self.currentlySelectedLocationCoordinate = [self.wfsManager getCoordinateForForecastSite:row];
     
-    NSLog(@"Selected a new forecast location, new URI request is: %@", self.currentRequestURI);
+    
+    /** Start a new URL session for the newly selected location  **/
+    
+    [self getUpdatedJSONDataBasedOnAdjustedParameters];
+    
+    
 }
+
+
+#pragma mark ******* PICKER VIEW DELEGATE METHODS
+
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     
@@ -167,6 +187,8 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     
 }
 
+#pragma mark ****** COLLECTION VIEW DATA SOURCE AND DELEGATE METHODS
+
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return (NSUInteger)[self.forecastPeriodSlider value];
 }
@@ -191,6 +213,105 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     return cell;
 }
 
+
+
+#pragma mark ******* URL SESSION MANAGEMENT HELPER METHODS
+
+-(void)getUpdatedJSONDataBasedOnAdjustedParameters{
+    
+    [self cancelPreviousURLSession];
+    
+    [self createAndStartDataTasksForNewURLSession];
+    
+    [self.childCollectionView reloadData];
+    
+    NSLog(@"Contents of the JSON data array");
+    
+    for(NSDictionary* dict in self.jsonDictArray){
+        NSLog(@"Contents of JSON Dict: %@",[dict description]);
+    }
+    
+}
+
+-(void) cancelPreviousURLSession{
+    
+    if(self.sessionForWeatherDataRequests){
+        [self.sessionForWeatherDataRequests invalidateAndCancel];
+        self.sessionForWeatherDataRequests = nil;
+    }
+}
+
+
+-(void)createAndStartDataTasksForNewURLSession{
+    
+    self.sessionForWeatherDataRequests = [NSURLSession sessionWithConfiguration:self.sessionConfiguration];
+    
+    self.jsonDictArray = [[NSMutableArray alloc] init];
+    
+    WeatherDisplayController* __weak weakSelf = self;
+    
+    for(NSURL* url in [self getURLsForForecastPeriod]){
+        
+        [[self.sessionForWeatherDataRequests dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            
+            NSLog(@"Got response %@ with error %@.\n", response, error);
+            
+            /** JSON Dictionaries for a particular session are added to stored array **/
+            NSError* e = nil;
+            
+            if(data){
+                NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&e];
+            
+                [weakSelf.jsonDictArray addObject:jsonDict];
+            }
+            
+        }] resume];
+        
+    }
+    
+    
+}
+
+
+-(NSArray<NSURL*>*)getURLsForForecastPeriod{
+    
+    NSMutableArray<NSURL*>* urlArray = [[NSMutableArray alloc] init];
+    
+    int numberOfForecastDays = (int)[self.forecastPeriodSlider value];
+    NSDate* runningDate = [self.datePicker date];
+    
+    for(int i = 0; i < numberOfForecastDays; i++){
+        
+       runningDate = [NSDate dateWithTimeInterval:(i*3600*24) sinceDate:runningDate];
+        NSTimeInterval UNIXFormattedRunningDate = [runningDate timeIntervalSince1970];
+        
+        NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setMaximumFractionDigits:0];
+        
+        NSString* runningDateString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:UNIXFormattedRunningDate]];
+        
+        NSString* nextURLString = [self.currentRequestURI stringByAppendingString:runningDateString];
+        
+        NSURL* nextURL = [NSURL URLWithString:nextURLString];
+        
+        [urlArray addObject:nextURL];
+    }
+    
+    return [NSArray arrayWithArray:urlArray];
+}
+
+
+-(void)showCurrentURLsForDataTasks{
+    
+    NSLog(@"The new set of urls is: ");
+    
+    for (NSURL*url in [self getURLsForForecastPeriod]) {
+        NSLog(@"%@",[url absoluteString]);
+    }
+    
+}
+
+
 -(NSString *)apiKey{
     return _apiKey;
 }
@@ -199,15 +320,33 @@ static NSString* _apiKey = @"ee1cc0493ff35cc8dc97394f1fcb0348";
     
     CLLocationDegrees latitude = self.currentlySelectedLocationCoordinate.latitude;
     CLLocationDegrees longitude = self.currentlySelectedLocationCoordinate.longitude;
-    NSTimeInterval requestedForecastDate = [self getUNIXDate];
     
-    NSString* parameterString = [NSString stringWithFormat:@"%@/%f,%f,%f",self.apiKey,latitude,longitude,requestedForecastDate];
+    NSString* parameterString = [NSString stringWithFormat:@"%@/%f,%f,",self.apiKey,latitude,longitude];
     
-    NSString* baseURLWithParameters = [_baseURL stringByAppendingString:parameterString];
+    NSString* baseURLStringWithLocationParameters = [_baseURL stringByAppendingString:parameterString];
     
-    return baseURLWithParameters;
+    return baseURLStringWithLocationParameters;
 }
+
+-(NSURLSessionConfiguration *)sessionConfiguration{
+    
+    /** The readonly sessionConfiguration provides a new instance of a default session configuration each time it is accessed **/
+    
+    return [NSURLSessionConfiguration defaultSessionConfiguration];
+}
+
+
+#pragma mark **** OTHER HELPER METHODS
+
+-(NSTimeInterval) getUNIXDate{
+    
+    return [[self.datePicker date] timeIntervalSince1970];
+    
+}
+
+#pragma mark ****** IBACTION FOR LOADING DARK SKY WEBSITE 
 
 - (IBAction)loadDarkSkyWebsite:(UITapGestureRecognizer *)sender {
 }
+
 @end

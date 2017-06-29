@@ -1089,7 +1089,7 @@
                                     <outletCollection property="gestureRecognizers" destination="zOT-iY-sZN" appends="YES" id="CQi-kt-1fS"/>
                                 </connections>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="5Vt-oC-Kqz">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Vt-oC-Kqz">
                                 <rect key="frame" x="205.5" y="252.5" width="154" height="31"/>
                                 <connections>
                                     <action selector="changedForecastPeriod:" destination="Xfz-PO-w8Y" eventType="valueChanged" id="DRK-vQ-lb3"/>

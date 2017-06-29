@@ -1,0 +1,52 @@
+Transportation
+	airport
+	train station
+	bus stop
+	
+	How do I get to the airport?
+	Where is the train station?
+	I need a ticket to Seoul.
+	Are there any discount seats available?
+
+	When does the next train leave for this place?
+	What time does my train leave?
+	Where do I board the train?
+	What is the platform for this train?
+	When does the train get there?
+	How long is the trip?
+	Is there any standing room available?
+	
+	Can I take the high-speed train?
+	Can I take the regular train?
+	I don’t want to ride the high-speed train. The regular train is fine.
+	I don’t want to ride the regular train. I would like the high speed train.
+		
+	Can I bring this on the plane?
+	Can this be considered carry-on?
+	Where do I check-in?
+	Where is the baggage claim?
+	What is the gate for this flight?
+	What time is my flight?
+
+	Do you stop at this place?
+	Do you go to this place?
+	Which bus goes to this place?
+	
+	
+Health/Medical
+
+Restaurants
+	How much is the bill?
+	Give me seconds please.
+	I would like to change my order.
+	I would like something sweet.
+	I would like something spicy.
+	I would like something light. With no oil or fat.
+	Do you have any vegetarian dishes?
+
+
+Food
+	Is there a supermarket nearby?
+	Where is the fruit?
+	Where are the vegetables?
+
