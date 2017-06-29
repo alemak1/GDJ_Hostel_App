@@ -49,18 +49,18 @@ static NSDictionary* _weatherIconDict;
     
     if(!_weatherIconDict){
         _weatherIconDict = [NSDictionary dictionaryWithObjectsAndKeys:
-            [UIImage imageNamed:@"rainB"],kRAIN,
-            [UIImage imageNamed:@"snowB"],kSNOW,
-            [UIImage imageNamed:@"sleetB"],kSLEET,
-            [UIImage imageNamed:@"hailB"],kHAIL,
-            [UIImage imageNamed:@"partlyCloudyDayB"],kPARTLY_CLOUDY_DAY,
-            [UIImage imageNamed:@"partlyCloudyNightB"],kPARTLY_CLOUDY_NIGHT,
-            [UIImage imageNamed:@"cloudyB"],kCLOUDY,
-            [UIImage imageNamed:@"windB"],kWINDY,
-            [UIImage imageNamed:@"clearB"],kCLEAR_DAY,
-            [UIImage imageNamed:@"clearNightB"],kCLEAR_NIGHT,
-            [UIImage imageNamed:@"fogB"],kFOG,
-            [UIImage imageNamed:@"clearNightB"],kCLEAR_NIGHT, nil];
+            [UIImage imageNamed:@"rainC"],kRAIN,
+            [UIImage imageNamed:@"snowC"],kSNOW,
+            [UIImage imageNamed:@"sleetC"],kSLEET,
+            [UIImage imageNamed:@"hailC"],kHAIL,
+            [UIImage imageNamed:@"partlyCloudyDayC"],kPARTLY_CLOUDY_DAY,
+            [UIImage imageNamed:@"partlyCloudyNightC"],kPARTLY_CLOUDY_NIGHT,
+            [UIImage imageNamed:@"cloudyC"],kCLOUDY,
+            [UIImage imageNamed:@"windC"],kWINDY,
+            [UIImage imageNamed:@"clearC"],kCLEAR_DAY,
+            [UIImage imageNamed:@"clearNightC"],kCLEAR_NIGHT,
+            [UIImage imageNamed:@"fogC"],kFOG,
+            [UIImage imageNamed:@"clearNightC"],kCLEAR_NIGHT, nil];
     }
     
     return _weatherIconDict;

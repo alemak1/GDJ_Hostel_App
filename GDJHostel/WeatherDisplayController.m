@@ -12,6 +12,7 @@
 
 #import "WFSManager.h"
 #import "WeatherIconManager.h"
+#import "WeatherConfiguration.h"
 
 @interface WeatherDisplayController () <UIPickerViewDelegate,UIPickerViewDataSource, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,NSURLSessionDelegate,NSURLSessionTaskDelegate,NSURLSessionDataDelegate>
 
@@ -63,6 +64,7 @@
 @property (readonly) NSOperationQueue* backgroundSessionOperationQueue;
 
 @property NSMutableArray<NSDictionary*>* jsonDictArray;
+@property NSMutableArray<WeatherConfiguration*>* jsonConfigurationArray;
 
 @end
 
@@ -180,7 +182,7 @@ int backgroundSessionIndex = 0;
     NSString* labelText = [self.wfsManager getTitleForForecastSite:row];
     
     UILabel* labelView = [[UILabel alloc] init];
-    [labelView setFont:[UIFont fontWithName:@"Futura-Medium" size:40.0]];
+    [labelView setFont:[UIFont fontWithName:@"Optima-Bold" size:30.0]];
     [labelView setText:labelText];
     
     [labelView setFrame:self.locationPicker.frame];
@@ -198,31 +200,56 @@ int backgroundSessionIndex = 0;
     
     /** The number of JSON objects successfully downloadded from the weather API will determine the number of cells that need to be configured **/
     
-    return [self.jsonDictArray count];
+    return [self.jsonConfigurationArray count];
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }
 
-/**
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    WeatherCollectionCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCollectionCell" forIndexPath:indexPath];
-    
-    return cell;
-}
-
-**/
-
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     WeatherCollectionCell* cell = [self.childCollectionView dequeueReusableCellWithReuseIdentifier:@"WeatherCollectionCell" forIndexPath:indexPath];
     
+    [self sortWeatherConfigurationArrayByDate];
+   
+    WeatherConfiguration* weatherConfiguration = [self.jsonConfigurationArray objectAtIndex:indexPath.row];
     
-    NSDictionary* jsonDict = [self.jsonDictArray objectAtIndex:indexPath.row];
+    [self configureCollectionViewCell:cell withWeatherConfiguration:weatherConfiguration];
 
+    return cell;
+}
+
+
+-(void) sortWeatherConfigurationArrayByDate{
+    [self.jsonConfigurationArray sortUsingComparator:^NSComparisonResult(id a, id b){
+        
+        NSDate* first = [(WeatherConfiguration*)a date];
+        NSDate* second = [(WeatherConfiguration*)b date];
+        
+        return [first compare:second];
+        
+    }];
+}
+
+
+-(void) configureCollectionViewCell:(WeatherCollectionCell*)cell withWeatherConfiguration:(WeatherConfiguration*)weatherConfiguration{
+    
+
+    
+    cell.weatherIconName = weatherConfiguration.iconName;
+    cell.temperature = weatherConfiguration.temperature;
+    cell.precipitation = weatherConfiguration.precipitation;
+    cell.humidity = weatherConfiguration.humidity;
+    cell.cloudCover = weatherConfiguration.cloudCover;
+    cell.windSpeed = weatherConfiguration.windSpeed;
+    cell.date = weatherConfiguration.date;
+    cell.summaryText = weatherConfiguration.summaryText;
+}
+
+-(void)configureCollectionViewCell:(WeatherCollectionCell*)cell withJSONDict:(NSDictionary*)jsonDict{
+    
     
     NSDictionary* dailyInfoDict = [jsonDict valueForKey:@"daily"];
     
@@ -264,6 +291,7 @@ int backgroundSessionIndex = 0;
     
     NSLog(@"Summary text: %@",summaryText);
     
+
     cell.weatherIconName = iconName;
     cell.temperature = temperature;
     cell.precipitation = precipitation;
@@ -273,9 +301,7 @@ int backgroundSessionIndex = 0;
     cell.date = formattedDate;
     cell.summaryText = summaryText;
 
-    return cell;
 }
-
 
 
 #pragma mark ******* URL SESSION MANAGEMENT HELPER METHODS
@@ -367,12 +393,12 @@ int backgroundSessionIndex = 0;
     self.sessionForWeatherDataRequests = [NSURLSession sessionWithConfiguration:self.sessionConfiguration];
     
     /** Clear any previously downloaded JSON data **/
-    if(self.jsonDictArray){
+    if(self.jsonConfigurationArray){
         
-        self.jsonDictArray = nil;
+        self.jsonConfigurationArray = nil;
     }
     
-    self.jsonDictArray = [[NSMutableArray alloc] init];
+    self.jsonConfigurationArray = [[NSMutableArray alloc] init];
     
     for(NSURL* url in [self getURLsForForecastPeriod]){
         
@@ -393,7 +419,9 @@ int backgroundSessionIndex = 0;
                         NSLog(@"Error in parsing JSON data: %@",[jsonError description]);
                     }else{
                         
-                        [self.jsonDictArray addObject:jsonDict];
+                        WeatherConfiguration* weatherConfiguration = [[WeatherConfiguration alloc] initWithJSONDict:jsonDict];
+                        
+                        [self.jsonConfigurationArray addObject:weatherConfiguration];
 
                         dispatch_async(dispatch_get_main_queue(), ^{
                             
