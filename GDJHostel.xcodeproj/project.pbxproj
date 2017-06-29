@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD1248891F04A8CA00B77F36 /* WeatherIconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1248881F04A8CA00B77F36 /* WeatherIconManager.m */; };
+		BD12488C1F04B4C100B77F36 /* WeatherCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD12488B1F04B4C100B77F36 /* WeatherCollectionCell.m */; };
 		BD27B12E1F0250B700059152 /* TouristSiteCategorySelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD27B12D1F0250B700059152 /* TouristSiteCategorySelectionController.m */; };
 		BD2995B11EFE68EB009E64BF /* SurvivalWordsPhrases.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD2995B01EFE68EB009E64BF /* SurvivalWordsPhrases.plist */; };
 		BD2CAA8E1EFFCCEF00C0E540 /* HostelFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA8D1EFFCCEF00C0E540 /* HostelFlowLayout.m */; };
@@ -35,6 +37,7 @@
 		BD3117DB1EFE800900D6A5D6 /* content_iPhone.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD3117DA1EFE800900D6A5D6 /* content_iPhone.plist */; };
 		BD312E021F01517B00FB90E3 /* UIView+HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BD312E011F01517B00FB90E3 /* UIView+HelperMethods.m */; };
 		BD3151141F00C844002332B8 /* TouristSiteCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3151131F00C844002332B8 /* TouristSiteCollectionViewController.m */; };
+		BD3154EB1F03BF23002B3388 /* WeatherDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3154EA1F03BF23002B3388 /* WeatherDisplayController.m */; };
 		BD31A5AE1F038E0600C018DB /* TouristSiteDetailInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31A5AD1F038E0600C018DB /* TouristSiteDetailInformationController.m */; };
 		BD31A5B11F03932100C018DB /* SeoulTourismNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31A5B01F03932100C018DB /* SeoulTourismNavigationController.m */; };
 		BD3279401F00124F0007FD64 /* ParkRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD32793F1F00124F0007FD64 /* ParkRoute.plist */; };
@@ -67,9 +70,17 @@
 		BDF2348B1F00216600E9ED63 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA32F061EFF45910087BF19 /* AudioController.m */; };
 		BDF2348C1F0021BA00E9ED63 /* HostelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA931EFFD0EC00C0E540 /* HostelCollectionViewCell.m */; };
 		BDF55EBD1F036906003FC663 /* NSString+HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF55EBC1F036906003FC663 /* NSString+HelperMethods.m */; };
+		BDFBFBA11F03D57700185F47 /* WeatherForecastCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBFBA01F03D57700185F47 /* WeatherForecastCollectionController.m */; };
+		BDFBFBA41F03E41400185F47 /* WeatherForecastSite.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBFBA31F03E41400185F47 /* WeatherForecastSite.m */; };
+		BDFBFBA71F03E51C00185F47 /* WFSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBFBA61F03E51C00185F47 /* WFSManager.m */; };
+		BDFBFBA91F03E5BE00185F47 /* WeatherForecastSites.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDFBFBA81F03E5BE00185F47 /* WeatherForecastSites.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD1248871F04A8BC00B77F36 /* WeatherIconManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherIconManager.h; sourceTree = "<group>"; };
+		BD1248881F04A8CA00B77F36 /* WeatherIconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherIconManager.m; sourceTree = "<group>"; };
+		BD12488A1F04B1C400B77F36 /* WeatherCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCollectionCell.h; sourceTree = "<group>"; };
+		BD12488B1F04B4C100B77F36 /* WeatherCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCollectionCell.m; sourceTree = "<group>"; };
 		BD27B1291F02505700059152 /* TouristSiteCategorySelectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristSiteCategorySelectionController.h; sourceTree = "<group>"; };
 		BD27B12D1F0250B700059152 /* TouristSiteCategorySelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristSiteCategorySelectionController.m; sourceTree = "<group>"; };
 		BD2995B01EFE68EB009E64BF /* SurvivalWordsPhrases.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SurvivalWordsPhrases.plist; sourceTree = "<group>"; };
@@ -114,6 +125,8 @@
 		BD312E011F01517B00FB90E3 /* UIView+HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HelperMethods.m"; sourceTree = "<group>"; };
 		BD3151121F00C82F002332B8 /* TouristSiteCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristSiteCollectionViewController.h; sourceTree = "<group>"; };
 		BD3151131F00C844002332B8 /* TouristSiteCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristSiteCollectionViewController.m; sourceTree = "<group>"; };
+		BD3154E91F03BF10002B3388 /* WeatherDisplayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherDisplayController.h; sourceTree = "<group>"; };
+		BD3154EA1F03BF23002B3388 /* WeatherDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDisplayController.m; sourceTree = "<group>"; };
 		BD31A5AC1F038DD400C018DB /* TouristSiteDetailInformationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristSiteDetailInformationController.h; sourceTree = "<group>"; };
 		BD31A5AD1F038E0600C018DB /* TouristSiteDetailInformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristSiteDetailInformationController.m; sourceTree = "<group>"; };
 		BD31A5AF1F03931200C018DB /* SeoulTourismNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoulTourismNavigationController.h; sourceTree = "<group>"; };
@@ -166,6 +179,13 @@
 		BDA32F061EFF45910087BF19 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
 		BDF55EBB1F036906003FC663 /* NSString+HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HelperMethods.h"; sourceTree = "<group>"; };
 		BDF55EBC1F036906003FC663 /* NSString+HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HelperMethods.m"; sourceTree = "<group>"; };
+		BDFBFB9F1F03D56600185F47 /* WeatherForecastCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherForecastCollectionController.h; sourceTree = "<group>"; };
+		BDFBFBA01F03D57700185F47 /* WeatherForecastCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherForecastCollectionController.m; sourceTree = "<group>"; };
+		BDFBFBA21F03E40800185F47 /* WeatherForecastSite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherForecastSite.h; sourceTree = "<group>"; };
+		BDFBFBA31F03E41400185F47 /* WeatherForecastSite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherForecastSite.m; sourceTree = "<group>"; };
+		BDFBFBA51F03E4DD00185F47 /* WFSManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFSManager.h; sourceTree = "<group>"; };
+		BDFBFBA61F03E51C00185F47 /* WFSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFSManager.m; sourceTree = "<group>"; };
+		BDFBFBA81F03E5BE00185F47 /* WeatherForecastSites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WeatherForecastSites.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +248,24 @@
 			name = InformationControllers;
 			sourceTree = "<group>";
 		};
+		BD3154E81F03BEE4002B3388 /* WeatherCollectionController */ = {
+			isa = PBXGroup;
+			children = (
+				BD3154E91F03BF10002B3388 /* WeatherDisplayController.h */,
+				BD3154EA1F03BF23002B3388 /* WeatherDisplayController.m */,
+				BDFBFB9F1F03D56600185F47 /* WeatherForecastCollectionController.h */,
+				BDFBFBA01F03D57700185F47 /* WeatherForecastCollectionController.m */,
+				BDFBFBA21F03E40800185F47 /* WeatherForecastSite.h */,
+				BDFBFBA31F03E41400185F47 /* WeatherForecastSite.m */,
+				BDFBFBA51F03E4DD00185F47 /* WFSManager.h */,
+				BDFBFBA61F03E51C00185F47 /* WFSManager.m */,
+				BDFBFBA81F03E5BE00185F47 /* WeatherForecastSites.plist */,
+				BD12488A1F04B1C400B77F36 /* WeatherCollectionCell.h */,
+				BD12488B1F04B4C100B77F36 /* WeatherCollectionCell.m */,
+			);
+			name = WeatherCollectionController;
+			sourceTree = "<group>";
+		};
 		BD3844B01EFE52C800F2E981 /* NavigationAidControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +287,8 @@
 				BDF55EBB1F036906003FC663 /* NSString+HelperMethods.h */,
 				BDF55EBC1F036906003FC663 /* NSString+HelperMethods.m */,
 				BD32E41D1F03A83F00F847B3 /* DayOfWeek.h */,
+				BD1248871F04A8BC00B77F36 /* WeatherIconManager.h */,
+				BD1248881F04A8CA00B77F36 /* WeatherIconManager.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -317,6 +357,7 @@
 		BD902CD71EFD31F600DD1034 /* GDJHostel */ = {
 			isa = PBXGroup;
 			children = (
+				BD3154E81F03BEE4002B3388 /* WeatherCollectionController */,
 				BD3A9C7E1F028C64006D1CD8 /* Utils */,
 				BD68476E1F00F10F004732FB /* ImageCacheUtil */,
 				BD2CAA951EFFDD8600C0E540 /* TouristSitesCollectionController */,
@@ -472,6 +513,7 @@
 				BD305BC01EFF8CC700F9F2B9 /* background-music-aac.caf in Resources */,
 				BD5C3ECA1EFD579100616400 /* StoryboardA.storyboard in Resources */,
 				BD305BA41EFF888100F9F2B9 /* Alpha Dance.mp3 in Resources */,
+				BDFBFBA91F03E5BE00185F47 /* WeatherForecastSites.plist in Resources */,
 				BD902CF01EFD325100DD1034 /* HostelArea.plist in Resources */,
 				BD305BBA1EFF8CB500F9F2B9 /* transportation-6.caf in Resources */,
 				BD305BB91EFF8CB500F9F2B9 /* transportation-5.caf in Resources */,
@@ -490,6 +532,8 @@
 				BD312E021F01517B00FB90E3 /* UIView+HelperMethods.m in Sources */,
 				BDF2348B1F00216600E9ED63 /* AudioController.m in Sources */,
 				BD375DCB1EFE98910002525F /* ScrollableInfoController.m in Sources */,
+				BD1248891F04A8CA00B77F36 /* WeatherIconManager.m in Sources */,
+				BD12488C1F04B4C100B77F36 /* WeatherCollectionCell.m in Sources */,
 				BD2EA76F1EFFB1E300A8572B /* FeatureScrollViewController.m in Sources */,
 				BD902CE01EFD31F600DD1034 /* ViewController.m in Sources */,
 				BD2CAA8E1EFFCCEF00C0E540 /* HostelFlowLayout.m in Sources */,
@@ -503,6 +547,7 @@
 				BD3151141F00C844002332B8 /* TouristSiteCollectionViewController.m in Sources */,
 				BD68476D1F00F102004732FB /* ImageKeyConstants.m in Sources */,
 				BD3844A61EFE450800F2E981 /* DirectionsMenuController.m in Sources */,
+				BDFBFBA41F03E41400185F47 /* WeatherForecastSite.m in Sources */,
 				BD5C3EBC1EFD4BA000616400 /* HostelAreaMapViewController.m in Sources */,
 				BD27B12E1F0250B700059152 /* TouristSiteCategorySelectionController.m in Sources */,
 				BD2CAA9B1EFFE59800C0E540 /* TouristSiteConfiguration.m in Sources */,
@@ -511,14 +556,17 @@
 				BD2CAA981EFFDDB500C0E540 /* TouristSiteCollectionViewCell.m in Sources */,
 				BD68476C1F00F102004732FB /* ImageManager.m in Sources */,
 				BD3844B31EFE579B00F2E981 /* ToHostelDirectionsController.m in Sources */,
+				BD3154EB1F03BF23002B3388 /* WeatherDisplayController.m in Sources */,
 				BD2EA7721EFFC28F00A8572B /* ContactScrollViewController.m in Sources */,
 				BD30C51A1EFDE5240032FE64 /* MenuComponent.m in Sources */,
 				BD902CDD1EFD31F600DD1034 /* AppDelegate.m in Sources */,
 				BD6847711F010070004732FB /* ImageManagerB.m in Sources */,
+				BDFBFBA71F03E51C00185F47 /* WFSManager.m in Sources */,
 				BD902CDA1EFD31F600DD1034 /* main.m in Sources */,
 				BD5C3EC41EFD516E00616400 /* OverlayConfiguration.m in Sources */,
 				BD31A5B11F03932100C018DB /* SeoulTourismNavigationController.m in Sources */,
 				BDA32EE21EFF39DB0087BF19 /* KoreanAudioPhraseController.m in Sources */,
+				BDFBFBA11F03D57700185F47 /* WeatherForecastCollectionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
