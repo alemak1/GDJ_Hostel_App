@@ -27,7 +27,7 @@ typedef enum TESTABLE_VIEWCONTROLLERS{
 
 @implementation AppDelegate
 
-static BOOL willInitiateFromStoryBoard = true;
+static BOOL willInitiateFromStoryBoard = false;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

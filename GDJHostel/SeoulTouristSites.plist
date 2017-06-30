@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>imagePath</key>
-		<string></string>
+		<string>war_memorial</string>
 		<key>category</key>
 		<integer>2</integer>
 		<key>specialNote</key>
@@ -55,9 +55,9 @@
 	</dict>
 	<dict>
 		<key>imagePath</key>
-		<string></string>
+		<string>namsan_observatory</string>
 		<key>category</key>
-		<integer>5</integer>
+		<integer>10</integer>
 		<key>webAddress</key>
 		<string></string>
 		<key>physicalAddress</key>
@@ -101,9 +101,9 @@
 	</dict>
 	<dict>
 		<key>imagePath</key>
-		<string></string>
+		<string>namsan_cable_car</string>
 		<key>category</key>
-		<integer>5</integer>
+		<integer>10</integer>
 		<key>specialNote</key>
 		<string></string>
 		<key>physicalAddress</key>
@@ -151,9 +151,9 @@
 	</dict>
 	<dict>
 		<key>imagePath</key>
-		<string></string>
+		<string>north_seoul_tower</string>
 		<key>category</key>
-		<integer>5</integer>
+		<integer>10</integer>
 		<key>daysClosed</key>
 		<array/>
 		<key>closingTime</key>
@@ -196,7 +196,40 @@
 	</dict>
 	<dict>
 		<key>imagePath</key>
-		<string></string>
+		<string>seoul_tower_plaza</string>
+		<key>category</key>
+		<integer>10</integer>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>description</key>
+		<string>N Seoul Tower used to be the tower for broadcasting transmission and the bottom levels of the tower have restricted access to authorized staff only. Since the remodeling to the Seoul Tower Plaza in 2015, these levels are now opened the public. Visitors to the Seoul Tower Plaza building can also enjoy the terrace that is installed to serve as a walking trail for leisure walks. A beautiful panoramic view of Seoul can also be seen from 243m in height. at the summit of Namsan Mountain.</string>
+		<key>webAddress</key>
+		<string>www.seoultower.co.kr</string>
+		<key>physicalAddress</key>
+		<string>105, Namsangongwon-gil, Yongsan-gu, Seoul
+</string>
+		<key>name</key>
+		<string>Seoul Tower Plaza</string>
+		<key>title</key>
+		<string>Seoul Tower Plaza</string>
+		<key>midCoord</key>
+		<string>{37.5509515,126.9871078}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5512232,126.9866143}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5513852,126.9874513}</string>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5506542,126.9867963}</string>
+		<key>boundary</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>world_cup_stadium</string>
 		<key>category</key>
 		<integer>8</integer>
 		<key>specialNote</key>
@@ -244,7 +277,7 @@ The very first impression the stadium gives is that it is very large. It provide
 	</dict>
 	<dict>
 		<key>imagePath</key>
-		<string></string>
+		<string>korean_film_museum</string>
 		<key>category</key>
 		<integer>0</integer>
 		<key>specialNote</key>
@@ -290,7 +323,7 @@ The very first impression the stadium gives is that it is very large. It provide
 	</dict>
 	<dict>
 		<key>imagePath</key>
-		<string></string>
+		<string>digital_media_city</string>
 		<key>category</key>
 		<integer>9</integer>
 		<key>specialNote</key>
@@ -336,7 +369,7 @@ Attractions and facilities at the DMC include the DMC Promotion Room, DMS (Digit
 	</dict>
 	<dict>
 		<key>imagePath</key>
-		<string></string>
+		<string>world_cup_park</string>
 		<key>category</key>
 		<integer>7</integer>
 		<key>specialNote</key>
@@ -383,54 +416,7 @@ Attractions and facilities at the DMC include the DMC Promotion Room, DMS (Digit
 	</dict>
 	<dict>
 		<key>imagePath</key>
-		<string></string>
-		<key>category</key>
-		<integer>7</integer>
-		<key>specialNote</key>
-		<string></string>
-		<key>physicalAddress</key>
-		<string></string>
-		<key>webAddress</key>
-		<string></string>
-		<key>daysClosed</key>
-		<array>
-			<integer>7</integer>
-		</array>
-		<key>closingTime</key>
-		<integer>-1</integer>
-		<key>openingTime</key>
-		<integer>-1</integer>
-		<key>admissionFee</key>
-		<integer>0</integer>
-		<key>description</key>
-		<string></string>
-		<key>name</key>
-		<string>Pyounghwa Park</string>
-		<key>title</key>
-		<string>Pyounghwa Park</string>
-		<key>boundary</key>
-		<array>
-			<string>{37.561923,126.890583}</string>
-			<string>{37.561923,126.890583}</string>
-			<string>{37.561923,126.890583}</string>
-			<string>{37.5619655,126.8923639}</string>
-			<string>{37.563194,126.894925}</string>
-			<string>{37.562633,126.8947}</string>
-			<string>{37.562633,126.8947}</string>
-			<string>{37.562633,126.8947}</string>
-		</array>
-		<key>overlayBottomLeftCoord</key>
-		<string>{37.561017,126.890612}</string>
-		<key>overlayTopRightCoord</key>
-		<string>{37.564162,126.89515}</string>
-		<key>overlayTopLeftCoord</key>
-		<string>{37.564307,126.890901}</string>
-		<key>midCoord</key>
-		<string>{37.562565,126.892715}</string>
-	</dict>
-	<dict>
-		<key>imagePath</key>
-		<string></string>
+		<string>pyounghwa_fashion_town</string>
 		<key>category</key>
 		<integer>3</integer>
 		<key>specialNote</key>
@@ -468,6 +454,328 @@ http://pyounghwa.com/eng
 		<string>{37.569065,127.004828}</string>
 		<key>midCoord</key>
 		<string>{37.5694549,127.0066594}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>namsan_octagonal_pavilion</string>
+		<key>category</key>
+		<integer>10</integer>
+		<key>specialNote</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string>105, Namsangongwon-gil, Yongsan-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>www.seoul.go.kr </string>
+		<key>daysClosed</key>
+		<array>
+			<integer>7</integer>
+		</array>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Sitting and viewing area close to the Namsan Seoul Tower.</string>
+		<key>name</key>
+		<string>Namsan Octagonal Pavilion</string>
+		<key>title</key>
+		<string>Namsan Octagonal Pavilion</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5501132,126.9871723}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5524692,126.9903903}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5522732,126.9867963}</string>
+		<key>midCoord</key>
+		<string>{37.5509515,126.9871078}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>yanggu_punch_bowl_village</string>
+		<key>category</key>
+		<integer>11</integer>
+		<key>specialNote</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string>50-3, Dongmakdong-gil, Yanggu-gun, Gangwon-do
+</string>
+		<key>webAddress</key>
+		<string>punchbowl.invil.org </string>
+		<key>daysClosed</key>
+		<array>
+			<integer>7</integer>
+		</array>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Punch Bowl in Yanggu-gun Gangwon-do is a highland basin situated 400-500 meters above sea level. The name &quot;Punch Bowl&quot; comes from the basin&apos;s resemblance to a large punch bowl. The town has around 1,700 residents, and is the only town that is located inside the Civilian Access Control Line.</string>
+		<key>name</key>
+		<string>Yanggu Punch Bowl Village</string>
+		<key>title</key>
+		<string>Yanggu Punch Bowl Village</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{38.2931782,128.1277033}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{38.2951062,128.1296773}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{38.2948282,128.1276173}</string>
+		<key>midCoord</key>
+		<string>{38.2941635,128.1284002}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>fourth_tunnel</string>
+		<key>category</key>
+		<integer>11</integer>
+		<key>specialNote</key>
+		<string>Visitors must register before 16:00 at Yanggu Unification Hall for admission to Eulji Observatory, the 4th Tunnel, and War Memorial Museum of Yanggu.</string>
+		<key>physicalAddress</key>
+		<string>233-4, Ihyeon-ri, Haean-myeon, Yanggu-gun, Gangwon-do
+</string>
+		<key>webAddress</key>
+		<string>ygtour.kr/ </string>
+		<key>daysClosed</key>
+		<array>
+			<integer>7</integer>
+		</array>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>A historic site that is both fascinating and educational.  If you are a history buff, this is the place to go.</string>
+		<key>name</key>
+		<string>The Fourth Tunnel</string>
+		<key>title</key>
+		<string>The Fourth Tunnel</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{38.3112072,128.1195313}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{38.3122262,128.1207543}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{38.3120742,128.1192523}</string>
+		<key>midCoord</key>
+		<string>{38.3115438,128.120164}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>eulji_observatory</string>
+		<key>category</key>
+		<integer>11</integer>
+		<key>specialNote</key>
+		<string>Visitors must register before 16:00 at Yanggu Unification Hall for admission to Eulji Observatory, the 4th Tunnel, and War Memorial Museum of Yanggu.</string>
+		<key>physicalAddress</key>
+		<string>621, Hu-ri, Haean-myeon, Yanggu-gun, Gangwon-do
+</string>
+		<key>webAddress</key>
+		<string>ygtour.kr/ </string>
+		<key>daysClosed</key>
+		<array>
+			<integer>7</integer>
+		</array>
+		<key>closingTime</key>
+		<integer>17</integer>
+		<key>openingTime</key>
+		<integer>9</integer>
+		<key>admissionFee</key>
+		<integer>3000</integer>
+		<key>description</key>
+		<string>Eulji Observation Platform, located near the Military Demarcation Line, is now one of the most informative relics dating back to the Korean Conflict. From the Eulji Observation Platform, North Korea soldiers on guard are visible and on clear days so is Birobong Peak of Geumgangsan Mountain. Every year over one hundred thousand people visit this observation platform at the DMZ.
+</string>
+		<key>name</key>
+		<string>Euji Observatory</string>
+		<key>title</key>
+		<string>Euji Observatory</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{38.2895832,128.1425063}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{38.2907112,128.1439333}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{38.2905852,128.1425813}</string>
+		<key>midCoord</key>
+		<string>{38.2901217,128.1430423}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>yanggu_unification_hall</string>
+		<key>category</key>
+		<integer>11</integer>
+		<key>specialNote</key>
+		<string>Visitors must register before 16:00 at Yanggu Unification Hall for admission to Eulji Observatory, the 4th Tunnel, and War Memorial Museum of Yanggu. Last admission is two hours before closing.
+</string>
+		<key>physicalAddress</key>
+		<string>35, Haeanseohwa-ro, Haean-myeon, Yanggu-gun, Gangwon-do
+</string>
+		<key>webAddress</key>
+		<string>ygtour.kr/ </string>
+		<key>daysClosed</key>
+		<array>
+			<integer>1</integer>
+		</array>
+		<key>closingTime</key>
+		<integer>17</integer>
+		<key>openingTime</key>
+		<integer>9</integer>
+		<key>admissionFee</key>
+		<integer>3000</integer>
+		<key>description</key>
+		<string>The Yanggu Unification Hall is located in the northernmost part of the Civilian Control Zone in Haean-myeon Yanggu-gun. It was built and opened to be utilized as a unification education center that would help broaden people’s understanding about the real situation in North Korea in preparation for reunification and encourage commitment for reunification. The location is 5 km away from The Fourth Tunnel, in the northern end of the punch bowl basin and it first opened in 1996. It has a first exhibition hall, second exhibition hall, agricultural specialty market, and a parking lot that can accommodate about 100 cars. </string>
+		<key>name</key>
+		<string>Yanggu Unification Hall</string>
+		<key>title</key>
+		<string>Yanggu Unification Hall</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{38.2893982,128.1434533}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{38.2902402,128.1443433}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{38.2901472,128.1432063}</string>
+		<key>midCoord</key>
+		<string>{38.2896083,128.1437215}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>wawoo_jongsa_temple</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>specialNote</key>
+		<string>Visitors must register before 16:00 at Yanggu Unification Hall for admission to Eulji Observatory, the 4th Tunnel, and War Memorial Museum of Yanggu. Last admission is two hours before closing.
+</string>
+		<key>physicalAddress</key>
+		<string>25-15, Haegok-ro, Cheoin-gu, Yongin-si, Gyeonggi-do
+</string>
+		<key>webAddress</key>
+		<string>www.wawoo-temple.org 
+</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Wawoojongsa Temple was established in 1970 by Kim Hae-Geun, a monk who was displaced by the Korean War. The temple is not only a reflection of the monk’s sincere hope for the reunification of the North and South, but is also the birthplace of the Korean Buddhist Nirvana Order</string>
+		<key>name</key>
+		<string>Wawoojongsa Temple</string>
+		<key>title</key>
+		<string>Wawoojongsa Temple</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.1885173,127.2742843}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.1895433,127.2752603}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.1892953,127.2740913}</string>
+		<key>midCoord</key>
+		<string>{37.1887563,127.2744993}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>biamsa_temple</string>
+		<key>category</key>
+		<integer>1</integer>
+		<key>specialNote</key>
+		<string>Visitors must register before 16:00 at Yanggu Unification Hall for admission to Eulji Observatory, the 4th Tunnel, and War Memorial Museum of Yanggu. Last admission is two hours before closing.
+</string>
+		<key>physicalAddress</key>
+		<string>137, Biamsa-gil, Jeonui-myeon, , Sejong-si
+</string>
+		<key>webAddress</key>
+		<string>www.sejong.go.kr </string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>The origin of Biamsa Temple is unknown, but the temple&apos;s architectural features suggest that it was built during the mid Goryeo Dynasty period (918-1392). The Geungnakbojeon Hall and the three-storied pagoda inside the temple have been designated as Cultural Properties of Chungcheongnam-do Province. The flamboyang and delicately crafted datjip (canopy) inside the Geungnakbojeon Hall was restored in 1657 during the 8th year of King Hyojong&apos;s reign.
+</string>
+		<key>name</key>
+		<string>Biamsa Temple</string>
+		<key>title</key>
+		<string>Biamsa Temple</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{36.6107783,127.1892543}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{36.6119413,127.1908213}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{36.6117603,127.1889863}</string>
+		<key>midCoord</key>
+		<string>{36.6113813,127.1898977}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>seoul_grand_park</string>
+		<key>category</key>
+		<integer>7</integer>
+		<key>specialNote</key>
+		<string>Admission fees vary for the zoo, theme parks, and campsite.</string>
+		<key>physicalAddress</key>
+		<string>102, Daegongwongwangjang-ro, Gwacheon-si, Gyeonggi-do
+</string>
+		<key>webAddress</key>
+		<string>grandpark.seoul.go.kr 
+</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>5000</integer>
+		<key>description</key>
+		<string>Covering an area of about 9,157,000㎡, Seoul Grand Park consists of themed areas for education, nature, and amusement. The park is known for its various amusement facilities and scenic beauty. Seoul Grand Park’s major attractions include Seoul Grand Park Zoo, Children&apos;s Zoo, a rose garden, Seoulland amusement park, and the National Museum of Modern and Contemorary Art, Gwancheon. </string>
+		<key>name</key>
+		<string>Seoul Grand Tower</string>
+		<key>title</key>
+		<string>Seoul Grand Tower</string>
+		<key>boundary</key>
+		<array>
+			<string>{37.4331702,127.0029923}</string>
+			<string>{37.4325572,127.0049883}</string>
+			<string>{37.4311342,127.0065223}</string>
+			<string>{37.4273132,127.0114363}</string>
+			<string>{37.4344912,127.0210493}</string>
+			<string>{37.4347592,127.0156633}</string>
+			<string>{37.4376092,127.0086683}</string>
+			<string>{37.4394452,127.0059863}</string>
+		</array>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.4311048,127.0054814}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.4382482,127.0221753}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.4402582,127.0047513}</string>
+		<key>midCoord</key>
+		<string>{37.4311048,127.0054814}</string>
 	</dict>
 </array>
 </plist>

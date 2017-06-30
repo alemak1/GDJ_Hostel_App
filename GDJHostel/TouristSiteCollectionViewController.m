@@ -82,6 +82,10 @@
     
     [cell setSiteImage:[UIImage imageNamed:@"RoomNo2_1"]];
     
+    NSString* imagePath = [configurationObject imagePath];
+    
+    cell.siteImage = [UIImage imageNamed:imagePath];
+    
     cell.titleText = [configurationObject title];
     
     cell.travelingTimeText = [configurationObject isOpen] ? @"Open" : @"Closed";

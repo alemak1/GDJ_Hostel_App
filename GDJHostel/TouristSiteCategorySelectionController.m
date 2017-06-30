@@ -99,7 +99,7 @@
     
     [touristSiteCVC1 didMoveToParentViewController:self];
     
-    [touristSiteCVC1 setTitleLabelText:@"Museums"];
+    [touristSiteCVC1 setTitleLabelText:@"Seoul Tower"];
     
     controllerIndex++;
     
@@ -118,7 +118,7 @@
     
     [touristSiteCVC2 didMoveToParentViewController:self];
     
-    [touristSiteCVC2 setTitleLabelText:@"Parks"];
+    [touristSiteCVC2 setTitleLabelText:@"Parks and Other Natural Sites"];
 
     
     controllerIndex++;
@@ -160,6 +160,68 @@
     [touristSiteCVC4 didMoveToParentViewController:self];
     
     [touristSiteCVC4 setTitleLabelText:@"Shopping Centers"];
+    
+    controllerIndex++;
+    
+    //Configure the next view controller...
+    
+    TouristSiteCollectionViewController* touristSiteCVC5 = [mainStoryBoard instantiateViewControllerWithIdentifier:@"TouristSiteCollectionViewController"];
+    
+    [self addChildViewController:touristSiteCVC5];
+    
+    
+    CGRect frame5 = getControllerFrame();
+    
+    [touristSiteCVC5.view setFrame:frame5];
+    
+    [self.scrollView addSubview:touristSiteCVC5.view];
+    
+    [touristSiteCVC5 didMoveToParentViewController:self];
+    
+    [touristSiteCVC5 setTitleLabelText:@"Yanggu County"];
+    
+    controllerIndex++;
+    
+    //Configure the next view controller...
+    
+    TouristSiteCollectionViewController* touristSiteCVC6 = [mainStoryBoard instantiateViewControllerWithIdentifier:@"TouristSiteCollectionViewController"];
+    
+    [self addChildViewController:touristSiteCVC6];
+    
+    
+    CGRect frame6 = getControllerFrame();
+    
+    [touristSiteCVC6.view setFrame:frame6];
+    
+    [self.scrollView addSubview:touristSiteCVC6.view];
+    
+    [touristSiteCVC6 didMoveToParentViewController:self];
+    
+    [touristSiteCVC6 setTitleLabelText:@"Museums and Monuments"];
+    
+    controllerIndex++;
+    
+    //Configure the next view controller...
+    
+    TouristSiteCollectionViewController* touristSiteCVC7 = [mainStoryBoard instantiateViewControllerWithIdentifier:@"TouristSiteCollectionViewController"];
+    
+    [self addChildViewController:touristSiteCVC7];
+    
+    
+    CGRect frame7 = getControllerFrame();
+    
+    [touristSiteCVC7.view setFrame:frame6];
+    
+    [self.scrollView addSubview:touristSiteCVC7.view];
+    
+    [touristSiteCVC7 didMoveToParentViewController:self];
+    
+    [touristSiteCVC7 setTitleLabelText:@"Others Places of Interest"];
+    
+    controllerIndex++;
+
+
+
 
     
 }

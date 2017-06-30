@@ -57,13 +57,23 @@ static void* TouristSiteDetailInformationContext = &TouristSiteDetailInformation
     if(context == TouristSiteDetailInformationContext){
         NSLog(@"Responding to observed change in touristConfiguraiton object");
         
-        /** Configure text for the title and descriptino labels **/
+        /** Configure the image for the site detail view **/
+        
+        UIImage* siteImage = [UIImage imageNamed:[self.touristSiteConfiguration imagePath]];
+        [self.siteImageView setImage:siteImage];
+        
+        
+        
+        
+        /** Configure text for the title and description labels **/
         [self.titleLabel setText:[self.touristSiteConfiguration title]];
         [self.titleLabel setAdjustsFontSizeToFitWidth:YES];
         [self.titleLabel setMinimumScaleFactor:0.25];
         
         [self.descriptionLabel setText:[self.touristSiteConfiguration siteDescription]];
         
+        
+
         /** Configure text for the admission fee **/
         
         CGFloat admissionFee = [self.touristSiteConfiguration admissionFee];
@@ -83,9 +93,7 @@ static void* TouristSiteDetailInformationContext = &TouristSiteDetailInformation
         [self.isOpenSwitch setOn:[self.touristSiteConfiguration isOpen]];
         [self.isOpenSwitch setUserInteractionEnabled:NO];
         
-        /** Configure the siteImage **/
         
-        [self.siteImageView setImage:[UIImage imageNamed:@"RoomNo1_1"]];
         
         /** Configure operating hours label **/
         

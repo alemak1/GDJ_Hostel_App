@@ -1,3 +1,12 @@
+Basic
+	Hello.
+	Good morning.
+	Good afternoon.
+	Good evening.
+	What time is it?
+	How does it cost?
+	Thank you.
+
 Transportation
 	airport
 	train station
@@ -34,17 +43,58 @@ Transportation
 	
 	
 Health/Medical
+	medicine
+	pills
+	Where is the hospital?
+	How do I go to the hospital?
+	I have a headache.
+	I’m not feeling well.
+	I think I’m sick.
+	I feel like throwing up.
+	I have a stomach ache.
+	My tooth hurts.
+	Do you have any aspirin?
+	Do you have anything for mosquitos?
 
 Restaurants
-	How much is the bill?
-	Give me seconds please.
+	A table for two, please.
+	A table for three, please.
+	Could I see the menu?
+	Is there a non-smoking section here?
+	I’m really hungry.
 	I would like to change my order.
 	I would like something sweet.
 	I would like something spicy.
 	I would like something light. With no oil or fat.
 	Do you have any vegetarian dishes?
+	This isn’t what I ordered.
+	We’ve been waiting too long.
+	This food is too cold.
+	This food is too salty.
+	This food is too spicy.
+	I’m allergic to this.
+	I don’t eat pork.
+	I don’t eat meat.
+	Could I have some more water?
+	Could I have some more rice?
+	Give me seconds, please.
+	Is there a non-smoking section here?
+	I would like the non-smoking section.
+	I’m full.
+	I don’t think I can eat any more.
+	How much is the bill?
+	Could we have the bill please?
+	Can I pay by credit card?
+	Do you take credit cards?
+
+	
 
 
+
+Other
+	I need an adapter for my plug.
+	
+	
 Food
 	Is there a supermarket nearby?
 	Where is the fruit?

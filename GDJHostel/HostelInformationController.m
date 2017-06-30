@@ -52,8 +52,8 @@
     self.menuComponent = [[MenuComponent alloc] initMenuWithFrame:desiredMenuFrame
                     targetView:self.view
                     direction:menuDirectionRightToLeft
-                    options:@[@"About Hostel", @"Directions", @"Contact Info", @"Seoul Tourism", @"Acknowledgements"]
-                    optionImages:@[@"informationB", @"compassB", @"contactPhoneB", @"templeB", @"trophyB"]];
+                    options:@[@"About Hostel", @"Directions", @"Contact Info", @"Seoul Tourism",@"Weather",@"Survival Korean", @"Acknowledgements"]
+                    optionImages:@[@"informationB", @"compassB", @"contactPhoneB", @"templeB",@"cloudyA",@"chatA", @"trophyB"]];
 
 }
 
@@ -92,8 +92,17 @@
 
                 break;
             case 4:
+                //Weather
+                 requestedViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"WeatherNavigationController"];
+                NSLog(@"You selected option %d",(int)selectedOptionIndex);
+
+                break;
+            case 5:
+                //Korean Phrases Audio
+                break;
+            case 6:
                 //Acknowledgements
-                 requestedViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"DirectionsMenuController"];
+                requestedViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"DirectionsMenuController"];
                 NSLog(@"You selected option %d",(int)selectedOptionIndex);
 
                 break;

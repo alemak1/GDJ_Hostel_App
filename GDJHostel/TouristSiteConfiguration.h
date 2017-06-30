@@ -28,6 +28,8 @@ typedef enum TouristSiteCategory{
     PARK,
     SPORT_STADIUM,
     OTHER,
+    SEOUL_TOWER,
+    YANGGU_COUNTY,
     TOURIST_SITE_CATEGORY_END_INDEX
 }TouristSiteCategory;
 
