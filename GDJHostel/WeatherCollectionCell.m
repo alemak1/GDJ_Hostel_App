@@ -153,7 +153,7 @@
     
     /** Get string representation of humidity and set the text value for the label **/
     NSString* temperatureNumberString = [temperatureFormatter stringFromNumber:[NSNumber numberWithDouble:temperature]];
-    NSString* temperatureString = [NSString stringWithFormat:@"%@ °F",temperatureNumberString];
+    NSString* temperatureString = [NSString stringWithFormat:@"%@ °C",temperatureNumberString];
     [self.temperatureIndicator setText:temperatureString];
 }
 
@@ -204,7 +204,5 @@
     
     return _windSpeed;
 }
-
-
 
 @end

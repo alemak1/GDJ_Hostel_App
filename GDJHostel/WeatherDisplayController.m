@@ -9,6 +9,7 @@
 #import "WeatherDisplayController.h"
 #import "WeatherForecastCollectionController.h"
 #import "WeatherCollectionCell.h"
+#import "WeatherDetailController.h"
 
 #import "WFSManager.h"
 #import "WeatherIconManager.h"
@@ -47,6 +48,7 @@
 @property CLLocationCoordinate2D currentlySelectedLocationCoordinate;
 
 
+
 /** Helper Properties for Configuring URL **/
 
 @property (readonly) NSString* currentRequestURI;
@@ -73,6 +75,20 @@
 - (IBAction)dismissPresentedViewController:(UIBarButtonItem *)sender;
 
 - (IBAction)dismissForecastController:(UIBarButtonItem *)sender;
+
+
+/** Constraint Outlets **/
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerHeightConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *verticalSpacingConstraintBtwnTopAndMiddleLabels;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *verticalSpacingConstraintBtwnBottomAndMiddleLabels;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *spacingBtwnContainerAndButtonConstraint;
+
+
+/** Weather Configuration Object - Currently Selected **/
+
+@property WeatherConfiguration* currentlySelectedWeatherConfiguration;
 
 
 
@@ -253,6 +269,17 @@ int backgroundSessionIndex = 0;
     return cell;
 }
 
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    self.currentlySelectedWeatherConfiguration = [self.jsonConfigurationArray objectAtIndex:indexPath.row];
+    
+    
+    [self performSegueWithIdentifier:@"showWeatherDetailController" sender:nil];
+
+    
+}
 
 -(void) sortWeatherConfigurationArrayByDate{
     [self.jsonConfigurationArray sortUsingComparator:^NSComparisonResult(id a, id b){
@@ -636,15 +663,50 @@ int backgroundSessionIndex = 0;
 }
 
 
+#pragma mark ******** PREPARE FOR SEGUE
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    if([segue.identifier isEqualToString:@"showWeatherDetailSegue"]){
-        //TODO: configure destination view controller and pass weather data to it
+    if([segue.identifier isEqualToString:@"showWeatherDetailController"]){
         
+        WeatherDetailController* detailController = (WeatherDetailController*)[segue destinationViewController];
+      
+        detailController.temperature = self.currentlySelectedWeatherConfiguration.temperature;
+        detailController.humidity = self.currentlySelectedWeatherConfiguration.humidity;
+        detailController.windSpeed = self.currentlySelectedWeatherConfiguration.windSpeed;
+        detailController.cloudCover = self.currentlySelectedWeatherConfiguration.cloudCover;
+        detailController.summaryText = self.currentlySelectedWeatherConfiguration.summaryText;
+        detailController.date = self.currentlySelectedWeatherConfiguration.date;
     }
 }
 
+#pragma mark ******* ADJUST CONSTRAINTS FOR LAYOUT-UPDATES BETWEEN iPAD PORTRAIT and iPAD LANDSCAPE
 
+/**
+-(void)willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    
+    UIUserInterfaceSizeClass verticalSC = [newCollection verticalSizeClass];
+    UIUserInterfaceSizeClass horizontalSC = [newCollection horizontalSizeClass];
+    
+    if(verticalSC == UIUserInterfaceSizeClassRegular && horizontalSC == UIUserInterfaceSizeClassRegular){
+        
+        if(UIInterfaceOrientationIsLandscape([UIDevice currentDevice].orientation)){
+            
+            //self.containerHeightConstraint = [NSLayoutConstraint constraintWithItem:self.containerView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:0.30 constant:0.0];
+            
+            //[self.containerHeightConstraint setActive:YES];
+        }
+        
+        
+    }
+    
+}
+
+
+-(void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection{
+    
+    
+}
+**/
 
 @end

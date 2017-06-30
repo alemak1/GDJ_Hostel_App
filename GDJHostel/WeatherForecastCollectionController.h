@@ -12,6 +12,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "WeatherConfiguration.h"
+
 @interface WeatherForecastCollectionController : UICollectionViewController
 
 
