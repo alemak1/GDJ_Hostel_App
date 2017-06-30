@@ -73,6 +73,11 @@ static void* TouristSiteDetailInformationContext = &TouristSiteDetailInformation
         [self.descriptionLabel setText:[self.touristSiteConfiguration siteDescription]];
         
         
+        /** Configure address label **/
+        
+        [self.addressLabel setText:[self.touristSiteConfiguration physicalAddress]];
+        [self.addressLabel setAdjustsFontSizeToFitWidth:YES];
+        [self.addressLabel setMinimumScaleFactor:0.25];
 
         /** Configure text for the admission fee **/
         

@@ -407,6 +407,10 @@ CLLocation* _lastUpdatedUserLocation;
     [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [numberFormatter setMaximumFractionDigits:2];
     
+    if(self.distanceFromUser == 0){
+        return @"";
+    }
+    
     return [numberFormatter stringFromNumber:[NSNumber numberWithFloat:self.distanceFromUser]];
     
 }

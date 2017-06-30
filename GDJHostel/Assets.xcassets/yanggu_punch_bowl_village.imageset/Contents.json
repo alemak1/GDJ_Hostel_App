@@ -2,7 +2,6 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "yanggu_punch_bowl_village.jpg",
       "scale" : "1x"
     },
     {
@@ -11,6 +10,7 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "yanggu_punch_bowl_village.jpg",
       "scale" : "3x"
     }
   ],

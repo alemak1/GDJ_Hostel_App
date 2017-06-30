@@ -11,11 +11,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "TouristSiteConfiguration.h"
 
 @interface TouristSiteCollectionViewController : UIViewController<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 
 @property NSString* titleLabelText;
-
+@property TouristSiteCategory category;
 
 @end
 

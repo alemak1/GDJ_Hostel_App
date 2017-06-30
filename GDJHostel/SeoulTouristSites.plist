@@ -231,7 +231,7 @@
 		<key>imagePath</key>
 		<string>world_cup_stadium</string>
 		<key>category</key>
-		<integer>8</integer>
+		<integer>9</integer>
 		<key>specialNote</key>
 		<string>Parking fee is 150 won.</string>
 		<key>physicalAddress</key>
@@ -279,7 +279,7 @@ The very first impression the stadium gives is that it is very large. It provide
 		<key>imagePath</key>
 		<string>korean_film_museum</string>
 		<key>category</key>
-		<integer>0</integer>
+		<integer>9</integer>
 		<key>specialNote</key>
 		<string>Fees may be charged for special exhibits.</string>
 		<key>physicalAddress</key>
@@ -656,7 +656,7 @@ http://pyounghwa.com/eng
 		<key>imagePath</key>
 		<string>wawoo_jongsa_temple</string>
 		<key>category</key>
-		<integer>1</integer>
+		<integer>2</integer>
 		<key>specialNote</key>
 		<string>Visitors must register before 16:00 at Yanggu Unification Hall for admission to Eulji Observatory, the 4th Tunnel, and War Memorial Museum of Yanggu. Last admission is two hours before closing.
 </string>
@@ -695,7 +695,7 @@ http://pyounghwa.com/eng
 		<key>imagePath</key>
 		<string>biamsa_temple</string>
 		<key>category</key>
-		<integer>1</integer>
+		<integer>2</integer>
 		<key>specialNote</key>
 		<string>Visitors must register before 16:00 at Yanggu Unification Hall for admission to Eulji Observatory, the 4th Tunnel, and War Memorial Museum of Yanggu. Last admission is two hours before closing.
 </string>
@@ -776,6 +776,86 @@ http://pyounghwa.com/eng
 		<string>{37.4402582,127.0047513}</string>
 		<key>midCoord</key>
 		<string>{37.4311048,127.0054814}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>dongdaemun_shopping_town</string>
+		<key>category</key>
+		<integer>3</integer>
+		<key>specialNote</key>
+		<string>Refer to website for operating hours and prices for specific stores.</string>
+		<key>physicalAddress</key>
+		<string>266, Jong-ro, Jongno-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>www.ddm-mall.com </string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Dongdaemun Shopping Complex is one of Korea’s most well-known markets. It was founded in December 1970 as the largest of its kind in Asia and has maintained that status for the last 40 years. Browsing the plethora of shops, you can find fabric and clothing following all the latest global fashion trends. Dongdaemun Shopping Complex continues to build up its reputation as a hub of international design.
+</string>
+		<key>name</key>
+		<string>Dongdaemun Shopping Complex</string>
+		<key>title</key>
+		<string>Dongdaemun Shopping Complex</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5704102,127.0047263}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5710331,127.0065337}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5704102,127.0047263}</string>
+		<key>midCoord</key>
+		<string>{37.5706654,127.0050692}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>gangnam_underground</string>
+		<key>category</key>
+		<integer>3</integer>
+		<key>specialNote</key>
+		<string>Refer to website for prices and items available at different stores.</string>
+		<key>physicalAddress</key>
+		<string>Underground, 396, Gangnam-daero, Gangnam-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>www.sisul.or.kr</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>22</integer>
+		<key>openingTime</key>
+		<integer>10</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Consumers in their 20s to 30s are frequent visitors to Gangnam Station Underground Shopping Center. 
+The mall is located in Gangnam Station of Seoul Subway Line 2, and consists of all the latest fashion trends. It is also an ideal place to just browse the shops to keep up with the so-called &quot;Gangnam Style.&quot; 
+The mall also has a rest area called Herb Plaza, where shoppers can take a rest from their shopping.
+</string>
+		<key>name</key>
+		<string>Gangnam Station Underground Shopping Center 
+</string>
+		<key>title</key>
+		<string>Gangnam Station Underground Shopping Center 
+</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.4974642,127.0247033}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.4987242,127.0259913}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.4974642,127.0247033}</string>
+		<key>midCoord</key>
+		<string>{37.4972766,127.0250787}</string>
 	</dict>
 </array>
 </plist>

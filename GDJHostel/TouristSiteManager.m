@@ -23,6 +23,37 @@
 NSArray* _touristSiteDictArray;
 
 
+
+
+
+-(instancetype)initWithFileName:(NSString*)fileName andWithTouristSiteCategory:(TouristSiteCategory)category{
+    
+    self = [super init];
+    
+    if(self){
+        NSString* path = [[NSBundle mainBundle] pathForResource:@"SeoulTouristSites" ofType:@"plist"];
+        
+        _touristSiteDictArray = [NSArray arrayWithContentsOfFile:path];
+        
+        _configurationArray = [[NSMutableArray alloc] init];
+        
+        for(NSDictionary* dict in _touristSiteDictArray){
+            TouristSiteConfiguration* touristSiteConfiguration = [[TouristSiteConfiguration alloc] initWithConfigurationDict:dict];
+            
+            if(touristSiteConfiguration.touristSiteCategory == category){
+                [self.configurationArray addObject:touristSiteConfiguration];
+
+            }
+            
+        }
+        
+    }
+    
+    
+    return self;
+    
+}
+
 -(instancetype)initWithFileName:(NSString*)fileName{
     
     self = [super init];
@@ -91,6 +122,12 @@ NSArray* _touristSiteDictArray;
 }
 
 #pragma mark UTILITY FUNCTIONS FOR ARRAY FILTERING
+
+
+-(void) filterForTouristSiteCategory:(TouristSiteCategory)category{
+    
+    self.configurationArray = (NSMutableArray*)[self getArrayForTouristSiteCategory:category];
+}
 
 - (NSArray<TouristSiteConfiguration*>*)getArrayForTouristSiteCategory:(TouristSiteCategory)touristSiteCategory{
     

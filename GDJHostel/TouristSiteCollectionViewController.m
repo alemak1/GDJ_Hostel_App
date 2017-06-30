@@ -33,11 +33,12 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    TouristSiteCategorySelectionController* parentController = (TouristSiteCategorySelectionController*)self.parentViewController;
-
     
-    self.siteManager = [parentController siteManager];
-    //NSLog(@"Site manager debug info: %@",[self.siteManager detailedDebugDescription]);
+    /**  Alternative implementations for code below coud also involve filtering the TouristSiteManager from the parent view controller to generate a copy with only the objects that are true for the filtering condition **/
+     
+    self.siteManager = [[TouristSiteManager alloc] initWithFileName:@"SeoulTouristSites" andWithTouristSiteCategory:self.category];
+     
+
     
     [self.collectionView setDelegate:self];
     [self.collectionView setDataSource:self];
@@ -91,6 +92,7 @@
     cell.travelingTimeText = [configurationObject isOpen] ? @"Open" : @"Closed";
     
     cell.distanceToSiteText = [configurationObject distanceFromUserString];
+    
     cell.touristSiteConfigurationObject = configurationObject;
 
     return cell;

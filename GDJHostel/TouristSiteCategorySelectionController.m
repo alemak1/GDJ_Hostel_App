@@ -65,15 +65,16 @@
 -(void)viewDidLoad{
     
     
-    CGFloat scrollViewWidth = CGRectGetWidth(self.scrollView.frame);
+    CGFloat scrollViewWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
     CGFloat scrollViewHeight = CGRectGetHeight(self.scrollView.frame);
     
-    self.scrollView.contentSize = CGSizeMake(scrollViewWidth, scrollViewHeight*3.00);
+    self.scrollView.contentSize = CGSizeMake(scrollViewWidth, scrollViewHeight*4.00);
 
+    [self.scrollView setShowsHorizontalScrollIndicator:NO];
     
     __block CGFloat controllerIndex = 0;
     
-    CGFloat controllerHeight = scrollViewHeight*0.50;
+    CGFloat controllerHeight = scrollViewHeight*0.60;
     
     CGRect(^getControllerFrame)(void) = ^CGRect(void){
         
@@ -101,6 +102,8 @@
     
     [touristSiteCVC1 setTitleLabelText:@"Seoul Tower"];
     
+    [touristSiteCVC1 setCategory:SEOUL_TOWER];
+    
     controllerIndex++;
     
     
@@ -120,6 +123,7 @@
     
     [touristSiteCVC2 setTitleLabelText:@"Parks and Other Natural Sites"];
 
+    [touristSiteCVC2 setCategory:PARK];
     
     controllerIndex++;
     
@@ -139,7 +143,9 @@
     
     [touristSiteCVC3 didMoveToParentViewController:self];
     
-    [touristSiteCVC3 setTitleLabelText:@"Memorials and Monuments"];
+    [touristSiteCVC3 setTitleLabelText:@"Temples and Other Monuments"];
+    
+    [touristSiteCVC3 setCategory:MONUMENT_OR_WAR_MEMORIAL];
 
     
     controllerIndex++;
@@ -161,6 +167,8 @@
     
     [touristSiteCVC4 setTitleLabelText:@"Shopping Centers"];
     
+    [touristSiteCVC4 setCategory:SHOPPING_AREA];
+    
     controllerIndex++;
     
     //Configure the next view controller...
@@ -180,6 +188,8 @@
     
     [touristSiteCVC5 setTitleLabelText:@"Yanggu County"];
     
+    [touristSiteCVC5 setCategory:YANGGU_COUNTY];
+    
     controllerIndex++;
     
     //Configure the next view controller...
@@ -197,28 +207,13 @@
     
     [touristSiteCVC6 didMoveToParentViewController:self];
     
-    [touristSiteCVC6 setTitleLabelText:@"Museums and Monuments"];
+    [touristSiteCVC6 setTitleLabelText:@"Museums and Other"];
+    
+    [touristSiteCVC6 setCategory:OTHER];
     
     controllerIndex++;
     
-    //Configure the next view controller...
     
-    TouristSiteCollectionViewController* touristSiteCVC7 = [mainStoryBoard instantiateViewControllerWithIdentifier:@"TouristSiteCollectionViewController"];
-    
-    [self addChildViewController:touristSiteCVC7];
-    
-    
-    CGRect frame7 = getControllerFrame();
-    
-    [touristSiteCVC7.view setFrame:frame6];
-    
-    [self.scrollView addSubview:touristSiteCVC7.view];
-    
-    [touristSiteCVC7 didMoveToParentViewController:self];
-    
-    [touristSiteCVC7 setTitleLabelText:@"Others Places of Interest"];
-    
-    controllerIndex++;
 
 
 

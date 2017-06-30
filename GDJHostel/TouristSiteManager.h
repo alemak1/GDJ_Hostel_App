@@ -19,10 +19,14 @@
 
 -(instancetype)initWithFileName:(NSString*)fileName;
 
+-(instancetype)initWithFileName:(NSString*)fileName andWithTouristSiteCategory:(TouristSiteCategory)category;
+
 -(NSInteger)totalNumberOfTouristSitesInMasterArray;
 -(TouristSiteConfiguration*)getConfigurationObjectFromMasterArray:(NSInteger)index;
 
 -(NSArray<CLRegion*>*)getRegionsForAllTouristLocations;
+
+-(void) filterForTouristSiteCategory:(TouristSiteCategory)category;
 
 -(NSString*) abbreviatedDebugDescription;
 -(NSString*) detailedDebugDescription;

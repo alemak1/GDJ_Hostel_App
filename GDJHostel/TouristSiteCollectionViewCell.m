@@ -93,7 +93,13 @@ static void *TouristConfigurationContext = &TouristConfigurationContext;
     
     labelStringWithDistance = [labelStringWithDistance stringByAppendingString:@" km"];
     
-    [self.distanceLabel setText:labelStringWithDistance];
+    if([distanceToSiteText isEqualToString:@""]){
+        [self.distanceLabel setText:@"Getting distance..."];
+    } else{
+        [self.distanceLabel setText:labelStringWithDistance];
+
+    }
+    
     
 }
 
