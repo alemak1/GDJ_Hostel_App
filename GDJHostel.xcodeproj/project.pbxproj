@@ -26,6 +26,7 @@
 		BD2EA76F1EFFB1E300A8572B /* FeatureScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EA76E1EFFB1E300A8572B /* FeatureScrollViewController.m */; };
 		BD2EA7721EFFC28F00A8572B /* ContactScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EA7711EFFC28F00A8572B /* ContactScrollViewController.m */; };
 		BD2EA7751EFFC4CB00A8572B /* RoomInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EA7741EFFC4CB00A8572B /* RoomInfoController.m */; };
+		BD2F9A8B1F0774E8004B0E09 /* BikeRouteMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2F9A8A1F0774E8004B0E09 /* BikeRouteMapController.m */; };
 		BD305BA41EFF888100F9F2B9 /* Alpha Dance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD305BA31EFF888100F9F2B9 /* Alpha Dance.mp3 */; };
 		BD305BB41EFF8CB500F9F2B9 /* transportation-0.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BA91EFF8CB500F9F2B9 /* transportation-0.caf */; };
 		BD305BB51EFF8CB500F9F2B9 /* transportation-1.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BAA1EFF8CB500F9F2B9 /* transportation-1.caf */; };
@@ -122,6 +123,8 @@
 		BD2EA7711EFFC28F00A8572B /* ContactScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactScrollViewController.m; sourceTree = "<group>"; };
 		BD2EA7731EFFC4BD00A8572B /* RoomInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoomInfoController.h; sourceTree = "<group>"; };
 		BD2EA7741EFFC4CB00A8572B /* RoomInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomInfoController.m; sourceTree = "<group>"; };
+		BD2F9A891F0774D7004B0E09 /* BikeRouteMapController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BikeRouteMapController.h; sourceTree = "<group>"; };
+		BD2F9A8A1F0774E8004B0E09 /* BikeRouteMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BikeRouteMapController.m; sourceTree = "<group>"; };
 		BD305BA31EFF888100F9F2B9 /* Alpha Dance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Alpha Dance.mp3"; sourceTree = "<group>"; };
 		BD305BA91EFF8CB500F9F2B9 /* transportation-0.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-0.caf"; sourceTree = "<group>"; };
 		BD305BAA1EFF8CB500F9F2B9 /* transportation-1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-1.caf"; sourceTree = "<group>"; };
@@ -302,6 +305,8 @@
 				BD14B0AA1F072E230024668D /* BikingRoutesController.m */,
 				BD14B0AC1F0732490024668D /* path1.plist */,
 				BD2B782C1F0737BD00C33184 /* path2.plist */,
+				BD2F9A891F0774D7004B0E09 /* BikeRouteMapController.h */,
+				BD2F9A8A1F0774E8004B0E09 /* BikeRouteMapController.m */,
 			);
 			name = NavigationAidControllers;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				BDF55EBD1F036906003FC663 /* NSString+HelperMethods.m in Sources */,
 				BD3844AC1EFE4FD300F2E981 /* HostelLocationAnnotationView.m in Sources */,
 				BD3A9C7D1F02839E006D1CD8 /* AppLocationManager.m in Sources */,
+				BD2F9A8B1F0774E8004B0E09 /* BikeRouteMapController.m in Sources */,
 				BD30C5171EFDDCE70032FE64 /* HostelInformationController.m in Sources */,
 				BD3151141F00C844002332B8 /* TouristSiteCollectionViewController.m in Sources */,
 				BD68476D1F00F102004732FB /* ImageKeyConstants.m in Sources */,

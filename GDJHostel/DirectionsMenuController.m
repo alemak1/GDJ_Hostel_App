@@ -37,6 +37,8 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
 - (IBAction)showSelectedViewController:(UIButton *)sender;
 
 
+- (IBAction)unwindToDirectionsMenuController:(UIStoryboardSegue *)unwindSegue;
+
 @end
 
 @implementation DirectionsMenuController
@@ -183,7 +185,7 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
             nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HostelAreaNavigationController"];
             break;
         case BIKING_JOGGING_ROUTE_CONTROLLER:
-            nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"BikingRoutesController"];
+            nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"BikeRouteNavigationController"];
             break;
         default:
             break;
@@ -222,6 +224,10 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     }
     
     return nil;
+}
+
+- (IBAction)unwindToDirectionsMenuController:(UIStoryboardSegue *)unwindSegue
+{
 }
 
 @end

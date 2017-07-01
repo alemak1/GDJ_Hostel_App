@@ -11,8 +11,15 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface BikingRoutesController : UIViewController
+@interface BikingRoutesController : UITableViewController
+
+
+typedef enum BIKE_ROUTES{
+    GONGDEOK_HYOCHANG_ROUTE,
+    LAST_ROUTE_INDEX
+}BIKE_ROUTES;
 
 @end
 
