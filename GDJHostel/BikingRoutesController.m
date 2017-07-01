@@ -66,6 +66,8 @@
         case GONGDEOK_HYOCHANG_ROUTE:
             return @"Gongdeok-Hyochang Park Bike Route";
             break;
+        case GONGDEOK_SEOGANG_ROUTE:
+            return @"Gongdeok-Seogang Walking/Biking Route";
 
         default:
             return nil;
@@ -98,6 +100,9 @@
     switch (bikeRoute) {
         case GONGDEOK_HYOCHANG_ROUTE:
             filePath = [[NSBundle mainBundle] pathForResource:@"path1" ofType:@"plist"];
+            break;
+        case GONGDEOK_SEOGANG_ROUTE:
+            filePath = [[NSBundle mainBundle] pathForResource:@"path2" ofType:@"plist"];
             break;
         default:
             break;

@@ -49,6 +49,10 @@
 		BD31A5AE1F038E0600C018DB /* TouristSiteDetailInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31A5AD1F038E0600C018DB /* TouristSiteDetailInformationController.m */; };
 		BD31A5B11F03932100C018DB /* SeoulTourismNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31A5B01F03932100C018DB /* SeoulTourismNavigationController.m */; };
 		BD3279401F00124F0007FD64 /* ParkRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD32793F1F00124F0007FD64 /* ParkRoute.plist */; };
+		BD34C1D61F079DBB00CD0DD3 /* LottoHotel.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD34C1D51F079DBB00CD0DD3 /* LottoHotel.plist */; };
+		BD34C1D91F079F7000CD0DD3 /* BoundaryOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = BD34C1D81F079F7000CD0DD3 /* BoundaryOverlay.m */; };
+		BD34C1DC1F07A8D300CD0DD3 /* PolygonMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD34C1DB1F07A8D300CD0DD3 /* PolygonMapController.m */; };
+		BD34C1DE1F07A8E200CD0DD3 /* PolygonSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD34C1DD1F07A8E200CD0DD3 /* PolygonSelectionController.m */; };
 		BD375DCB1EFE98910002525F /* ScrollableInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD375DCA1EFE98910002525F /* ScrollableInfoController.m */; };
 		BD3844A61EFE450800F2E981 /* DirectionsMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3844A51EFE450800F2E981 /* DirectionsMenuController.m */; };
 		BD3844AB1EFE4FD300F2E981 /* HostelLocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3844A81EFE4FD300F2E981 /* HostelLocationAnnotation.m */; };
@@ -155,6 +159,13 @@
 		BD31A5B01F03932100C018DB /* SeoulTourismNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeoulTourismNavigationController.m; sourceTree = "<group>"; };
 		BD32793F1F00124F0007FD64 /* ParkRoute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ParkRoute.plist; sourceTree = "<group>"; };
 		BD32E41D1F03A83F00F847B3 /* DayOfWeek.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DayOfWeek.h; sourceTree = "<group>"; };
+		BD34C1D51F079DBB00CD0DD3 /* LottoHotel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LottoHotel.plist; sourceTree = "<group>"; };
+		BD34C1D71F079F4200CD0DD3 /* BoundaryOverlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoundaryOverlay.h; sourceTree = "<group>"; };
+		BD34C1D81F079F7000CD0DD3 /* BoundaryOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoundaryOverlay.m; sourceTree = "<group>"; };
+		BD34C1DA1F07A8BB00CD0DD3 /* PolygonSelectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PolygonSelectionController.h; sourceTree = "<group>"; };
+		BD34C1DB1F07A8D300CD0DD3 /* PolygonMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolygonMapController.m; sourceTree = "<group>"; };
+		BD34C1DD1F07A8E200CD0DD3 /* PolygonSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolygonSelectionController.m; sourceTree = "<group>"; };
+		BD34C1DF1F07A90F00CD0DD3 /* PolygonMapController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PolygonMapController.h; sourceTree = "<group>"; };
 		BD375DC91EFE98830002525F /* ScrollableInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollableInfoController.h; sourceTree = "<group>"; };
 		BD375DCA1EFE98910002525F /* ScrollableInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollableInfoController.m; sourceTree = "<group>"; };
 		BD3844A41EFE450800F2E981 /* DirectionsMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionsMenuController.h; sourceTree = "<group>"; };
@@ -307,6 +318,13 @@
 				BD2B782C1F0737BD00C33184 /* path2.plist */,
 				BD2F9A891F0774D7004B0E09 /* BikeRouteMapController.h */,
 				BD2F9A8A1F0774E8004B0E09 /* BikeRouteMapController.m */,
+				BD34C1D51F079DBB00CD0DD3 /* LottoHotel.plist */,
+				BD34C1D71F079F4200CD0DD3 /* BoundaryOverlay.h */,
+				BD34C1D81F079F7000CD0DD3 /* BoundaryOverlay.m */,
+				BD34C1DA1F07A8BB00CD0DD3 /* PolygonSelectionController.h */,
+				BD34C1DD1F07A8E200CD0DD3 /* PolygonSelectionController.m */,
+				BD34C1DF1F07A90F00CD0DD3 /* PolygonMapController.h */,
+				BD34C1DB1F07A8D300CD0DD3 /* PolygonMapController.m */,
 			);
 			name = NavigationAidControllers;
 			sourceTree = "<group>";
@@ -536,6 +554,7 @@
 				BD305BBD1EFF8CB500F9F2B9 /* transportation-9.caf in Resources */,
 				BD305BBC1EFF8CB500F9F2B9 /* transportation-8.caf in Resources */,
 				BD3117DB1EFE800900D6A5D6 /* content_iPhone.plist in Resources */,
+				BD34C1D61F079DBB00CD0DD3 /* LottoHotel.plist in Resources */,
 				BD305BB71EFF8CB500F9F2B9 /* transportation-3.caf in Resources */,
 				BD305BB51EFF8CB500F9F2B9 /* transportation-1.caf in Resources */,
 				BD5C3EC61EFD53FC00616400 /* Seoul.geojson in Resources */,
@@ -578,6 +597,7 @@
 				BD2EA7751EFFC4CB00A8572B /* RoomInfoController.m in Sources */,
 				BD14B0AB1F072E230024668D /* BikingRoutesController.m in Sources */,
 				BD31A5AE1F038E0600C018DB /* TouristSiteDetailInformationController.m in Sources */,
+				BD34C1D91F079F7000CD0DD3 /* BoundaryOverlay.m in Sources */,
 				BD2CAA911EFFCD6200C0E540 /* HostelCollectionController.m in Sources */,
 				BDF55EBD1F036906003FC663 /* NSString+HelperMethods.m in Sources */,
 				BD3844AC1EFE4FD300F2E981 /* HostelLocationAnnotationView.m in Sources */,
@@ -587,6 +607,7 @@
 				BD3151141F00C844002332B8 /* TouristSiteCollectionViewController.m in Sources */,
 				BD68476D1F00F102004732FB /* ImageKeyConstants.m in Sources */,
 				BD3844A61EFE450800F2E981 /* DirectionsMenuController.m in Sources */,
+				BD34C1DE1F07A8E200CD0DD3 /* PolygonSelectionController.m in Sources */,
 				BDFBFBA41F03E41400185F47 /* WeatherForecastSite.m in Sources */,
 				BD5C3EBC1EFD4BA000616400 /* HostelAreaMapViewController.m in Sources */,
 				BD27B12E1F0250B700059152 /* TouristSiteCategorySelectionController.m in Sources */,
@@ -607,6 +628,7 @@
 				BD6847711F010070004732FB /* ImageManagerB.m in Sources */,
 				BDFBFBA71F03E51C00185F47 /* WFSManager.m in Sources */,
 				BD902CDA1EFD31F600DD1034 /* main.m in Sources */,
+				BD34C1DC1F07A8D300CD0DD3 /* PolygonMapController.m in Sources */,
 				BD5C3EC41EFD516E00616400 /* OverlayConfiguration.m in Sources */,
 				BD31A5B11F03932100C018DB /* SeoulTourismNavigationController.m in Sources */,
 				BDA32EE21EFF39DB0087BF19 /* KoreanAudioPhraseController.m in Sources */,

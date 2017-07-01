@@ -25,6 +25,7 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     TO_HOSTEL_DIRECTIONS_CONTROLLER,
     HOSTEL_LOCAL_AREA_MAP_CONTROLLER,
     BIKING_JOGGING_ROUTE_CONTROLLER,
+    POLYGON_NAVIGATION_CONTROLLER,
     LAST_VIEW_CONTROLLER,
 }VALID_NEXT_VIEW_CONTROLLER;
 
@@ -187,6 +188,9 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
         case BIKING_JOGGING_ROUTE_CONTROLLER:
             nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"BikeRouteNavigationController"];
             break;
+        case POLYGON_NAVIGATION_CONTROLLER:
+            nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"PolygonNavigationController"];
+            break;
         default:
             break;
     }
@@ -219,6 +223,8 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
             return @"View the Local Area";
         case BIKING_JOGGING_ROUTE_CONTROLLER:
             return @"Local Biking/Jogging Routes";
+        case POLYGON_NAVIGATION_CONTROLLER:
+            return @"Local Building, Park, and Site Regions";
         case LAST_VIEW_CONTROLLER:
             return nil;
     }
