@@ -60,6 +60,12 @@
     }]];
 }
 
+-(SeoulLocationAnnotation*)getAnnotationForIndexPath:(NSIndexPath*)indexPath{
+    
+    NSArray* annotationsArray = [self getAnnotationsOfType:(SeoulLocationType)indexPath.section];
+    
+    return [annotationsArray objectAtIndex:indexPath.row];
+}
 
 /** Helper functions for debugging the annotations array **/
 

@@ -19,6 +19,7 @@
 -(NSArray<SeoulLocationAnnotation*>*)getAllAnnotations;
 -(NSArray<SeoulLocationAnnotation*>*)getAnnotationsOfType:(SeoulLocationType)locationType;
 
+-(SeoulLocationAnnotation*)getAnnotationForIndexPath:(NSIndexPath*)indexPath;
 
 -(instancetype)initWithFilename:(NSString*)filename;
 

@@ -10,7 +10,7 @@
 #import "HostelAreaMapOptionsController.h"
 #import "HostelAreaMapViewController.h"
 #import "HostelLocationAnnotation.h"
-
+#import "SeoulLocationAnnotation+HelperMethods.h"
 
 @implementation HostelAreaMapOptionsController
 
@@ -45,7 +45,7 @@
     
     UITableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"HostelAreaOptionsCell"];
     
-    NSString* title = [self getTitleForLocationType:indexPath.row];
+    NSString* title = [SeoulLocationAnnotation getTitleForLocationType:indexPath.row];
     
     [cell.textLabel setAttributedText:[[NSAttributedString alloc] initWithString:title attributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Futura-Medium" size:20.0],NSFontAttributeName, nil]]];
     
@@ -74,48 +74,6 @@
 }
     
 
-
--(NSString*) getTitleForLocationType:(SeoulLocationType)locationType{
-    
-    switch (locationType) {
-        case NearHostelLocationBankATM:
-            return @"Banks and ATMs";
-        case NearHostelLocationPubsBars:
-            return @"Pubs and Bars";
-        case NearHostelLocationCoffeeShop:
-            return @"Coffee Shops";
-        case NearHostelLocationOtherStores:
-            return @"Other Types of Stores";
-        case NearHostelLocationKoreanBarbecue:
-            return @"Korean Barbecue";
-        case NearHostelLocationConvenienceStore:
-            return @"Convenience Stores";
-        case NearHostelLocationOtherRestaurants:
-            return @"Other Kinds of Restaurants";
-        case NearHostelLocationSportsRecreation:
-            return @"Sports and Recreation";
-        case NearHostelLocationPharmacyDrugstore:
-            return @"Pharmacy and Drugstores";
-        case NearHostelLocationPhoneMobileServices:
-            return @"Phone and Mobile Services";
-        case NearHostelLocationCosmeticsSkinFacialCare:
-            return @"Cosmetics and Skin Care";
-        case TouristAttractionTower:
-            return @"Radio Towers";
-        case TouristAttractionMuseum:
-            return @"Museums";
-        case TouristAttractionTemple:
-            return @"Temples";
-        case TouristAttractionWarMemorial:
-            return @"Korean War Memorial";
-        case TouristAttractionShoppingArea:
-            return @"Shopping Area";
-        case TouristAttractionStreetMarket:
-            return @"Night Market";
-        default:
-            return nil;
-    }
-}
 
 
 @end

@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GDJHostel/AnnotationManager.m"
-            timestampString = "520569673.394963"
+            timestampString = "520620667.493979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "-debugDescriptionDetail"
             landmarkType = "7">
          </BreakpointContent>

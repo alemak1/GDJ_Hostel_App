@@ -15,6 +15,9 @@
 #import "WeatherIconManager.h"
 #import "WeatherConfiguration.h"
 #import "UIView+HelperMethods.h"
+#import "UIViewController+HelperMethods.h"
+
+#import "WebViewController.h"
 
 @interface WeatherDisplayController () <UIPickerViewDelegate,UIPickerViewDataSource, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,NSURLSessionDelegate,NSURLSessionTaskDelegate,NSURLSessionDataDelegate>
 
@@ -43,7 +46,6 @@
 
 @property UICollectionView* childCollectionView;
 
-- (IBAction)loadDarkSkyWebsite:(UITapGestureRecognizer *)sender;
 
 @property CLLocationCoordinate2D currentlySelectedLocationCoordinate;
 
@@ -90,6 +92,7 @@
 
 @property WeatherConfiguration* currentlySelectedWeatherConfiguration;
 
+- (IBAction)loadDarkSkyWebsite:(UIButton *)sender;
 
 
 @end
@@ -109,6 +112,7 @@ int backgroundSessionIndex = 0;
 }
 
 -(void)viewDidLoad{
+    
     
     self.wfsManager = [[WFSManager alloc] initFromFileName:@"WeatherForecastSites"];
     
@@ -596,10 +600,8 @@ int backgroundSessionIndex = 0;
     
 }
 
-#pragma mark ****** IBACTION FOR LOADING DARK SKY WEBSITE 
 
-- (IBAction)loadDarkSkyWebsite:(UITapGestureRecognizer *)sender {
-}
+
 
 #pragma mark ****** URL SESSION DELEGATE METHODS
 
@@ -709,4 +711,11 @@ int backgroundSessionIndex = 0;
 }
 **/
 
+#pragma mark IBACTION FOR LOADING DARK SKY WEBSITE
+
+- (IBAction)loadDarkSkyWebsite:(UIButton *)sender {
+    
+    [self loadWebsiteWithURLAddress:@"https://darksky.net/poweredby/"];
+   
+}
 @end

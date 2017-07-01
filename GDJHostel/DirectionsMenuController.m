@@ -10,6 +10,7 @@
 #import "DirectionsMenuController.h"
 #import "LocationSearchController.h"
 #import "ToHostelDirectionsController.h"
+#import "TouristLocationTableViewController.h"
 
 /**
 #import "TouristLocationSelectionNavigationController.h"
@@ -200,13 +201,12 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
 
 - (UINavigationController*) getNavigationControllerForTouristLocationTableViewController{
     
-    /**
-    UINavigationController* navigationController = [[TouristLocationSelectionNavigationController alloc] initWithRootViewController:[[TouristLocationTableViewController alloc] init]];
+    
+    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:[[TouristLocationTableViewController alloc] init]];
     
 
-    
     return navigationController;
-     **/
+
     return nil;
 }
 

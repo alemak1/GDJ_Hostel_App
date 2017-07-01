@@ -79,6 +79,12 @@
 		BD902CE81EFD31F600DD1034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD902CE61EFD31F600DD1034 /* LaunchScreen.storyboard */; };
 		BD902CF01EFD325100DD1034 /* HostelArea.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD902CEF1EFD325100DD1034 /* HostelArea.plist */; };
 		BDA32EE21EFF39DB0087BF19 /* KoreanAudioPhraseController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA32EE11EFF39DB0087BF19 /* KoreanAudioPhraseController.m */; };
+		BDE3BA241F07EE6200DFDEF4 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE3BA231F07EE6200DFDEF4 /* WebViewController.m */; };
+		BDE3BA281F07F58700DFDEF4 /* ContactInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE3BA271F07F58700DFDEF4 /* ContactInfoController.m */; };
+		BDE3BA2B1F07F66300DFDEF4 /* UIViewController+HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE3BA2A1F07F66300DFDEF4 /* UIViewController+HelperMethods.m */; };
+		BDE3BA2D1F07FBBC00DFDEF4 /* TouristLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE3BA2C1F07FBBC00DFDEF4 /* TouristLocationTableViewController.m */; };
+		BDE3BA341F08019F00DFDEF4 /* SeoulLocationAnnotation+HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE3BA331F08019F00DFDEF4 /* SeoulLocationAnnotation+HelperMethods.m */; };
+		BDE3BA371F08033F00DFDEF4 /* HeaderViewConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE3BA361F08033F00DFDEF4 /* HeaderViewConfiguration.m */; };
 		BDF2348B1F00216600E9ED63 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA32F061EFF45910087BF19 /* AudioController.m */; };
 		BDF2348C1F0021BA00E9ED63 /* HostelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA931EFFD0EC00C0E540 /* HostelCollectionViewCell.m */; };
 		BDF55EBD1F036906003FC663 /* NSString+HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF55EBC1F036906003FC663 /* NSString+HelperMethods.m */; };
@@ -210,6 +216,18 @@
 		BDA32EE11EFF39DB0087BF19 /* KoreanAudioPhraseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KoreanAudioPhraseController.m; sourceTree = "<group>"; };
 		BDA32F051EFF45850087BF19 /* AudioController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
 		BDA32F061EFF45910087BF19 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
+		BDE3BA221F07EE5200DFDEF4 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		BDE3BA231F07EE6200DFDEF4 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		BDE3BA261F07F57800DFDEF4 /* ContactInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactInfoController.h; sourceTree = "<group>"; };
+		BDE3BA271F07F58700DFDEF4 /* ContactInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactInfoController.m; sourceTree = "<group>"; };
+		BDE3BA291F07F66300DFDEF4 /* UIViewController+HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HelperMethods.h"; sourceTree = "<group>"; };
+		BDE3BA2A1F07F66300DFDEF4 /* UIViewController+HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HelperMethods.m"; sourceTree = "<group>"; };
+		BDE3BA2C1F07FBBC00DFDEF4 /* TouristLocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristLocationTableViewController.m; sourceTree = "<group>"; };
+		BDE3BA2E1F07FBCB00DFDEF4 /* TouristLocationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouristLocationTableViewController.h; sourceTree = "<group>"; };
+		BDE3BA321F08019F00DFDEF4 /* SeoulLocationAnnotation+HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SeoulLocationAnnotation+HelperMethods.h"; sourceTree = "<group>"; };
+		BDE3BA331F08019F00DFDEF4 /* SeoulLocationAnnotation+HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SeoulLocationAnnotation+HelperMethods.m"; sourceTree = "<group>"; };
+		BDE3BA351F08033F00DFDEF4 /* HeaderViewConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderViewConfiguration.h; sourceTree = "<group>"; };
+		BDE3BA361F08033F00DFDEF4 /* HeaderViewConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderViewConfiguration.m; sourceTree = "<group>"; };
 		BDF55EBB1F036906003FC663 /* NSString+HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HelperMethods.h"; sourceTree = "<group>"; };
 		BDF55EBC1F036906003FC663 /* NSString+HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HelperMethods.m"; sourceTree = "<group>"; };
 		BDFBFB9F1F03D56600185F47 /* WeatherForecastCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherForecastCollectionController.h; sourceTree = "<group>"; };
@@ -262,13 +280,12 @@
 		BD3117D31EFE7EC000D6A5D6 /* InformationControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BDE3BA251F07F53F00DFDEF4 /* ContactInfoControllers */,
 				BD3117DA1EFE800900D6A5D6 /* content_iPhone.plist */,
 				BD375DCA1EFE98910002525F /* ScrollableInfoController.m */,
 				BD375DC91EFE98830002525F /* ScrollableInfoController.h */,
 				BD2EA76D1EFFB1D500A8572B /* FeatureScrollViewController.h */,
 				BD2EA76E1EFFB1E300A8572B /* FeatureScrollViewController.m */,
-				BD2EA7701EFFC28200A8572B /* ContactScrollViewController.h */,
-				BD2EA7711EFFC28F00A8572B /* ContactScrollViewController.m */,
 				BD2EA7731EFFC4BD00A8572B /* RoomInfoController.h */,
 				BD2EA7741EFFC4CB00A8572B /* RoomInfoController.m */,
 				BD2CAA8C1EFFCCE200C0E540 /* HostelFlowLayout.h */,
@@ -306,6 +323,9 @@
 		BD3844B01EFE52C800F2E981 /* NavigationAidControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BD5C3EBD1EFD4BA400616400 /* HostelAreaMapViewController */,
+				BDE3BA2E1F07FBCB00DFDEF4 /* TouristLocationTableViewController.h */,
+				BDE3BA2C1F07FBBC00DFDEF4 /* TouristLocationTableViewController.m */,
 				BD3844B11EFE579B00F2E981 /* ToHostelDirectionsController.h */,
 				BD3844B21EFE579B00F2E981 /* ToHostelDirectionsController.m */,
 				BD3844A41EFE450800F2E981 /* DirectionsMenuController.h */,
@@ -339,6 +359,8 @@
 				BD32E41D1F03A83F00F847B3 /* DayOfWeek.h */,
 				BD1248871F04A8BC00B77F36 /* WeatherIconManager.h */,
 				BD1248881F04A8CA00B77F36 /* WeatherIconManager.m */,
+				BDE3BA291F07F66300DFDEF4 /* UIViewController+HelperMethods.h */,
+				BDE3BA2A1F07F66300DFDEF4 /* UIViewController+HelperMethods.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -367,6 +389,8 @@
 		BD5C3EC21EFD515600616400 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				BDE3BA351F08033F00DFDEF4 /* HeaderViewConfiguration.h */,
+				BDE3BA361F08033F00DFDEF4 /* HeaderViewConfiguration.m */,
 				BD3844A71EFE4FD300F2E981 /* HostelLocationAnnotation.h */,
 				BD3844A81EFE4FD300F2E981 /* HostelLocationAnnotation.m */,
 				BD3844A91EFE4FD300F2E981 /* HostelLocationAnnotationView.h */,
@@ -375,6 +399,8 @@
 				BD5C3EC31EFD516E00616400 /* OverlayConfiguration.m */,
 				BD2B782E1F073B6700C33184 /* AnnotationManager.h */,
 				BD2B782F1F073BDB00C33184 /* AnnotationManager.m */,
+				BDE3BA321F08019F00DFDEF4 /* SeoulLocationAnnotation+HelperMethods.h */,
+				BDE3BA331F08019F00DFDEF4 /* SeoulLocationAnnotation+HelperMethods.m */,
 			);
 			name = DataModels;
 			sourceTree = "<group>";
@@ -412,6 +438,7 @@
 		BD902CD71EFD31F600DD1034 /* GDJHostel */ = {
 			isa = PBXGroup;
 			children = (
+				BDE3BA211F07EE3D00DFDEF4 /* WebviewController */,
 				BD3154E81F03BEE4002B3388 /* WeatherCollectionController */,
 				BD3A9C7E1F028C64006D1CD8 /* Utils */,
 				BD68476E1F00F10F004732FB /* ImageCacheUtil */,
@@ -421,7 +448,6 @@
 				BD3117D31EFE7EC000D6A5D6 /* InformationControllers */,
 				BD3844B01EFE52C800F2E981 /* NavigationAidControllers */,
 				BD5C3EC21EFD515600616400 /* DataModels */,
-				BD5C3EBD1EFD4BA400616400 /* HostelAreaMapViewController */,
 				BD902CDB1EFD31F600DD1034 /* AppDelegate.h */,
 				BD902CDC1EFD31F600DD1034 /* AppDelegate.m */,
 				BD902CDE1EFD31F600DD1034 /* ViewController.h */,
@@ -480,6 +506,26 @@
 				BD305BA31EFF888100F9F2B9 /* Alpha Dance.mp3 */,
 			);
 			name = AudioFiles;
+			sourceTree = "<group>";
+		};
+		BDE3BA211F07EE3D00DFDEF4 /* WebviewController */ = {
+			isa = PBXGroup;
+			children = (
+				BDE3BA221F07EE5200DFDEF4 /* WebViewController.h */,
+				BDE3BA231F07EE6200DFDEF4 /* WebViewController.m */,
+			);
+			name = WebviewController;
+			sourceTree = "<group>";
+		};
+		BDE3BA251F07F53F00DFDEF4 /* ContactInfoControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BD2EA7701EFFC28200A8572B /* ContactScrollViewController.h */,
+				BD2EA7711EFFC28F00A8572B /* ContactScrollViewController.m */,
+				BDE3BA261F07F57800DFDEF4 /* ContactInfoController.h */,
+				BDE3BA271F07F58700DFDEF4 /* ContactInfoController.m */,
+			);
+			name = ContactInfoControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -605,16 +651,21 @@
 				BD2F9A8B1F0774E8004B0E09 /* BikeRouteMapController.m in Sources */,
 				BD30C5171EFDDCE70032FE64 /* HostelInformationController.m in Sources */,
 				BD3151141F00C844002332B8 /* TouristSiteCollectionViewController.m in Sources */,
+				BDE3BA341F08019F00DFDEF4 /* SeoulLocationAnnotation+HelperMethods.m in Sources */,
+				BDE3BA241F07EE6200DFDEF4 /* WebViewController.m in Sources */,
 				BD68476D1F00F102004732FB /* ImageKeyConstants.m in Sources */,
 				BD3844A61EFE450800F2E981 /* DirectionsMenuController.m in Sources */,
 				BD34C1DE1F07A8E200CD0DD3 /* PolygonSelectionController.m in Sources */,
 				BDFBFBA41F03E41400185F47 /* WeatherForecastSite.m in Sources */,
 				BD5C3EBC1EFD4BA000616400 /* HostelAreaMapViewController.m in Sources */,
+				BDE3BA281F07F58700DFDEF4 /* ContactInfoController.m in Sources */,
 				BD27B12E1F0250B700059152 /* TouristSiteCategorySelectionController.m in Sources */,
+				BDE3BA371F08033F00DFDEF4 /* HeaderViewConfiguration.m in Sources */,
 				BD2CAA9B1EFFE59800C0E540 /* TouristSiteConfiguration.m in Sources */,
 				BD3844AB1EFE4FD300F2E981 /* HostelLocationAnnotation.m in Sources */,
 				BD3844AF1EFE526300F2E981 /* LocationSearchController.m in Sources */,
 				BD2C30E41F0543400087BBA6 /* WeatherConfiguration.m in Sources */,
+				BDE3BA2D1F07FBBC00DFDEF4 /* TouristLocationTableViewController.m in Sources */,
 				BD2CAA981EFFDDB500C0E540 /* TouristSiteCollectionViewCell.m in Sources */,
 				BD68476C1F00F102004732FB /* ImageManager.m in Sources */,
 				BD3844B31EFE579B00F2E981 /* ToHostelDirectionsController.m in Sources */,
@@ -628,6 +679,7 @@
 				BD6847711F010070004732FB /* ImageManagerB.m in Sources */,
 				BDFBFBA71F03E51C00185F47 /* WFSManager.m in Sources */,
 				BD902CDA1EFD31F600DD1034 /* main.m in Sources */,
+				BDE3BA2B1F07F66300DFDEF4 /* UIViewController+HelperMethods.m in Sources */,
 				BD34C1DC1F07A8D300CD0DD3 /* PolygonMapController.m in Sources */,
 				BD5C3EC41EFD516E00616400 /* OverlayConfiguration.m in Sources */,
 				BD31A5B11F03932100C018DB /* SeoulTourismNavigationController.m in Sources */,

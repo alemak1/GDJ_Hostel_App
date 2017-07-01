@@ -43,15 +43,15 @@
     
     UIStoryboard* mainStoryBOard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    UIViewController* featureViewController = [mainStoryBOard instantiateViewControllerWithIdentifier:@"ContactInfoController"];
+    UIViewController* contactInfoController = [mainStoryBOard instantiateViewControllerWithIdentifier:@"ContactInfoController"];
     
-    [self addChildViewController:featureViewController];
+    [self addChildViewController:contactInfoController];
     
-    [self.scrollView addSubview:featureViewController.view];
+    [self.scrollView addSubview:contactInfoController.view];
     
-    [featureViewController.view setFrame:CGRectMake(0.00, 0.00, self.scrollView.contentSize.width, self.scrollView.contentSize.height)];
+    [contactInfoController.view setFrame:CGRectMake(0.00, 0.00, self.scrollView.contentSize.width, self.scrollView.contentSize.height)];
     
-    [featureViewController didMoveToParentViewController:self];
+    [contactInfoController didMoveToParentViewController:self];
     
 }
 
