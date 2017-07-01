@@ -24,6 +24,7 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     LOCATION_SEARCH_CONTROLLER,
     TO_HOSTEL_DIRECTIONS_CONTROLLER,
     HOSTEL_LOCAL_AREA_MAP_CONTROLLER,
+    BIKING_JOGGING_ROUTE_CONTROLLER,
     LAST_VIEW_CONTROLLER,
 }VALID_NEXT_VIEW_CONTROLLER;
 
@@ -164,20 +165,26 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     
     UIViewController* nextViewController;
     
-    UIStoryboard* mainStoryBoard = [UIStoryboard storyboardWithName:@"StoryboardA" bundle:nil];
+    UIStoryboard* storyBoardA = [UIStoryboard storyboardWithName:@"StoryboardA" bundle:nil];
+    
+    UIStoryboard* mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                             
     switch (self.currentNextViewController) {
         case TOURIST_LOCATION_TABLEVIEW_CONTROLLER:
             nextViewController = [self getNavigationControllerForTouristLocationTableViewController];
             break;
         case TO_HOSTEL_DIRECTIONS_CONTROLLER:
-            nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"ToHostelDirectionsController"];
+            nextViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"ToHostelDirectionsController"];
             break;
         case LOCATION_SEARCH_CONTROLLER:
-            nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"LocationSearchController"];
+            nextViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"LocationSearchController"];
             break;
         case HOSTEL_LOCAL_AREA_MAP_CONTROLLER:
-            nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HostelLocalAreaMapNavigationController"];
+            nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HostelAreaNavigationController"];
+            break;
+        case BIKING_JOGGING_ROUTE_CONTROLLER:
+            nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"BikingRoutesController"];
+            break;
         default:
             break;
     }
@@ -208,6 +215,8 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
             return @"Search for Locations Nearby";
         case HOSTEL_LOCAL_AREA_MAP_CONTROLLER:
             return @"View the Local Area";
+        case BIKING_JOGGING_ROUTE_CONTROLLER:
+            return @"Local Biking/Jogging Routes";
         case LAST_VIEW_CONTROLLER:
             return nil;
     }

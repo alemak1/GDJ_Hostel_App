@@ -48,6 +48,7 @@
 }
 
 
+
 -(void) pushTSDetailInformationControllerForSelectedSite:(NSNotification*)notification{
     
     TouristSiteConfiguration* selectedTouristConfiguration = [[notification userInfo] valueForKey:@"touristSiteConfiguration"];
@@ -74,7 +75,7 @@
     
     __block CGFloat controllerIndex = 0;
     
-    CGFloat controllerHeight = scrollViewHeight*0.60;
+    CGFloat controllerHeight = scrollViewHeight*0.50;
     
     CGRect(^getControllerFrame)(void) = ^CGRect(void){
         

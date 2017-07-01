@@ -17,8 +17,7 @@
 
 @interface HostelAreaMapViewController : UIViewController<MKMapViewDelegate>
 
-@property (nonatomic, strong) OverlayConfiguration *overlayConfiguration;
-@property (nonatomic, strong) NSMutableArray *selectedOptions;
+@property (nonatomic, strong) NSMutableArray<NSNumber*> *selectedOptions;
 
 @end
 

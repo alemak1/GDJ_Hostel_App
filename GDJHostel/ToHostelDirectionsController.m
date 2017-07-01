@@ -62,15 +62,6 @@ typedef enum TRANSPORTATION_MODE{
 
 -(void)viewWillAppear:(BOOL)animated{
     
-
-   
-    
-    
-}
-
-
--(void)viewDidLoad{
-    
     MKMapItem* fromLocation = [MKMapItem mapItemForCurrentLocation];
     CLLocationCoordinate2D fromLocationCoordinate = fromLocation.placemark.coordinate;
     
@@ -81,6 +72,15 @@ typedef enum TRANSPORTATION_MODE{
     TRANSPORTATION_MODE selected_transportation_mode = (int)[[self transportationMode] selectedSegmentIndex];
     
     [self makeDirectionsToHostelRequestFromUserLocationForTransportationType:selected_transportation_mode];
+   
+    
+    
+}
+
+
+-(void)viewDidLoad{
+    
+    
     
     
    

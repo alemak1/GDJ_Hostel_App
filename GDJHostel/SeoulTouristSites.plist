@@ -857,5 +857,82 @@ The mall also has a rest area called Herb Plaza, where shoppers can take a rest 
 		<key>midCoord</key>
 		<string>{37.4972766,127.0250787}</string>
 	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>gwanmunsa_temple</string>
+		<key>category</key>
+		<integer>2</integer>
+		<key>specialNote</key>
+		<string>Program Content: Temple basic etiquette, temple guide, lunch, making of lotus lantern, making of 108 Buddhist prayer beads, talking with a monk, and etc.</string>
+		<key>physicalAddress</key>
+		<string>111, Baumoe-ro 7-gil, Seocho-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>www.gwanmunsa.org 
+</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Located at the foot of Umyeonsan Mountain in Umyeon-dong, Seocho-gu, Seoul, Gwanmunsa Temple had its ground-breaking ceremony in 1993 and construction was completed in October, 1998.  The temple site has a total area 6,700 pyeong (22,148.76㎡) with 7 ground levels and 4 basement levels. The temple was constructed with a mixture of modern and traditional Buddhism architecture forms. Inside the temple, cutting-edge facilities are used for various cultural events, conferences, and sacred ceremonies. 
+
+</string>
+		<key>name</key>
+		<string>Gwanmunsa Temple</string>
+		<key>title</key>
+		<string>Gwanmunsa Temple</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.4733332,127.0195043}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.4743122,127.0205873}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.4741342,127.0196223}</string>
+		<key>midCoord</key>
+		<string>{37.4737166,127.0200835}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>lets_run_park</string>
+		<key>category</key>
+		<integer>7</integer>
+		<key>specialNote</key>
+		<string>Admission Fees and operating hours vary depending on program types.</string>
+		<key>physicalAddress</key>
+		<string>107, Gyeongmagongwon-daero, Gwacheon-si, Gyeonggi-do
+</string>
+		<key>webAddress</key>
+		<string>park.kra.co.kr/seoul_main.do </string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Let&apos;s Run Park Seoul, located in Gwacheon, has horse races every weekend, as well as various unique experience programs and events to enjoy. The most popular program is the Secret Way Tour, giving access to parts of the park generally closed to the public. The Let&apos;s Run Wagon Tour allows participants to experience the excitement building up just before the start of a race.</string>
+		<key>name</key>
+		<string>Let&apos;s Run Park Seoul</string>
+		<key>title</key>
+		<string>Let&apos;s Run Park Seoul</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.4436032,127.0100393}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.4516612,127.0175063}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.4514442,127.0114983}</string>
+		<key>midCoord</key>
+		<string>{37.4448511,127.0149533}</string>
+	</dict>
 </array>
 </plist>
