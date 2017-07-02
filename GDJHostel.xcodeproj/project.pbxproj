@@ -61,6 +61,9 @@
 		BD3844B31EFE579B00F2E981 /* ToHostelDirectionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3844B21EFE579B00F2E981 /* ToHostelDirectionsController.m */; };
 		BD3A9C7A1F0280A1006D1CD8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3A9C791F0280A1006D1CD8 /* CoreLocation.framework */; };
 		BD3A9C7D1F02839E006D1CD8 /* AppLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3A9C7C1F02839E006D1CD8 /* AppLocationManager.m */; };
+		BD554C8F1F090FBF00B43C8C /* StoryboardB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD554C8E1F090FBF00B43C8C /* StoryboardB.storyboard */; };
+		BD554C931F090FFF00B43C8C /* ProductPriceController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD554C921F090FFF00B43C8C /* ProductPriceController.m */; };
+		BD554C971F0922D500B43C8C /* ProductPriceDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD554C961F0922D500B43C8C /* ProductPriceDisplayController.m */; };
 		BD5C3EBC1EFD4BA000616400 /* HostelAreaMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5C3EBB1EFD4BA000616400 /* HostelAreaMapViewController.m */; };
 		BD5C3EC01EFD4C9000616400 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5C3EBF1EFD4C9000616400 /* MapKit.framework */; };
 		BD5C3EC41EFD516E00616400 /* OverlayConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5C3EC31EFD516E00616400 /* OverlayConfiguration.m */; };
@@ -188,6 +191,12 @@
 		BD3A9C791F0280A1006D1CD8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BD3A9C7B1F028390006D1CD8 /* AppLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppLocationManager.h; sourceTree = "<group>"; };
 		BD3A9C7C1F02839E006D1CD8 /* AppLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppLocationManager.m; sourceTree = "<group>"; };
+		BD554C8E1F090FBF00B43C8C /* StoryboardB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryboardB.storyboard; sourceTree = "<group>"; };
+		BD554C911F090FE600B43C8C /* ProductPriceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductPriceController.h; sourceTree = "<group>"; };
+		BD554C921F090FFF00B43C8C /* ProductPriceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductPriceController.m; sourceTree = "<group>"; };
+		BD554C941F0915B800B43C8C /* KoreanProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KoreanProduct.h; sourceTree = "<group>"; };
+		BD554C951F0922C400B43C8C /* ProductPriceDisplayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductPriceDisplayController.h; sourceTree = "<group>"; };
+		BD554C961F0922D500B43C8C /* ProductPriceDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductPriceDisplayController.m; sourceTree = "<group>"; };
 		BD5C3EBA1EFD4B9100616400 /* HostelAreaMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostelAreaMapViewController.h; sourceTree = "<group>"; };
 		BD5C3EBB1EFD4BA000616400 /* HostelAreaMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelAreaMapViewController.m; sourceTree = "<group>"; };
 		BD5C3EBF1EFD4C9000616400 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -364,6 +373,18 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		BD554C901F090FD300B43C8C /* ProductPriceController */ = {
+			isa = PBXGroup;
+			children = (
+				BD554C911F090FE600B43C8C /* ProductPriceController.h */,
+				BD554C921F090FFF00B43C8C /* ProductPriceController.m */,
+				BD554C941F0915B800B43C8C /* KoreanProduct.h */,
+				BD554C951F0922C400B43C8C /* ProductPriceDisplayController.h */,
+				BD554C961F0922D500B43C8C /* ProductPriceDisplayController.m */,
+			);
+			name = ProductPriceController;
+			sourceTree = "<group>";
+		};
 		BD5C3EBD1EFD4BA400616400 /* HostelAreaMapViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +490,7 @@
 		BD902CD71EFD31F600DD1034 /* GDJHostel */ = {
 			isa = PBXGroup;
 			children = (
+				BD554C901F090FD300B43C8C /* ProductPriceController */,
 				BDE3BA211F07EE3D00DFDEF4 /* WebviewController */,
 				BD3154E81F03BEE4002B3388 /* WeatherCollectionController */,
 				BD3A9C7E1F028C64006D1CD8 /* Utils */,
@@ -484,6 +506,7 @@
 				BD902CDE1EFD31F600DD1034 /* ViewController.h */,
 				BD902CDF1EFD31F600DD1034 /* ViewController.m */,
 				BD5C3EC91EFD579100616400 /* StoryboardA.storyboard */,
+				BD554C8E1F090FBF00B43C8C /* StoryboardB.storyboard */,
 				BD902CE11EFD31F600DD1034 /* Main.storyboard */,
 				BD902CE41EFD31F600DD1034 /* Assets.xcassets */,
 				BD902CE61EFD31F600DD1034 /* LaunchScreen.storyboard */,
@@ -642,6 +665,7 @@
 				BD3279401F00124F0007FD64 /* ParkRoute.plist in Resources */,
 				BD305BB41EFF8CB500F9F2B9 /* transportation-0.caf in Resources */,
 				BD305BBB1EFF8CB500F9F2B9 /* transportation-7.caf in Resources */,
+				BD554C8F1F090FBF00B43C8C /* StoryboardB.storyboard in Resources */,
 				BD2995B11EFE68EB009E64BF /* SurvivalWordsPhrases.plist in Resources */,
 				BD305BC01EFF8CC700F9F2B9 /* background-music-aac.caf in Resources */,
 				BD5C3ECA1EFD579100616400 /* StoryboardA.storyboard in Resources */,
@@ -703,6 +727,7 @@
 				BD3844B31EFE579B00F2E981 /* ToHostelDirectionsController.m in Sources */,
 				BD3154EB1F03BF23002B3388 /* WeatherDisplayController.m in Sources */,
 				BD2B78301F073BDB00C33184 /* AnnotationManager.m in Sources */,
+				BD554C971F0922D500B43C8C /* ProductPriceDisplayController.m in Sources */,
 				BD2EA7721EFFC28F00A8572B /* ContactScrollViewController.m in Sources */,
 				BD30C51A1EFDE5240032FE64 /* MenuComponent.m in Sources */,
 				BD2DF30E1F060643005BAD8B /* WeatherDetailController.m in Sources */,
@@ -711,6 +736,7 @@
 				BD6847711F010070004732FB /* ImageManagerB.m in Sources */,
 				BDFBFBA71F03E51C00185F47 /* WFSManager.m in Sources */,
 				BD902CDA1EFD31F600DD1034 /* main.m in Sources */,
+				BD554C931F090FFF00B43C8C /* ProductPriceController.m in Sources */,
 				BDE3BA2B1F07F66300DFDEF4 /* UIViewController+HelperMethods.m in Sources */,
 				BD34C1DC1F07A8D300CD0DD3 /* PolygonMapController.m in Sources */,
 				BD5C3EC41EFD516E00616400 /* OverlayConfiguration.m in Sources */,

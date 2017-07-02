@@ -52,8 +52,8 @@
     self.menuComponent = [[MenuComponent alloc] initMenuWithFrame:desiredMenuFrame
                     targetView:self.view
                     direction:menuDirectionRightToLeft
-                    options:@[@"About Hostel", @"Directions", @"Contact Info", @"Seoul Tourism",@"Weather",@"Survival Korean", @"Acknowledgements"]
-                    optionImages:@[@"informationB", @"compassB", @"contactPhoneB", @"templeB",@"cloudyA",@"chatA", @"trophyB"]];
+                    options:@[@"About Hostel", @"Directions", @"Contact Info", @"Seoul Tourism",@"Weather",@"Survival Korean", @"Korean Product Prices",@"Acknowledgements"]
+                    optionImages:@[@"informationB", @"compassB", @"contactPhoneB", @"templeB",@"cloudyA",@"chatA", @"shoppingCartB",@"trophyB"]];
 
 }
 
@@ -62,6 +62,8 @@
     [self.menuComponent showMenuWithSelectionHandler:^(NSInteger selectedOptionIndex) {
         
         UIStoryboard* storyBoardA = [UIStoryboard storyboardWithName:@"StoryboardA" bundle:nil];
+        
+        UIStoryboard* storyBoardB = [UIStoryboard storyboardWithName:@"StoryboardB" bundle:nil];
         
         UIStoryboard* mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
@@ -101,6 +103,10 @@
                 //Korean Phrases Audio
                 break;
             case 6:
+                //Korean Product Prices
+                requestedViewController = [storyBoardB instantiateViewControllerWithIdentifier:@"ProductPriceNavigationController"];
+                break;
+            case 7:
                 //Acknowledgements
                 requestedViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"DirectionsMenuController"];
                 NSLog(@"You selected option %d",(int)selectedOptionIndex);
@@ -135,6 +141,11 @@
     
     
     return [mainStoryBoard instantiateViewControllerWithIdentifier:storyBoardIdentifier];
+    
+}
+
+
+-(IBAction)unwindBackToHostelIndexPage:(UIStoryboardSegue *)unwindSegue{
     
 }
 
