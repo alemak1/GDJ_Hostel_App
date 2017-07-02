@@ -22,6 +22,7 @@
 		BD2CAA981EFFDDB500C0E540 /* TouristSiteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA971EFFDDB500C0E540 /* TouristSiteCollectionViewCell.m */; };
 		BD2CAA9B1EFFE59800C0E540 /* TouristSiteConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA9A1EFFE59800C0E540 /* TouristSiteConfiguration.m */; };
 		BD2CAA9D1EFFE7D700C0E540 /* SeoulTouristSites.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD2CAA9C1EFFE7D700C0E540 /* SeoulTouristSites.plist */; };
+		BD2DCCAE1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2DCCAD1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m */; };
 		BD2DF30E1F060643005BAD8B /* WeatherDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2DF30D1F060643005BAD8B /* WeatherDetailController.m */; };
 		BD2EA76F1EFFB1E300A8572B /* FeatureScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EA76E1EFFB1E300A8572B /* FeatureScrollViewController.m */; };
 		BD2EA7721EFFC28F00A8572B /* ContactScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EA7711EFFC28F00A8572B /* ContactScrollViewController.m */; };
@@ -129,6 +130,10 @@
 		BD2CAA9C1EFFE7D700C0E540 /* SeoulTouristSites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SeoulTouristSites.plist; sourceTree = "<group>"; };
 		BD2CAA9E1EFFE7FF00C0E540 /* TouristSiteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristSiteManager.h; sourceTree = "<group>"; };
 		BD2CAA9F1EFFE80900C0E540 /* TouristSiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristSiteManager.m; sourceTree = "<group>"; };
+		BD2DCCAC1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CurrencyHelperMethods.h"; sourceTree = "<group>"; };
+		BD2DCCAD1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CurrencyHelperMethods.m"; sourceTree = "<group>"; };
+		BD2DCCAF1F092A8000EA8FDF /* CurrencyType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrencyType.h; sourceTree = "<group>"; };
+		BD2DCCB01F09360B00EA8FDF /* ProductCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductCategory.h; sourceTree = "<group>"; };
 		BD2DF30C1F060634005BAD8B /* WeatherDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherDetailController.h; sourceTree = "<group>"; };
 		BD2DF30D1F060643005BAD8B /* WeatherDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailController.m; sourceTree = "<group>"; };
 		BD2EA76D1EFFB1D500A8572B /* FeatureScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureScrollViewController.h; sourceTree = "<group>"; };
@@ -381,6 +386,10 @@
 				BD554C941F0915B800B43C8C /* KoreanProduct.h */,
 				BD554C951F0922C400B43C8C /* ProductPriceDisplayController.h */,
 				BD554C961F0922D500B43C8C /* ProductPriceDisplayController.m */,
+				BD2DCCAC1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.h */,
+				BD2DCCAD1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m */,
+				BD2DCCAF1F092A8000EA8FDF /* CurrencyType.h */,
+				BD2DCCB01F09360B00EA8FDF /* ProductCategory.h */,
 			);
 			name = ProductPriceController;
 			sourceTree = "<group>";
@@ -728,6 +737,7 @@
 				BD3154EB1F03BF23002B3388 /* WeatherDisplayController.m in Sources */,
 				BD2B78301F073BDB00C33184 /* AnnotationManager.m in Sources */,
 				BD554C971F0922D500B43C8C /* ProductPriceDisplayController.m in Sources */,
+				BD2DCCAE1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m in Sources */,
 				BD2EA7721EFFC28F00A8572B /* ContactScrollViewController.m in Sources */,
 				BD30C51A1EFDE5240032FE64 /* MenuComponent.m in Sources */,
 				BD2DF30E1F060643005BAD8B /* WeatherDetailController.m in Sources */,

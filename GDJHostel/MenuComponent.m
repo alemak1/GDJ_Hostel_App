@@ -59,7 +59,7 @@
         [self setupOptionsTableView];
         
         // Set the initial table view settings.
-        [self setInitialTableViewSettings];
+        [self setInitialTableViewSettings:[self.targetView traitCollection]];
         
         // Setup the swipe gesture recognizer.
         [self setupSwipeGestureRecognizer];
@@ -144,10 +144,10 @@
 
 -(void)setupOptionsTableView{
     
-    CGFloat menuFrameWidth = CGRectGetHeight(self.menuFrame);
-    CGFloat menuFrameHeight = CGRectGetWidth(self.menuFrame);
+    CGFloat menuFrameWidth = CGRectGetWidth(self.menuFrame);
+    CGFloat menuFrameHeight = CGRectGetHeight(self.menuFrame);
     
-    self.optionsTableView = [[UITableView alloc] initWithFrame:CGRectMake(menuFrameWidth*0.01, menuFrameHeight*0.55, self.menuFrame.size.width, self.menuFrame.size.height) style:UITableViewStylePlain];
+    self.optionsTableView = [[UITableView alloc] initWithFrame:CGRectMake(menuFrameWidth*0.01, menuFrameHeight*0.55, self.menuFrame.size.width, self.menuFrame.size.height*0.50) style:UITableViewStylePlain];
     [self.optionsTableView setBackgroundColor:[UIColor clearColor]];
     [self.optionsTableView setScrollEnabled:NO];
     [self.optionsTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -189,8 +189,8 @@
     // Setup the options table view.
     [self resetOptionsTableView:[self.targetView traitCollection]];
     
-    // Set the initial table view settings.
-    [self setInitialTableViewSettings];
+    // Set the initial table view settings.    
+    [self setInitialTableViewSettings:[self.targetView traitCollection]];
     
     // Setup the swipe gesture recognizer.
     [self setupSwipeGestureRecognizer];
@@ -229,18 +229,23 @@
     BOOL CW_RH = (horizontalSC == UIUserInterfaceSizeClassCompact && verticalSC == UIUserInterfaceSizeClassRegular);
     
     
-    CGFloat menuFrameWidth = CGRectGetHeight(self.menuFrame);
-    CGFloat menuFrameHeight = CGRectGetWidth(self.menuFrame);
+    CGFloat menuFrameWidth = CGRectGetWidth(self.menuFrame);
+    CGFloat menuFrameHeight = CGRectGetHeight(self.menuFrame);
     
-    self.optionsTableView = [[UITableView alloc] initWithFrame:CGRectMake(menuFrameWidth*0.01, menuFrameHeight*0.44, self.menuFrame.size.width, self.menuFrame.size.height) style:UITableViewStylePlain];
+    self.optionsTableView = [[UITableView alloc] initWithFrame:CGRectMake(menuFrameWidth*0.01, menuFrameHeight*0.20, self.menuFrame.size.width, self.menuFrame.size.height) style:UITableViewStylePlain];
     
     CGRect logoFrame = CGRectMake(menuFrameWidth*0.10, menuFrameHeight*0.02, 120, 120);
+    [self.optionsTableView setScrollEnabled:NO];
+    
 
     if(CW_CH){
-        self.optionsTableView = [[UITableView alloc] initWithFrame:CGRectMake(menuFrameWidth*0.01, menuFrameHeight*0.30, self.menuFrame.size.width, self.menuFrame.size.height*0.80) style:UITableViewStylePlain];
+        self.optionsTableView = [[UITableView alloc] initWithFrame:CGRectMake(menuFrameWidth*0.01, menuFrameHeight*0.15, self.menuFrame.size.width, menuFrameHeight*4) style:UITableViewStylePlain];
+        
+        
+        [self.optionsTableView setContentSize:CGSizeMake(self.menuFrame.size.width, menuFrameHeight*4)];
         
         logoFrame = CGRectMake(menuFrameWidth*0.10, menuFrameHeight*0.02, 80, 80);
-        
+        [self.optionsTableView setScrollEnabled:YES];
     }
     
     if(CW_RH){
@@ -249,7 +254,6 @@
 
     
     [self.optionsTableView setBackgroundColor:[UIColor clearColor]];
-    [self.optionsTableView setScrollEnabled:NO];
     [self.optionsTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.menuView addSubview:self.optionsTableView];
     
@@ -267,13 +271,29 @@
 
 
 
-- (void)setInitialTableViewSettings {
+- (void)setInitialTableViewSettings:(UITraitCollection*)newTraitCollection {
     self.tableSettings = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                           [UIFont fontWithName:@"Futura-CondensedMedium" size:30.0], @"font",
             [NSNumber numberWithInt:NSTextAlignmentLeft], @"textAlignment",
             [UIColor colorWithRed:245.0/255.0 green:231.0/255.0 blue:143.0/255.0 alpha:1.00], @"textColor",
             [NSNumber numberWithInt:UITableViewCellSelectionStyleGray], @"selectionStyle",
                           nil];
+    
+    UIUserInterfaceSizeClass horizontalSC = [newTraitCollection horizontalSizeClass];
+    UIUserInterfaceSizeClass verticalSC = [newTraitCollection verticalSizeClass];
+    
+    BOOL CW_CH = (horizontalSC == UIUserInterfaceSizeClassCompact && verticalSC == UIUserInterfaceSizeClassCompact);
+    
+    BOOL CW_RH = (horizontalSC == UIUserInterfaceSizeClassCompact && verticalSC == UIUserInterfaceSizeClassRegular);
+    
+    if(CW_CH){
+        self.tableSettings = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+            [UIFont fontWithName:@"Futura-CondensedMedium" size:25.0], @"font",
+            [NSNumber numberWithInt:NSTextAlignmentLeft], @"textAlignment",
+            [UIColor colorWithRed:245.0/255.0 green:231.0/255.0 blue:143.0/255.0 alpha:1.00], @"textColor",
+            [NSNumber numberWithInt:UITableViewCellSelectionStyleGray], @"selectionStyle",
+                              nil];
+    }
 }
 
 

@@ -10,20 +10,22 @@
 #define KoreanProduct_h
 
 #import <Foundation/Foundation.h>
+#import "ProductCategory.h"
 
 @interface KoreanProduct : NSObject
 
 
-typedef enum ProductCategory{
-    
-}ProductCategory;
 
+
+typedef enum
 @property NSString* name;
 @property NSString* brand;
 @property NSString* imagePath;
 @property NSNumber* priceInKRW;
 @property NSInteger unityQuantity;
-@property ProductCategory category;
+@property GeneralProductCategory generalCategory;
+@property SpecificProductCategory specificCategory;
+
 
 
 

@@ -7,6 +7,8 @@
 //
 
 #import "ProductPriceController.h"
+#import "ProductCategory.h"
+#import "NSString+CurrencyHelperMethods.h"
 
 @interface ProductPriceController ()
 
@@ -28,7 +30,8 @@ static void* ProductPriceControllerContext = &ProductPriceControllerContext;
 
 -(void)viewDidLoad{
     
-    
+    [self.collectionView setDataSource:self];
+    [self.collectionView setDataSource:self];
     
 
   
@@ -53,6 +56,35 @@ static void* ProductPriceControllerContext = &ProductPriceControllerContext;
     [self removeObserver:self forKeyPath:@"currencyExchangeData"];
 }
 
+
+#pragma mark TABLEVIEW DATASOURCE AND DELEGATE METHODS
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return LAST_ASSORTED_PRODUCT_INDEX;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    UICollectionViewCell* cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ProductCategoryCell" forIndexPath:indexPath];
+    
+    NSString* imagePath = [NSString getImagePathFor:indexPath.row];
+    
+    UIImageView* cellImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imagePath]];
+    
+
+    cellImageView.frame = cell.contentView.frame;
+    
+    [cell.contentView addSubview:cellImageView];
+    
+    return cell;
+}
+
+#pragma mark NSURL SESSION/NSURL DATA TASK UTILITY FUNCTIONS
 
 -(void) loadCurrencyExchangeData{
     
@@ -98,6 +130,34 @@ static void* ProductPriceControllerContext = &ProductPriceControllerContext;
 }
 
 @end
+
+/**
+ 
+ MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+ request.naturalLanguageQuery = [self.locationSearchBar text];
+ 
+ request.region = [self.mainMapView region];
+ 
+ // Create and initialize a search object.
+ MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
+ 
+ // Start the search and display the results as annotations on the map.
+ [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error)
+ {
+ NSMutableArray *placemarks = [NSMutableArray array];
+ for (MKMapItem *item in response.mapItems) {
+ [placemarks addObject:item.placemark];
+ }
+ 
+ [self.mainMapView removeAnnotations:[self.mainMapView annotations]];
+ [self.mainMapView showAnnotations:placemarks animated:NO];
+ }
+ 
+ ];
+
+ 
+ 
+ **/
 
 
 /** This code is for use in iOS education tutorials:
