@@ -187,7 +187,7 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
         case TO_HOSTEL_DIRECTIONS_CONTROLLER:
             nextViewController = [self getToHostelDirectionsController];            break;
         case LOCATION_SEARCH_CONTROLLER:
-            nextViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"LocationSearchController"];
+            nextViewController = [self getLocationSearchController];
             break;
         case HOSTEL_LOCAL_AREA_MAP_CONTROLLER:
             nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HostelAreaNavigationController"];
@@ -236,6 +236,26 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     }
     
     return nil;
+}
+
+-(LocationSearchController*)getLocationSearchController{
+    
+    
+    
+    UIStoryboard* storyBoardA = [UIStoryboard storyboardWithName:@"StoryboardA" bundle:nil];
+    
+    NSString* storyboardIdentifier = @"LocationSearchController";
+    
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+        
+        storyboardIdentifier = @"LocationSearchController_iPad";
+        
+    }
+    
+    LocationSearchController* nextViewController = [storyBoardA instantiateViewControllerWithIdentifier:storyboardIdentifier];
+    
+    return nextViewController;
+
 }
 
 -(ToHostelDirectionsController*)getToHostelDirectionsController{
