@@ -16,6 +16,7 @@
 
 @interface ToHostelDirectionsController : UIViewController<MKMapViewDelegate>
 
+
 @property MKDirectionsResponse* directionsResponse;
 
 @end

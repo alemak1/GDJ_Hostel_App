@@ -7,20 +7,23 @@
 //
 
 #import "ToHostelDirectionsController.h"
+#import "TransportationMode.h"
+#import "AppLocationManager.h"
+#import "MKDirectionsRequest+HelperMethods.h"
+#import "NSString+HelperMethods.h"
+#import "UIViewController+HelperMethods.h"
 
 @interface ToHostelDirectionsController ()
-
-typedef enum TRANSPORTATION_MODE{
-    WALK = 0,
-    TRANSIT,
-    CAR
-}TRANSPORTATION_MODE;
 
 
 
 /** Primary MapView, which will show the route to the hostel from the user's starting location **/
 
 @property (weak, nonatomic) IBOutlet MKMapView *routeDisplayMap;
+
+
+
+@property (weak,nonatomic) MKRoute* toHostelRoute;
 
 /** Additional labels which indicate the distance and time to the hostel from the user's current location **/
 
@@ -32,11 +35,14 @@ typedef enum TRANSPORTATION_MODE{
 @property (weak, nonatomic) IBOutlet UISegmentedControl *transportationMode;
 
 
+
+
 /** Callback for responding to the user selection of a new transportation type **/
 
 - (IBAction)makeRequestForNewTransportationType:(UISegmentedControl *)sender;
 
 
+- (IBAction)viewDirectionsInGoogleMaps:(UIButton *)sender;
 
 /** NumberFormatters for the distance and type to the hostel are preconfigured, lazily loaded **/
 
@@ -46,35 +52,38 @@ typedef enum TRANSPORTATION_MODE{
 
 - (IBAction)dismissCurrentViewController:(UIButton *)sender;
 
-- (IBAction)viewDirectionsToHostelWithMapsApp:(UIButton *)sender;
 
 @end
 
 @implementation ToHostelDirectionsController
 
+CLLocation* _userLocation;
 
 -(void)viewWillLayoutSubviews{
     
+    _userLocation = [[UserLocationManager sharedLocationManager] getLastUpdatedUserLocation];
+    
     [[self routeDisplayMap] setDelegate:self];
-
+    
+    
+    
+    [self setMapRegionToUserLocation];
+    
+    if(self.directionsResponse == nil){
+        
+        [self makeDirectionsRequestsToHostelWithAnyTransportationType];
+        
+        [self updateHostelDirectionsInterface];
+        
+    }
+   
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    MKMapItem* fromLocation = [MKMapItem mapItemForCurrentLocation];
-    CLLocationCoordinate2D fromLocationCoordinate = fromLocation.placemark.coordinate;
-    
-    [self.routeDisplayMap setRegion:MKCoordinateRegionMake(fromLocationCoordinate, MKCoordinateSpanMake(0.50, 0.50))];
-    
-    
-    
-    TRANSPORTATION_MODE selected_transportation_mode = (int)[[self transportationMode] selectedSegmentIndex];
-    
-    [self makeDirectionsToHostelRequestFromUserLocationForTransportationType:selected_transportation_mode];
-   
-    
-    
+
+
 }
 
 
@@ -82,52 +91,167 @@ typedef enum TRANSPORTATION_MODE{
     
     
     
-    
-   
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+
+
+- (void) setMapRegionToUserLocation{
+    CLLocationCoordinate2D fromLocationCoordinate = _userLocation.coordinate;
+    
+    [self.routeDisplayMap setRegion:MKCoordinateRegionMake(fromLocationCoordinate, MKCoordinateSpanMake(0.01, 0.01))];
     
     
-    if([keyPath isEqualToString:@"directionsResponse.routes"]){
-        
-        NSLog(@"The observed variable: directionsResponse.routes has changed");
-        
-        [self showDirections:[self directionsResponse]];
-        
-        MKRoute* firstRoute = self.directionsResponse.routes[0];
-        
-        double estimatedTravelTime = firstRoute.expectedTravelTime;
-        double estimatedDistance = firstRoute.distance;
-        
-        [self setTravelDistanceWith:estimatedDistance];
-        [self setTravelTimeWith:estimatedTravelTime];
-        
-        NSUInteger keyValueChangeKind = [change valueForKey:NSKeyValueChangeKindKey];
-    
-        if(keyValueChangeKind == NSKeyValueChangeInsertion){
-            NSIndexSet* insertedIndices = [change valueForKey:NSKeyValueChangeIndexesKey];
-        
-            NSLog(@"The index set return is %@", [insertedIndices description]);
-    
-        }
-    }
 }
+
+/** When the user changes the selected transportation type, a directions request is made with any transportation type option set to user's selected transportation mode; if an error occurs or the server is unavailable, the current viewcontroller is dismissed and the Maps App is launched instead **/
 
 - (IBAction)makeRequestForNewTransportationType:(UISegmentedControl *)sender{
+    
+    //Remove overlays from previous directions request
     
     NSLog(@"Making route request based on new transportation mode...");
     
     TRANSPORTATION_MODE selected_transportation_mode = (int)[[self transportationMode] selectedSegmentIndex];
     
-    [self makeDirectionsToHostelRequestFromUserLocationForTransportationType:selected_transportation_mode];
+    MKDirectionsRequest* directionsRequest = [[MKDirectionsRequest alloc]init];
     
+    
+    MKMapItem* fromLocation = [MKMapItem mapItemForCurrentLocation];
+    
+    CLLocationCoordinate2D hostelLocationCoordinate = CLLocationCoordinate2DMake(37.541593, 126.952866);
+    
+    MKPlacemark* hostelPlacemark = [[MKPlacemark alloc] initWithCoordinate:hostelLocationCoordinate];
+    
+    MKMapItem* hostelLocation = [[MKMapItem alloc] initWithPlacemark:hostelPlacemark];
+    
+    [directionsRequest setSource:fromLocation];
+    [directionsRequest setDestination:hostelLocation];
+    
+    MKDirectionsTransportType transportType = MKDirectionsTransportTypeAny;
+    
+    switch (selected_transportation_mode) {
+        case WALK:
+            transportType = MKDirectionsTransportTypeWalking;
+            break;
+        case TRANSIT:
+            transportType = MKDirectionsTransportTypeTransit;
+            break;
+        case CAR:
+            transportType = MKDirectionsTransportTypeAutomobile;
+            break;
+        default:
+            transportType = MKDirectionsTransportTypeAny;
+            break;
+    }
+    
+    [directionsRequest setTransportType: transportType];
+    
+    MKDirections* directions = [[MKDirections alloc] initWithRequest:directionsRequest];
+    
+    [self.travelTimeIndicator setText:@"Getting travel time..."];
+    [self.distanceToHostelIndicator setText:@"Getting distance..."];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 3*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        
+        
+        [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse* directionsResponse, NSError* routingError){
+            
+            
+            if(routingError){
+                NSLog(@"Error: failed to directions to hostel from server(from IBAction function)");
+                [self dismissViewControllerAnimated:NO completion:^{
+                    [self viewDirectionsWithMapsApp];
+                    
+                }];
+            }
+            
+            self.directionsResponse = directionsResponse;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [self updateHostelDirectionsInterface];
+                
+            });
+            
+        }];
+    
+    
+    });
+   
+
+    
+}
+
+/**
+
+- (IBAction)viewDirectionsInGoogleMaps:(UIButton *)sender {
+    
+    CLLocationDegrees latitude = _userLocation.coordinate.latitude;
+    CLLocationDegrees longitude = _userLocation.coordinate.longitude;
+
+
+    [self loadWebsiteWithURLAddress:[NSString stringWithFormat:@"https://www.google.co.kr/maps/dir/%f,%f/@37.5401193,126.9466391",latitude,longitude]];
+    
+    
+}
+**/
+
+/** When the view controller loads, a directions request is made with any transportation type option set to TransportTypeAny; if an error occurs or the server is unavailable, the current viewcontroller is dismissed and the Maps App is launched instead **/
+
+-(void) makeDirectionsRequestsToHostelWithAnyTransportationType{
+    
+    MKDirectionsRequest* directionsRequest = [MKDirectionsRequest getDirectionsRequestToHostelForTransportationMode:WALK];
+    
+    directionsRequest.transportType = MKDirectionsTransportTypeAny;
+    
+    MKDirections* toHostelDirections = [[MKDirections alloc] initWithRequest:directionsRequest];
+    
+    [toHostelDirections calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse* directionsResponse, NSError* routingError){
+    
+        
+        if(routingError){
+            [self dismissViewControllerAnimated:NO completion:^{
+                [self viewDirectionsWithMapsApp];
+                
+            }];
+        }
+        
+        self.directionsResponse = directionsResponse;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+        
+            [self updateHostelDirectionsInterface];
+            
+            
+        });
+        
+    }];
+    
+}
+
+
+-(void) updateHostelDirectionsInterface{
+    
+    MKRoute* route = self.directionsResponse.routes[0];
+    
+    NSTimeInterval expectedTravelTime = route.expectedTravelTime;
+    CLLocationDistance expectedTravelDistance = route.distance;
+    
+    
+    [self showDirections:self.directionsResponse];
+    
+    [self setTravelDistanceWith:expectedTravelDistance];
+    [self setTravelTimeWith:expectedTravelTime];
 }
 
 
 - (void) showDirections:(MKDirectionsResponse*) response{
     
-    [self.routeDisplayMap removeOverlays:self.routeDisplayMap.overlays];
+    if([self.routeDisplayMap.overlays count] > 0){
+        
+        [self.routeDisplayMap removeOverlays:self.routeDisplayMap.overlays];
+
+    }
     
     for(MKRoute* route in response.routes){
         [[self routeDisplayMap] addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
@@ -138,12 +262,12 @@ typedef enum TRANSPORTATION_MODE{
 
 - (void) setTravelTimeWith:(double)travelTime{
     
-    NSNumber* travelTimeNumber = [NSNumber numberWithDouble:travelTime];
+    NSString* timeString = [NSString timeHHMMSSFormattedStringFromTotalSeconds:(int)travelTime];
     
-    NSString* travelTimeString = [[self travelTimeNumberFormatter] stringFromNumber:travelTimeNumber];;
+    [self.travelTimeIndicator setAdjustsFontSizeToFitWidth:YES];
+    [self.travelTimeIndicator setMinimumScaleFactor:0.25];
     
-    
-    [self.travelTimeIndicator setText:travelTimeString];
+    [self.travelTimeIndicator setText:[NSString stringWithFormat:@"%@ Hours:Min:Sec ",timeString]];
 }
 
 /** TODO: Consider using generics **/
@@ -154,74 +278,10 @@ typedef enum TRANSPORTATION_MODE{
     
     NSString* distanceString = [[self distanceNumberFormatter] stringFromNumber:distanceNumber];;
     
-    [[self distanceToHostelIndicator] setText:distanceString];
+    [[self distanceToHostelIndicator] setText:[NSString stringWithFormat:@"%@ meters", distanceString]];
     
 }
 
--(void) makeDirectionsToHostelRequestFromUserLocationForTransportationType:(TRANSPORTATION_MODE)transportationMode{
-    
-    NSLog(@"Making direction request based on selected transportation mode: %@", [self selectedTransportationMode]);
-    
-    MKDirectionsRequest* routeRequest = [[MKDirectionsRequest alloc] init];
-    
-    switch (transportationMode) {
-        case WALK:
-            routeRequest.transportType = MKDirectionsTransportTypeWalking;
-            break;
-        case TRANSIT:
-            routeRequest.transportType = MKDirectionsTransportTypeTransit;
-            break;
-        case CAR:
-            routeRequest.transportType = MKDirectionsTransportTypeAutomobile;
-            break;
-        default:
-            routeRequest.transportType = MKDirectionsTransportTypeAny;
-            break;
-    }
-    
-    /** Currenet location is obtained from class method, which returns the user location singleton instance **/
-    
-    MKMapItem* currentLocation = [MKMapItem mapItemForCurrentLocation];
-    
-    //TODO: Use a global constant for Ina's Hostel coordinate
-    
-    CLLocationCoordinate2D hostelLocationCoordinate = CLLocationCoordinate2DMake(37.541593, 126.952866);
-    
-    MKPlacemark* hostelPlacemark = [[MKPlacemark alloc] initWithCoordinate:hostelLocationCoordinate];
-    
-    MKMapItem* hostelLocation = [[MKMapItem alloc] initWithPlacemark:hostelPlacemark];
-    
-    [routeRequest setSource:currentLocation];
-    
-    [routeRequest setDestination:hostelLocation];
-    
-    MKDirections* routeDirections = [[MKDirections alloc] initWithRequest:routeRequest];
-    
-    [routeDirections calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse* routeResponse, NSError* routeError){
-        
-        if(routeError){
-            //TODO: Implement error handling; show alert
-        } else {
-            
-            /** Store the direction response in stored property registered for KVO**/
-            
-            NSLog(@"Request processed. Route Response Info: %@", [routeResponse description]);
-            
-            [self showDirections:routeResponse];
-            
-            MKRoute* firstRoute = routeResponse.routes[0];
-            
-            double estimatedTravelTime = firstRoute.expectedTravelTime;
-            double estimatedDistance = firstRoute.distance;
-            
-            [self setTravelDistanceWith:estimatedDistance];
-            [self setTravelTimeWith:estimatedTravelTime];
-
-        }
-        
-    }];
-
-}
 
 
 -(NSNumberFormatter *)travelTimeNumberFormatter{
@@ -262,6 +322,12 @@ typedef enum TRANSPORTATION_MODE{
 
 - (IBAction)viewDirectionsToHostelWithMapsApp:(UIButton *)sender {
     
+    [self viewDirectionsWithMapsApp];
+
+}
+
+
+-(void) viewDirectionsWithMapsApp{
     MKMapItem* fromLocation = [MKMapItem mapItemForCurrentLocation];
     CLLocationCoordinate2D fromLocationCoordinate = fromLocation.placemark.coordinate;
     
@@ -290,10 +356,20 @@ typedef enum TRANSPORTATION_MODE{
                                   [NSValue valueWithMKCoordinate:region.center], MKLaunchOptionsMapCenterKey,
                                   [NSValue valueWithMKCoordinateSpan:region.span], MKLaunchOptionsMapSpanKey,
                                   MKLaunchOptionsDirectionsModeDefault,MKLaunchOptionsDirectionsModeKey, nil]];
-    
-
 }
 
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
+    
+    if([overlay isKindOfClass:[MKPolyline class]]){
+        MKPolylineRenderer* lineView = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+        
+        lineView.strokeColor = [UIColor greenColor];
+        
+        return lineView;
+    }
+    
+    return nil;
+}
 
 
 @end

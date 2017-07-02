@@ -71,6 +71,7 @@
 		BD68476D1F00F102004732FB /* ImageKeyConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = BD68476B1F00F102004732FB /* ImageKeyConstants.m */; };
 		BD6847711F010070004732FB /* ImageManagerB.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6847701F010070004732FB /* ImageManagerB.m */; };
 		BD7670DC1F02037000918A20 /* TouristSiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA9F1EFFE80900C0E540 /* TouristSiteManager.m */; };
+		BD7C35491F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BD7C35481F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.m */; };
 		BD902CDA1EFD31F600DD1034 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CD91EFD31F600DD1034 /* main.m */; };
 		BD902CDD1EFD31F600DD1034 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CDC1EFD31F600DD1034 /* AppDelegate.m */; };
 		BD902CE01EFD31F600DD1034 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CDF1EFD31F600DD1034 /* ViewController.m */; };
@@ -201,6 +202,9 @@
 		BD68476B1F00F102004732FB /* ImageKeyConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageKeyConstants.m; sourceTree = "<group>"; };
 		BD68476F1F010061004732FB /* ImageManagerB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageManagerB.h; sourceTree = "<group>"; };
 		BD6847701F010070004732FB /* ImageManagerB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManagerB.m; sourceTree = "<group>"; };
+		BD7C35471F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKDirectionsRequest+HelperMethods.h"; sourceTree = "<group>"; };
+		BD7C35481F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKDirectionsRequest+HelperMethods.m"; sourceTree = "<group>"; };
+		BD7C354A1F08A515009FD8F8 /* TransportationMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransportationMode.h; sourceTree = "<group>"; };
 		BD902CD51EFD31F600DD1034 /* GDJHostel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDJHostel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD902CD91EFD31F600DD1034 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BD902CDB1EFD31F600DD1034 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -323,28 +327,23 @@
 		BD3844B01EFE52C800F2E981 /* NavigationAidControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BD7C35461F089B79009FD8F8 /* PolygonMapControllers */,
+				BD7C35451F089B67009FD8F8 /* BikeRouteControllers */,
+				BD7C35441F089B46009FD8F8 /* plists */,
 				BD5C3EBD1EFD4BA400616400 /* HostelAreaMapViewController */,
 				BDE3BA2E1F07FBCB00DFDEF4 /* TouristLocationTableViewController.h */,
 				BDE3BA2C1F07FBBC00DFDEF4 /* TouristLocationTableViewController.m */,
+				BD7C354A1F08A515009FD8F8 /* TransportationMode.h */,
 				BD3844B11EFE579B00F2E981 /* ToHostelDirectionsController.h */,
 				BD3844B21EFE579B00F2E981 /* ToHostelDirectionsController.m */,
 				BD3844A41EFE450800F2E981 /* DirectionsMenuController.h */,
 				BD3844A51EFE450800F2E981 /* DirectionsMenuController.m */,
 				BD3844AD1EFE526300F2E981 /* LocationSearchController.h */,
 				BD3844AE1EFE526300F2E981 /* LocationSearchController.m */,
-				BD14B0A91F072E150024668D /* BikingRoutesController.h */,
-				BD14B0AA1F072E230024668D /* BikingRoutesController.m */,
-				BD14B0AC1F0732490024668D /* path1.plist */,
-				BD2B782C1F0737BD00C33184 /* path2.plist */,
-				BD2F9A891F0774D7004B0E09 /* BikeRouteMapController.h */,
-				BD2F9A8A1F0774E8004B0E09 /* BikeRouteMapController.m */,
-				BD34C1D51F079DBB00CD0DD3 /* LottoHotel.plist */,
 				BD34C1D71F079F4200CD0DD3 /* BoundaryOverlay.h */,
 				BD34C1D81F079F7000CD0DD3 /* BoundaryOverlay.m */,
-				BD34C1DA1F07A8BB00CD0DD3 /* PolygonSelectionController.h */,
-				BD34C1DD1F07A8E200CD0DD3 /* PolygonSelectionController.m */,
-				BD34C1DF1F07A90F00CD0DD3 /* PolygonMapController.h */,
-				BD34C1DB1F07A8D300CD0DD3 /* PolygonMapController.m */,
+				BD7C35471F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.h */,
+				BD7C35481F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.m */,
 			);
 			name = NavigationAidControllers;
 			sourceTree = "<group>";
@@ -370,7 +369,6 @@
 			children = (
 				BD5C3EBA1EFD4B9100616400 /* HostelAreaMapViewController.h */,
 				BD5C3EBB1EFD4BA000616400 /* HostelAreaMapViewController.m */,
-				BD5C3EC71EFD542500616400 /* PlacemarksNearHostel.plist */,
 				BD2B78311F074CA000C33184 /* HostelAreaMapOptionsController.h */,
 				BD2B78321F074CAF00C33184 /* HostelAreaMapOptionsController.m */,
 			);
@@ -416,6 +414,39 @@
 				BD6847701F010070004732FB /* ImageManagerB.m */,
 			);
 			name = ImageCacheUtil;
+			sourceTree = "<group>";
+		};
+		BD7C35441F089B46009FD8F8 /* plists */ = {
+			isa = PBXGroup;
+			children = (
+				BD34C1D51F079DBB00CD0DD3 /* LottoHotel.plist */,
+				BD14B0AC1F0732490024668D /* path1.plist */,
+				BD2B782C1F0737BD00C33184 /* path2.plist */,
+				BD5C3EC71EFD542500616400 /* PlacemarksNearHostel.plist */,
+			);
+			name = plists;
+			sourceTree = "<group>";
+		};
+		BD7C35451F089B67009FD8F8 /* BikeRouteControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BD14B0A91F072E150024668D /* BikingRoutesController.h */,
+				BD14B0AA1F072E230024668D /* BikingRoutesController.m */,
+				BD2F9A891F0774D7004B0E09 /* BikeRouteMapController.h */,
+				BD2F9A8A1F0774E8004B0E09 /* BikeRouteMapController.m */,
+			);
+			name = BikeRouteControllers;
+			sourceTree = "<group>";
+		};
+		BD7C35461F089B79009FD8F8 /* PolygonMapControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BD34C1DA1F07A8BB00CD0DD3 /* PolygonSelectionController.h */,
+				BD34C1DD1F07A8E200CD0DD3 /* PolygonSelectionController.m */,
+				BD34C1DF1F07A90F00CD0DD3 /* PolygonMapController.h */,
+				BD34C1DB1F07A8D300CD0DD3 /* PolygonMapController.m */,
+			);
+			name = PolygonMapControllers;
 			sourceTree = "<group>";
 		};
 		BD902CCC1EFD31F600DD1034 = {
@@ -664,6 +695,7 @@
 				BD2CAA9B1EFFE59800C0E540 /* TouristSiteConfiguration.m in Sources */,
 				BD3844AB1EFE4FD300F2E981 /* HostelLocationAnnotation.m in Sources */,
 				BD3844AF1EFE526300F2E981 /* LocationSearchController.m in Sources */,
+				BD7C35491F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.m in Sources */,
 				BD2C30E41F0543400087BBA6 /* WeatherConfiguration.m in Sources */,
 				BDE3BA2D1F07FBBC00DFDEF4 /* TouristLocationTableViewController.m in Sources */,
 				BD2CAA981EFFDDB500C0E540 /* TouristSiteCollectionViewCell.m in Sources */,

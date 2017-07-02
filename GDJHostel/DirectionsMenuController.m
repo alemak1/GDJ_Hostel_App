@@ -11,6 +11,8 @@
 #import "LocationSearchController.h"
 #import "ToHostelDirectionsController.h"
 #import "TouristLocationTableViewController.h"
+#import "AppLocationManager.h"
+#import "MKDirectionsRequest+HelperMethods.h"
 
 /**
 #import "TouristLocationSelectionNavigationController.h"
@@ -51,6 +53,11 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     
     [self.pickerControl setDelegate:self];
     [self.pickerControl setDataSource:self];
+    
+    UserLocationManager* sharedLocationManager = [UserLocationManager sharedLocationManager];
+    
+    [sharedLocationManager requestAuthorizationAndStartUpdates];
+
     
 }
 
@@ -178,8 +185,7 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
             nextViewController = [self getNavigationControllerForTouristLocationTableViewController];
             break;
         case TO_HOSTEL_DIRECTIONS_CONTROLLER:
-            nextViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"ToHostelDirectionsController"];
-            break;
+            nextViewController = [self getToHostelDirectionsController];            break;
         case LOCATION_SEARCH_CONTROLLER:
             nextViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"LocationSearchController"];
             break;
@@ -232,8 +238,35 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     return nil;
 }
 
+-(ToHostelDirectionsController*)getToHostelDirectionsController{
+    
+    MKDirectionsResponse* directionsResponse = [MKDirectionsRequest getDirectionsResponseForHostelDirectionsRequestForTransportationMode:WALK];
+    
+   
+    UIStoryboard* storyBoardA = [UIStoryboard storyboardWithName:@"StoryboardA" bundle:nil];
+    
+    NSString* storyboardIdentifier = @"ToHostelDirectionsController";
+    
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+        
+        storyboardIdentifier = @"ToHostelDirectionsController_iPad";
+        
+    }
+    
+    ToHostelDirectionsController* nextViewController = [storyBoardA instantiateViewControllerWithIdentifier:storyboardIdentifier];
+    
+    nextViewController.directionsResponse = directionsResponse;
+    
+    return nextViewController;
+    
+    
+    
+}
+
 - (IBAction)unwindToDirectionsMenuController:(UIStoryboardSegue *)unwindSegue
 {
 }
+
+
 
 @end
