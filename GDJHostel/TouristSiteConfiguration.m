@@ -49,6 +49,7 @@ CLLocation* _lastUpdatedUserLocation;
         NSDictionary *configurationDictionary = [NSDictionary dictionaryWithContentsOfFile:filePath];
         
         _title = [configurationDictionary valueForKey:@"title"];
+        
         _siteDescription = [configurationDictionary valueForKey:@"description"];
         _admissionFee = [[configurationDictionary valueForKey:@"admissionFee"] doubleValue];
         _touristSiteCategory = (int)[[configurationDictionary valueForKey:@"category"] integerValue];

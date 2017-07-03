@@ -22,10 +22,16 @@
 -(void)startMonitoringForRegions:(NSArray<CLRegion*>*)regions;
 -(void)stopMonitoringForRegions:(NSArray<CLRegion*>*)regions;
 
+-(void)startMonitoringForSingleRegion:(CLRegion*)region;
+-(void)stopMonitoringForSingleRegion:(CLRegion*)region;
+
+
+
 -(CLLocation*)getLastUpdatedUserLocation;
 
 -(void)setPresentingViewControllerTo:(UIViewController*)presentingViewController;
-
+-(BOOL)isBeingRegionMonitored:(NSString*)regionIdentifier;
+-(CLRegion*)getRegionWithIdentifier:(NSString*)regionIdentifier;
 
 @end
 

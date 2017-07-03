@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "TouristSiteDetailInformationController.h"
+#import "UIViewController+HelperMethods.h"
 #import "NSString+HelperMethods.h"
+#import "AppLocationManager.h"
 
 @interface TouristSiteDetailInformationController ()
 
@@ -31,6 +33,12 @@
 - (IBAction)loadWebsiteButton:(UIButton *)sender;
 
 
+- (IBAction)launchRegionMonitoringForSite:(UISwitch *)sender;
+
+- (IBAction)changedRegionMonitoringStatus:(UISwitch *)sender;
+
+@property CLRegion* monitoredRegion;
+
 @end
 
 @implementation TouristSiteDetailInformationController
@@ -45,10 +53,17 @@ static void* TouristSiteDetailInformationContext = &TouristSiteDetailInformation
 
 -(void)viewWillAppear:(BOOL)animated{
     
+    _loadWebsiteRequest = ^{
+        [self loadWebsiteWithURLAddress:self.touristSiteConfiguration.webAddress];
+    };
+    
 }
 
 -(void)viewDidLoad{
     [self addObserver:self forKeyPath:@"touristSiteConfiguration" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial context:TouristSiteDetailInformationContext];
+    
+    
+    
 }
 
 
@@ -57,20 +72,27 @@ static void* TouristSiteDetailInformationContext = &TouristSiteDetailInformation
     if(context == TouristSiteDetailInformationContext){
         NSLog(@"Responding to observed change in touristConfiguraiton object");
         
+        /** Configure isUnderRegionMonitoringSwitch **/
+        
+        [self configureRegionMonitoringSwitch];
+        
+        
+        /** Configure Site Description Label **/
+        
+        [self configureSiteDescriptionLabel];
+        
+        
+        
         /** Configure the image for the site detail view **/
         
         UIImage* siteImage = [UIImage imageNamed:[self.touristSiteConfiguration imagePath]];
         [self.siteImageView setImage:siteImage];
         
         
-        
-        
         /** Configure text for the title and description labels **/
         [self.titleLabel setText:[self.touristSiteConfiguration title]];
         [self.titleLabel setAdjustsFontSizeToFitWidth:YES];
         [self.titleLabel setMinimumScaleFactor:0.25];
-        
-        [self.descriptionLabel setText:[self.touristSiteConfiguration siteDescription]];
         
         
         /** Configure address label **/
@@ -79,97 +101,11 @@ static void* TouristSiteDetailInformationContext = &TouristSiteDetailInformation
         [self.addressLabel setAdjustsFontSizeToFitWidth:YES];
         [self.addressLabel setMinimumScaleFactor:0.25];
 
-        /** Configure text for the admission fee **/
-        
-        CGFloat admissionFee = [self.touristSiteConfiguration admissionFee];
-        
-        NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
-        [numberFormatter setMinimumFractionDigits:2];
-        
-        NSString* admissionFeeString = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:admissionFee]];
-        
-        NSString* admissionFeeLabelText = admissionFee > 0 ? [NSString stringWithFormat:@"Admission Fee: %@",admissionFeeString] : @"Admission: Free";
-        
-        [self.admissionFeeLabel setText:admissionFeeLabelText];
-        
-        
-        /** Configure the 'isOpen' switch **/
-        
-        [self.isOpenSwitch setOn:[self.touristSiteConfiguration isOpen]];
-        [self.isOpenSwitch setUserInteractionEnabled:NO];
-        
-        
         
         /** Configure operating hours label **/
         
-        CGFloat openingTime = [[self.touristSiteConfiguration openingTime] doubleValue];
-        CGFloat closingTime = [[self.touristSiteConfiguration closingTime] doubleValue];
-        
-        NSString* operatingHoursString;
-        
-        if(openingTime < 0.00 || closingTime < 0.00){
-            operatingHoursString = @"Open All Hours";
-        } else {
-            int openingTimeInSeconds = openingTime*3600;
-            int closingTimeInSeconds = closingTime*3600;
-            
-            NSString* openingTimeString = [NSString timeFormattedStringFromTotalSeconds:openingTimeInSeconds];
-            NSString* closingTimeString = [NSString timeFormattedStringFromTotalSeconds:closingTimeInSeconds];
-            
-            operatingHoursString = [NSString stringWithFormat:@"Operating Hours: %@ to %@",openingTimeString,closingTimeString];
-        }
-        
-        
-        [self.operatingHoursLabel setText:operatingHoursString];
-        
-        
-        /** Configure days closed label **/
-        
-        int numberOfDaysClosed = [self.touristSiteConfiguration numberOfDaysClosed];
-        int* daysClosed = [self.touristSiteConfiguration daysClosed];
-        
-        NSString* daysClosedString;
-        
-        daysClosedString = [[NSString alloc] init];
-        
-        if(numberOfDaysClosed <= 0){
-            daysClosedString = @"Open Everyday";
-        }
-        
-        for(int i = 0; i < numberOfDaysClosed; i++){
-            
-            daysClosedString = [daysClosedString stringByAppendingString:[NSString getDayAbbreviation:i]];
-        }
-        
-        [self.daysClosedLabel setText:daysClosedString];
-        
-        
-        /** Configure the Time Until Closing/Opening Label **/
-        
-        NSString* timeUntilText;
-        
-        if(openingTime < 0.00 || closingTime < 0.00){
-            timeUntilText = @"";
-        } else {
-            timeUntilText = [self.touristSiteConfiguration isOpen] ? @"Time Until Closing: " : @"Time Until Opening: ";
-            
-            NSString* appendedString = [self.touristSiteConfiguration isOpen] ? [self.touristSiteConfiguration timeUntilClosingString] : [self.touristSiteConfiguration timeUntilOpeningString];
-            
-            timeUntilText = [timeUntilText stringByAppendingString:appendedString];
-        }
-        
-        
-        [self.timeUntilCloseLabel setText:timeUntilText];
-        
-        /** Configure the Special Note Label **/
-        
-        NSString* noteText = [self.touristSiteConfiguration specialNote];
-        
-        if(noteText){
-            [self.specialNoteLabel setText:[NSString stringWithFormat:@"Note: %@", noteText]];
-        } else {
-            [self.specialNoteLabel setText:@""];
-        }
+        [self configureOperatingHoursLabel];
+      
         
         /** Store the map request function **/
         
@@ -200,12 +136,148 @@ static void* TouristSiteDetailInformationContext = &TouristSiteDetailInformation
         
             NSString* webAddress = weakSelf.touristSiteConfiguration.webAddress;
             
+            [self loadWebsiteWithURLAddress:webAddress];
+            
             NSLog(@"Loading website at %@",webAddress);
         
         };
     }
 }
 
+
+-(void)configureSiteDescriptionLabel{
+    
+    NSString* baseDescriptionString = (self.touristSiteConfiguration.siteDescription != nil) ? self.touristSiteConfiguration.siteDescription : @"";
+    
+    /** Configure text for the admission fee **/
+    
+    CGFloat admissionFee = [self.touristSiteConfiguration admissionFee];
+    
+    NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setMinimumFractionDigits:2];
+    
+    NSString* admissionFeeString = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:admissionFee]];
+    
+    NSString* admissionFeeLabelText = admissionFee > 0 ? [NSString stringWithFormat:@"Admission Fee: %@",admissionFeeString] : @"Admission: Free";
+    
+    baseDescriptionString = [baseDescriptionString stringByAppendingString:@" / "];
+    
+    baseDescriptionString = [baseDescriptionString stringByAppendingString:admissionFeeLabelText];
+    
+    /** Configure days closed label **/
+    
+    int numberOfDaysClosed = [self.touristSiteConfiguration numberOfDaysClosed];
+    int* daysClosed = [self.touristSiteConfiguration daysClosed];
+    
+    NSString* daysClosedString;
+    
+    daysClosedString = [[NSString alloc] init];
+    
+    if(numberOfDaysClosed <= 0){
+        daysClosedString = @"Open Everyday";
+    } else {
+        daysClosedString = @"Closed on: ";
+    }
+    
+    for(int i = 0; i < numberOfDaysClosed; i++){
+        
+        daysClosedString = [daysClosedString stringByAppendingString:[NSString getDayAbbreviation:i]];
+    }
+    
+    baseDescriptionString = [baseDescriptionString stringByAppendingString:@" / "];
+    
+    baseDescriptionString = [baseDescriptionString stringByAppendingString:daysClosedString];
+    
+    
+    
+    /** Configure the Time Until Closing/Opening Label **/
+    CGFloat openingTime = [[self.touristSiteConfiguration openingTime] doubleValue];
+    CGFloat closingTime = [[self.touristSiteConfiguration closingTime] doubleValue];
+    
+    
+    NSString* timeUntilText = @"";
+    
+    if(openingTime < 0.00 || closingTime < 0.00){
+        timeUntilText = @"";
+    } else {
+        timeUntilText = [self.touristSiteConfiguration isOpen] ? @"Time Until Closing: " : @"Time Until Opening: ";
+        
+        NSString* appendedString = [self.touristSiteConfiguration isOpen] ? [self.touristSiteConfiguration timeUntilClosingString] : [self.touristSiteConfiguration timeUntilOpeningString];
+        
+        timeUntilText = [timeUntilText stringByAppendingString:appendedString];
+    }
+    
+    baseDescriptionString = [baseDescriptionString stringByAppendingString:@" / "];
+    
+    baseDescriptionString = [baseDescriptionString stringByAppendingString:timeUntilText];
+    
+    
+    /** Configure the Special Note Label **/
+    
+    NSString* noteText = [self.touristSiteConfiguration specialNote];
+    
+    noteText = noteText != nil ? noteText : @"";
+    
+    baseDescriptionString = [baseDescriptionString stringByAppendingString:@" / "];
+    
+    baseDescriptionString = [baseDescriptionString stringByAppendingString:noteText];
+    
+    [self.descriptionLabel setText:baseDescriptionString];
+    
+}
+
+
+- (void) configureOperatingHoursLabel{
+    
+    /** Configure operating hours label **/
+    
+    
+    CGFloat openingTime = [[self.touristSiteConfiguration openingTime] doubleValue];
+    CGFloat closingTime = [[self.touristSiteConfiguration closingTime] doubleValue];
+    
+    NSString* operatingHoursString;
+    
+    if(openingTime < 0.00 || closingTime < 0.00){
+        operatingHoursString = @"Open All Hours";
+    } else {
+        int openingTimeInSeconds = openingTime*3600;
+        int closingTimeInSeconds = closingTime*3600;
+        
+        NSString* openingTimeString = [NSString timeFormattedStringFromTotalSeconds:openingTimeInSeconds];
+        NSString* closingTimeString = [NSString timeFormattedStringFromTotalSeconds:closingTimeInSeconds];
+        
+        operatingHoursString = [NSString stringWithFormat:@"Operating Hours: %@ to %@",openingTimeString,closingTimeString];
+    }
+    
+    
+    [self.operatingHoursLabel setText:operatingHoursString];
+    
+    
+}
+
+
+-(void) configureRegionMonitoringSwitch{
+    
+    [self.isOpenSwitch setUserInteractionEnabled:YES];
+
+    NSString* regionIdentifierString = [self.touristSiteConfiguration title];
+    
+    BOOL isBeingMonitored = [[UserLocationManager sharedLocationManager] isBeingRegionMonitored:regionIdentifierString];
+    
+   
+    if(isBeingMonitored){
+        self.monitoredRegion = [[UserLocationManager sharedLocationManager] getRegionWithIdentifier:self.touristSiteConfiguration.title];
+        
+        [self.isOpenSwitch setOn:YES];
+
+    } else {
+        
+        [self.isOpenSwitch setOn:NO];
+
+    }
+    
+    
+}
 
 -(void)dealloc{
     [self removeObserver:self forKeyPath:@"touristSiteConfiguration"];
@@ -220,4 +292,85 @@ static void* TouristSiteDetailInformationContext = &TouristSiteDetailInformation
     
     _loadWebsiteRequest();
 }
+
+- (IBAction)launchRegionMonitoringForSite:(UISwitch *)sender {
+    
+    UserLocationManager* locationManager = [UserLocationManager sharedLocationManager];
+    
+    if(self.monitoredRegion != nil){
+        NSLog(@"Theh region is already being monitored");
+        return;
+    }
+    
+    if([sender isOn]){
+        //Enable region monitoring
+        
+        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Do you want to monitor this region for entry and exit?" message:@"If yes, the app will notify you when you enter and exit the proximity of this tourist site.  You can set the radius of the region by entering a valid integer in the textfield." preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField* textField){
+            textField.placeholder = @"Enter monitoring radius...";
+            
+        }];
+        
+        UIAlertAction* addRegionAction = [UIAlertAction actionWithTitle:@"Monitor Region" style:UIAlertActionStyleDefault handler:^(UIAlertAction* alertAction){
+            
+            UITextField* radiusTextfield = [alertController.textFields objectAtIndex:0];
+            NSString* radiusText = [radiusTextfield text];
+            
+            /** Validate the text in the text field for monitoring region radius **/
+            
+            BOOL inputIsValid = YES;
+            
+            for(int i = 0; i < [radiusText length]; i++){
+                if(!isnumber([radiusText characterAtIndex:i]) || ([radiusText length] <= 0)){
+                    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Invalid Entry" message:@"Please enter a valid integer number for the radius of the monitoring region" preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                    
+                    [alertController addAction:okAction];
+                    
+                    [self presentViewController:alertController animated:YES completion:nil];
+                    [self.isOpenSwitch setOn:NO];
+            
+                    inputIsValid = NO;
+                }
+            }
+            
+            if(inputIsValid){
+                NSLog(@"Configuring new region for region monitoring with region identifier: %@",[self.touristSiteConfiguration name]);
+                
+                int monitoringRadius = [radiusText doubleValue];
+            
+                CLRegion* newRegion = [self.touristSiteConfiguration getRegionFromTouristConfiguration];
+                
+                [locationManager startMonitoringForRegion:newRegion];
+                [self.isOpenSwitch setOn:YES];
+                
+                NSLog(@"Region monitoring has been turned on for circular region with coordinate(long/lat) %f,%f, monitoring radius %d, andw with identifier %@",self.touristSiteConfiguration.midCoordinate.longitude,self.touristSiteConfiguration.midCoordinate.latitude,monitoringRadius,self.touristSiteConfiguration.title);
+                
+            }
+        
+        }];
+        
+        UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction*action){
+        
+            [self.isOpenSwitch setOn:NO];
+        }];
+        
+        [alertController addAction:addRegionAction];
+        [alertController addAction:cancelAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+        
+        
+    } else {
+        
+        [locationManager stopMonitoringForRegion:[self.touristSiteConfiguration getRegionFromTouristConfiguration]];
+        [self.isOpenSwitch setOn:NO];
+       
+        
+    }
+}
+
 @end

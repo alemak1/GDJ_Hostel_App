@@ -31,9 +31,18 @@
     
     TouristSiteConfiguration* touristSiteConfiguration = [[notification userInfo] valueForKey:@"touristSiteConfiguration"];
     
+    
+    NSLog(@"From notification, tourist Site Configuration Info. Lat/Long: %f,%f, Name: %@",self.touristSiteConfiguration.midCoordinate.latitude,self.touristSiteConfiguration.midCoordinate.longitude,self.touristSiteConfiguration.title);
+    
+
+    
     self.touristSiteConfiguration = touristSiteConfiguration;
     
-    [self performSegueWithIdentifier:@"showTouristSiteDetailController" sender:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+    
+        [self performSegueWithIdentifier:@"showTouristSiteDetailController" sender:nil];
+    });
+    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -44,9 +53,8 @@
         
         [detailInfoController setTouristSiteConfiguration:self.touristSiteConfiguration];
         
-       
+        NSLog(@"Tourist Site Configuration Info. Lat/Long: %f,%f, Name: %@",self.touristSiteConfiguration.midCoordinate.latitude,self.touristSiteConfiguration.midCoordinate.longitude,self.touristSiteConfiguration.title);
         
-        //TODO: configure the view controller with tourist configuration object
     }
     
     

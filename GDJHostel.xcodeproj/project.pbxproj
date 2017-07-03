@@ -285,8 +285,6 @@
 				BD3151131F00C844002332B8 /* TouristSiteCollectionViewController.m */,
 				BD27B1291F02505700059152 /* TouristSiteCategorySelectionController.h */,
 				BD27B12D1F0250B700059152 /* TouristSiteCategorySelectionController.m */,
-				BD3A9C7B1F028390006D1CD8 /* AppLocationManager.h */,
-				BD3A9C7C1F02839E006D1CD8 /* AppLocationManager.m */,
 				BD31A5AC1F038DD400C018DB /* TouristSiteDetailInformationController.h */,
 				BD31A5AD1F038E0600C018DB /* TouristSiteDetailInformationController.m */,
 				BD31A5AF1F03931200C018DB /* SeoulTourismNavigationController.h */,
@@ -376,6 +374,17 @@
 				BDE3BA2A1F07F66300DFDEF4 /* UIViewController+HelperMethods.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		BD3CB85E1F09EBEB0002A275 /* EntryPointViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BD30C5151EFDDCD50032FE64 /* HostelInformationController.h */,
+				BD30C5161EFDDCE70032FE64 /* HostelInformationController.m */,
+				BD30C5181EFDE5160032FE64 /* MenuComponent.h */,
+				BD30C5191EFDE5240032FE64 /* MenuComponent.m */,
+			);
+			name = EntryPointViewController;
 			sourceTree = "<group>";
 		};
 		BD554C901F090FD300B43C8C /* ProductPriceController */ = {
@@ -499,6 +508,7 @@
 		BD902CD71EFD31F600DD1034 /* GDJHostel */ = {
 			isa = PBXGroup;
 			children = (
+				BD3CB85E1F09EBEB0002A275 /* EntryPointViewController */,
 				BD554C901F090FD300B43C8C /* ProductPriceController */,
 				BDE3BA211F07EE3D00DFDEF4 /* WebviewController */,
 				BD3154E81F03BEE4002B3388 /* WeatherCollectionController */,
@@ -510,10 +520,12 @@
 				BD3117D31EFE7EC000D6A5D6 /* InformationControllers */,
 				BD3844B01EFE52C800F2E981 /* NavigationAidControllers */,
 				BD5C3EC21EFD515600616400 /* DataModels */,
-				BD902CDB1EFD31F600DD1034 /* AppDelegate.h */,
-				BD902CDC1EFD31F600DD1034 /* AppDelegate.m */,
+				BD3A9C7B1F028390006D1CD8 /* AppLocationManager.h */,
+				BD3A9C7C1F02839E006D1CD8 /* AppLocationManager.m */,
 				BD902CDE1EFD31F600DD1034 /* ViewController.h */,
 				BD902CDF1EFD31F600DD1034 /* ViewController.m */,
+				BD902CDB1EFD31F600DD1034 /* AppDelegate.h */,
+				BD902CDC1EFD31F600DD1034 /* AppDelegate.m */,
 				BD5C3EC91EFD579100616400 /* StoryboardA.storyboard */,
 				BD554C8E1F090FBF00B43C8C /* StoryboardB.storyboard */,
 				BD902CE11EFD31F600DD1034 /* Main.storyboard */,
@@ -523,10 +535,6 @@
 				BD5C3EC51EFD53FC00616400 /* Seoul.geojson */,
 				BD902CD81EFD31F600DD1034 /* Supporting Files */,
 				BD902CEF1EFD325100DD1034 /* HostelArea.plist */,
-				BD30C5151EFDDCD50032FE64 /* HostelInformationController.h */,
-				BD30C5161EFDDCE70032FE64 /* HostelInformationController.m */,
-				BD30C5181EFDE5160032FE64 /* MenuComponent.h */,
-				BD30C5191EFDE5240032FE64 /* MenuComponent.m */,
 			);
 			path = GDJHostel;
 			sourceTree = "<group>";

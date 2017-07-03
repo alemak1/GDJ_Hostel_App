@@ -137,6 +137,11 @@ static void *TouristConfigurationContext = &TouristConfigurationContext;
     
     NSDictionary* userInfoDict = [NSDictionary dictionaryWithObjectsAndKeys:self.touristSiteConfigurationObject,@"touristSiteConfiguration", nil];
     
+    
+    NSLog(@"From tourist site collection view cell.  Name: %@, Lat/Long: %f,%f",[self.touristSiteConfigurationObject name],self.touristSiteConfigurationObject.midCoordinate.latitude,self.touristSiteConfigurationObject.midCoordinate.longitude);
+    
+    NSLog(@"Sending userInfoDict %@",[userInfoDict description]);
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"presentTouristSiteDetailNotification" object:self userInfo:userInfoDict];
 }
 

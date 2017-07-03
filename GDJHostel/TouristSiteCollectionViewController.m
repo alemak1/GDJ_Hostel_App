@@ -75,13 +75,13 @@
 
 }
 
+
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     TouristSiteCollectionViewCell* cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"TouristCollectionViewCell" forIndexPath:indexPath];
 
     TouristSiteConfiguration* configurationObject = [self.siteManager getConfigurationObjectFromMasterArray:indexPath.row];
     
-    [cell setSiteImage:[UIImage imageNamed:@"RoomNo2_1"]];
     
     NSString* imagePath = [configurationObject imagePath];
     
@@ -101,11 +101,6 @@
 
 
 
--(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-}
-
-
 
 -(NSArray *)debugImagePathArrayAtIndexes:(NSIndexSet *)indexes{
     
@@ -117,7 +112,7 @@
 }
 
 
-
+/**
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     return CGSizeMake(300, 200);
@@ -133,6 +128,7 @@
     return 20.0;
 }
 
+ **/
 
 
 @end

@@ -14,7 +14,7 @@
 29, Itaewon-ro, Yongsan-gu, Seoul
 </string>
 		<key>webAddress</key>
-		<string>http://english.visitkorea.or.kr/enu/ATR/SI_EN_3_1_1_1.jsp?cid=268131</string>
+		<string>https://english.visitkorea.or.kr/enu/ATR/SI_EN_3_1_1_1.jsp?cid=268131</string>
 		<key>daysClosed</key>
 		<array>
 			<integer>1</integer>
@@ -59,9 +59,10 @@
 		<key>category</key>
 		<integer>10</integer>
 		<key>webAddress</key>
-		<string></string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>physicalAddress</key>
-		<string></string>
+		<string>105, Namsangongwon-gil, Yongsan-gu, Seoul
+</string>
 		<key>description</key>
 		<string>Namsan Seoul Tower was the first tower-type tourism spot in Korea. The top of the tower is at almost 480m above sea level, including Namsan Mountain (243m) and the tower’s own height (236.7m), making it one of the tallest towers in the Orient. It is comprised of Seoul Tower Plaza, recently opened to public access after 40 years, and N Seoul Tower, operated by CJ Foodville since 2005.</string>
 		<key>admissionFee</key>
@@ -107,9 +108,10 @@
 		<key>specialNote</key>
 		<string></string>
 		<key>physicalAddress</key>
-		<string></string>
+		<string>105, Namsangongwon-gil, Yongsan-gu, Seoul
+</string>
 		<key>webAddress</key>
-		<string></string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array>
 			<integer>1</integer>
@@ -163,7 +165,7 @@
 		<key>description</key>
 		<string>Namsan Seoul Tower was the first tower-type tourism spot in Korea. The top of the tower is at almost 480m above sea level, including Namsan Mountain (243m) and the tower’s own height (236.7m), making it one of the tallest towers in the Orient. It is comprised of Seoul Tower Plaza, recently opened to public access after 40 years, and N Seoul Tower, operated by CJ Foodville since 2005.</string>
 		<key>webAddress</key>
-		<string>seoultower.co.kr</string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>physicalAddress</key>
 		<string>105, Namsangongwon-gil, Yongsan-gu, Seoul
 </string>
@@ -208,7 +210,7 @@
 		<key>description</key>
 		<string>N Seoul Tower used to be the tower for broadcasting transmission and the bottom levels of the tower have restricted access to authorized staff only. Since the remodeling to the Seoul Tower Plaza in 2015, these levels are now opened the public. Visitors to the Seoul Tower Plaza building can also enjoy the terrace that is installed to serve as a walking trail for leisure walks. A beautiful panoramic view of Seoul can also be seen from 243m in height. at the summit of Namsan Mountain.</string>
 		<key>webAddress</key>
-		<string>www.seoultower.co.kr</string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>physicalAddress</key>
 		<string>105, Namsangongwon-gil, Yongsan-gu, Seoul
 </string>
@@ -238,7 +240,7 @@
 		<string>240, World Cup-ro, Mapo-gu, Seoul
 </string>
 		<key>webAddress</key>
-		<string>new.sisul.or.kr </string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array/>
 		<key>closingTime</key>
@@ -286,7 +288,7 @@ The very first impression the stadium gives is that it is very large. It provide
 		<string>400, World Cup buk-ro, Mapo-gu, Seoul
 </string>
 		<key>webAddress</key>
-		<string>new.sisul.or.kr </string>
+		<string>https://www.sisul.or.kr/open_content/main/</string>
 		<key>daysClosed</key>
 		<array>
 			<integer>1</integer>
@@ -332,7 +334,7 @@ The very first impression the stadium gives is that it is very large. It provide
 		<string>366, World Cup buk-ro, Mapo-gu, Seoul
 </string>
 		<key>webAddress</key>
-		<string>seouldmc.kr</string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array>
 			<integer>7</integer>
@@ -378,7 +380,7 @@ Attractions and facilities at the DMC include the DMC Promotion Room, DMS (Digit
 		<string>243-60, World Cup-ro, Mapo-gu, Seoul
 </string>
 		<key>webAddress</key>
-		<string>worldcuppark.seoul.go.kr </string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array>
 			<integer>7</integer>
@@ -425,9 +427,7 @@ Attractions and facilities at the DMC include the DMC Promotion Room, DMS (Digit
 		<string>274, Cheonggyecheon-ro, Jung-gu, Seoul
 </string>
 		<key>webAddress</key>
-		<string>http://pyounghwa.com/eng 
-http://pyounghwa.com/eng 
-</string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array>
 			<integer>7</integer>
@@ -466,7 +466,7 @@ http://pyounghwa.com/eng
 		<string>105, Namsangongwon-gil, Yongsan-gu, Seoul
 </string>
 		<key>webAddress</key>
-		<string>www.seoul.go.kr </string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array>
 			<integer>7</integer>
@@ -505,7 +505,7 @@ http://pyounghwa.com/eng
 		<string>50-3, Dongmakdong-gil, Yanggu-gun, Gangwon-do
 </string>
 		<key>webAddress</key>
-		<string>punchbowl.invil.org </string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array>
 			<integer>7</integer>
@@ -544,7 +544,7 @@ http://pyounghwa.com/eng
 		<string>233-4, Ihyeon-ri, Haean-myeon, Yanggu-gun, Gangwon-do
 </string>
 		<key>webAddress</key>
-		<string>ygtour.kr/ </string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array>
 			<integer>7</integer>
@@ -583,7 +583,7 @@ http://pyounghwa.com/eng
 		<string>621, Hu-ri, Haean-myeon, Yanggu-gun, Gangwon-do
 </string>
 		<key>webAddress</key>
-		<string>ygtour.kr/ </string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array>
 			<integer>7</integer>
@@ -624,7 +624,7 @@ http://pyounghwa.com/eng
 		<string>35, Haeanseohwa-ro, Haean-myeon, Yanggu-gun, Gangwon-do
 </string>
 		<key>webAddress</key>
-		<string>ygtour.kr/ </string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array>
 			<integer>1</integer>
@@ -664,8 +664,7 @@ http://pyounghwa.com/eng
 		<string>25-15, Haegok-ro, Cheoin-gu, Yongin-si, Gyeonggi-do
 </string>
 		<key>webAddress</key>
-		<string>www.wawoo-temple.org 
-</string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array/>
 		<key>closingTime</key>
@@ -703,7 +702,7 @@ http://pyounghwa.com/eng
 		<string>137, Biamsa-gil, Jeonui-myeon, , Sejong-si
 </string>
 		<key>webAddress</key>
-		<string>www.sejong.go.kr </string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array/>
 		<key>closingTime</key>
@@ -741,8 +740,7 @@ http://pyounghwa.com/eng
 		<string>102, Daegongwongwangjang-ro, Gwacheon-si, Gyeonggi-do
 </string>
 		<key>webAddress</key>
-		<string>grandpark.seoul.go.kr 
-</string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array/>
 		<key>closingTime</key>
@@ -826,7 +824,7 @@ http://pyounghwa.com/eng
 		<string>Underground, 396, Gangnam-daero, Gangnam-gu, Seoul
 </string>
 		<key>webAddress</key>
-		<string>www.sisul.or.kr</string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array/>
 		<key>closingTime</key>
@@ -868,8 +866,7 @@ The mall also has a rest area called Herb Plaza, where shoppers can take a rest 
 		<string>111, Baumoe-ro 7-gil, Seocho-gu, Seoul
 </string>
 		<key>webAddress</key>
-		<string>www.gwanmunsa.org 
-</string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array/>
 		<key>closingTime</key>
@@ -908,7 +905,7 @@ The mall also has a rest area called Herb Plaza, where shoppers can take a rest 
 		<string>107, Gyeongmagongwon-daero, Gwacheon-si, Gyeonggi-do
 </string>
 		<key>webAddress</key>
-		<string>park.kra.co.kr/seoul_main.do </string>
+		<string>https://english.visitkorea.or.kr/enu/index.kto</string>
 		<key>daysClosed</key>
 		<array/>
 		<key>closingTime</key>

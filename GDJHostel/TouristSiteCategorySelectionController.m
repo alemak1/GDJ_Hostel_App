@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TouristSiteCategorySelectionController.h"
 #import "TouristSiteCollectionViewController.h"
+#import "TouristSiteDetailInformationController.h"
 #import "AppLocationManager.h"
 
 @interface TouristSiteCategorySelectionController ()
@@ -18,7 +19,7 @@
 
 - (IBAction)returnToMainMenu:(UIBarButtonItem *)sender;
 
-
+@property TouristSiteConfiguration* selectedTouristSiteConfiguration;
 
 @end
 
@@ -39,29 +40,11 @@
     
     self.siteManager = [[TouristSiteManager alloc] initWithFileName:@"SeoulTouristSites"];
     
-    [sharedLocationManager startMonitoringForRegions:[self.siteManager getRegionsForAllTouristLocations]];
-    
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushTSDetailInformationControllerForSelectedSite:) name:@"presentTouristSiteDetailNotification" object:nil];
-
-    
-}
-
-
-
--(void) pushTSDetailInformationControllerForSelectedSite:(NSNotification*)notification{
-    
-    TouristSiteConfiguration* selectedTouristConfiguration = [[notification userInfo] valueForKey:@"touristSiteConfiguration"];
-    
    
-    //Not yet implemented
-}
-
-
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
 }
+
+
 
 -(void)viewDidLoad{
     
@@ -69,7 +52,7 @@
     CGFloat scrollViewWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
     CGFloat scrollViewHeight = CGRectGetHeight(self.scrollView.frame);
     
-    self.scrollView.contentSize = CGSizeMake(scrollViewWidth, scrollViewHeight*4.00);
+    self.scrollView.contentSize = CGSizeMake(scrollViewWidth, scrollViewHeight*3.00);
 
     [self.scrollView setShowsHorizontalScrollIndicator:NO];
     
@@ -230,3 +213,36 @@
 }
 
 @end
+
+/** This code does not get executed, since segue for the detail controller is connected to the navigation controller, not the TouristSiteCategoryCollectionController
+ 
+ [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setSelectedTouristSiteConfigurationForDetailController:) name:@"presentTouristSiteDetailNotification" object:nil];
+ 
+ **/
+
+
+/** This code does not get executed, since segue for the detail controller is connected to the navigation controller, not the TouristSiteCategoryCollectionController
+ 
+ -(void) setSelectedTouristSiteConfigurationForDetailController:(NSNotification*)notification{
+ 
+ TouristSiteConfiguration* selectedTouristConfiguration = [[notification userInfo] valueForKey:@"touristSiteConfiguration"];
+ 
+ self.selectedTouristSiteConfiguration = selectedTouristConfiguration;
+ 
+ }
+ 
+ 
+ 
+ -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+ 
+ NSLog(@"Preparing segue for tourist detail controller...");
+ 
+ if([segue.identifier isEqualToString:@"showTouristSiteDetailController"]){
+ TouristSiteDetailInformationController* detailController = segue.destinationViewController;
+ 
+ detailController.touristSiteConfiguration = self.selectedTouristSiteConfiguration;
+ 
+ }
+ }
+ 
+ **/

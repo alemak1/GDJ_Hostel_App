@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "HostelInformationController.h"
 #import "MenuComponent.h"
+#import "AppLocationManager.h"
 
 @interface HostelInformationController ()
 
@@ -25,7 +26,11 @@
 -(void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
 
-   
+    /** Initialize the user location manager and set its presenting view controller **/
+    
+    UserLocationManager* userLocationManager = [UserLocationManager sharedLocationManager];
+    
+    [userLocationManager setPresentingViewControllerTo:self];
 }
 
 

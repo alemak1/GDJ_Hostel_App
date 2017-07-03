@@ -59,7 +59,7 @@ static UserLocationManager* mySharedLocationManager;
 
 -(void)setPresentingViewControllerTo:(UIViewController*)presentingViewController{
     
-    [self setPresentingViewControllerTo:presentingViewController];
+    self.currentPresentingViewController = presentingViewController;
     
 }
 
@@ -147,6 +147,8 @@ static UserLocationManager* mySharedLocationManager;
 }
 
 
+
+
 -(void)startMonitoringForRegions:(NSArray<CLRegion*>*)regions{
     
     for(CLRegion* region in regions){
@@ -156,6 +158,46 @@ static UserLocationManager* mySharedLocationManager;
         
         [self startMonitoringForRegion:region];
     }
+}
+
+-(void)startMonitoringForSingleRegion:(CLRegion*)region{
+    [region setNotifyOnExit:YES];
+    [region setNotifyOnEntry:YES];
+    
+    [self startMonitoringForRegion:region];
+    
+}
+
+-(void)stopMonitoringForSingleRegion:(CLRegion*)region{
+    
+    [self stopMonitoringForRegion:region];
+}
+
+
+-(BOOL)isBeingRegionMonitored:(NSString*)regionIdentifier{
+    
+    NSSet* monitoredRegions = [self monitoredRegions];
+    
+    for (CLRegion* region in monitoredRegions) {
+        if([region.identifier isEqualToString:regionIdentifier]){
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+-(CLRegion*)getRegionWithIdentifier:(NSString*)regionIdentifier{
+    
+    NSSet* monitoredRegions = [self monitoredRegions];
+    
+    for (CLRegion* region in monitoredRegions) {
+        if(region.identifier == regionIdentifier){
+            return region;
+        }
+    }
+    
+    return nil;
 }
 
 -(void)stopMonitoringForRegions:(NSArray<CLRegion*>*)regions{
