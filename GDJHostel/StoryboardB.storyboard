@@ -85,13 +85,13 @@
                                 </connections>
                             </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="currencyC" translatesAutoresizingMaskIntoConstraints="NO" id="zPi-E1-RgG">
-                                <rect key="frame" x="16" y="85" width="30" height="60"/>
+                                <rect key="frame" x="16" y="69" width="30" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="dHW-qY-9fi"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJx-og-u6A">
-                                <rect key="frame" x="77" y="95" width="248" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJx-og-u6A">
+                                <rect key="frame" x="77" y="87.5" width="203" height="23.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Convert Korean Won To:">
                                         <attributes>
@@ -102,26 +102,68 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZa-Ib-Ago">
-                                <rect key="frame" x="47.5" y="135" width="262.5" height="46.5"/>
+                                <rect key="frame" x="47.5" y="116" width="262.5" height="46.5"/>
                                 <connections>
                                     <outlet property="dataSource" destination="6V8-Nx-O2p" id="P1U-Xp-dVM"/>
                                     <outlet property="delegate" destination="6V8-Nx-O2p" id="iek-5z-tJA"/>
                                 </connections>
                             </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9hK-XG-z5Y">
+                                <rect key="frame" x="10" y="191" width="337.5" height="22.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lEd-tb-TLW">
+                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="22.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="PRICE(KRW):">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="Futura-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AOs-fT-c8a">
+                                        <rect key="frame" x="122.5" y="0.0" width="34" height="22.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UT2-SS-nRw">
+                                        <rect key="frame" x="166.5" y="0.0" width="127.5" height="22.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="PRICE(OTHER):">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="Futura-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nqa-a2-c1q">
+                                        <rect key="frame" x="304" y="0.0" width="33.5" height="22.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.90980392160000001" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="n7d-Ui-LHZ" secondAttribute="trailing" id="4kj-XA-cW2"/>
-                            <constraint firstItem="qZa-Ib-Ago" firstAttribute="top" secondItem="qJx-og-u6A" secondAttribute="bottom" constant="8" id="65a-tn-h31"/>
+                            <constraint firstItem="qZa-Ib-Ago" firstAttribute="top" secondItem="qJx-og-u6A" secondAttribute="bottom" constant="5" id="65a-tn-h31"/>
                             <constraint firstItem="fia-xe-pJx" firstAttribute="top" secondItem="n7d-Ui-LHZ" secondAttribute="bottom" id="8TE-Fi-Ts0"/>
-                            <constraint firstItem="zPi-E1-RgG" firstAttribute="top" secondItem="kzc-RD-znC" secondAttribute="bottom" constant="21" id="8kP-YM-ztW"/>
+                            <constraint firstItem="zPi-E1-RgG" firstAttribute="top" secondItem="kzc-RD-znC" secondAttribute="bottom" constant="5" id="8kP-YM-ztW"/>
                             <constraint firstItem="qZa-Ib-Ago" firstAttribute="height" secondItem="F9u-1A-9KM" secondAttribute="height" multiplier="0.07" id="9Cl-w9-DIJ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="zPi-E1-RgG" secondAttribute="leading" id="Edk-ga-7pA"/>
                             <constraint firstItem="qZa-Ib-Ago" firstAttribute="width" secondItem="F9u-1A-9KM" secondAttribute="width" multiplier="0.7" id="O4j-AC-g7I"/>
+                            <constraint firstItem="9hK-XG-z5Y" firstAttribute="centerX" secondItem="qZa-Ib-Ago" secondAttribute="centerX" id="VpX-F3-SCB"/>
                             <constraint firstItem="n7d-Ui-LHZ" firstAttribute="leading" secondItem="F9u-1A-9KM" secondAttribute="leading" id="kYr-Nt-x56"/>
                             <constraint firstItem="qJx-og-u6A" firstAttribute="centerY" secondItem="zPi-E1-RgG" secondAttribute="centerY" id="m1E-2x-Yol"/>
                             <constraint firstItem="qZa-Ib-Ago" firstAttribute="centerX" secondItem="qJx-og-u6A" secondAttribute="centerX" id="mBh-Ko-iEi"/>
+                            <constraint firstItem="9hK-XG-z5Y" firstAttribute="top" secondItem="qZa-Ib-Ago" secondAttribute="bottom" constant="28.5" id="vCM-Zf-xGv"/>
                             <constraint firstItem="qJx-og-u6A" firstAttribute="leading" secondItem="zPi-E1-RgG" secondAttribute="trailing" constant="31" id="vbW-hY-Qfi"/>
+                            <constraint firstItem="9hK-XG-z5Y" firstAttribute="width" secondItem="F9u-1A-9KM" secondAttribute="width" multiplier="0.9" id="wzn-si-bP8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I9f-1J-z2d">
@@ -134,12 +176,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="currencyPickerView" destination="qZa-Ib-Ago" id="6PE-d9-hfe"/>
+                        <outlet property="foreignPriceLabel" destination="UT2-SS-nRw" id="yNb-8o-HIH"/>
+                        <outlet property="foreignPriceNumber" destination="nqa-a2-c1q" id="LUJ-mD-xho"/>
+                        <outlet property="koreanPriceNumber" destination="AOs-fT-c8a" id="1jB-Gt-A1C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTN-tt-Lkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8BU-jP-4pi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1452" y="225.33733133433284"/>
+            <point key="canvasLocation" x="1281" y="220"/>
         </scene>
         <!--Product Price Controller-->
         <scene sceneID="b4x-Ts-v0A">

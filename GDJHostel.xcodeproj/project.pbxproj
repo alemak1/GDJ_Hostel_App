@@ -49,6 +49,7 @@
 		BD3154EB1F03BF23002B3388 /* WeatherDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3154EA1F03BF23002B3388 /* WeatherDisplayController.m */; };
 		BD31A5AE1F038E0600C018DB /* TouristSiteDetailInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31A5AD1F038E0600C018DB /* TouristSiteDetailInformationController.m */; };
 		BD31A5B11F03932100C018DB /* SeoulTourismNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31A5B01F03932100C018DB /* SeoulTourismNavigationController.m */; };
+		BD31BC671F0A488100A23256 /* KoreanProducts.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD31BC661F0A488100A23256 /* KoreanProducts.plist */; };
 		BD3279401F00124F0007FD64 /* ParkRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD32793F1F00124F0007FD64 /* ParkRoute.plist */; };
 		BD34C1D61F079DBB00CD0DD3 /* LottoHotel.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD34C1D51F079DBB00CD0DD3 /* LottoHotel.plist */; };
 		BD34C1D91F079F7000CD0DD3 /* BoundaryOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = BD34C1D81F079F7000CD0DD3 /* BoundaryOverlay.m */; };
@@ -173,6 +174,7 @@
 		BD31A5AD1F038E0600C018DB /* TouristSiteDetailInformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristSiteDetailInformationController.m; sourceTree = "<group>"; };
 		BD31A5AF1F03931200C018DB /* SeoulTourismNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoulTourismNavigationController.h; sourceTree = "<group>"; };
 		BD31A5B01F03932100C018DB /* SeoulTourismNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeoulTourismNavigationController.m; sourceTree = "<group>"; };
+		BD31BC661F0A488100A23256 /* KoreanProducts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KoreanProducts.plist; sourceTree = "<group>"; };
 		BD32793F1F00124F0007FD64 /* ParkRoute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ParkRoute.plist; sourceTree = "<group>"; };
 		BD32E41D1F03A83F00F847B3 /* DayOfWeek.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DayOfWeek.h; sourceTree = "<group>"; };
 		BD34C1D51F079DBB00CD0DD3 /* LottoHotel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LottoHotel.plist; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				BD2DCCAD1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m */,
 				BD2DCCAF1F092A8000EA8FDF /* CurrencyType.h */,
 				BD2DCCB01F09360B00EA8FDF /* ProductCategory.h */,
+				BD31BC661F0A488100A23256 /* KoreanProducts.plist */,
 			);
 			name = ProductPriceController;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				BD2CAA9D1EFFE7D700C0E540 /* SeoulTouristSites.plist in Resources */,
 				BD3279401F00124F0007FD64 /* ParkRoute.plist in Resources */,
 				BD305BB41EFF8CB500F9F2B9 /* transportation-0.caf in Resources */,
+				BD31BC671F0A488100A23256 /* KoreanProducts.plist in Resources */,
 				BD305BBB1EFF8CB500F9F2B9 /* transportation-7.caf in Resources */,
 				BD554C8F1F090FBF00B43C8C /* StoryboardB.storyboard in Resources */,
 				BD2995B11EFE68EB009E64BF /* SurvivalWordsPhrases.plist in Resources */,

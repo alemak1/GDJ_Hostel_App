@@ -22,7 +22,7 @@ typedef enum
 @property NSString* brand;
 @property NSString* imagePath;
 @property NSNumber* priceInKRW;
-@property NSInteger unityQuantity;
+@property NSString* unityQuantity;
 @property GeneralProductCategory generalCategory;
 @property SpecificProductCategory specificCategory;
 

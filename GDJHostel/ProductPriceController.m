@@ -7,26 +7,42 @@
 //
 
 #import "ProductPriceController.h"
+#import "ProductPriceDisplayController.h"
 #import "ProductCategory.h"
 #import "NSString+CurrencyHelperMethods.h"
 
 @interface ProductPriceController ()
 
+
+
+
+
+
+
 @property NSDictionary* currencyExchangeData;
 @property NSURLSession* apiRequestSession;
+@property (readonly) double currentExchangeRate;
 
 @end
 
 @implementation ProductPriceController
 
 static void* ProductPriceControllerContext = &ProductPriceControllerContext;
+static void* CurrencyCodeContext = &CurrencyCodeContext;
+
+@synthesize currentExchangeRate = _currentExchangeRate;
 
 -(void)viewWillAppear:(BOOL)animated{
     
     [self loadCurrencyExchangeData];
+    
 
     [self addObserver:self forKeyPath:@"currencyExchangeData" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:ProductPriceControllerContext];
+    
+    [self addObserver:self forKeyPath:@"currentCurrencyCode" options:NSKeyValueObservingOptionNew context:CurrencyCodeContext];
 }
+
+
 
 -(void)viewDidLoad{
     
@@ -36,6 +52,8 @@ static void* ProductPriceControllerContext = &ProductPriceControllerContext;
 
   
     
+    
+    
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
@@ -43,6 +61,24 @@ static void* ProductPriceControllerContext = &ProductPriceControllerContext;
     if(context == ProductPriceControllerContext){
         
         NSLog(@"The value of the currency exchange dictionary changed. It's value is now: %@",[self.currencyExchangeData description]);
+    }
+    
+    if(context == CurrencyCodeContext){
+        NSLog(@"The current currency code has changed to %@",self.currentCurrencyCode);
+        
+        NSDictionary* ratesDict = [self.currencyExchangeData valueForKey:@"rates"];
+        
+        _currentExchangeRate = [[ratesDict valueForKey:self.currentCurrencyCode] doubleValue];
+        
+        NSLog(@"The current exchange rate is: %f",_currentExchangeRate);
+        
+        //Test Code (for debug purposes)
+        
+        ProductPriceDisplayController* parentController = (ProductPriceDisplayController*)self.parentViewController;
+        
+        [parentController setKoreanPrice:[NSNumber numberWithFloat:10000]];
+        [parentController setForeignPrice:[NSNumber numberWithFloat:10000*self.currentExchangeRate]];
+        
     }
 }
 
@@ -54,6 +90,8 @@ static void* ProductPriceControllerContext = &ProductPriceControllerContext;
     [self.apiRequestSession invalidateAndCancel];
     
     [self removeObserver:self forKeyPath:@"currencyExchangeData"];
+    
+    [self removeObserver:self forKeyPath:@"currentCurrencyCode"];
 }
 
 
@@ -92,7 +130,7 @@ static void* ProductPriceControllerContext = &ProductPriceControllerContext;
     
     self.apiRequestSession = [NSURLSession sessionWithConfiguration:defaultConfiguration];
     
-    NSURL* urlAddress = [NSURL URLWithString:@"https://api.fixer.io/latest"];
+    NSURL* urlAddress = [NSURL URLWithString:@"https://api.fixer.io/latest?base=KRW"];
     
     NSURLRequest* urlRequest = [NSURLRequest requestWithURL:urlAddress];
     
@@ -127,6 +165,10 @@ static void* ProductPriceControllerContext = &ProductPriceControllerContext;
     }];
     
     [dataTask resume];
+}
+
+-(double)currentExchangeRate{
+    return _currentExchangeRate;
 }
 
 @end

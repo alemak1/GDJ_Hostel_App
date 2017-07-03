@@ -14,6 +14,13 @@
 
 @interface ProductPriceDisplayController : UIViewController
 
+@property NSString* foreignCurrencyAbbreviation;
+
+@property NSNumber* foreignPrice;
+@property NSNumber* koreanPrice;
+
+
+
 @end
 
 #endif /* ProductPriceDisplayController_h */

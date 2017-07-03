@@ -14,6 +14,9 @@
 
 @interface ProductPriceController : UICollectionViewController
 
+@property NSString* currentCurrencyCode;
+
+
 @end
 
 #endif /* ProductPriceController_h */
