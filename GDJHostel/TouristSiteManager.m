@@ -180,6 +180,16 @@ NSArray* _touristSiteDictArray;
 }
 
 
+-(TouristSiteConfiguration*)getConfigurationForRegionIdentifier:(NSString*)regionIdentifier{
+    
+    for (TouristSiteConfiguration* siteConfiguration in self.configurationArray) {
+        if([siteConfiguration.title isEqualToString:regionIdentifier]){
+            return siteConfiguration;
+        }
+    }
+    return nil;
+}
+
 -(NSArray<CLRegion*>*)getRegionsForAllTouristLocations{
     
     NSMutableArray* regionArray = [[NSMutableArray alloc] init];

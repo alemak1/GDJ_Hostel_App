@@ -62,6 +62,7 @@
 		BD3844B31EFE579B00F2E981 /* ToHostelDirectionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3844B21EFE579B00F2E981 /* ToHostelDirectionsController.m */; };
 		BD3A9C7A1F0280A1006D1CD8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3A9C791F0280A1006D1CD8 /* CoreLocation.framework */; };
 		BD3A9C7D1F02839E006D1CD8 /* AppLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3A9C7C1F02839E006D1CD8 /* AppLocationManager.m */; };
+		BD3CB8621F0A24620002A275 /* MonitoredRegionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3CB8611F0A24620002A275 /* MonitoredRegionsController.m */; };
 		BD554C8F1F090FBF00B43C8C /* StoryboardB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD554C8E1F090FBF00B43C8C /* StoryboardB.storyboard */; };
 		BD554C931F090FFF00B43C8C /* ProductPriceController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD554C921F090FFF00B43C8C /* ProductPriceController.m */; };
 		BD554C971F0922D500B43C8C /* ProductPriceDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD554C961F0922D500B43C8C /* ProductPriceDisplayController.m */; };
@@ -196,6 +197,8 @@
 		BD3A9C791F0280A1006D1CD8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BD3A9C7B1F028390006D1CD8 /* AppLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppLocationManager.h; sourceTree = "<group>"; };
 		BD3A9C7C1F02839E006D1CD8 /* AppLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppLocationManager.m; sourceTree = "<group>"; };
+		BD3CB8601F0A24510002A275 /* MonitoredRegionsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonitoredRegionsController.h; sourceTree = "<group>"; };
+		BD3CB8611F0A24620002A275 /* MonitoredRegionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitoredRegionsController.m; sourceTree = "<group>"; };
 		BD554C8E1F090FBF00B43C8C /* StoryboardB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryboardB.storyboard; sourceTree = "<group>"; };
 		BD554C911F090FE600B43C8C /* ProductPriceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductPriceController.h; sourceTree = "<group>"; };
 		BD554C921F090FFF00B43C8C /* ProductPriceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductPriceController.m; sourceTree = "<group>"; };
@@ -387,6 +390,15 @@
 			name = EntryPointViewController;
 			sourceTree = "<group>";
 		};
+		BD3CB85F1F0A243E0002A275 /* MonitoredRegionsController */ = {
+			isa = PBXGroup;
+			children = (
+				BD3CB8601F0A24510002A275 /* MonitoredRegionsController.h */,
+				BD3CB8611F0A24620002A275 /* MonitoredRegionsController.m */,
+			);
+			name = MonitoredRegionsController;
+			sourceTree = "<group>";
+		};
 		BD554C901F090FD300B43C8C /* ProductPriceController */ = {
 			isa = PBXGroup;
 			children = (
@@ -508,6 +520,7 @@
 		BD902CD71EFD31F600DD1034 /* GDJHostel */ = {
 			isa = PBXGroup;
 			children = (
+				BD3CB85F1F0A243E0002A275 /* MonitoredRegionsController */,
 				BD3CB85E1F09EBEB0002A275 /* EntryPointViewController */,
 				BD554C901F090FD300B43C8C /* ProductPriceController */,
 				BDE3BA211F07EE3D00DFDEF4 /* WebviewController */,
@@ -725,6 +738,7 @@
 				BD3151141F00C844002332B8 /* TouristSiteCollectionViewController.m in Sources */,
 				BDE3BA341F08019F00DFDEF4 /* SeoulLocationAnnotation+HelperMethods.m in Sources */,
 				BDE3BA241F07EE6200DFDEF4 /* WebViewController.m in Sources */,
+				BD3CB8621F0A24620002A275 /* MonitoredRegionsController.m in Sources */,
 				BD68476D1F00F102004732FB /* ImageKeyConstants.m in Sources */,
 				BD3844A61EFE450800F2E981 /* DirectionsMenuController.m in Sources */,
 				BD34C1DE1F07A8E200CD0DD3 /* PolygonSelectionController.m in Sources */,

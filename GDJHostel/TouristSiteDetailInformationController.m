@@ -151,46 +151,43 @@ static void* TouristSiteDetailInformationContext = &TouristSiteDetailInformation
     
     /** Configure text for the admission fee **/
     
-    CGFloat admissionFee = [self.touristSiteConfiguration admissionFee];
+    baseDescriptionString = [self appendAdmissionFeeString:baseDescriptionString];
     
-    NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
-    [numberFormatter setMinimumFractionDigits:2];
-    
-    NSString* admissionFeeString = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:admissionFee]];
-    
-    NSString* admissionFeeLabelText = admissionFee > 0 ? [NSString stringWithFormat:@"Admission Fee: %@",admissionFeeString] : @"Admission: Free";
-    
-    baseDescriptionString = [baseDescriptionString stringByAppendingString:@" / "];
-    
-    baseDescriptionString = [baseDescriptionString stringByAppendingString:admissionFeeLabelText];
-    
-    /** Configure days closed label **/
-    
-    int numberOfDaysClosed = [self.touristSiteConfiguration numberOfDaysClosed];
-    int* daysClosed = [self.touristSiteConfiguration daysClosed];
-    
-    NSString* daysClosedString;
-    
-    daysClosedString = [[NSString alloc] init];
-    
-    if(numberOfDaysClosed <= 0){
-        daysClosedString = @"Open Everyday";
-    } else {
-        daysClosedString = @"Closed on: ";
-    }
-    
-    for(int i = 0; i < numberOfDaysClosed; i++){
-        
-        daysClosedString = [daysClosedString stringByAppendingString:[NSString getDayAbbreviation:i]];
-    }
-    
-    baseDescriptionString = [baseDescriptionString stringByAppendingString:@" / "];
-    
-    baseDescriptionString = [baseDescriptionString stringByAppendingString:daysClosedString];
-    
+   
+    /** Configure text for the number of days closed  **/
+
+    baseDescriptionString = [self appendNumberOfDaysClosedString:baseDescriptionString];
     
     
     /** Configure the Time Until Closing/Opening Label **/
+    
+    //baseDescriptionString = [self appendOpeningClosingTimeStrings:baseDescriptionString];
+    
+    
+    /** Configure the Special Note Label **/
+    
+    baseDescriptionString = [self appendSpecialNoteString:baseDescriptionString];
+    
+    /** Set text for the description label **/
+    
+    [self.descriptionLabel setText:baseDescriptionString];
+    
+}
+
+
+-(NSString*) appendSpecialNoteString:(NSString*)baseDescriptionString{
+    NSString* noteText = [self.touristSiteConfiguration specialNote];
+    
+    noteText = noteText != nil ? noteText : @"";
+    
+    baseDescriptionString = [baseDescriptionString stringByAppendingString:@" / "];
+    
+    baseDescriptionString = [baseDescriptionString stringByAppendingString:noteText];
+    
+    return baseDescriptionString;
+}
+
+- (NSString*) appendOpeningClosingTimeStrings: (NSString*) baseDescriptionString {
     CGFloat openingTime = [[self.touristSiteConfiguration openingTime] doubleValue];
     CGFloat closingTime = [[self.touristSiteConfiguration closingTime] doubleValue];
     
@@ -212,18 +209,54 @@ static void* TouristSiteDetailInformationContext = &TouristSiteDetailInformation
     baseDescriptionString = [baseDescriptionString stringByAppendingString:timeUntilText];
     
     
-    /** Configure the Special Note Label **/
+    return baseDescriptionString;
+}
+
+- (NSString*) appendAdmissionFeeString:(NSString*)baseDescriptionString{
+    /** Configure text for the admission fee **/
     
-    NSString* noteText = [self.touristSiteConfiguration specialNote];
+    CGFloat admissionFee = [self.touristSiteConfiguration admissionFee];
     
-    noteText = noteText != nil ? noteText : @"";
+    NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setMinimumFractionDigits:2];
+    
+    NSString* admissionFeeString = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:admissionFee]];
+    
+    NSString* admissionFeeLabelText = admissionFee > 0 ? [NSString stringWithFormat:@"Admission Fee: %@",admissionFeeString] : @"Admission: Free";
     
     baseDescriptionString = [baseDescriptionString stringByAppendingString:@" / "];
     
-    baseDescriptionString = [baseDescriptionString stringByAppendingString:noteText];
+    baseDescriptionString = [baseDescriptionString stringByAppendingString:admissionFeeLabelText];
     
-    [self.descriptionLabel setText:baseDescriptionString];
+    return baseDescriptionString;
+}
+
+- (NSString*) appendNumberOfDaysClosedString:(NSString*)baseDescriptionString{
+    /** Configure days closed label **/
     
+    int numberOfDaysClosed = [self.touristSiteConfiguration numberOfDaysClosed];
+    int* daysClosed = [self.touristSiteConfiguration daysClosed];
+    
+    NSString* daysClosedString;
+    
+    daysClosedString = [[NSString alloc] init];
+    
+    if(numberOfDaysClosed <= 0){
+        daysClosedString = @"Open Everyday";
+    } else {
+        daysClosedString = @"Closed on: ";
+    }
+    
+    for(int i = 0; i < numberOfDaysClosed; i++){
+        
+        daysClosedString = [daysClosedString stringByAppendingString:[NSString getDayAbbreviation:daysClosed[i]]];
+    }
+    
+    baseDescriptionString = [baseDescriptionString stringByAppendingString:@" / "];
+    
+    baseDescriptionString = [baseDescriptionString stringByAppendingString:daysClosedString];
+    
+    return baseDescriptionString;
 }
 
 
@@ -305,52 +338,29 @@ static void* TouristSiteDetailInformationContext = &TouristSiteDetailInformation
     if([sender isOn]){
         //Enable region monitoring
         
-        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Do you want to monitor this region for entry and exit?" message:@"If yes, the app will notify you when you enter and exit the proximity of this tourist site.  You can set the radius of the region by entering a valid integer in the textfield." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Do you want to monitor this region for entry and exit?" message:@"If yes, the app will notify you when you enter and exit the proximity of this tourist site. " preferredStyle:UIAlertControllerStyleAlert];
         
-        [alertController addTextFieldWithConfigurationHandler:^(UITextField* textField){
-            textField.placeholder = @"Enter monitoring radius...";
-            
-        }];
+        
+
         
         UIAlertAction* addRegionAction = [UIAlertAction actionWithTitle:@"Monitor Region" style:UIAlertActionStyleDefault handler:^(UIAlertAction* alertAction){
             
-            UITextField* radiusTextfield = [alertController.textFields objectAtIndex:0];
-            NSString* radiusText = [radiusTextfield text];
+
             
-            /** Validate the text in the text field for monitoring region radius **/
-            
-            BOOL inputIsValid = YES;
-            
-            for(int i = 0; i < [radiusText length]; i++){
-                if(!isnumber([radiusText characterAtIndex:i]) || ([radiusText length] <= 0)){
-                    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Invalid Entry" message:@"Please enter a valid integer number for the radius of the monitoring region" preferredStyle:UIAlertControllerStyleAlert];
-                    
-                    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-                    
-                    [alertController addAction:okAction];
-                    
-                    [self presentViewController:alertController animated:YES completion:nil];
-                    [self.isOpenSwitch setOn:NO];
-            
-                    inputIsValid = NO;
-                }
-            }
-            
-            if(inputIsValid){
-                NSLog(@"Configuring new region for region monitoring with region identifier: %@",[self.touristSiteConfiguration name]);
+            NSLog(@"Configuring new region for region monitoring with region identifier: %@",[self.touristSiteConfiguration name]);
                 
-                int monitoringRadius = [radiusText doubleValue];
             
-                CLRegion* newRegion = [self.touristSiteConfiguration getRegionFromTouristConfiguration];
+            CLRegion* newRegion = [self.touristSiteConfiguration getRegionFromTouristConfiguration];
                 
-                [locationManager startMonitoringForRegion:newRegion];
-                [self.isOpenSwitch setOn:YES];
+            [locationManager startMonitoringForRegion:newRegion];
+            [self.isOpenSwitch setOn:YES];
                 
-                NSLog(@"Region monitoring has been turned on for circular region with coordinate(long/lat) %f,%f, monitoring radius %d, andw with identifier %@",self.touristSiteConfiguration.midCoordinate.longitude,self.touristSiteConfiguration.midCoordinate.latitude,monitoringRadius,self.touristSiteConfiguration.title);
-                
-            }
         
+            
         }];
+
+        
+       
         
         UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction*action){
         
@@ -374,3 +384,57 @@ static void* TouristSiteDetailInformationContext = &TouristSiteDetailInformation
 }
 
 @end
+
+
+/** Previous version allowed for user to specify the radius for entry/exit notifications
+ 
+ /**
+ [alertController addTextFieldWithConfigurationHandler:^(UITextField* textField){
+ textField.placeholder = @"Enter monitoring radius...";
+ 
+ }];
+ **/
+
+ /**
+ 
+ UIAlertAction* addRegionAction = [UIAlertAction actionWithTitle:@"Monitor Region" style:UIAlertActionStyleDefault handler:^(UIAlertAction* alertAction){
+ 
+ UITextField* radiusTextfield = [alertController.textFields objectAtIndex:0];
+ NSString* radiusText = [radiusTextfield text];
+ 
+ 
+ BOOL inputIsValid = YES;
+ 
+ for(int i = 0; i < [radiusText length]; i++){
+ if(!isnumber([radiusText characterAtIndex:i]) || ([radiusText length] <= 0)){
+ UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Invalid Entry" message:@"Please enter a valid integer number for the radius of the monitoring region" preferredStyle:UIAlertControllerStyleAlert];
+ 
+ UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+ 
+ [alertController addAction:okAction];
+ 
+ [self presentViewController:alertController animated:YES completion:nil];
+ [self.isOpenSwitch setOn:NO];
+ 
+ inputIsValid = NO;
+ }
+ }
+ 
+ if(inputIsValid){
+ NSLog(@"Configuring new region for region monitoring with region identifier: %@",[self.touristSiteConfiguration name]);
+ 
+ int monitoringRadius = [radiusText doubleValue];
+ 
+ CLRegion* newRegion = [self.touristSiteConfiguration getRegionFromTouristConfiguration];
+ 
+ [locationManager startMonitoringForRegion:newRegion];
+ [self.isOpenSwitch setOn:YES];
+ 
+ NSLog(@"Region monitoring has been turned on for circular region with coordinate(long/lat) %f,%f, monitoring radius %d, andw with identifier %@",self.touristSiteConfiguration.midCoordinate.longitude,self.touristSiteConfiguration.midCoordinate.latitude,monitoringRadius,self.touristSiteConfiguration.title);
+ 
+ }
+ 
+ }];
+ **/
+
+

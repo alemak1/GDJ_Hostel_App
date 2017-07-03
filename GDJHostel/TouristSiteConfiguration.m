@@ -227,6 +227,18 @@ CLLocation* _lastUpdatedUserLocation;
     
 }
 
+-(CLRegion*) getRegionFromTouristConfigurationWithRadius:(double)radius{
+    
+   
+    CLRegion* region = [[CLCircularRegion alloc] initWithCenter:self.midCoordinate radius:radius identifier: self.title];
+    
+    [region setNotifyOnExit:YES];
+    [region setNotifyOnEntry:YES];
+    
+    return region;
+    
+}
+
 
 -(BOOL)isOpen{
     

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+
 #import <CoreLocation/CoreLocation.h>
 #import "AppLocationManager.h"
 
@@ -81,6 +83,8 @@ static UserLocationManager* mySharedLocationManager;
     
     if(self){
         
+        self.siteManager = [[TouristSiteManager alloc] initWithFileName:@"SeoulTouristSites"];
+        
         [self setDelegate:self];
         [self setDistanceFilter:kCLLocationAccuracyHundredMeters];
         [self setDesiredAccuracy:kCLLocationAccuracyBest];
@@ -149,7 +153,7 @@ static UserLocationManager* mySharedLocationManager;
 
 
 
--(void)startMonitoringForRegions:(NSArray<CLRegion*>*)regions{
+-(void)startMonitoringForRegions:(NSSet<CLRegion*>*)regions{
     
     for(CLRegion* region in regions){
         
@@ -200,7 +204,7 @@ static UserLocationManager* mySharedLocationManager;
     return nil;
 }
 
--(void)stopMonitoringForRegions:(NSArray<CLRegion*>*)regions{
+-(void)stopMonitoringForRegions:(NSSet<CLRegion*>*)regions{
     
     for(CLRegion* region in regions){
         [self stopMonitoringForRegion:region];
@@ -249,8 +253,33 @@ static UserLocationManager* mySharedLocationManager;
 
 // The device entered a monitored region.
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region  {
-    NSString *event = [NSString stringWithFormat:@"didEnterRegion %@ at %@", region.identifier, [NSDate date]];
-    NSLog(@"%s %@", __PRETTY_FUNCTION__, event);
+    
+    NSString* siteName = [region identifier];
+    
+    CLCircularRegion* circularRegion = (CLCircularRegion*)region;
+    
+    CLLocationDistance distanceToRegionCenter = [self getDistanceToRegionCenter:circularRegion.center];
+    
+    NSString* alertTitle = [NSString stringWithFormat:@"You are very close to %@",siteName];
+    NSString* alertMessage = [NSString stringWithFormat:@"The tourst site %@ is %f meters away. Do you want directions to get there?",siteName,distanceToRegionCenter];
+
+    
+    UIAlertController* alerController = [UIAlertController alertControllerWithTitle:alertTitle message:alertMessage preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* okayAction = [UIAlertAction actionWithTitle:@"Give me directions" style:UIAlertActionStyleDefault handler:^(UIAlertAction* alertAction){
+        
+        [self viewLocationInMapsTo:circularRegion.center];
+        
+    
+    }];
+    
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"No thanks" style:UIAlertActionStyleDefault handler:nil];
+    
+    
+    [alerController addAction:okayAction];
+    [alerController addAction:cancelAction];
+    
+    [self.currentPresentingViewController presentViewController:alerController animated:YES completion:nil];
     
 }
 
@@ -271,5 +300,52 @@ static UserLocationManager* mySharedLocationManager;
 -(CLLocation*)getLastUpdatedUserLocation{
     return self.lastUpdatedUserLocation;
 }
+
+
+-(CLLocationDistance)getDistanceToRegionCenter:(CLLocationCoordinate2D)regionCenter{
+    /** Initialize a MapItem with user's current location **/
+    CLLocationCoordinate2D userLocation = self.lastUpdatedUserLocation.coordinate;
+    
+    
+    CLLocationDistance distanceBetweenEndpoints = [self.lastUpdatedUserLocation distanceFromLocation:[[CLLocation alloc] initWithLatitude:regionCenter.latitude longitude:regionCenter.longitude]];
+    
+    return distanceBetweenEndpoints;
+    
+}
+
+-(void)viewLocationInMapsTo:(CLLocationCoordinate2D)regionCenter{
+    
+    /** Initialize a MapItem with user's current location **/
+    CLLocationCoordinate2D userLocation = self.lastUpdatedUserLocation.coordinate;
+    
+    MKPlacemark* userLocationPlacemark = [[MKPlacemark alloc] initWithCoordinate:userLocation];
+    MKMapItem* fromLocation = [[MKMapItem alloc] initWithPlacemark:userLocationPlacemark];
+    
+    
+    
+        /** Initialize a MapItem with the center coordinate of the region that the user has just entered **/
+    MKPlacemark* regionPlacemark = [[MKPlacemark alloc] initWithCoordinate:regionCenter];
+        
+    MKMapItem* toLocation = [[MKMapItem alloc] initWithPlacemark:regionPlacemark];
+        
+        
+    
+    CLLocationDistance distanceBetweenEndpoints = [self.lastUpdatedUserLocation distanceFromLocation:regionPlacemark.location];
+        
+        // Create a region centered on the starting point with a 10km span
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation, distanceBetweenEndpoints*1.5, distanceBetweenEndpoints*1.5);
+        
+        
+    
+        // Open the item in Maps, specifying the map region to display.
+        [MKMapItem openMapsWithItems:[NSArray arrayWithObjects:toLocation,fromLocation, nil]
+                       launchOptions:[NSDictionary dictionaryWithObjectsAndKeys:
+                                      [NSValue valueWithMKCoordinate:region.center], MKLaunchOptionsMapCenterKey,
+                                      [NSValue valueWithMKCoordinateSpan:region.span], MKLaunchOptionsMapSpanKey,
+                                      MKLaunchOptionsDirectionsModeDefault,MKLaunchOptionsDirectionsModeKey, nil]];
+    }
+
+
+
 
 @end

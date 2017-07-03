@@ -133,7 +133,10 @@
 
 @end
 
-/**
+
+
+/** For future iOS tutorials:
+ 
  
  -(instancetype)initWithTitleText:(NSString*)titleText{
  

@@ -31,6 +31,9 @@
     UserLocationManager* userLocationManager = [UserLocationManager sharedLocationManager];
     
     [userLocationManager setPresentingViewControllerTo:self];
+    
+    [userLocationManager stopMonitoringForRegions:[userLocationManager monitoredRegions]];
+    
 }
 
 
@@ -57,8 +60,8 @@
     self.menuComponent = [[MenuComponent alloc] initMenuWithFrame:desiredMenuFrame
                     targetView:self.view
                     direction:menuDirectionRightToLeft
-                    options:@[@"About Hostel", @"Directions", @"Contact Info", @"Seoul Tourism",@"Weather",@"Survival Korean", @"Korean Product Prices",@"Acknowledgements"]
-                    optionImages:@[@"informationB", @"compassB", @"contactPhoneB", @"templeB",@"cloudyA",@"chatA", @"shoppingCartB",@"trophyB"]];
+                    options:@[@"About Hostel", @"Directions", @"Contact Info", @"Seoul Tourism",@"Weather",@"Survival Korean", @"Product Prices",@"Monitored Regions",@"Acknowledgements"]
+                    optionImages:@[@"informationB", @"compassB", @"contactPhoneB", @"templeB",@"cloudyA",@"chatA", @"shoppingCartB",@"mapAddressB",@"trophyB"]];
 
 }
 
@@ -112,6 +115,9 @@
                 requestedViewController = [storyBoardB instantiateViewControllerWithIdentifier:@"ProductPriceNavigationController"];
                 break;
             case 7:
+                requestedViewController = [storyBoardB instantiateViewControllerWithIdentifier:@"MonitoredRegionsController"];
+                break;
+            case 8:
                 //Acknowledgements
                 requestedViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"DirectionsMenuController"];
                 NSLog(@"You selected option %d",(int)selectedOptionIndex);

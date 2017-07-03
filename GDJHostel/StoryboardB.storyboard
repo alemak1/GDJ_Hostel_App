@@ -11,6 +11,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Monitored Regions Controller-->
+        <scene sceneID="IjB-Nk-psY">
+            <objects>
+                <tableViewController id="GG9-RB-yhH" customClass="MonitoredRegionsController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VjO-ZY-xnf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonitoredRegionCell" textLabel="h0Y-y2-lRa" detailTextLabel="qLZ-BZ-aLf" style="IBUITableViewCellStyleSubtitle" id="vAC-Ro-jql">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MonitoredRegionCell" tableViewCell="vAC-Ro-jql" id="6V8-85-dtz">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h0Y-y2-lRa">
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qLZ-BZ-aLf">
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GG9-RB-yhH" id="sJN-c7-aIl"/>
+                            <outlet property="delegate" destination="GG9-RB-yhH" id="HFq-fh-sLp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="GwO-Vg-9UW">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Qze-UK-vUm">
+                            <connections>
+                                <segue destination="Nvx-Wf-jCG" kind="unwind" unwindAction="unwindBackToHostelIndexPage:" id="Moh-b5-T7K"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CYA-Wa-Iuz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Nvx-Wf-jCG" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-727" y="706"/>
+        </scene>
         <!--Product Price Display Controller-->
         <scene sceneID="VDo-6r-Z13">
             <objects>
@@ -87,7 +139,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTN-tt-Lkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8BU-jP-4pi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="316" y="434.93253373313348"/>
+            <point key="canvasLocation" x="1452" y="225.33733133433284"/>
         </scene>
         <!--Product Price Controller-->
         <scene sceneID="b4x-Ts-v0A">
@@ -122,7 +174,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AiQ-cW-02g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1226" y="667"/>
+            <point key="canvasLocation" x="2164" y="666.11694152923542"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EgW-Pk-QCH">
@@ -141,6 +193,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ON-bt-OWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-750" y="-27"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hqi-aL-emO">
+            <objects>
+                <navigationController storyboardIdentifier="MonitoredRegionsController" automaticallyAdjustsScrollViewInsets="NO" id="gDO-s1-NmE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dbG-TS-MGf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GG9-RB-yhH" kind="relationship" relationship="rootViewController" id="CBD-W5-lEe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LfY-qJ-9NP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1462" y="648"/>
         </scene>
     </scenes>
     <resources>

@@ -40,7 +40,13 @@
     
     self.siteManager = [[TouristSiteManager alloc] initWithFileName:@"SeoulTouristSites"];
     
-   
+    
+    NSLog(@"The regions currently being monitored are ...");
+    
+    for (CLRegion* region in [sharedLocationManager monitoredRegions]) {
+        
+        NSLog(@"Region description: %@",[region description]);
+    }
     
 }
 
@@ -48,12 +54,44 @@
 
 -(void)viewDidLoad{
     
+
+    
+    
+    
+    
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone){
+        //Configure the device for iPhone
+        
+        if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait){
+            [self configureScrollViewForPhonePortraitMode];
+        }
+        
+        if([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight){
+            
+        }
+        
+    } else if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+        
+        //Configure the scroll view for iPad
+    }
+    
+    
+
+
+
+
+    
+}
+
+
+-(void) configureScrollViewForPhonePortraitMode{
     
     CGFloat scrollViewWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
     CGFloat scrollViewHeight = CGRectGetHeight(self.scrollView.frame);
     
+    
     self.scrollView.contentSize = CGSizeMake(scrollViewWidth, scrollViewHeight*3.00);
-
+    
     [self.scrollView setShowsHorizontalScrollIndicator:NO];
     
     __block CGFloat controllerIndex = 0;
@@ -70,7 +108,7 @@
     
     
     UIStoryboard* mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-
+    
     
     TouristSiteCollectionViewController* touristSiteCVC1 = [mainStoryBoard instantiateViewControllerWithIdentifier:@"TouristSiteCollectionViewController"];
     
@@ -96,7 +134,7 @@
     TouristSiteCollectionViewController* touristSiteCVC2 = [mainStoryBoard instantiateViewControllerWithIdentifier:@"TouristSiteCollectionViewController"];
     
     [self addChildViewController:touristSiteCVC2];
-
+    
     CGRect frame2 = getControllerFrame();
     
     [touristSiteCVC2.view setFrame:frame2];
@@ -106,7 +144,7 @@
     [touristSiteCVC2 didMoveToParentViewController:self];
     
     [touristSiteCVC2 setTitleLabelText:@"Parks and Other Natural Sites"];
-
+    
     [touristSiteCVC2 setCategory:PARK];
     
     controllerIndex++;
@@ -118,11 +156,11 @@
     TouristSiteCollectionViewController* touristSiteCVC3 = [mainStoryBoard instantiateViewControllerWithIdentifier:@"TouristSiteCollectionViewController"];
     
     [self addChildViewController:touristSiteCVC3];
-
+    
     CGRect frame3 = getControllerFrame();
     
     [touristSiteCVC3.view setFrame:frame3];
-
+    
     [self.scrollView addSubview:touristSiteCVC3.view];
     
     [touristSiteCVC3 didMoveToParentViewController:self];
@@ -130,7 +168,7 @@
     [touristSiteCVC3 setTitleLabelText:@"Temples and Other Monuments"];
     
     [touristSiteCVC3 setCategory:MONUMENT_OR_WAR_MEMORIAL];
-
+    
     
     controllerIndex++;
     
@@ -197,14 +235,8 @@
     
     controllerIndex++;
     
-    
 
-
-
-
-    
 }
-
 
 - (IBAction)returnToMainMenu:(UIBarButtonItem *)sender {
     

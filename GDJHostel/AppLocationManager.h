@@ -11,17 +11,20 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "TouristSiteManager.h"
 
 @interface UserLocationManager : CLLocationManager
 
 
 +(UserLocationManager*) sharedLocationManager;
 
+
+@property TouristSiteManager* siteManager;
+
 -(void) requestAuthorizationAndStartUpdates;
 
--(void)startMonitoringForRegions:(NSArray<CLRegion*>*)regions;
--(void)stopMonitoringForRegions:(NSArray<CLRegion*>*)regions;
-
+-(void)startMonitoringForRegions:(NSSet<CLRegion*>*)regions;
+-(void)stopMonitoringForRegions:(NSSet<CLRegion*>*)regions;
 -(void)startMonitoringForSingleRegion:(CLRegion*)region;
 -(void)stopMonitoringForSingleRegion:(CLRegion*)region;
 
