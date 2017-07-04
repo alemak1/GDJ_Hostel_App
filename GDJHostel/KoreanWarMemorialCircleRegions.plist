@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>pkm_37_ship</string>
 		<key>coordinate</key>
@@ -13,6 +15,8 @@
 		<string>Restored Patrol Boat</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>c46_commando_transport</string>
 		<key>coordinate</key>
@@ -23,6 +27,8 @@
 		<string>C-46 Commando Transport</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>b52_bomber</string>
 		<key>coordinate</key>
@@ -33,6 +39,8 @@
 		<string>B-52 Stratofortress Bomber</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>children_museum_entrance</string>
 		<key>coordinate</key>
@@ -43,6 +51,8 @@
 		<string>Children&apos;s Museum Entrance</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>douglas_macarthur_model</string>
 		<key>coordinate</key>
@@ -53,6 +63,8 @@
 		<string>Douglas MacArthur Wax Model</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>war_veterans_profiles</string>
 		<key>coordinate</key>
@@ -63,6 +75,8 @@
 		<string>War Veterans Profiles</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>library_war_memorial</string>
 		<key>coordinate</key>
@@ -73,6 +87,8 @@
 		<string>Library</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>airmobile_operation</string>
 		<key>coordinate</key>
@@ -83,6 +99,8 @@
 		<string>Airmobile Operation</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>airmobile_operation</string>
 		<key>coordinate</key>
@@ -93,6 +111,8 @@
 		<string>Midway Viewing Area</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>coffeenamu</string>
 		<key>coordinate</key>
@@ -103,6 +123,8 @@
 		<string>Coffeenamu</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>3D_slam_eagle</string>
 		<key>coordinate</key>
@@ -113,6 +135,8 @@
 		<string>3D Slam Eagle Theater</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>navy_ship_bridge</string>
 		<key>coordinate</key>
@@ -123,6 +147,8 @@
 		<string>Navy Ship Bridge Model</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>flag_raising_exhibit</string>
 		<key>coordinate</key>
@@ -133,6 +159,8 @@
 		<string>Flag Raising Exhibit</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>flag_raising_exhibit</string>
 		<key>coordinate</key>
@@ -143,6 +171,8 @@
 		<string>Flag Raising Exhibit</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>soldier_silhouette</string>
 		<key>coordinate</key>
@@ -153,6 +183,8 @@
 		<string>Solider Silhouette Exhibit</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>war_movie_theater</string>
 		<key>coordinate</key>
@@ -163,6 +195,8 @@
 		<string>War Movie Theater</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>war_exhibit_room_2_exit</string>
 		<key>coordinate</key>
@@ -173,6 +207,8 @@
 		<string>Korean Warn Exhibit Room 2 Exit</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>war_exhibit_room_2_exit</string>
 		<key>coordinate</key>
@@ -183,6 +219,8 @@
 		<string>Korean Warn Exhibit Room 2 Exit</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>memorial_hall</string>
 		<key>coordinate</key>
@@ -193,6 +231,8 @@
 		<string>Memorial Hall</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>military_uniforms</string>
 		<key>coordinate</key>
@@ -203,6 +243,8 @@
 		<string>Military Uniforms of Great Han Empire</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>hwaseong_fortress</string>
 		<key>coordinate</key>
@@ -213,6 +255,8 @@
 		<string>Hwaseong Fortress Model</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>yi_jongmu_painting</string>
 		<key>coordinate</key>
@@ -223,6 +267,8 @@
 		<string>Yi Jongmu&apos;s Conquest of Daemado Painting</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>scaling_ladder</string>
 		<key>coordinate</key>
@@ -233,6 +279,8 @@
 		<string>Military Scaling Ladder</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>cavalry_goryeo</string>
 		<key>coordinate</key>
@@ -243,6 +291,8 @@
 		<string>Cavalry of Goryeo Model</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>turtleship</string>
 		<key>coordinate</key>
@@ -253,6 +303,8 @@
 		<string>Turtleship</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>statue_of_brothers</string>
 		<key>coordinate</key>
@@ -263,6 +315,8 @@
 		<string>Statue of Brothers</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>cu_store</string>
 		<key>coordinate</key>
@@ -273,6 +327,8 @@
 		<string>CU Convenience Store</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>souvenir_gift_shop</string>
 		<key>coordinate</key>
@@ -283,6 +339,8 @@
 		<string>Souvenir Gift Shop</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string></string>
 		<key>imagePath</key>
 		<string>wedding_hall</string>
 		<key>coordinate</key>

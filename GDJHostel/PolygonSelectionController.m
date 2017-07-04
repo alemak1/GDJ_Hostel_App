@@ -60,7 +60,10 @@
     switch (polygonType) {
         case LOTTO_HOTEL:
             return @"Lotto Hotel";
-            break;
+        case KOREAN_WAR_MEMORIAL:
+            return @"Korean War Memorial (Main Building)";
+        case PETRAEUS_BUILDING:
+            return @"Petraeus Building Complex";
         default:
             return nil;
     }
@@ -82,6 +85,12 @@
         switch (polygonType) {
             case LOTTO_HOTEL:
                 fileName = @"LottoHotel";
+                break;
+            case KOREAN_WAR_MEMORIAL:
+                fileName = @"WarMemorialMainBuilding";
+                break;
+            case PETRAEUS_BUILDING:
+                fileName = @"PetraeusBuilding";
                 break;
             default:
                 break;

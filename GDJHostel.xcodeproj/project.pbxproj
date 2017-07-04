@@ -25,6 +25,9 @@
 		BD2D62C51F0A9BD300231365 /* AnnotationMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2D62C41F0A9BD300231365 /* AnnotationMapViewController.m */; };
 		BD2DCCAE1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2DCCAD1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m */; };
 		BD2DF30E1F060643005BAD8B /* WeatherDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2DF30D1F060643005BAD8B /* WeatherDetailController.m */; };
+		BD2E8E9C1F0BD9CA003D9C9B /* PetraeusBuilding.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD2E8E9B1F0BD9CA003D9C9B /* PetraeusBuilding.plist */; };
+		BD2E8EA01F0BDC3A003D9C9B /* WarMemorialNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2E8E9F1F0BDC3A003D9C9B /* WarMemorialNavigationController.m */; };
+		BD2E8EA31F0BDEF6003D9C9B /* WarMemorialAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2E8EA21F0BDEF6003D9C9B /* WarMemorialAnnotation.m */; };
 		BD2EA76F1EFFB1E300A8572B /* FeatureScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EA76E1EFFB1E300A8572B /* FeatureScrollViewController.m */; };
 		BD2EA7721EFFC28F00A8572B /* ContactScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EA7711EFFC28F00A8572B /* ContactScrollViewController.m */; };
 		BD2EA7751EFFC4CB00A8572B /* RoomInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EA7741EFFC4CB00A8572B /* RoomInfoController.m */; };
@@ -154,6 +157,11 @@
 		BD2DCCB01F09360B00EA8FDF /* ProductCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductCategory.h; sourceTree = "<group>"; };
 		BD2DF30C1F060634005BAD8B /* WeatherDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherDetailController.h; sourceTree = "<group>"; };
 		BD2DF30D1F060643005BAD8B /* WeatherDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailController.m; sourceTree = "<group>"; };
+		BD2E8E9B1F0BD9CA003D9C9B /* PetraeusBuilding.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PetraeusBuilding.plist; sourceTree = "<group>"; };
+		BD2E8E9E1F0BDC24003D9C9B /* WarMemorialNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WarMemorialNavigationController.h; sourceTree = "<group>"; };
+		BD2E8E9F1F0BDC3A003D9C9B /* WarMemorialNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarMemorialNavigationController.m; sourceTree = "<group>"; };
+		BD2E8EA11F0BDEE8003D9C9B /* WarMemorialAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WarMemorialAnnotation.h; sourceTree = "<group>"; };
+		BD2E8EA21F0BDEF6003D9C9B /* WarMemorialAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarMemorialAnnotation.m; sourceTree = "<group>"; };
 		BD2EA76D1EFFB1D500A8572B /* FeatureScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureScrollViewController.h; sourceTree = "<group>"; };
 		BD2EA76E1EFFB1E300A8572B /* FeatureScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureScrollViewController.m; sourceTree = "<group>"; };
 		BD2EA7701EFFC28200A8572B /* ContactScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactScrollViewController.h; sourceTree = "<group>"; };
@@ -338,6 +346,17 @@
 			name = TouristLocationTableViewController;
 			sourceTree = "<group>";
 		};
+		BD2E8E9D1F0BDB29003D9C9B /* WarMemorialNavigator */ = {
+			isa = PBXGroup;
+			children = (
+				BD2E8E9E1F0BDC24003D9C9B /* WarMemorialNavigationController.h */,
+				BD2E8E9F1F0BDC3A003D9C9B /* WarMemorialNavigationController.m */,
+				BD2E8EA11F0BDEE8003D9C9B /* WarMemorialAnnotation.h */,
+				BD2E8EA21F0BDEF6003D9C9B /* WarMemorialAnnotation.m */,
+			);
+			name = WarMemorialNavigator;
+			sourceTree = "<group>";
+		};
 		BD3117D31EFE7EC000D6A5D6 /* InformationControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +403,7 @@
 		BD3844B01EFE52C800F2E981 /* NavigationAidControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BD2E8E9D1F0BDB29003D9C9B /* WarMemorialNavigator */,
 				BD2D62C21F0A9B9400231365 /* TouristLocationTableViewController */,
 				BD7C35461F089B79009FD8F8 /* PolygonMapControllers */,
 				BD7C35451F089B67009FD8F8 /* BikeRouteControllers */,
@@ -527,6 +547,7 @@
 				BD305CE51F0BC2B300F0CC7B /* WarHistoryExhibit.plist */,
 				BD305CE71F0BC56800F0CC7B /* WarHistoryExhibit2.plist */,
 				BD305CE91F0BCCEE00F0CC7B /* WeddingHall.plist */,
+				BD2E8E9B1F0BD9CA003D9C9B /* PetraeusBuilding.plist */,
 			);
 			name = plists;
 			sourceTree = "<group>";
@@ -742,6 +763,7 @@
 				BD305BBC1EFF8CB500F9F2B9 /* transportation-8.caf in Resources */,
 				BD305CD11F0B96CB00F0CC7B /* NationalSecurityPavilionPath.plist in Resources */,
 				BD3117DB1EFE800900D6A5D6 /* content_iPhone.plist in Resources */,
+				BD2E8E9C1F0BD9CA003D9C9B /* PetraeusBuilding.plist in Resources */,
 				BD34C1D61F079DBB00CD0DD3 /* LottoHotel.plist in Resources */,
 				BD305CE01F0BB44300F0CC7B /* KoreanWarExhibitRoom2.plist in Resources */,
 				BD305BB71EFF8CB500F9F2B9 /* transportation-3.caf in Resources */,
@@ -793,6 +815,7 @@
 				BD12488C1F04B4C100B77F36 /* WeatherCollectionCell.m in Sources */,
 				BD2EA76F1EFFB1E300A8572B /* FeatureScrollViewController.m in Sources */,
 				BD902CE01EFD31F600DD1034 /* ViewController.m in Sources */,
+				BD2E8EA31F0BDEF6003D9C9B /* WarMemorialAnnotation.m in Sources */,
 				BD2CAA8E1EFFCCEF00C0E540 /* HostelFlowLayout.m in Sources */,
 				BD2EA7751EFFC4CB00A8572B /* RoomInfoController.m in Sources */,
 				BD14B0AB1F072E230024668D /* BikingRoutesController.m in Sources */,
@@ -830,6 +853,7 @@
 				BD554C971F0922D500B43C8C /* ProductPriceDisplayController.m in Sources */,
 				BD2DCCAE1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m in Sources */,
 				BD2EA7721EFFC28F00A8572B /* ContactScrollViewController.m in Sources */,
+				BD2E8EA01F0BDC3A003D9C9B /* WarMemorialNavigationController.m in Sources */,
 				BD30C51A1EFDE5240032FE64 /* MenuComponent.m in Sources */,
 				BD2DF30E1F060643005BAD8B /* WeatherDetailController.m in Sources */,
 				BD2D62C51F0A9BD300231365 /* AnnotationMapViewController.m in Sources */,

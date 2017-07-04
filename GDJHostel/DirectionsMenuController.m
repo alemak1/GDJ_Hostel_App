@@ -13,6 +13,7 @@
 #import "TouristLocationTableViewController.h"
 #import "AppLocationManager.h"
 #import "MKDirectionsRequest+HelperMethods.h"
+#import "WarMemorialNavigationController.h"
 
 /**
 #import "TouristLocationSelectionNavigationController.h"
@@ -29,6 +30,7 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     HOSTEL_LOCAL_AREA_MAP_CONTROLLER,
     BIKING_JOGGING_ROUTE_CONTROLLER,
     POLYGON_NAVIGATION_CONTROLLER,
+    WAR_MEMORIAL_NAVIGATION_CONTROLLER,
     LAST_VIEW_CONTROLLER,
 }VALID_NEXT_VIEW_CONTROLLER;
 
@@ -198,6 +200,9 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
         case POLYGON_NAVIGATION_CONTROLLER:
             nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"PolygonNavigationController"];
             break;
+        case WAR_MEMORIAL_NAVIGATION_CONTROLLER:
+            nextViewController = [self getWarMemorialNavigationController];
+            break;
         default:
             break;
     }
@@ -228,14 +233,37 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
         case HOSTEL_LOCAL_AREA_MAP_CONTROLLER:
             return @"View the Local Area";
         case BIKING_JOGGING_ROUTE_CONTROLLER:
-            return @"Local Biking/Jogging Routes";
+            return @"Sight-Seeing Routes";
         case POLYGON_NAVIGATION_CONTROLLER:
             return @"Local Building, Park, and Site Regions";
+        case WAR_MEMORIAL_NAVIGATION_CONTROLLER:
+            return @"War Memorial Navigation Aid";
         case LAST_VIEW_CONTROLLER:
             return nil;
     }
     
     return nil;
+}
+
+
+
+-(WarMemorialNavigationController*) getWarMemorialNavigationController{
+    
+    
+    
+    UIStoryboard* storyboardB = [UIStoryboard storyboardWithName:@"StoryboardB" bundle:nil];
+    
+    NSString* storyboardIdentifier = @"WarMemorialNavigationController";
+    
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+        
+        storyboardIdentifier = @"WarMemorialNavigationController_iPad";
+        
+    }
+    
+    WarMemorialNavigationController* nextViewController = [storyboardB instantiateViewControllerWithIdentifier:storyboardIdentifier];
+    
+    return nextViewController;
 }
 
 -(LocationSearchController*)getLocationSearchController{
