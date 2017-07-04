@@ -68,7 +68,22 @@
             break;
         case GONGDEOK_SEOGANG_ROUTE:
             return @"Gongdeok-Seogang Walking/Biking Route";
-
+        case NATIONAL_SECURITY_PAVILION_PATH:
+            return @"National Security Pavilion Path (Korean War Memorial)";
+        case KOREAN_WAR_EXHIBIT_ROOM_1:
+            return @"Korean War Exhibit Room 1";
+        case KOREAN_WAR_EXHIBIT_ROOM_2:
+            return @"Korean War Exhibit Room 2";
+        case KOREAN_WAR_EXHIBIT_ROOM_3:
+            return @"Korean War Exhibit Room 3";
+        case DONATED_RELICS_EXHIBIT:
+            return @"Donated Relics Exhibit";
+        case ROK_ARMED_FORCES_ROOM:
+            return @"ROK Armed Forces Room";
+        case WAR_HISTORY_EXHIBIT_ROOM_1:
+            return @"War History Exhibit Room 1";
+        case WAR_HISTORY_EXHIBIT_ROOM_2:
+            return @"War History Exhibit Room 2";
         default:
             return nil;
     }
@@ -103,6 +118,31 @@
             break;
         case GONGDEOK_SEOGANG_ROUTE:
             filePath = [[NSBundle mainBundle] pathForResource:@"path2" ofType:@"plist"];
+            break;
+        case NATIONAL_SECURITY_PAVILION_PATH:
+            filePath = [[NSBundle mainBundle] pathForResource:@"NationalSecurityPavilionPath" ofType:@"plist"];
+            break;
+        case KOREAN_WAR_EXHIBIT_ROOM_1:
+            filePath = [[NSBundle mainBundle] pathForResource:@"KoreanWarExhibitRoom1" ofType:@"plist"];
+            break;
+        
+        case KOREAN_WAR_EXHIBIT_ROOM_2:
+            filePath = [[NSBundle mainBundle] pathForResource:@"KoreanWarExhibitRoom2" ofType:@"plist"];
+            break;
+        case KOREAN_WAR_EXHIBIT_ROOM_3:
+            filePath = [[NSBundle mainBundle] pathForResource:@"KoreanWarExhibitRoom3" ofType:@"plist"];
+            break;
+        case WAR_HISTORY_EXHIBIT_ROOM_1:
+            filePath = [[NSBundle mainBundle] pathForResource:@"WarHistoryExhibit" ofType:@"plist"];
+            break;
+        case WAR_HISTORY_EXHIBIT_ROOM_2:
+            filePath = [[NSBundle mainBundle] pathForResource:@"WarHistoryExhibit2" ofType:@"plist"];
+            break;
+        case DONATED_RELICS_EXHIBIT:
+            filePath = [[NSBundle mainBundle] pathForResource:@"DonatedRelicsExhibit" ofType:@"plist"];
+            break;
+        case ROK_ARMED_FORCES_ROOM:
+            filePath = [[NSBundle mainBundle] pathForResource:@"ROKArmedForcesRoom" ofType:@"plist"];
             break;
         default:
             break;
@@ -142,6 +182,8 @@
          BikeRouteMapController* bikeRouteMapController = (BikeRouteMapController*)segue.destinationViewController;
         
         bikeRouteMapController.bikeRoute = polyline;
+        
+        bikeRouteMapController.routeName = [self getRouteNameForBikeRouteEnum:self.selectedBikeRoute];
         
         
         

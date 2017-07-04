@@ -23,6 +23,7 @@ typedef enum SpecificProductCategory{
 
 
 typedef enum AssortedProductCategory{
+    BEER,
     BARBECUE,
     CELL_PHONE,
     HAIRCUT,

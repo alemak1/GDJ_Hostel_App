@@ -931,5 +931,119 @@ The mall also has a rest area called Herb Plaza, where shoppers can take a rest 
 		<key>midCoord</key>
 		<string>{37.4448511,127.0149533}</string>
 	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>national_security_pavilion</string>
+		<key>category</key>
+		<integer>12</integer>
+		<key>specialNote</key>
+		<string>The outdoor area is open all day, but the restored naval boat can only be boarded during the day.</string>
+		<key>physicalAddress</key>
+		<string>29, Itaewon-ro, Yongsan-gu, Seoul
+29, Itaewon-ro, Yongsan-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>https://english.visitkorea.or.kr/</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>An outdoor exhibit adjacted to the main building of the Korean War Memorial, this outdoor exhibit is a tribute to Korean War veterans and also veterans of the 2nd Sea Battle of Yeonpyeong (June 29. 2002), where South Korean patrol boats engaged in a confrontation with North Korean counterparts. It features Korean War era military vehicles, weaponry, and other hardware, and the restored patrol boat can be boarded during the day. </string>
+		<key>name</key>
+		<string>PKM-357 National Security Exhibition Pavilion</string>
+		<key>title</key>
+		<string>PKM-357 National Security Exhibition Pavilion</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5356,126.9775}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5363,126.9785}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5363,126.9775}</string>
+		<key>midCoord</key>
+		<string>{37.5359,126.9782}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>pkrm_357_ship</string>
+		<key>category</key>
+		<integer>12</integer>
+		<key>specialNote</key>
+		<string>The ship can be boarded during the day, including the top, middle, and lower deck.</string>
+		<key>physicalAddress</key>
+		<string>29, Itaewon-ro, Yongsan-gu, Seoul
+29, Itaewon-ro, Yongsan-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>https://english.visitkorea.or.kr/</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>This restored patrol boat commemmorates the 2nd Sea Battle of Yeonpyeong on June 29, 2002, during which 6 South Korean sea man died during a clash with a North Korean counterpart. The hull is manufactured on the same scale (1:1) as the original ship, although the actual ship is on exhibit at the National Security Park located at the Korean Navy 2nd Fleet Command.</string>
+		<key>name</key>
+		<string>2nd Battle of Yeonpyeong Restored Ship</string>
+		<key>title</key>
+		<string>2nd Battle of Yeonpyeong Restored Ship</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5357,126.9780}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5361,126.9784}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5361,126.9780}</string>
+		<key>midCoord</key>
+		<string>{37.5359,126.9782}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>b52_bomber</string>
+		<key>category</key>
+		<integer>12</integer>
+		<key>specialNote</key>
+		<string>A small walkway can be climbed to a vantage point next to the cockpit, but the plane cannot be entered.</string>
+		<key>physicalAddress</key>
+		<string>29, Itaewon-ro, Yongsan-gu, Seoul
+29, Itaewon-ro, Yongsan-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>https://english.visitkorea.or.kr/</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>The B-52 Stratofortress is the U.S. long-range, subsonic, jet-powered strategic bomber, exclusively opened by the USAF since the 1950s.  USAF still operates B-52H for precision strike operations, and will use B-52 forces into 2040.</string>
+		<key>name</key>
+		<string>B-52 Stratofortress</string>
+		<key>title</key>
+		<string>B-52 Stratofortress</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5350,126.9780}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5356,126.9790}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5356,126.9780}</string>
+		<key>midCoord</key>
+		<string>{37.5354,126.9784}</string>
+	</dict>
 </array>
 </plist>

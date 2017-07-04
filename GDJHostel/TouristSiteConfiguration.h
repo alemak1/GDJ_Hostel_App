@@ -30,6 +30,7 @@ typedef enum TouristSiteCategory{
     OTHER,
     SEOUL_TOWER,
     YANGGU_COUNTY,
+    KOREAN_WAR_MEMORIAL,
     TOURIST_SITE_CATEGORY_END_INDEX
 }TouristSiteCategory;
 

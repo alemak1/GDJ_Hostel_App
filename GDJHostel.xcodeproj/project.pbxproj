@@ -28,7 +28,6 @@
 		BD2EA76F1EFFB1E300A8572B /* FeatureScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EA76E1EFFB1E300A8572B /* FeatureScrollViewController.m */; };
 		BD2EA7721EFFC28F00A8572B /* ContactScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EA7711EFFC28F00A8572B /* ContactScrollViewController.m */; };
 		BD2EA7751EFFC4CB00A8572B /* RoomInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EA7741EFFC4CB00A8572B /* RoomInfoController.m */; };
-		BD2F9A8B1F0774E8004B0E09 /* BikeRouteMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2F9A8A1F0774E8004B0E09 /* BikeRouteMapController.m */; };
 		BD305BA41EFF888100F9F2B9 /* Alpha Dance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD305BA31EFF888100F9F2B9 /* Alpha Dance.mp3 */; };
 		BD305BB41EFF8CB500F9F2B9 /* transportation-0.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BA91EFF8CB500F9F2B9 /* transportation-0.caf */; };
 		BD305BB51EFF8CB500F9F2B9 /* transportation-1.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BAA1EFF8CB500F9F2B9 /* transportation-1.caf */; };
@@ -42,6 +41,20 @@
 		BD305BBD1EFF8CB500F9F2B9 /* transportation-9.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BB21EFF8CB500F9F2B9 /* transportation-9.caf */; };
 		BD305BBE1EFF8CB500F9F2B9 /* transportation-10.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BB31EFF8CB500F9F2B9 /* transportation-10.caf */; };
 		BD305BC01EFF8CC700F9F2B9 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = BD305BBF1EFF8CC700F9F2B9 /* background-music-aac.caf */; };
+		BD305CD11F0B96CB00F0CC7B /* NationalSecurityPavilionPath.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD305CD01F0B96CB00F0CC7B /* NationalSecurityPavilionPath.plist */; };
+		BD305CD31F0B9B2100F0CC7B /* KoreanWarExhibitRoom3.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD305CD21F0B9B2100F0CC7B /* KoreanWarExhibitRoom3.plist */; };
+		BD305CD51F0B9D7D00F0CC7B /* DonatedRelicsExhibit.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD305CD41F0B9D7D00F0CC7B /* DonatedRelicsExhibit.plist */; };
+		BD305CD71F0B9F3D00F0CC7B /* ROKArmedForcesRoom.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD305CD61F0B9F3D00F0CC7B /* ROKArmedForcesRoom.plist */; };
+		BD305CD91F0BA88500F0CC7B /* BikeRouteMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2F9A8A1F0774E8004B0E09 /* BikeRouteMapController.m */; };
+		BD305CDA1F0BA8CA00F0CC7B /* BikeRoutePoint.h in Sources */ = {isa = PBXBuildFile; fileRef = BD305CD81F0BA62700F0CC7B /* BikeRoutePoint.h */; };
+		BD305CDC1F0BA8E600F0CC7B /* BikeRoutePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = BD305CDB1F0BA8E600F0CC7B /* BikeRoutePoint.m */; };
+		BD305CDE1F0BB43300F0CC7B /* KoreanWarExhibitRoom1.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD305CDD1F0BB43300F0CC7B /* KoreanWarExhibitRoom1.plist */; };
+		BD305CE01F0BB44300F0CC7B /* KoreanWarExhibitRoom2.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD305CDF1F0BB44300F0CC7B /* KoreanWarExhibitRoom2.plist */; };
+		BD305CE21F0BB7E400F0CC7B /* WarMemorialMainBuilding.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD305CE11F0BB7E400F0CC7B /* WarMemorialMainBuilding.plist */; };
+		BD305CE41F0BBBA700F0CC7B /* KoreanWarMemorialCircleRegions.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD305CE31F0BBBA700F0CC7B /* KoreanWarMemorialCircleRegions.plist */; };
+		BD305CE61F0BC2B300F0CC7B /* WarHistoryExhibit.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD305CE51F0BC2B300F0CC7B /* WarHistoryExhibit.plist */; };
+		BD305CE81F0BC56800F0CC7B /* WarHistoryExhibit2.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD305CE71F0BC56800F0CC7B /* WarHistoryExhibit2.plist */; };
+		BD305CEA1F0BCCEE00F0CC7B /* WeddingHall.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD305CE91F0BCCEE00F0CC7B /* WeddingHall.plist */; };
 		BD30C5171EFDDCE70032FE64 /* HostelInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD30C5161EFDDCE70032FE64 /* HostelInformationController.m */; };
 		BD30C51A1EFDE5240032FE64 /* MenuComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = BD30C5191EFDE5240032FE64 /* MenuComponent.m */; };
 		BD3117DB1EFE800900D6A5D6 /* content_iPhone.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD3117DA1EFE800900D6A5D6 /* content_iPhone.plist */; };
@@ -162,6 +175,19 @@
 		BD305BB21EFF8CB500F9F2B9 /* transportation-9.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-9.caf"; sourceTree = "<group>"; };
 		BD305BB31EFF8CB500F9F2B9 /* transportation-10.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "transportation-10.caf"; sourceTree = "<group>"; };
 		BD305BBF1EFF8CC700F9F2B9 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
+		BD305CD01F0B96CB00F0CC7B /* NationalSecurityPavilionPath.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NationalSecurityPavilionPath.plist; sourceTree = "<group>"; };
+		BD305CD21F0B9B2100F0CC7B /* KoreanWarExhibitRoom3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KoreanWarExhibitRoom3.plist; sourceTree = "<group>"; };
+		BD305CD41F0B9D7D00F0CC7B /* DonatedRelicsExhibit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DonatedRelicsExhibit.plist; sourceTree = "<group>"; };
+		BD305CD61F0B9F3D00F0CC7B /* ROKArmedForcesRoom.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ROKArmedForcesRoom.plist; sourceTree = "<group>"; };
+		BD305CD81F0BA62700F0CC7B /* BikeRoutePoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BikeRoutePoint.h; sourceTree = "<group>"; };
+		BD305CDB1F0BA8E600F0CC7B /* BikeRoutePoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BikeRoutePoint.m; sourceTree = "<group>"; };
+		BD305CDD1F0BB43300F0CC7B /* KoreanWarExhibitRoom1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KoreanWarExhibitRoom1.plist; sourceTree = "<group>"; };
+		BD305CDF1F0BB44300F0CC7B /* KoreanWarExhibitRoom2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KoreanWarExhibitRoom2.plist; sourceTree = "<group>"; };
+		BD305CE11F0BB7E400F0CC7B /* WarMemorialMainBuilding.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WarMemorialMainBuilding.plist; sourceTree = "<group>"; };
+		BD305CE31F0BBBA700F0CC7B /* KoreanWarMemorialCircleRegions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KoreanWarMemorialCircleRegions.plist; sourceTree = "<group>"; };
+		BD305CE51F0BC2B300F0CC7B /* WarHistoryExhibit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WarHistoryExhibit.plist; sourceTree = "<group>"; };
+		BD305CE71F0BC56800F0CC7B /* WarHistoryExhibit2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WarHistoryExhibit2.plist; sourceTree = "<group>"; };
+		BD305CE91F0BCCEE00F0CC7B /* WeddingHall.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WeddingHall.plist; sourceTree = "<group>"; };
 		BD30C5151EFDDCD50032FE64 /* HostelInformationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostelInformationController.h; sourceTree = "<group>"; };
 		BD30C5161EFDDCE70032FE64 /* HostelInformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelInformationController.m; sourceTree = "<group>"; };
 		BD30C5181EFDE5160032FE64 /* MenuComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuComponent.h; sourceTree = "<group>"; };
@@ -490,6 +516,17 @@
 				BD14B0AC1F0732490024668D /* path1.plist */,
 				BD2B782C1F0737BD00C33184 /* path2.plist */,
 				BD5C3EC71EFD542500616400 /* PlacemarksNearHostel.plist */,
+				BD305CD01F0B96CB00F0CC7B /* NationalSecurityPavilionPath.plist */,
+				BD305CD21F0B9B2100F0CC7B /* KoreanWarExhibitRoom3.plist */,
+				BD305CD41F0B9D7D00F0CC7B /* DonatedRelicsExhibit.plist */,
+				BD305CD61F0B9F3D00F0CC7B /* ROKArmedForcesRoom.plist */,
+				BD305CDD1F0BB43300F0CC7B /* KoreanWarExhibitRoom1.plist */,
+				BD305CDF1F0BB44300F0CC7B /* KoreanWarExhibitRoom2.plist */,
+				BD305CE11F0BB7E400F0CC7B /* WarMemorialMainBuilding.plist */,
+				BD305CE31F0BBBA700F0CC7B /* KoreanWarMemorialCircleRegions.plist */,
+				BD305CE51F0BC2B300F0CC7B /* WarHistoryExhibit.plist */,
+				BD305CE71F0BC56800F0CC7B /* WarHistoryExhibit2.plist */,
+				BD305CE91F0BCCEE00F0CC7B /* WeddingHall.plist */,
 			);
 			name = plists;
 			sourceTree = "<group>";
@@ -501,6 +538,8 @@
 				BD14B0AA1F072E230024668D /* BikingRoutesController.m */,
 				BD2F9A891F0774D7004B0E09 /* BikeRouteMapController.h */,
 				BD2F9A8A1F0774E8004B0E09 /* BikeRouteMapController.m */,
+				BD305CD81F0BA62700F0CC7B /* BikeRoutePoint.h */,
+				BD305CDB1F0BA8E600F0CC7B /* BikeRoutePoint.m */,
 			);
 			name = BikeRouteControllers;
 			sourceTree = "<group>";
@@ -693,14 +732,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD902CE81EFD31F600DD1034 /* LaunchScreen.storyboard in Resources */,
+				BD305CEA1F0BCCEE00F0CC7B /* WeddingHall.plist in Resources */,
 				BD305BB81EFF8CB500F9F2B9 /* transportation-4.caf in Resources */,
+				BD305CD51F0B9D7D00F0CC7B /* DonatedRelicsExhibit.plist in Resources */,
 				BD305BBE1EFF8CB500F9F2B9 /* transportation-10.caf in Resources */,
 				BD902CE51EFD31F600DD1034 /* Assets.xcassets in Resources */,
 				BD5C3EC81EFD542500616400 /* PlacemarksNearHostel.plist in Resources */,
 				BD305BBD1EFF8CB500F9F2B9 /* transportation-9.caf in Resources */,
 				BD305BBC1EFF8CB500F9F2B9 /* transportation-8.caf in Resources */,
+				BD305CD11F0B96CB00F0CC7B /* NationalSecurityPavilionPath.plist in Resources */,
 				BD3117DB1EFE800900D6A5D6 /* content_iPhone.plist in Resources */,
 				BD34C1D61F079DBB00CD0DD3 /* LottoHotel.plist in Resources */,
+				BD305CE01F0BB44300F0CC7B /* KoreanWarExhibitRoom2.plist in Resources */,
 				BD305BB71EFF8CB500F9F2B9 /* transportation-3.caf in Resources */,
 				BD305BB51EFF8CB500F9F2B9 /* transportation-1.caf in Resources */,
 				BD5C3EC61EFD53FC00616400 /* Seoul.geojson in Resources */,
@@ -714,12 +757,19 @@
 				BD305BBB1EFF8CB500F9F2B9 /* transportation-7.caf in Resources */,
 				BD554C8F1F090FBF00B43C8C /* StoryboardB.storyboard in Resources */,
 				BD2995B11EFE68EB009E64BF /* SurvivalWordsPhrases.plist in Resources */,
+				BD305CD71F0B9F3D00F0CC7B /* ROKArmedForcesRoom.plist in Resources */,
 				BD305BC01EFF8CC700F9F2B9 /* background-music-aac.caf in Resources */,
 				BD5C3ECA1EFD579100616400 /* StoryboardA.storyboard in Resources */,
+				BD305CDE1F0BB43300F0CC7B /* KoreanWarExhibitRoom1.plist in Resources */,
 				BD305BA41EFF888100F9F2B9 /* Alpha Dance.mp3 in Resources */,
 				BDFBFBA91F03E5BE00185F47 /* WeatherForecastSites.plist in Resources */,
+				BD305CE21F0BB7E400F0CC7B /* WarMemorialMainBuilding.plist in Resources */,
 				BD902CF01EFD325100DD1034 /* HostelArea.plist in Resources */,
+				BD305CE41F0BBBA700F0CC7B /* KoreanWarMemorialCircleRegions.plist in Resources */,
+				BD305CD31F0B9B2100F0CC7B /* KoreanWarExhibitRoom3.plist in Resources */,
+				BD305CE61F0BC2B300F0CC7B /* WarHistoryExhibit.plist in Resources */,
 				BD14B0AD1F0732490024668D /* path1.plist in Resources */,
+				BD305CE81F0BC56800F0CC7B /* WarHistoryExhibit2.plist in Resources */,
 				BD305BBA1EFF8CB500F9F2B9 /* transportation-6.caf in Resources */,
 				BD305BB91EFF8CB500F9F2B9 /* transportation-5.caf in Resources */,
 			);
@@ -732,6 +782,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD305CDA1F0BA8CA00F0CC7B /* BikeRoutePoint.h in Sources */,
+				BD305CD91F0BA88500F0CC7B /* BikeRouteMapController.m in Sources */,
 				BD7670DC1F02037000918A20 /* TouristSiteManager.m in Sources */,
 				BDF2348C1F0021BA00E9ED63 /* HostelCollectionViewCell.m in Sources */,
 				BD312E021F01517B00FB90E3 /* UIView+HelperMethods.m in Sources */,
@@ -750,13 +802,13 @@
 				BDF55EBD1F036906003FC663 /* NSString+HelperMethods.m in Sources */,
 				BD3844AC1EFE4FD300F2E981 /* HostelLocationAnnotationView.m in Sources */,
 				BD3A9C7D1F02839E006D1CD8 /* AppLocationManager.m in Sources */,
-				BD2F9A8B1F0774E8004B0E09 /* BikeRouteMapController.m in Sources */,
 				BD30C5171EFDDCE70032FE64 /* HostelInformationController.m in Sources */,
 				BD3151141F00C844002332B8 /* TouristSiteCollectionViewController.m in Sources */,
 				BDE3BA341F08019F00DFDEF4 /* SeoulLocationAnnotation+HelperMethods.m in Sources */,
 				BDE3BA241F07EE6200DFDEF4 /* WebViewController.m in Sources */,
 				BD3CB8621F0A24620002A275 /* MonitoredRegionsController.m in Sources */,
 				BD68476D1F00F102004732FB /* ImageKeyConstants.m in Sources */,
+				BD305CDC1F0BA8E600F0CC7B /* BikeRoutePoint.m in Sources */,
 				BD3844A61EFE450800F2E981 /* DirectionsMenuController.m in Sources */,
 				BD34C1DE1F07A8E200CD0DD3 /* PolygonSelectionController.m in Sources */,
 				BDFBFBA41F03E41400185F47 /* WeatherForecastSite.m in Sources */,

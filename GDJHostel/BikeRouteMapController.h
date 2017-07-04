@@ -20,6 +20,8 @@
 
 @property MKPolyline* bikeRoute;
 
+@property NSString* routeName;
+
 @end
 
 #endif /* BikeRouteMapController_h */

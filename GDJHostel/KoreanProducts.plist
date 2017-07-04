@@ -3,86 +3,242 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>assortedCategory</key>
+		<string>0</string>
 		<key>unitQuantity</key>
-		<string></string>
+		<string>360 ml bottle</string>
 		<key>specificCategory</key>
 		<integer>0</integer>
 		<key>generalCategory</key>
 		<integer>0</integer>
 		<key>priceInKRW</key>
-		<integer>0</integer>
+		<integer>1190</integer>
 		<key>imagePath</key>
 		<string></string>
 		<key>name</key>
-		<string></string>
+		<string>Cham E Seul Beer</string>
 		<key>brand</key>
-		<string></string>
+		<string>Cham E Seul</string>
 	</dict>
 	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
 		<key>unitQuantity</key>
-		<string></string>
+		<string>360 ml</string>
 		<key>specificCategory</key>
 		<integer>0</integer>
 		<key>generalCategory</key>
 		<integer>0</integer>
 		<key>priceInKRW</key>
-		<integer>0</integer>
+		<integer>1280</integer>
 		<key>imagePath</key>
 		<string></string>
 		<key>name</key>
-		<string></string>
+		<string>Enjoy Original Beer</string>
 		<key>brand</key>
-		<string></string>
+		<string>Enjoy Original</string>
 	</dict>
 	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
 		<key>unitQuantity</key>
-		<string></string>
+		<string>6 pack (360 ml per bottle)</string>
 		<key>specificCategory</key>
 		<integer>0</integer>
 		<key>generalCategory</key>
 		<integer>0</integer>
 		<key>priceInKRW</key>
-		<integer>0</integer>
+		<integer>7140</integer>
 		<key>imagePath</key>
 		<string></string>
 		<key>name</key>
-		<string></string>
+		<string>Cham E Seul Beer</string>
 		<key>brand</key>
-		<string></string>
+		<string>Cham E Seul</string>
 	</dict>
 	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
 		<key>unitQuantity</key>
-		<string></string>
+		<string>500 ml</string>
 		<key>specificCategory</key>
 		<integer>0</integer>
 		<key>generalCategory</key>
 		<integer>0</integer>
 		<key>priceInKRW</key>
-		<integer>0</integer>
+		<integer>1870</integer>
 		<key>imagePath</key>
 		<string></string>
 		<key>name</key>
-		<string></string>
+		<string>Cass Fresh Beer</string>
 		<key>brand</key>
-		<string></string>
+		<string>Cass Fresh Beer</string>
 	</dict>
 	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
 		<key>unitQuantity</key>
-		<string></string>
+		<string>6 pack (355 ml per can)</string>
 		<key>specificCategory</key>
 		<integer>0</integer>
 		<key>generalCategory</key>
 		<integer>0</integer>
 		<key>priceInKRW</key>
-		<integer>0</integer>
+		<integer>8220</integer>
 		<key>imagePath</key>
 		<string></string>
 		<key>name</key>
-		<string></string>
+		<string>Cass Fresh Beer</string>
 		<key>brand</key>
-		<string></string>
+		<string>Cass Fresh</string>
 	</dict>
 	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
+		<key>unitQuantity</key>
+		<string>500 ml can</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>1880</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Hite Extra Cold</string>
+		<key>brand</key>
+		<string>Hite </string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
+		<key>unitQuantity</key>
+		<string>500 ml per can</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>1880</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Max All Malt Beer</string>
+		<key>brand</key>
+		<string>Max Beer</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
+		<key>unitQuantity</key>
+		<string>500 ml</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>1410</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Hite Extra Cold</string>
+		<key>brand</key>
+		<string>Hite</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
+		<key>unitQuantity</key>
+		<string>1L bottle</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>2650</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Max All Malt Beer</string>
+		<key>brand</key>
+		<string>Max Beer</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
+		<key>unitQuantity</key>
+		<string>1.6L bottle</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>4200</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Max All Malt Beer</string>
+		<key>brand</key>
+		<string>Max Beer</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
+		<key>unitQuantity</key>
+		<string>(6 pack, 355 ml per can)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>8220</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Hite Extra Cold</string>
+		<key>brand</key>
+		<string>Hite Beer</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
+		<key>unitQuantity</key>
+		<string>(12 pack, 355 ml per can)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>16440</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Hite Extra Cold</string>
+		<key>brand</key>
+		<string>Hite Beer</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
+		<key>unitQuantity</key>
+		<string>(6 pack, 355 ml per can)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>10200</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Cafri Premium Beer</string>
+		<key>brand</key>
+		<string>Cafri Premium Beer</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
 		<key>unitQuantity</key>
 		<string></string>
 		<key>specificCategory</key>
@@ -94,7 +250,43 @@
 		<key>imagePath</key>
 		<string></string>
 		<key>name</key>
+		<string>Conpurost</string>
+		<key>brand</key>
+		<string>Tony the Tiger</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
+		<key>unitQuantity</key>
 		<string></string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>0</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Amond Prake</string>
+		<key>brand</key>
+		<string>(Pink Girl, Yellow-Hatted Pilot)</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>0</integer>
+		<key>unitQuantity</key>
+		<string></string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>5680</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Ohgok Cocbol</string>
 		<key>brand</key>
 		<string></string>
 	</dict>
