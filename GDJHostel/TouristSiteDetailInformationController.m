@@ -268,7 +268,7 @@ static void* TouristSiteDetailInformationContext = &TouristSiteDetailInformation
     CGFloat openingTime = [[self.touristSiteConfiguration openingTime] doubleValue];
     CGFloat closingTime = [[self.touristSiteConfiguration closingTime] doubleValue];
     
-    NSString* operatingHoursString;
+    NSString* operatingHoursString = @"";
     
     if(openingTime < 0.00 || closingTime < 0.00){
         operatingHoursString = @"Open All Hours";

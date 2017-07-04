@@ -17,6 +17,7 @@
 
 @property AnnotationManager* annotationManager;
 
+@property NSMutableArray<SeoulLocationAnnotation*>* selectedAnnotations;
 
 @end
 
@@ -27,9 +28,17 @@ BOOL _seeNameOnly = true;
 
 -(void)viewWillAppear:(BOOL)animated{
     
+    
+    /** Initialize set for user-selected annotations **/
+    
+    self.selectedAnnotations = [[NSMutableArray alloc] init];
+    
     /** Set table view delegate and register table view cells **/
     
     [self.tableView setDelegate:self];
+    
+    [self.tableView setAllowsMultipleSelection:YES];
+    [self.tableView setAllowsMultipleSelectionDuringEditing:YES];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"TableViewCell"];
     
@@ -104,9 +113,19 @@ BOOL _seeNameOnly = true;
 #pragma mark *********** TABLEVIEW DELEGATE METHODS
 
 
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    SeoulLocationAnnotation* annotation = [self.annotationManager getAnnotationForIndexPath:indexPath];
+    
+    [self.selectedAnnotations removeObject:annotation];
+    
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     SeoulLocationAnnotation* annotation = [self.annotationManager getAnnotationForIndexPath:indexPath];
+    
+    [self.selectedAnnotations addObject:annotation];
     
     NSString* title = annotation.title;
 
@@ -122,6 +141,8 @@ BOOL _seeNameOnly = true;
     //TODO: Add the selected annotation to a map view; perform segue; (use the prepare segue method to access the map view of the destination controller or another stored property (i.e. an array of annotations)
     
     //TODO: allow multiple selection on the table possibly
+    
+    
     
     
 }

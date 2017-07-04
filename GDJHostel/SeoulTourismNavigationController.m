@@ -40,14 +40,25 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
     
-        [self performSegueWithIdentifier:@"showTouristSiteDetailController" sender:nil];
+        NSString* segueIdentifier = @"showTouristSiteDetailController";
+        
+        if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+            
+            segueIdentifier = @"showTouristSiteDetailController_iPad";
+            
+        }
+        
+        
+        [self performSegueWithIdentifier:segueIdentifier sender:nil];
+        
+        
     });
     
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    if([segue.identifier isEqualToString:@"showTouristSiteDetailController"]){
+    if([segue.identifier isEqualToString:@"showTouristSiteDetailController"] || [segue.identifier isEqualToString:@"showTouristSiteDetailController_iPad"]){
         
         TouristSiteDetailInformationController* detailInfoController = (TouristSiteDetailInformationController*)segue.destinationViewController;
         

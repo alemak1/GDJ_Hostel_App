@@ -60,7 +60,7 @@
     self.menuComponent = [[MenuComponent alloc] initMenuWithFrame:desiredMenuFrame
                     targetView:self.view
                     direction:menuDirectionRightToLeft
-                    options:@[@"About Hostel", @"Directions", @"Contact Info", @"Seoul Tourism",@"Weather",@"Survival Korean", @"Product Prices",@"Monitored Regions",@"Acknowledgements"]
+                    options:@[@"About Hostel", @"Explore Nearby", @"Contact Info", @"Seoul Tourism",@"Weather",@"Survival Korean", @"Product Prices",@"Monitored Regions",@"Acknowledgements"]
                     optionImages:@[@"informationB", @"compassB", @"contactPhoneB", @"templeB",@"cloudyA",@"chatA", @"shoppingCartB",@"mapAddressB",@"trophyB"]];
 
 }
@@ -115,7 +115,7 @@
                 requestedViewController = [storyBoardB instantiateViewControllerWithIdentifier:@"ProductPriceNavigationController"];
                 break;
             case 7:
-                requestedViewController = [storyBoardB instantiateViewControllerWithIdentifier:@"MonitoredRegionsController"];
+                requestedViewController = [self getMonitoredRegionsControllerFromStoryboard];
                 break;
             case 8:
                 //Acknowledgements
@@ -134,6 +134,24 @@
 
 -(void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection{
     [self.menuComponent resetMenuView:[self traitCollection]];
+}
+
+
+-(UIViewController*)getMonitoredRegionsControllerFromStoryboard{
+    
+    UIStoryboard* storyboardB = [UIStoryboard storyboardWithName:@"StoryboardB" bundle:nil];
+    
+    
+    NSString *storyBoardIdentifier = @"MonitoredRegionsController_iPad";
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        storyBoardIdentifier = @"MonitoredRegionsController";
+    }
+    
+    
+    return [storyboardB instantiateViewControllerWithIdentifier:storyBoardIdentifier];
+    
 }
 
 -(UIViewController*)getInformationControllerFromStoryBoard{

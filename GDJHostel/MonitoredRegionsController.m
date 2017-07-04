@@ -69,7 +69,7 @@
     
     
     if(!hasSwitch){
-        CGRect toggleFrame = [cell.contentView getFrameAdjustedRelativeToContentViewWithXCoordOffset:0.95 andWithYCoordOffset:0.10 andWithWidthMultiplier:0.20 andWithHeightMultiplier:0.90];
+        CGRect toggleFrame = [cell.contentView getFrameAdjustedRelativeToContentViewWithXCoordOffset:0.87 andWithYCoordOffset:0.10 andWithWidthMultiplier:0.20 andWithHeightMultiplier:0.90];
     
         UISwitch* monitoringToggle = [[UISwitch alloc] initWithFrame:toggleFrame];
     
@@ -87,6 +87,10 @@
     
     
     [cell.textLabel setText:title];
+    [cell.textLabel setFont:[UIFont fontWithName:@"Futura-Medium" size:12.0]];
+    [cell.textLabel setAdjustsFontSizeToFitWidth:YES];
+    [cell.textLabel setMinimumScaleFactor:0.50];
+    
     [cell.detailTextLabel setText:address];
     
     
