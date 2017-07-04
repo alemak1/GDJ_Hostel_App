@@ -199,7 +199,7 @@
                         <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Z5f-AD-uXD">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rO1-l1-h0H">
-                                <rect key="frame" x="266" y="7" width="128" height="30"/>
+                                <rect key="frame" x="519" y="7" width="128" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Routes Menu"/>
@@ -346,10 +346,10 @@
                                 </connections>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="MdY-q1-eau">
-                                <rect key="frame" x="103" y="522" width="208" height="120"/>
+                                <rect key="frame" x="55" y="522" width="305" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z9i-xk-k34">
-                                        <rect key="frame" x="0.0" y="0.0" width="208" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Eay-Gf-X4O"/>
                                         </constraints>
@@ -357,7 +357,8 @@
                                             <attributedString key="attributedTitle">
                                                 <fragment content="     Directions to Starting Point">
                                                     <attributes>
-                                                        <font key="NSFont" size="14" name=".SFNSText"/>
+                                                        <color key="NSColor" red="0.9659712211" green="1" blue="0.42817059880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="21" name="Futura-Medium"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -368,12 +369,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CbI-8t-UbM">
-                                        <rect key="frame" x="0.0" y="80" width="208" height="40"/>
+                                        <rect key="frame" x="0.0" y="80" width="305" height="40"/>
                                         <state key="normal" image="compassA">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="     Directions to Endpoint">
                                                     <attributes>
-                                                        <font key="NSFont" size="14" name=".SFNSText"/>
+                                                        <color key="NSColor" red="0.9659712211" green="1" blue="0.42817059880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="21" name="Futura-Medium"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -399,7 +401,7 @@
                                 </variation>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93137937780000002" green="0.61003148060000001" blue="0.57834213160000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kqu-nU-pSQ" firstAttribute="height" secondItem="rum-63-NU5" secondAttribute="height" id="1n2-9h-SLp"/>
                             <constraint firstAttribute="trailing" secondItem="kqu-nU-pSQ" secondAttribute="trailing" id="2Je-4E-Tgc"/>
@@ -432,7 +434,7 @@
                             <constraint firstAttribute="trailing" secondItem="kqu-nU-pSQ" secondAttribute="trailing" id="iqN-8q-aO8"/>
                             <constraint firstItem="kqu-nU-pSQ" firstAttribute="height" secondItem="rum-63-NU5" secondAttribute="height" multiplier="0.7" id="jkX-fQ-lfr"/>
                             <constraint firstItem="kqu-nU-pSQ" firstAttribute="leading" secondItem="MdY-q1-eau" secondAttribute="trailing" constant="85.5" id="lQx-8t-WBA">
-                                <variation key="heightClass=compact" constant="40"/>
+                                <variation key="heightClass=compact" constant="20"/>
                             </constraint>
                             <constraint firstItem="kqu-nU-pSQ" firstAttribute="leading" secondItem="MdY-q1-eau" secondAttribute="trailing" id="lWn-im-ii2"/>
                             <constraint firstItem="kqu-nU-pSQ" firstAttribute="top" secondItem="XWi-2A-N9k" secondAttribute="bottom" id="n9O-tf-0IT"/>
@@ -539,7 +541,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zb-L8-JGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3070" y="-1078"/>
+            <point key="canvasLocation" x="3052" y="-1151"/>
         </scene>
         <!--Scrollable Info Controller-->
         <scene sceneID="Qpe-u1-zVL">
@@ -1526,7 +1528,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecast Period" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3q-vg-Cya">
-                                <rect key="frame" x="222" y="366" width="165" height="14"/>
+                                <rect key="frame" x="221" y="367" width="166" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
