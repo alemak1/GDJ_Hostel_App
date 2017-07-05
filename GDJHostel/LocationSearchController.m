@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LocationSearchController.h"
+#import "AppLocationManager.h"
 
 @interface LocationSearchController ()
 
@@ -25,24 +26,25 @@
 
 -(void)viewWillLayoutSubviews{
     
-    
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     
     [self.mainMapView setDelegate:self];
-    
-    
     [self.locationSearchBar setDelegate:self];
+    
+    
+    //Configure the map view so that it's coordinate region is centered on GDJ hostel
+    
+    CLLocation* userLocation = [[UserLocationManager sharedLocationManager] getLastUpdatedUserLocation];
+    
+    [self.mainMapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.001, 0.001))];
+    
 }
 
 -(void)viewDidLoad{
     
-    //Configure the map view so that it's coordinate region is centered on GDJ hostel
-    
-    CLLocationCoordinate2D hostelLocationCoordinate = CLLocationCoordinate2DMake(37.541593, 126.952866);
-    
-    [self.mainMapView setRegion:MKCoordinateRegionMake(hostelLocationCoordinate, MKCoordinateSpanMake(0.01, 0.01))];
     
     
 }

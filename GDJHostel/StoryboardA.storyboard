@@ -245,7 +245,7 @@
                                 </connections>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cD-5o-2Fz">
-                                <rect key="frame" x="154.5" y="123" width="461" height="58"/>
+                                <rect key="frame" x="153.5" y="123" width="461" height="58"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Directions to GDJ Hostel">
                                         <attributes>
@@ -260,7 +260,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytP-Yy-LH6">
                                 <rect key="frame" x="180.5" y="737" width="307" height="31.5"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Distance to Hostel:">
+                                    <fragment content="Distance to Destination:">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="24" name="Futura-Medium"/>
@@ -423,13 +423,14 @@
                     <connections>
                         <outlet property="distanceToHostelIndicator" destination="mn8-B5-JIC" id="BHU-H0-Lct"/>
                         <outlet property="routeDisplayMap" destination="EVg-l5-Hg6" id="a2D-kU-f4c"/>
+                        <outlet property="titleLabel" destination="0cD-5o-2Fz" id="gIG-Y5-oQh"/>
                         <outlet property="transportationMode" destination="NRo-py-fUa" id="DN0-1h-go3"/>
                         <outlet property="travelTimeIndicator" destination="fDg-Rk-KiO" id="9jg-Yv-hLz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GNx-NQ-iup" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3359" y="-3124"/>
+            <point key="canvasLocation" x="-3991" y="-3149"/>
         </scene>
         <!--To Hostel Directions Controller-->
         <scene sceneID="7RE-Nx-Aq4">

@@ -14,6 +14,7 @@
 #import "AppLocationManager.h"
 #import "MKDirectionsRequest+HelperMethods.h"
 #import "WarMemorialNavigationController.h"
+#import "DestinationCategory.h"
 
 /**
 #import "TouristLocationSelectionNavigationController.h"
@@ -26,7 +27,8 @@
 typedef enum VALID_NEXT_VIEW_CONTROLLER{
     TOURIST_LOCATION_TABLEVIEW_CONTROLLER = 0,
     LOCATION_SEARCH_CONTROLLER,
-    TO_HOSTEL_DIRECTIONS_CONTROLLER,
+    TO_AIRPORT_DIRECTIONS_CONTROLLER,
+    TO_SEOUL_STATION_DIRECTIONS_CONTROLLER,
     HOSTEL_LOCAL_AREA_MAP_CONTROLLER,
     BIKING_JOGGING_ROUTE_CONTROLLER,
     POLYGON_NAVIGATION_CONTROLLER,
@@ -184,9 +186,6 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
         case TOURIST_LOCATION_TABLEVIEW_CONTROLLER:
             nextViewController = [self getNavigationControllerForTouristLocationTableViewController];
             break;
-        case TO_HOSTEL_DIRECTIONS_CONTROLLER:
-            nextViewController = [self getToHostelDirectionsController];
-            break;
         case LOCATION_SEARCH_CONTROLLER:
             nextViewController = [self getLocationSearchController];
             break;
@@ -201,6 +200,12 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
             break;
         case WAR_MEMORIAL_NAVIGATION_CONTROLLER:
             nextViewController = [self getWarMemorialNavigationController];
+            break;
+        case TO_AIRPORT_DIRECTIONS_CONTROLLER:
+            nextViewController = [self getToAirportDirectionsController];
+            break;
+        case TO_SEOUL_STATION_DIRECTIONS_CONTROLLER:
+            nextViewController = [self getToSeoulStationDirectionsController];
             break;
         default:
             break;
@@ -231,8 +236,6 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
 -(NSString*)getNextViewControllerTitleFor:(VALID_NEXT_VIEW_CONTROLLER)validNextViewController{
     
     switch (validNextViewController) {
-        case TO_HOSTEL_DIRECTIONS_CONTROLLER:
-            return @"Route to Hostel";
         case TOURIST_LOCATION_TABLEVIEW_CONTROLLER:
             return @"List of Recommended Places";
         case LOCATION_SEARCH_CONTROLLER:
@@ -245,6 +248,10 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
             return @"Local Building, Park, and Site Regions";
         case WAR_MEMORIAL_NAVIGATION_CONTROLLER:
             return @"War Memorial Navigation Aid";
+        case TO_SEOUL_STATION_DIRECTIONS_CONTROLLER:
+            return @"Directions to Seoul Station";
+        case TO_AIRPORT_DIRECTIONS_CONTROLLER:
+            return @"Directions to Incheon Airport";
         case LAST_VIEW_CONTROLLER:
             return nil;
     }
@@ -293,6 +300,63 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
 
 }
 
+-(ToHostelDirectionsController*)getToAirportDirectionsController{
+    
+    MKDirectionsResponse* directionsResponse = [MKDirectionsRequest getDirectionsResponseForIncheonInternationalAirportDirectionsRequestForTransportationMode:TRANSIT];
+    
+    
+    UIStoryboard* storyBoardA = [UIStoryboard storyboardWithName:@"StoryboardA" bundle:nil];
+    
+    NSString* storyboardIdentifier = @"ToHostelDirectionsController";
+    
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+        
+        storyboardIdentifier = @"ToHostelDirectionsController_iPad";
+        
+    }
+    
+    ToHostelDirectionsController* nextViewController = [storyBoardA instantiateViewControllerWithIdentifier:storyboardIdentifier];
+    
+    
+    
+    [nextViewController.titleLabel setAttributedText:[self getAttributedTitleForToDestinationControllerWithString:@"Directions to Airport"]];
+    
+    nextViewController.destinationCategory = INCHEON_AIRPORT;
+    
+    nextViewController.directionsResponse = directionsResponse;
+    
+    return nextViewController;
+
+}
+
+
+-(ToHostelDirectionsController*)getToSeoulStationDirectionsController{
+    
+    MKDirectionsResponse* directionsResponse = [MKDirectionsRequest getDirectionsResponseForSeoulStationDirectionsRequestForTransportationMode:TRANSIT];
+    
+    
+    UIStoryboard* storyBoardA = [UIStoryboard storyboardWithName:@"StoryboardA" bundle:nil];
+    
+    NSString* storyboardIdentifier = @"ToHostelDirectionsController";
+    
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+        
+        storyboardIdentifier = @"ToHostelDirectionsController_iPad";
+        
+    }
+    
+    ToHostelDirectionsController* nextViewController = [storyBoardA instantiateViewControllerWithIdentifier:storyboardIdentifier];
+    
+    [nextViewController.titleLabel setAttributedText:[self getAttributedTitleForToDestinationControllerWithString:@"Directions to Seoul Station"]];
+    
+    
+    nextViewController.destinationCategory = SEOUL_STATION;
+    
+    nextViewController.directionsResponse = directionsResponse;
+    
+    return nextViewController;
+}
+
 -(ToHostelDirectionsController*)getToHostelDirectionsController{
     
     MKDirectionsResponse* directionsResponse = [MKDirectionsRequest getDirectionsResponseForHostelDirectionsRequestForTransportationMode:WALK];
@@ -315,7 +379,18 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     return nextViewController;
     
     
+}
+
+/** Helper method for configuring the title label for the "To Destination" (e.g. To Hostel, To Aiprot, To Seoul Station) Controlller  **/
+
+-(NSAttributedString*)getAttributedTitleForToDestinationControllerWithString:(NSString*)string{
+
+    NSDictionary* attributesDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Futura-Bold" size:30.0],NSFontAttributeName,[UIColor blueColor],NSForegroundColorAttributeName, nil];
+
+    NSAttributedString* attributedTitle = [[NSAttributedString alloc]initWithString:string attributes:attributesDict];
     
+    
+    return attributedTitle;
 }
 
 - (IBAction)unwindToDirectionsMenuController:(UIStoryboardSegue *)unwindSegue

@@ -12,8 +12,11 @@
 #import "MKDirectionsRequest+HelperMethods.h"
 #import "NSString+HelperMethods.h"
 #import "UIViewController+HelperMethods.h"
+#import "AppLocationManager.h"
 
 @interface ToHostelDirectionsController ()
+
+
 
 
 
@@ -42,8 +45,6 @@
 - (IBAction)makeRequestForNewTransportationType:(UISegmentedControl *)sender;
 
 
-- (IBAction)viewDirectionsInGoogleMaps:(UIButton *)sender;
-
 /** NumberFormatters for the distance and type to the hostel are preconfigured, lazily loaded **/
 
 @property (readonly) NSNumberFormatter* travelTimeNumberFormatter;
@@ -53,9 +54,17 @@
 - (IBAction)dismissCurrentViewController:(UIButton *)sender;
 
 
+/** Read-only Properties **/
+
+@property (readonly) CLLocationCoordinate2D incheonAirportCoordinate;
+@property (readonly) CLLocationCoordinate2D seoulStationCoordinate;
+
+
 @end
 
 @implementation ToHostelDirectionsController
+
+
 
 CLLocation* _userLocation;
 
@@ -113,40 +122,24 @@ CLLocation* _userLocation;
     
     TRANSPORTATION_MODE selected_transportation_mode = (int)[[self transportationMode] selectedSegmentIndex];
     
-    MKDirectionsRequest* directionsRequest = [[MKDirectionsRequest alloc]init];
+    MKDirections* directions;
+    CLLocationCoordinate2D destinationCoordinate;
     
-    
-    MKMapItem* fromLocation = [MKMapItem mapItemForCurrentLocation];
-    
-    CLLocationCoordinate2D hostelLocationCoordinate = CLLocationCoordinate2DMake(37.541593, 126.952866);
-    
-    MKPlacemark* hostelPlacemark = [[MKPlacemark alloc] initWithCoordinate:hostelLocationCoordinate];
-    
-    MKMapItem* hostelLocation = [[MKMapItem alloc] initWithPlacemark:hostelPlacemark];
-    
-    [directionsRequest setSource:fromLocation];
-    [directionsRequest setDestination:hostelLocation];
-    
-    MKDirectionsTransportType transportType = MKDirectionsTransportTypeAny;
-    
-    switch (selected_transportation_mode) {
-        case WALK:
-            transportType = MKDirectionsTransportTypeWalking;
+    switch (self.destinationCategory) {
+        case SEOUL_STATION:
+            directions = [MKDirectionsRequest getDirectionsToDestinationForTransportMode:selected_transportation_mode andWithDestinationCoordinate:self.seoulStationCoordinate];
+            destinationCoordinate = self.seoulStationCoordinate;
             break;
-        case TRANSIT:
-            transportType = MKDirectionsTransportTypeTransit;
-            break;
-        case CAR:
-            transportType = MKDirectionsTransportTypeAutomobile;
+        case INCHEON_AIRPORT:
+             directions = [MKDirectionsRequest getDirectionsToDestinationForTransportMode:selected_transportation_mode andWithDestinationCoordinate:self.incheonAirportCoordinate];
+            destinationCoordinate = self.incheonAirportCoordinate;
             break;
         default:
-            transportType = MKDirectionsTransportTypeAny;
             break;
     }
     
-    [directionsRequest setTransportType: transportType];
     
-    MKDirections* directions = [[MKDirections alloc] initWithRequest:directionsRequest];
+    
     
     [self.travelTimeIndicator setText:@"Getting travel time..."];
     [self.distanceToHostelIndicator setText:@"Getting distance..."];
@@ -160,7 +153,7 @@ CLLocation* _userLocation;
             if(routingError){
                 NSLog(@"Error: failed to directions to hostel from server(from IBAction function)");
                 [self dismissViewControllerAnimated:NO completion:^{
-                    [self viewDirectionsWithMapsApp];
+                    [[UserLocationManager sharedLocationManager] viewLocationInMapsTo:destinationCoordinate];
                     
                 }];
             }
@@ -200,7 +193,20 @@ CLLocation* _userLocation;
 
 -(void) makeDirectionsRequestsToHostelWithAnyTransportationType{
     
-    MKDirectionsRequest* directionsRequest = [MKDirectionsRequest getDirectionsRequestToHostelForTransportationMode:WALK];
+    CLLocationCoordinate2D destinationCoordinate;
+    
+    switch (self.destinationCategory) {
+        case INCHEON_AIRPORT:
+            destinationCoordinate = self.incheonAirportCoordinate;
+            break;
+        case SEOUL_STATION:
+            destinationCoordinate = self.seoulStationCoordinate;
+            break;
+        default:
+            break;
+    }
+    
+    MKDirectionsRequest* directionsRequest = [MKDirectionsRequest getDirectionsRequestToDestinationCoordinate:destinationCoordinate ForTransportationMode:5];
     
     directionsRequest.transportType = MKDirectionsTransportTypeAny;
     
@@ -211,7 +217,7 @@ CLLocation* _userLocation;
         
         if(routingError){
             [self dismissViewControllerAnimated:NO completion:^{
-                [self viewDirectionsWithMapsApp];
+                [[UserLocationManager sharedLocationManager] viewLocationInMapsTo:destinationCoordinate];
                 
             }];
         }
@@ -322,41 +328,34 @@ CLLocation* _userLocation;
 
 - (IBAction)viewDirectionsToHostelWithMapsApp:(UIButton *)sender {
     
-    [self viewDirectionsWithMapsApp];
+    CLLocationCoordinate2D destinationCoordinate;
+    
+    switch (self.destinationCategory) {
+        case INCHEON_AIRPORT:
+            destinationCoordinate = self.incheonAirportCoordinate;
+            break;
+        case SEOUL_STATION:
+            destinationCoordinate = self.seoulStationCoordinate;
+            break;
+        default:
+            break;
+    }
+    
+    [[UserLocationManager sharedLocationManager] viewLocationInMapsTo:destinationCoordinate];
 
 }
 
 
--(void) viewDirectionsWithMapsApp{
-    MKMapItem* fromLocation = [MKMapItem mapItemForCurrentLocation];
-    CLLocationCoordinate2D fromLocationCoordinate = fromLocation.placemark.coordinate;
-    
-    
-    CLLocationCoordinate2D hostelLocationCoordinate = CLLocationCoordinate2DMake(37.541593, 126.952866);
-    
-    MKPlacemark* hostelPlacemark = [[MKPlacemark alloc] initWithCoordinate:hostelLocationCoordinate];
-    
-    MKMapItem* hostelLocation = [[MKMapItem alloc] initWithPlacemark:hostelPlacemark];
-    
-    
-    MKMapItem* toLocation = hostelLocation;
-    
-    CLLocationDistance distanceBetweenEndpoints = [fromLocation.placemark.location distanceFromLocation:hostelLocation.placemark.location];
-    
-    // Create a region centered on the starting point with a 10km span
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(fromLocationCoordinate, distanceBetweenEndpoints*1.5, distanceBetweenEndpoints*1.5);
-    
-    
-    NSLog(@"Current location: %@",[fromLocation description]);
-    NSLog(@"Destination location: %@",[toLocation description]);
-    
-    // Open the item in Maps, specifying the map region to display.
-    [MKMapItem openMapsWithItems:[NSArray arrayWithObjects:toLocation,fromLocation, nil]
-                   launchOptions:[NSDictionary dictionaryWithObjectsAndKeys:
-                                  [NSValue valueWithMKCoordinate:region.center], MKLaunchOptionsMapCenterKey,
-                                  [NSValue valueWithMKCoordinateSpan:region.span], MKLaunchOptionsMapSpanKey,
-                                  MKLaunchOptionsDirectionsModeDefault,MKLaunchOptionsDirectionsModeKey, nil]];
+
+
+-(CLLocationCoordinate2D)seoulStationCoordinate{
+    return CLLocationCoordinate2DMake(37.5552515,126.9684579);
 }
+
+-(CLLocationCoordinate2D)incheonAirportCoordinate{
+    return CLLocationCoordinate2DMake(37.460195,126.438507);
+}
+
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
     

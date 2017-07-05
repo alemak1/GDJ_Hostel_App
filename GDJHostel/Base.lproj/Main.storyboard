@@ -46,7 +46,7 @@
                             </connections>
                         </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="xBa-bP-MT3">
-                            <rect key="frame" x="81.5" y="7.5" width="212" height="29"/>
+                            <rect key="frame" x="101" y="7.5" width="212" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Standard"/>
@@ -903,7 +903,7 @@
                                 <rect key="frame" x="20" y="20" width="374" height="716"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LW1-kU-1Ko">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="83"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="83"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parkB" translatesAutoresizingMaskIntoConstraints="NO" id="sPT-p6-xAD">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="83"/>
@@ -912,9 +912,9 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMi-KH-oP3">
-                                                <rect key="frame" x="30" y="0.0" width="210" height="83"/>
+                                                <rect key="frame" x="30" y="0.0" width="303" height="83"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="     Close to Han River Park">
+                                                    <fragment content="     Extensive list of location placemarks">
                                                         <attributes>
                                                             <font key="NSFont" size="17" name="Futura-Medium"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -926,7 +926,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ek-kq-ioX">
-                                        <rect key="frame" x="0.0" y="83" width="330" height="93"/>
+                                        <rect key="frame" x="0.0" y="83" width="349" height="93"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kitchenB" translatesAutoresizingMaskIntoConstraints="NO" id="rR8-PC-ELU">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="93"/>
@@ -935,9 +935,9 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdu-nX-Yc1">
-                                                <rect key="frame" x="30" y="0.0" width="300" height="93"/>
+                                                <rect key="frame" x="30" y="0.0" width="319" height="93"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="     Kitchen and Refrigerator Available ">
+                                                    <fragment content="     Region monitoring for major hotspots ">
                                                         <attributes>
                                                             <font key="NSFont" size="17" name="Futura-Medium"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -950,7 +950,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CRB-Ff-Sjc">
-                                        <rect key="frame" x="0.0" y="176" width="333" height="83"/>
+                                        <rect key="frame" x="0.0" y="176" width="374" height="83"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoppingCartB" translatesAutoresizingMaskIntoConstraints="NO" id="YwQ-F8-oJ8">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="83"/>
@@ -958,10 +958,10 @@
                                                     <constraint firstAttribute="width" constant="30" id="DdL-hF-RLl"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ah1-51-6Ru">
-                                                <rect key="frame" x="30" y="0.0" width="303" height="83"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ah1-51-6Ru">
+                                                <rect key="frame" x="30" y="0.0" width="344" height="83"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="     Across from Emart Shopping Center">
+                                                    <fragment content="     Weather forecasts for major Korean cities">
                                                         <attributes>
                                                             <font key="NSFont" size="17" name="Futura-Medium"/>
                                                         </attributes>
@@ -973,7 +973,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hc9-Da-9n1">
-                                        <rect key="frame" x="0.0" y="259" width="296" height="88"/>
+                                        <rect key="frame" x="0.0" y="259" width="331" height="88"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airportB" translatesAutoresizingMaskIntoConstraints="NO" id="f1E-rl-fy7">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="88"/>
@@ -981,10 +981,10 @@
                                                     <constraint firstAttribute="width" constant="30" id="m5p-Ag-2z9"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQb-yG-O1z">
-                                                <rect key="frame" x="30" y="0.0" width="266" height="88"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AQb-yG-O1z">
+                                                <rect key="frame" x="30" y="0.0" width="301" height="88"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="     Short subway ride from airport">
+                                                    <fragment content="     Prices for common Korean products">
                                                         <attributes>
                                                             <font key="NSFont" size="17" name="Futura-Medium"/>
                                                         </attributes>
@@ -996,7 +996,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Bxu-7E-Yhk">
-                                        <rect key="frame" x="0.0" y="347" width="271" height="64"/>
+                                        <rect key="frame" x="0.0" y="347" width="330" height="64"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wirelessA" translatesAutoresizingMaskIntoConstraints="NO" id="ykF-69-Ddh">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="64"/>
@@ -1005,9 +1005,9 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VO0-3m-cCv">
-                                                <rect key="frame" x="30" y="0.0" width="241" height="64"/>
+                                                <rect key="frame" x="30" y="0.0" width="300" height="64"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="     WiFi Available in All Rooms">
+                                                    <fragment content="     Routes and navigation aids for sites">
                                                         <attributes>
                                                             <font key="NSFont" size="17" name="Futura-Medium"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -1020,7 +1020,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dus-7O-WD3">
-                                        <rect key="frame" x="0.0" y="411" width="173" height="83"/>
+                                        <rect key="frame" x="0.0" y="411" width="222" height="83"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="familyB" translatesAutoresizingMaskIntoConstraints="NO" id="P0P-bQ-h14">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="83"/>
@@ -1029,9 +1029,9 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEC-MT-8PX">
-                                                <rect key="frame" x="30" y="0.0" width="143" height="83"/>
+                                                <rect key="frame" x="30" y="0.0" width="192" height="83"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="     Family-Friendly">
+                                                    <fragment content="     Basic Korean phrases">
                                                         <attributes>
                                                             <font key="NSFont" size="17" name="Futura-Medium"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -1124,7 +1124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gis-vj-jkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1015" y="-367"/>
+            <point key="canvasLocation" x="278" y="-966"/>
         </scene>
         <!--ContactInfoScrollController-->
         <scene sceneID="OMK-tT-9NM">
@@ -1220,7 +1220,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="12" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VUH-8Q-Vmd">
-                                <rect key="frame" x="20" y="228" width="373" height="133"/>
+                                <rect key="frame" x="20" y="228" width="373" height="132"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="afX-VB-cNG">
                                     <size key="itemSize" width="200" height="90"/>
@@ -1230,7 +1230,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MidTopCollectionViewCell" id="YtI-7d-H1s">
-                                        <rect key="frame" x="0.0" y="22" width="200" height="90"/>
+                                        <rect key="frame" x="0.0" y="21" width="200" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="90"/>
@@ -1245,7 +1245,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmu-8T-PjU">
-                                <rect key="frame" x="20" y="376" width="132" height="21"/>
+                                <rect key="frame" x="20" y="375" width="132" height="21"/>
                                 <attributedString key="attributedText">
                                     <fragment content="SouthWest Room">
                                         <attributes>
@@ -1257,7 +1257,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="13" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ufb-Fs-Ewv">
-                                <rect key="frame" x="20" y="402" width="373" height="132"/>
+                                <rect key="frame" x="20" y="401" width="373" height="132"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a0S-0E-Izs">
                                     <size key="itemSize" width="200" height="90"/>
@@ -1282,7 +1282,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14Y-gN-Uei">
-                                <rect key="frame" x="20" y="555" width="125" height="23"/>
+                                <rect key="frame" x="20" y="554" width="125" height="23"/>
                                 <attributedString key="attributedText">
                                     <fragment content="SouthEast Room">
                                         <attributes>
@@ -1294,7 +1294,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="14" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gf8-sg-ryP">
-                                <rect key="frame" x="20" y="583" width="373" height="133"/>
+                                <rect key="frame" x="20" y="582" width="373" height="132"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oIb-yB-kP8">
                                     <size key="itemSize" width="200" height="90"/>
@@ -1304,7 +1304,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BottomCollectionViewCell" id="qbk-fL-Rtq">
-                                        <rect key="frame" x="0.0" y="22" width="200" height="90"/>
+                                        <rect key="frame" x="0.0" y="21" width="200" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="90"/>
@@ -1740,6 +1740,12 @@
                                 <exclude reference="u30-I7-nIm"/>
                                 <exclude reference="wgg-5f-Fzf"/>
                                 <exclude reference="z2Y-5J-A2Z"/>
+                                <exclude reference="3l4-eO-dqO"/>
+                                <exclude reference="6Ff-4u-D9x"/>
+                                <exclude reference="DYP-DY-Yvf"/>
+                                <exclude reference="HxH-xs-T3l"/>
+                                <exclude reference="KGO-oI-zrv"/>
+                                <exclude reference="i2X-a8-zCh"/>
                                 <exclude reference="1ZX-jg-UwL"/>
                                 <exclude reference="3Kr-gU-NTn"/>
                                 <exclude reference="8xl-ua-G4u"/>
@@ -1749,12 +1755,6 @@
                                 <exclude reference="cU0-hx-2y3"/>
                                 <exclude reference="toQ-Ua-Tde"/>
                                 <exclude reference="uVR-ZU-sbd"/>
-                                <exclude reference="3l4-eO-dqO"/>
-                                <exclude reference="6Ff-4u-D9x"/>
-                                <exclude reference="DYP-DY-Yvf"/>
-                                <exclude reference="HxH-xs-T3l"/>
-                                <exclude reference="KGO-oI-zrv"/>
-                                <exclude reference="i2X-a8-zCh"/>
                                 <exclude reference="ALL-3o-GcH"/>
                                 <exclude reference="ZXN-wV-7P8"/>
                                 <exclude reference="fTD-v6-hy2"/>
@@ -1801,17 +1801,17 @@
                                 <include reference="brj-Ln-rGG"/>
                                 <include reference="dCw-4R-2VO"/>
                                 <exclude reference="zLM-R6-vul"/>
+                                <exclude reference="1eS-6F-BcK"/>
+                                <exclude reference="3u0-Tf-u2J"/>
+                                <include reference="6Ff-4u-D9x"/>
+                                <include reference="KGO-oI-zrv"/>
+                                <exclude reference="jHc-4u-P8U"/>
                                 <include reference="1ZX-jg-UwL"/>
                                 <include reference="3Kr-gU-NTn"/>
                                 <exclude reference="KIG-gr-pbk"/>
                                 <exclude reference="KMU-3u-dh4"/>
                                 <exclude reference="rH1-is-HfC"/>
                                 <include reference="toQ-Ua-Tde"/>
-                                <exclude reference="1eS-6F-BcK"/>
-                                <exclude reference="3u0-Tf-u2J"/>
-                                <include reference="6Ff-4u-D9x"/>
-                                <include reference="KGO-oI-zrv"/>
-                                <exclude reference="jHc-4u-P8U"/>
                                 <include reference="ALL-3o-GcH"/>
                                 <exclude reference="sDR-km-7BR"/>
                                 <include reference="sHb-mt-nL4"/>
@@ -1865,16 +1865,16 @@
                                 <include reference="wgg-5f-Fzf"/>
                                 <exclude reference="z2Y-5J-A2Z"/>
                                 <exclude reference="zLM-R6-vul"/>
-                                <include reference="IUQ-y1-WtM"/>
-                                <exclude reference="KIG-gr-pbk"/>
-                                <exclude reference="KMU-3u-dh4"/>
-                                <include reference="adp-NN-23v"/>
-                                <exclude reference="rH1-is-HfC"/>
                                 <exclude reference="1eS-6F-BcK"/>
                                 <exclude reference="3u0-Tf-u2J"/>
                                 <include reference="DYP-DY-Yvf"/>
                                 <include reference="i2X-a8-zCh"/>
                                 <exclude reference="jHc-4u-P8U"/>
+                                <include reference="IUQ-y1-WtM"/>
+                                <exclude reference="KIG-gr-pbk"/>
+                                <exclude reference="KMU-3u-dh4"/>
+                                <include reference="adp-NN-23v"/>
+                                <exclude reference="rH1-is-HfC"/>
                                 <exclude reference="ZXN-wV-7P8"/>
                                 <exclude reference="sDR-km-7BR"/>
                             </mask>
@@ -1902,12 +1902,12 @@
                                 <include reference="dqx-M3-cVM"/>
                                 <include reference="NqQ-M2-Vpw"/>
                                 <include reference="zLM-R6-vul"/>
-                                <include reference="KIG-gr-pbk"/>
-                                <include reference="KMU-3u-dh4"/>
-                                <include reference="rH1-is-HfC"/>
                                 <include reference="1eS-6F-BcK"/>
                                 <include reference="3u0-Tf-u2J"/>
                                 <include reference="jHc-4u-P8U"/>
+                                <include reference="KIG-gr-pbk"/>
+                                <include reference="KMU-3u-dh4"/>
+                                <include reference="rH1-is-HfC"/>
                                 <include reference="sDR-km-7BR"/>
                             </mask>
                         </variation>
@@ -1959,6 +1959,11 @@
                                 <include reference="ezr-Xa-l38"/>
                                 <include reference="u30-I7-nIm"/>
                                 <exclude reference="zLM-R6-vul"/>
+                                <exclude reference="1eS-6F-BcK"/>
+                                <include reference="3l4-eO-dqO"/>
+                                <exclude reference="3u0-Tf-u2J"/>
+                                <include reference="HxH-xs-T3l"/>
+                                <exclude reference="jHc-4u-P8U"/>
                                 <include reference="8xl-ua-G4u"/>
                                 <exclude reference="KIG-gr-pbk"/>
                                 <exclude reference="KMU-3u-dh4"/>
@@ -1966,11 +1971,6 @@
                                 <include reference="cU0-hx-2y3"/>
                                 <exclude reference="rH1-is-HfC"/>
                                 <include reference="uVR-ZU-sbd"/>
-                                <exclude reference="1eS-6F-BcK"/>
-                                <include reference="3l4-eO-dqO"/>
-                                <exclude reference="3u0-Tf-u2J"/>
-                                <include reference="HxH-xs-T3l"/>
-                                <exclude reference="jHc-4u-P8U"/>
                                 <include reference="fTD-v6-hy2"/>
                                 <exclude reference="sDR-km-7BR"/>
                             </mask>
@@ -2755,7 +2755,7 @@
         <scene sceneID="Ldm-I9-5VY">
             <objects>
                 <collectionViewController id="wbe-oi-UkB" customClass="WeatherForecastCollectionController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="4WI-tg-aSw">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4WI-tg-aSw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="294"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93020004034042358" green="0.67146831750869751" blue="0.93137937784194946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3109,7 +3109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGI-pR-8AR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="616.79999999999995" y="-896.40179910044981"/>
+            <point key="canvasLocation" x="1152" y="-1033"/>
         </scene>
         <!--Seoul Tourism Navigation Controller-->
         <scene sceneID="cXV-dG-gGL">

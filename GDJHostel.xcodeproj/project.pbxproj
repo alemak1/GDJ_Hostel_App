@@ -166,6 +166,7 @@
 		BD2E8E9F1F0BDC3A003D9C9B /* WarMemorialNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarMemorialNavigationController.m; sourceTree = "<group>"; };
 		BD2E8EA11F0BDEE8003D9C9B /* WarMemorialAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WarMemorialAnnotation.h; sourceTree = "<group>"; };
 		BD2E8EA21F0BDEF6003D9C9B /* WarMemorialAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarMemorialAnnotation.m; sourceTree = "<group>"; };
+		BD2E9DD61F0D7D4300BDBA2B /* DestinationCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DestinationCategory.h; sourceTree = "<group>"; };
 		BD2EA76D1EFFB1D500A8572B /* FeatureScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureScrollViewController.h; sourceTree = "<group>"; };
 		BD2EA76E1EFFB1E300A8572B /* FeatureScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureScrollViewController.m; sourceTree = "<group>"; };
 		BD2EA7701EFFC28200A8572B /* ContactScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactScrollViewController.h; sourceTree = "<group>"; };
@@ -423,6 +424,7 @@
 				BD7C35441F089B46009FD8F8 /* plists */,
 				BD5C3EBD1EFD4BA400616400 /* HostelAreaMapViewController */,
 				BD7C354A1F08A515009FD8F8 /* TransportationMode.h */,
+				BD2E9DD61F0D7D4300BDBA2B /* DestinationCategory.h */,
 				BD3844B11EFE579B00F2E981 /* ToHostelDirectionsController.h */,
 				BD3844B21EFE579B00F2E981 /* ToHostelDirectionsController.m */,
 				BD3844A41EFE450800F2E981 /* DirectionsMenuController.h */,
