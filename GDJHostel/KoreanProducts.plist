@@ -238,15 +238,15 @@
 	</dict>
 	<dict>
 		<key>assortedCategory</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>unitQuantity</key>
-		<string></string>
+		<string>600 g box of cereal</string>
 		<key>specificCategory</key>
 		<integer>0</integer>
 		<key>generalCategory</key>
 		<integer>0</integer>
 		<key>priceInKRW</key>
-		<integer>0</integer>
+		<integer>3980</integer>
 		<key>imagePath</key>
 		<string></string>
 		<key>name</key>
@@ -256,25 +256,25 @@
 	</dict>
 	<dict>
 		<key>assortedCategory</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>unitQuantity</key>
-		<string></string>
+		<string>580 g box of cereal</string>
 		<key>specificCategory</key>
 		<integer>0</integer>
 		<key>generalCategory</key>
 		<integer>0</integer>
 		<key>priceInKRW</key>
-		<integer>0</integer>
+		<integer>6780</integer>
 		<key>imagePath</key>
 		<string></string>
 		<key>name</key>
 		<string>Amond Prake</string>
 		<key>brand</key>
-		<string>(Pink Girl, Yellow-Hatted Pilot)</string>
+		<string>Amond Prake Cereal</string>
 	</dict>
 	<dict>
 		<key>assortedCategory</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>unitQuantity</key>
 		<string></string>
 		<key>specificCategory</key>
@@ -286,9 +286,639 @@
 		<key>imagePath</key>
 		<string></string>
 		<key>name</key>
-		<string>Ohgok Cocbol</string>
+		<string>Ohgok Coco Ball</string>
 		<key>brand</key>
+		<string>Ohgok Coco Ball Cereal</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>1</integer>
+		<key>unitQuantity</key>
+		<string>500 g box of cereal</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>7550</integer>
+		<key>imagePath</key>
 		<string></string>
+		<key>name</key>
+		<string>Oreo Cereal</string>
+		<key>brand</key>
+		<string>Oreo Cereal</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>1</integer>
+		<key>unitQuantity</key>
+		<string>530 g box of cereal</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>7350</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Froot Ring Cereal</string>
+		<key>brand</key>
+		<string>Froot Ring Cereal</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>2</integer>
+		<key>unitQuantity</key>
+		<string>(4 GB RAM, 128 GB HD, i3, 35.6 cm screen)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>1149000</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Samsung NT900X5L-L345 Labtop</string>
+		<key>brand</key>
+		<string>Samsung</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>2</integer>
+		<key>unitQuantity</key>
+		<string>(4 GB RAM, 128 GB HD, i3, 38 cm screen)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>599000</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Samsung NT300E5K-L15E Labtop</string>
+		<key>brand</key>
+		<string>Samsung</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>2</integer>
+		<key>unitQuantity</key>
+		<string>(4 GB RAM, 500 GB HD, i3, 38 cm screen)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>679000</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Samsung NT300E5K-L35D Labtop</string>
+		<key>brand</key>
+		<string>Samsung</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>2</integer>
+		<key>unitQuantity</key>
+		<string>(8 GB RAM, 500 GB HD, i5, 38 cm screen)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>999000</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Samsung NT500R5L-M58D Labtop</string>
+		<key>brand</key>
+		<string>Samsung</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>2</integer>
+		<key>unitQuantity</key>
+		<string>(4 GB RAM, 256 GB HD, i3, 33.7 cm screen)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>999000</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Samsung NT900X3L-L34D Labtop</string>
+		<key>brand</key>
+		<string>Samsung</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>4</integer>
+		<key>unitQuantity</key>
+		<string>(HD, 80 cm, Smart 3D)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>399000</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>80 cm LED TV</string>
+		<key>brand</key>
+		<string>Samsung UN32K4100BFXKR</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>4</integer>
+		<key>unitQuantity</key>
+		<string>(HD, HDMI x 2, Smart)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>1390000</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>125 cm LED TV</string>
+		<key>brand</key>
+		<string>LG (UN32K4100BFXKR)</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>3</integer>
+		<key>unitQuantity</key>
+		<string>(HD, HDMI x 2, Smart)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>39800</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Blender</string>
+		<key>brand</key>
+		<string>Clean Sense (SMX-EM500)</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>3</integer>
+		<key>unitQuantity</key>
+		<string>600 W, 1.7 L</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>41000</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Blender</string>
+		<key>brand</key>
+		<string>Hamil (HM-E1655GD)</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>3</integer>
+		<key>unitQuantity</key>
+		<string>900 W, 1.7 L</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>129000</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Blender</string>
+		<key>brand</key>
+		<string>Electrolux</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>3</integer>
+		<key>unitQuantity</key>
+		<string>900 W, 1.7 L</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>499000</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Blender</string>
+		<key>brand</key>
+		<string>Electrolux</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>5</integer>
+		<key>unitQuantity</key>
+		<string>Steam Blender</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>499000</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Rice Cook</string>
+		<key>brand</key>
+		<string>Cuchen</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>6</integer>
+		<key>unitQuantity</key>
+		<string>(20L, 700 W, A/S)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>64800</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Microwave</string>
+		<key>brand</key>
+		<string>Tarrington House</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>6</integer>
+		<key>unitQuantity</key>
+		<string>(20L, 700 W, A/S)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>429000</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Microwave</string>
+		<key>brand</key>
+		<string>LG ML39B</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>7</integer>
+		<key>unitQuantity</key>
+		<string>1.2 G Box (8 peaches)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>7580</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Peaches</string>
+		<key>brand</key>
+		<string>Peaches</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>7</integer>
+		<key>unitQuantity</key>
+		<string>700 g box</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>10800</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Cherries</string>
+		<key>brand</key>
+		<string>Cherries</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>7</integer>
+		<key>unitQuantity</key>
+		<string>1.2 kg</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>9980</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Blueberries</string>
+		<key>brand</key>
+		<string>Blueberries</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>7</integer>
+		<key>unitQuantity</key>
+		<string>1.5 kg</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>9980</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Lemon</string>
+		<key>brand</key>
+		<string>Lemon</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>7</integer>
+		<key>unitQuantity</key>
+		<string>2 kg</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>6980</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Tomatoes</string>
+		<key>brand</key>
+		<string>Emart Brand</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>7</integer>
+		<key>unitQuantity</key>
+		<string>1 pineapple</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>6980</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Pineapple</string>
+		<key>brand</key>
+		<string>Sumifru</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>7</integer>
+		<key>unitQuantity</key>
+		<string>8-9 kg</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>15900</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Watermelon</string>
+		<key>brand</key>
+		<string>Watermelon</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>8</integer>
+		<key>unitQuantity</key>
+		<string>1 cup</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>2500</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Espresso</string>
+		<key>brand</key>
+		<string>Ediiya</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>8</integer>
+		<key>unitQuantity</key>
+		<string>1 cup</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>3200</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Cafe Latte</string>
+		<key>brand</key>
+		<string>Ediiya</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>8</integer>
+		<key>unitQuantity</key>
+		<string>1 cup</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>2800</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Cafe Americano</string>
+		<key>brand</key>
+		<string>Ediiya</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>8</integer>
+		<key>unitQuantity</key>
+		<string>1 cup</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>3200</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Cappuccino</string>
+		<key>brand</key>
+		<string>Ediiya</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>9</integer>
+		<key>unitQuantity</key>
+		<string>1 bowl</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>4500</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Bibimbap</string>
+		<key>brand</key>
+		<string>Bibimbap</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>9</integer>
+		<key>unitQuantity</key>
+		<string>1 serving</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>3500</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Hot and Spicy Rice Cake (Ddeokbokki)</string>
+		<key>brand</key>
+		<string>Hot and Spicy Rice Cake (Ddeokbokki)</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>9</integer>
+		<key>unitQuantity</key>
+		<string>1 bowl</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>6500</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Kimchi Stew</string>
+		<key>brand</key>
+		<string>Kimchi Stew</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>10</integer>
+		<key>unitQuantity</key>
+		<string>1 shirt</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>20000</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>T-Shirt</string>
+		<key>brand</key>
+		<string>Jaju</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>10</integer>
+		<key>unitQuantity</key>
+		<string>1 baseball cap</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<real>15000</real>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Baseball Cap</string>
+		<key>brand</key>
+		<string>Generic</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>11</integer>
+		<key>unitQuantity</key>
+		<string>Basic Plan (1 GB, 10000 KRW voice credit, 264 KRW/min)</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>15000</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>SIM CARD (90 day period)</string>
+		<key>brand</key>
+		<string>EG</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>11</integer>
+		<key>unitQuantity</key>
+		<string></string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>0</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>SIM CARD (90 day period)</string>
+		<key>brand</key>
+		<string>KT</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>11</integer>
+		<key>unitQuantity</key>
+		<string></string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>0</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>SIM CARD (90 day period)</string>
+		<key>brand</key>
+		<string>SK</string>
 	</dict>
 </array>
 </plist>
