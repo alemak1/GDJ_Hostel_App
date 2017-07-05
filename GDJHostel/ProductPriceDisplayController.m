@@ -10,6 +10,7 @@
 #import "ProductPriceController.h"
 #import "NSString+CurrencyHelperMethods.h"
 #import "CurrencyType.h"
+#import "ProductSearchController.h"
 
 @interface ProductPriceDisplayController () <UIPickerViewDelegate,UIPickerViewDataSource>
 
@@ -22,6 +23,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *foreignPriceNumber;
 
+@property (weak, nonatomic) IBOutlet UILabel *productDescriptionLabel;
 
 
 
@@ -36,13 +38,19 @@
 
 @synthesize foreignPrice = _foreignPrice;
 @synthesize  koreanPrice = _koreanPrice;
+@synthesize productPriceDescription = _productPriceDescription;
+
+
+-(void)viewWillAppear:(BOOL)animated{
+}
+
+
 
 -(void)viewDidLoad{
     
     [self.currencyPickerView setDelegate:self];
     [self.currencyPickerView setDataSource:self];
-    
-}
+    }
 
 
 #pragma mark ********** PICKER VIEW DELEGATE AND DATA SOURCE METHODS
@@ -51,11 +59,19 @@
     
     NSString* currencyAbbreviation = [NSString getCurrencyAbbreviationForCurrencyType:(int)row];
     
+    [self configureForeignCurrencyDisplayWithCurrencyAbbreviation:currencyAbbreviation];
+    
+}
+
+
+-(void)configureForeignCurrencyDisplayWithCurrencyAbbreviation:(NSString*)currencyAbbreviation{
+    
     [self setForeignCurrencyAbbreviation:currencyAbbreviation];
     
     ProductPriceController* priceCollectionController = [self.childViewControllers firstObject];
     
     [priceCollectionController setCurrentCurrencyCode:currencyAbbreviation];
+    
     
     
     
@@ -143,6 +159,17 @@
     [self.koreanPriceNumber setAttributedText:attributedString];
 }
 
+-(void)setProductPriceDescription:(NSString *)productPriceDescription{
+    
+    [self.productDescriptionLabel setText:productPriceDescription];
+    
+    _productPriceDescription = productPriceDescription;
+}
+
+-(NSString *)productPriceDescription{
+    return _productPriceDescription;
+}
+
 -(NSNumber *)koreanPrice{
     return _koreanPrice;
 }
@@ -151,6 +178,35 @@
 -(UIFont *)defaultLabelFont{
     return [UIFont fontWithName:@"Futura-Bold" size:17.0];
 }
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    ProductSearchController* productSearchController = (ProductSearchController*)segue.destinationViewController;
+    
+    
+    ProductPriceController* productPriceController = (ProductPriceController*)[self.childViewControllers firstObject];
+    
+    if([segue.identifier isEqualToString:@"showProductSearchControllerSegue"]){
+        
+       
+        
+        productSearchController.searchNearHostel = false;
+        
+      
+    }
+    
+    if([segue.identifier isEqualToString:@"showProductSearchControllerSegue_fromHostel"]){
+        
+        productSearchController.searchNearHostel = true;
+
+    }
+    
+    productSearchController.assortedProductCategory = productPriceController.currentAssortedProductCategory;
+    
+}
+
+
 
 @end
 

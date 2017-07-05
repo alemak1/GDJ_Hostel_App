@@ -19,6 +19,7 @@
 @property NSNumber* foreignPrice;
 @property NSNumber* koreanPrice;
 
+@property NSString* productPriceDescription;
 
 
 @end

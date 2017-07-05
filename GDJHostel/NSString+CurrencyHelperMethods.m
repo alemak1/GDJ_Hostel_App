@@ -128,7 +128,7 @@
     return nil;
 }
 
-+(NSString*)getImagePathFor:(AssortedProductCategory)productCategory{
++(NSString*)getAssortedProductImagePathFor:(AssortedProductCategory)productCategory{
     switch (productCategory) {
         case KIMCHI_STEW:
             return @"kimchi_stew";
@@ -138,7 +138,7 @@
             return @"makeup";
         case SIM_CARD:
             return @"sim_card";
-        case RED_SHIRT:
+        case CLOTHES:
             return @"red_shirt";
         case BARBECUE:
             return @"barbecue";
@@ -146,6 +146,66 @@
             return @"cell_phone";
         case HAIRCUT:
             return @"haircut";
+        case BEER:
+            return @"beerA";
+        case COMPUTER:
+            return @"laptopA";
+        case CEREAL:
+            return @"cerealA";
+        case MICROWAVE:
+            return @"microwaveA";
+        case BLENDER:
+            return @"blenderA";
+        case FRUIT:
+            return @"fruitA";
+        case COFFEE:
+            return @"coffeeGlassA";
+        case TV:
+            return @"tvA";
+        case RICE_COOKER:
+            return @"riceCookerA";
+        default:
+            return nil;
+    }
+}
+
++(NSString*)getSearchQueryAssociatedWithAssortedProductCategory:(AssortedProductCategory)assortedProductCategory{
+    
+    switch(assortedProductCategory){
+        case KIMCHI_STEW:
+            return @"restaurant";
+        case NOODLES:
+            return @"noodle";
+        case MAKEUP:
+            return @"cosmetics";
+        case SIM_CARD:
+            return @"sim card";
+        case CLOTHES:
+            return @"clothes";
+        case BARBECUE:
+            return @"korean barbecue";
+        case CELL_PHONE:
+            return @"cell phone";
+        case HAIRCUT:
+            return @"haircut";
+        case BEER:
+            return @"convenience store";
+        case COMPUTER:
+            return @"electronics";
+        case CEREAL:
+            return @"emart";
+        case MICROWAVE:
+            return @"electronics";
+        case BLENDER:
+            return @"electronics";
+        case FRUIT:
+            return @"emart";
+        case COFFEE:
+            return @"convenience store";
+        case TV:
+            return @"electronics";
+        case RICE_COOKER:
+            return @"electronics";
         default:
             return nil;
     }

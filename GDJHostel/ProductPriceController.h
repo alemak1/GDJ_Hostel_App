@@ -11,11 +11,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "ProductCategory.h"
 
 @interface ProductPriceController : UICollectionViewController
 
 @property NSString* currentCurrencyCode;
 
+@property AssortedProductCategory currentAssortedProductCategory;
 
 @end
 

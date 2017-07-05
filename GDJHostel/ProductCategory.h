@@ -23,24 +23,24 @@ typedef enum SpecificProductCategory{
 
 
 typedef enum AssortedProductCategory{
-    BEER,
-    CEREAL,
-    COMPUTER,
-    BLENDER,
-    TV,
-    RICE_COOKER,
-    MICROWAVE,
-    FRUIT,
-    COFFEE,
-    CLOTHES,
-    SIM_CARD,
+    BEER = 0,   //0
+    CEREAL = 1,
+    COMPUTER = 2,
+    BLENDER = 3,
+    TV = 4,
+    RICE_COOKER = 5,
+    MICROWAVE = 6,
+    FRUIT = 7,
+    COFFEE = 8,
+    KIMCHI_STEW = 9,
+    CLOTHES = 10,
+    SIM_CARD = 11,
+    CELL_PHONE = 12,
+    LAST_ASSORTED_PRODUCT_INDEX,
     BARBECUE,
-    CELL_PHONE,
     HAIRCUT,
-    KIMCHI_STEW,
     MAKEUP,
-    NOODLES,
-    LAST_ASSORTED_PRODUCT_INDEX
+    NOODLES
 }AssortedProductCategory;
 
 #endif /* ProductCategory_h */

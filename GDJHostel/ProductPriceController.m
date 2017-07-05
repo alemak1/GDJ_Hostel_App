@@ -10,6 +10,9 @@
 #import "ProductPriceDisplayController.h"
 #import "ProductCategory.h"
 #import "NSString+CurrencyHelperMethods.h"
+#import "KoreanProduct.h"
+#import "KoreanProductCell.h"
+#import "AppLocationManager.h"
 
 @interface ProductPriceController ()
 
@@ -23,6 +26,8 @@
 @property NSURLSession* apiRequestSession;
 @property (readonly) double currentExchangeRate;
 
+@property NSArray<KoreanProduct*>* koreanProductsArray;
+
 @end
 
 @implementation ProductPriceController
@@ -32,10 +37,18 @@ static void* CurrencyCodeContext = &CurrencyCodeContext;
 
 @synthesize currentExchangeRate = _currentExchangeRate;
 
+
+-(void)viewWillLayoutSubviews{
+    UserLocationManager* sharedLocationManager = [UserLocationManager sharedLocationManager];
+    
+    [sharedLocationManager requestAuthorizationAndStartUpdates];
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     
     [self loadCurrencyExchangeData];
     
+    [self loadKoreanProductsArray];
 
     [self addObserver:self forKeyPath:@"currencyExchangeData" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:ProductPriceControllerContext];
     
@@ -49,10 +62,6 @@ static void* CurrencyCodeContext = &CurrencyCodeContext;
     [self.collectionView setDataSource:self];
     [self.collectionView setDataSource:self];
     
-
-  
-    
-    
     
 }
 
@@ -60,25 +69,21 @@ static void* CurrencyCodeContext = &CurrencyCodeContext;
     
     if(context == ProductPriceControllerContext){
         
-        NSLog(@"The value of the currency exchange dictionary changed. It's value is now: %@",[self.currencyExchangeData description]);
+     NSLog(@"The value of the currency exchange dictionary changed. It's value is now: %@",[self.currencyExchangeData description]);
+        
+        NSDictionary* ratesDict = [self.currencyExchangeData valueForKey:@"rates"];
+        
+        _currentExchangeRate = [[ratesDict valueForKey:self.currentCurrencyCode] doubleValue];
     }
     
     if(context == CurrencyCodeContext){
-        NSLog(@"The current currency code has changed to %@",self.currentCurrencyCode);
         
         NSDictionary* ratesDict = [self.currencyExchangeData valueForKey:@"rates"];
         
         _currentExchangeRate = [[ratesDict valueForKey:self.currentCurrencyCode] doubleValue];
         
-        NSLog(@"The current exchange rate is: %f",_currentExchangeRate);
         
-        //Test Code (for debug purposes)
-        
-        ProductPriceDisplayController* parentController = (ProductPriceDisplayController*)self.parentViewController;
-        
-        [parentController setKoreanPrice:[NSNumber numberWithFloat:10000]];
-        [parentController setForeignPrice:[NSNumber numberWithFloat:10000*self.currentExchangeRate]];
-        
+    
     }
 }
 
@@ -108,18 +113,31 @@ static void* CurrencyCodeContext = &CurrencyCodeContext;
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    UICollectionViewCell* cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ProductCategoryCell" forIndexPath:indexPath];
+    KoreanProductCell* cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"KoreanProductCell" forIndexPath:indexPath];
     
-    NSString* imagePath = [NSString getImagePathFor:indexPath.row];
-    
-    UIImageView* cellImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imagePath]];
+   
+    NSString* imagePath = [NSString getAssortedProductImagePathFor:indexPath.row];
     
 
-    cellImageView.frame = cell.contentView.frame;
-    
-    [cell.contentView addSubview:cellImageView];
+    cell.image = [UIImage imageNamed:imagePath];
     
     return cell;
+}
+
+
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    KoreanProduct* randomlySelectedProduct = [self getRandomKoreanProductForIndexPath:indexPath];
+    
+    CGFloat productPrice = [[randomlySelectedProduct priceInKRW] floatValue];
+   
+    [self setProductDescriptionLabelWithProduct:randomlySelectedProduct];
+    
+    [self setProductPriceWithKRWPrice:productPrice];
+    
+    self.currentAssortedProductCategory = (AssortedProductCategory)indexPath.row;
+    
 }
 
 #pragma mark NSURL SESSION/NSURL DATA TASK UTILITY FUNCTIONS
@@ -165,6 +183,79 @@ static void* CurrencyCodeContext = &CurrencyCodeContext;
     }];
     
     [dataTask resume];
+}
+
+
+-(void) loadKoreanProductsArray{
+    
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"KoreanProducts" ofType:@"plist"];
+    
+    NSArray* dictArray = [NSArray arrayWithContentsOfFile:path];
+    
+    NSMutableArray* koreanProductsArray = [[NSMutableArray alloc] init];
+    
+    for(NSDictionary* dict in dictArray){
+        
+        [koreanProductsArray addObject:[[KoreanProduct alloc] initWithDictionary:dict]];
+        
+    }
+    
+    self.koreanProductsArray = [NSArray arrayWithArray:koreanProductsArray];
+    
+}
+
+-(KoreanProduct*)getRandomKoreanProductForIndexPath:(NSIndexPath*)indexPath{
+    
+    AssortedProductCategory selectedCategory = (AssortedProductCategory)indexPath.row;
+    
+    NSArray* productArrayForCategory = [self.koreanProductsArray filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(KoreanProduct* koreanProduct, NSDictionary* bindings){
+        
+        
+        NSLog(@"Korean product info %@",koreanProduct);
+        NSLog(@"Assorted Category is: %d",koreanProduct.assortedCategory);
+        
+        return koreanProduct.assortedCategory == selectedCategory;
+        
+    }]];
+    
+    
+    
+    NSInteger numberOfProductsInCategory = [productArrayForCategory count];
+    
+    NSInteger randomIndex = arc4random_uniform((UInt32)numberOfProductsInCategory);
+    
+    
+    return [productArrayForCategory objectAtIndex:randomIndex];
+    
+}
+
+-(void)setProductDescriptionLabelWithProduct:(KoreanProduct*)product{
+    
+    NSString* productName = [product name];
+    NSString* productBrand = [product brand];
+    NSString* productQuantity = [product unityQuantity];
+    
+    NSString* description = [NSString stringWithFormat:@"Product Name: %@ (%@), Info: %@",productName,productBrand,productQuantity];
+    
+    [self setProductDescriptionLabelWithText:description];
+    
+}
+
+-(void)setProductDescriptionLabelWithText:(NSString*)labelText{
+    
+    ProductPriceDisplayController* productPriceDisplayController = (ProductPriceDisplayController*)self.parentViewController;
+    
+    productPriceDisplayController.productPriceDescription = labelText;
+}
+
+-(void)setProductPriceWithKRWPrice:(CGFloat)krwPrice{
+    //Test Code (for debug purposes)
+    
+    ProductPriceDisplayController* parentController = (ProductPriceDisplayController*)self.parentViewController;
+    
+    [parentController setKoreanPrice:[NSNumber numberWithFloat:krwPrice]];
+    [parentController setForeignPrice:[NSNumber numberWithFloat:krwPrice*self.currentExchangeRate]];
+    
 }
 
 -(double)currentExchangeRate{

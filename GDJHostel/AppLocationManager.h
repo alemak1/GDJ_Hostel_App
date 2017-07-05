@@ -36,6 +36,9 @@
 -(BOOL)isBeingRegionMonitored:(NSString*)regionIdentifier;
 -(CLRegion*)getRegionWithIdentifier:(NSString*)regionIdentifier;
 
+
+-(void)viewLocationInMapsTo:(CLLocationCoordinate2D)regionCenter;
+
 @end
 
 #endif /* AppLocationManager_h */

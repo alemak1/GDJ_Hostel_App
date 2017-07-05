@@ -16,6 +16,8 @@
 
 +(NSString*) getCurrencyNameForCurrencyType:(CurrencyType)currencyType;
 
-+(NSString*)getImagePathFor:(AssortedProductCategory)productCategory;
++(NSString*)getAssortedProductImagePathFor:(AssortedProductCategory)productCategory;
+
++(NSString*)getSearchQueryAssociatedWithAssortedProductCategory:(AssortedProductCategory)assortedProductCategory;
 
 @end

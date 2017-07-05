@@ -15,18 +15,17 @@
 @interface KoreanProduct : NSObject
 
 
-
-
-typedef enum
 @property NSString* name;
 @property NSString* brand;
 @property NSString* imagePath;
 @property NSNumber* priceInKRW;
 @property NSString* unityQuantity;
+
+@property AssortedProductCategory assortedCategory;
 @property GeneralProductCategory generalCategory;
 @property SpecificProductCategory specificCategory;
 
-
+-(instancetype)initWithDictionary:(NSDictionary*)configurationDict;
 
 
 @end

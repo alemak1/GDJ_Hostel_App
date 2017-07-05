@@ -103,6 +103,9 @@
 		BD902CE81EFD31F600DD1034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD902CE61EFD31F600DD1034 /* LaunchScreen.storyboard */; };
 		BD902CF01EFD325100DD1034 /* HostelArea.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD902CEF1EFD325100DD1034 /* HostelArea.plist */; };
 		BDA32EE21EFF39DB0087BF19 /* KoreanAudioPhraseController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA32EE11EFF39DB0087BF19 /* KoreanAudioPhraseController.m */; };
+		BDE1E97A1F0CDE67009F132E /* KoreanProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE1E9791F0CDE67009F132E /* KoreanProduct.m */; };
+		BDE1E97D1F0CF1EE009F132E /* KoreanProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE1E97C1F0CF1EE009F132E /* KoreanProductCell.m */; };
+		BDE1E97F1F0CFD43009F132E /* ProductSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE1E97E1F0CFD43009F132E /* ProductSearchController.m */; };
 		BDE3BA241F07EE6200DFDEF4 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE3BA231F07EE6200DFDEF4 /* WebViewController.m */; };
 		BDE3BA281F07F58700DFDEF4 /* ContactInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE3BA271F07F58700DFDEF4 /* ContactInfoController.m */; };
 		BDE3BA2B1F07F66300DFDEF4 /* UIViewController+HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE3BA2A1F07F66300DFDEF4 /* UIViewController+HelperMethods.m */; };
@@ -276,6 +279,11 @@
 		BDA32EE11EFF39DB0087BF19 /* KoreanAudioPhraseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KoreanAudioPhraseController.m; sourceTree = "<group>"; };
 		BDA32F051EFF45850087BF19 /* AudioController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
 		BDA32F061EFF45910087BF19 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
+		BDE1E9791F0CDE67009F132E /* KoreanProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KoreanProduct.m; sourceTree = "<group>"; };
+		BDE1E97B1F0CF1C7009F132E /* KoreanProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KoreanProductCell.h; sourceTree = "<group>"; };
+		BDE1E97C1F0CF1EE009F132E /* KoreanProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KoreanProductCell.m; sourceTree = "<group>"; };
+		BDE1E97E1F0CFD43009F132E /* ProductSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSearchController.m; sourceTree = "<group>"; };
+		BDE1E9801F0CFD57009F132E /* ProductSearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductSearchController.h; sourceTree = "<group>"; };
 		BDE3BA221F07EE5200DFDEF4 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		BDE3BA231F07EE6200DFDEF4 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		BDE3BA261F07F57800DFDEF4 /* ContactInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactInfoController.h; sourceTree = "<group>"; };
@@ -465,7 +473,6 @@
 			children = (
 				BD554C911F090FE600B43C8C /* ProductPriceController.h */,
 				BD554C921F090FFF00B43C8C /* ProductPriceController.m */,
-				BD554C941F0915B800B43C8C /* KoreanProduct.h */,
 				BD554C951F0922C400B43C8C /* ProductPriceDisplayController.h */,
 				BD554C961F0922D500B43C8C /* ProductPriceDisplayController.m */,
 				BD2DCCAC1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.h */,
@@ -473,6 +480,12 @@
 				BD2DCCAF1F092A8000EA8FDF /* CurrencyType.h */,
 				BD2DCCB01F09360B00EA8FDF /* ProductCategory.h */,
 				BD31BC661F0A488100A23256 /* KoreanProducts.plist */,
+				BD554C941F0915B800B43C8C /* KoreanProduct.h */,
+				BDE1E9791F0CDE67009F132E /* KoreanProduct.m */,
+				BDE1E97B1F0CF1C7009F132E /* KoreanProductCell.h */,
+				BDE1E97C1F0CF1EE009F132E /* KoreanProductCell.m */,
+				BDE1E97E1F0CFD43009F132E /* ProductSearchController.m */,
+				BDE1E9801F0CFD57009F132E /* ProductSearchController.h */,
 			);
 			name = ProductPriceController;
 			sourceTree = "<group>";
@@ -851,6 +864,7 @@
 				BD3154EB1F03BF23002B3388 /* WeatherDisplayController.m in Sources */,
 				BD2B78301F073BDB00C33184 /* AnnotationManager.m in Sources */,
 				BD554C971F0922D500B43C8C /* ProductPriceDisplayController.m in Sources */,
+				BDE1E97F1F0CFD43009F132E /* ProductSearchController.m in Sources */,
 				BD2DCCAE1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m in Sources */,
 				BD2EA7721EFFC28F00A8572B /* ContactScrollViewController.m in Sources */,
 				BD2E8EA01F0BDC3A003D9C9B /* WarMemorialNavigationController.m in Sources */,
@@ -863,10 +877,12 @@
 				BDFBFBA71F03E51C00185F47 /* WFSManager.m in Sources */,
 				BD902CDA1EFD31F600DD1034 /* main.m in Sources */,
 				BD554C931F090FFF00B43C8C /* ProductPriceController.m in Sources */,
+				BDE1E97A1F0CDE67009F132E /* KoreanProduct.m in Sources */,
 				BDE3BA2B1F07F66300DFDEF4 /* UIViewController+HelperMethods.m in Sources */,
 				BD34C1DC1F07A8D300CD0DD3 /* PolygonMapController.m in Sources */,
 				BD5C3EC41EFD516E00616400 /* OverlayConfiguration.m in Sources */,
 				BD31A5B11F03932100C018DB /* SeoulTourismNavigationController.m in Sources */,
+				BDE1E97D1F0CF1EE009F132E /* KoreanProductCell.m in Sources */,
 				BDA32EE21EFF39DB0087BF19 /* KoreanAudioPhraseController.m in Sources */,
 				BDFBFBA11F03D57700185F47 /* WeatherForecastCollectionController.m in Sources */,
 			);

@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>assortedCategory</key>
-		<string>0</string>
+		<integer>0</integer>
 		<key>unitQuantity</key>
 		<string>360 ml bottle</string>
 		<key>specificCategory</key>
@@ -840,7 +840,7 @@
 		<key>generalCategory</key>
 		<integer>0</integer>
 		<key>priceInKRW</key>
-		<real>20000</real>
+		<real>15900</real>
 		<key>imagePath</key>
 		<string></string>
 		<key>name</key>
@@ -870,17 +870,17 @@
 		<key>assortedCategory</key>
 		<integer>11</integer>
 		<key>unitQuantity</key>
-		<string>Basic Plan (1 GB, 10000 KRW voice credit, 264 KRW/min)</string>
+		<string>1 GB of 3G data (Mobile Data + Voice Plane)</string>
 		<key>specificCategory</key>
 		<integer>0</integer>
 		<key>generalCategory</key>
 		<integer>0</integer>
 		<key>priceInKRW</key>
-		<integer>15000</integer>
+		<integer>26500</integer>
 		<key>imagePath</key>
 		<string></string>
 		<key>name</key>
-		<string>SIM CARD (90 day period)</string>
+		<string>SIM CARD</string>
 		<key>brand</key>
 		<string>EG</string>
 	</dict>
@@ -888,23 +888,41 @@
 		<key>assortedCategory</key>
 		<integer>11</integer>
 		<key>unitQuantity</key>
-		<string></string>
+		<string>Unlimited 4G/LTE</string>
 		<key>specificCategory</key>
 		<integer>0</integer>
 		<key>generalCategory</key>
 		<integer>0</integer>
 		<key>priceInKRW</key>
-		<integer>0</integer>
+		<integer>25900</integer>
 		<key>imagePath</key>
 		<string></string>
 		<key>name</key>
-		<string>SIM CARD (90 day period)</string>
+		<string>SIM CARD</string>
 		<key>brand</key>
-		<string>KT</string>
+		<string>EG</string>
 	</dict>
 	<dict>
 		<key>assortedCategory</key>
 		<integer>11</integer>
+		<key>unitQuantity</key>
+		<string>Unlimited 4G/LTE</string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>29932</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>SIM CARD</string>
+		<key>brand</key>
+		<string>EG</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>12</integer>
 		<key>unitQuantity</key>
 		<string></string>
 		<key>specificCategory</key>
@@ -912,13 +930,67 @@
 		<key>generalCategory</key>
 		<integer>0</integer>
 		<key>priceInKRW</key>
-		<integer>0</integer>
+		<integer>990000</integer>
 		<key>imagePath</key>
 		<string></string>
 		<key>name</key>
-		<string>SIM CARD (90 day period)</string>
+		<string>Cell Phone</string>
 		<key>brand</key>
-		<string>SK</string>
+		<string>Samsung S8+ (Brand New)</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>12</integer>
+		<key>unitQuantity</key>
+		<string></string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>935000</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Cell Phone</string>
+		<key>brand</key>
+		<string>Samsung S8</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>12</integer>
+		<key>unitQuantity</key>
+		<string></string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>528000</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Cell Phone</string>
+		<key>brand</key>
+		<string>Samsung A7 2016</string>
+	</dict>
+	<dict>
+		<key>assortedCategory</key>
+		<integer>12</integer>
+		<key>unitQuantity</key>
+		<string></string>
+		<key>specificCategory</key>
+		<integer>0</integer>
+		<key>generalCategory</key>
+		<integer>0</integer>
+		<key>priceInKRW</key>
+		<integer>548000</integer>
+		<key>imagePath</key>
+		<string></string>
+		<key>name</key>
+		<string>Cell Phone</string>
+		<key>brand</key>
+		<string>Samsung A5 2017</string>
 	</dict>
 </array>
 </plist>
