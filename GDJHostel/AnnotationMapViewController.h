@@ -20,6 +20,7 @@
 
 @property SeoulLocationAnnotation* annotation;
 
+
 @end
 
 #endif /* AnnotationMapViewController_h */

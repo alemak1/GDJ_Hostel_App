@@ -313,6 +313,43 @@ static UserLocationManager* mySharedLocationManager;
     
 }
 
+
+-(void)viewLocationInMapsFromHostelTo:(CLLocationCoordinate2D)toLocationCoordinate{
+    
+    
+    /** Initialize a MapItem with user's current location **/
+    
+    CLLocationCoordinate2D hostelLocation = CLLocationCoordinate2DMake(37.5394623, 126.9461431);
+    
+    MKPlacemark* hostelLocationPlacemark = [[MKPlacemark alloc] initWithCoordinate:hostelLocation];
+    
+    MKMapItem* fromLocation = [[MKMapItem alloc] initWithPlacemark:hostelLocationPlacemark];
+    
+    
+
+    /** Initialize a MapItem with the center coordinate of the region that the user has just entered **/
+    MKPlacemark* toLocationPlacemark = [[MKPlacemark alloc] initWithCoordinate:toLocationCoordinate];
+    
+    MKMapItem* toLocation = [[MKMapItem alloc] initWithPlacemark:toLocationPlacemark];
+    
+    
+    
+    CLLocationDistance distanceBetweenEndpoints = [self.lastUpdatedUserLocation distanceFromLocation:toLocationPlacemark.location];
+    
+    // Create a region centered on the starting point with a 10km span
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(hostelLocation, distanceBetweenEndpoints*1.5, distanceBetweenEndpoints*1.5);
+    
+    
+    
+    // Open the item in Maps, specifying the map region to display.
+    [MKMapItem openMapsWithItems:[NSArray arrayWithObjects:toLocation,fromLocation, nil]
+                   launchOptions:[NSDictionary dictionaryWithObjectsAndKeys:
+                                  [NSValue valueWithMKCoordinate:region.center], MKLaunchOptionsMapCenterKey,
+                                  [NSValue valueWithMKCoordinateSpan:region.span], MKLaunchOptionsMapSpanKey,
+                                  MKLaunchOptionsDirectionsModeDefault,MKLaunchOptionsDirectionsModeKey, nil]];
+    
+}
+
 -(void)viewLocationInMapsTo:(CLLocationCoordinate2D)regionCenter{
     
     /** Initialize a MapItem with user's current location **/

@@ -202,7 +202,7 @@
 
     }
     
-    productSearchController.assortedProductCategory = productPriceController.currentAssortedProductCategory;
+    productSearchController.assortedProductCategory = [productPriceController getCurrentAssortedProductCategory];
     
 }
 

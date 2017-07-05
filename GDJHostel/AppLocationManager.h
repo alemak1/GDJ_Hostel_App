@@ -38,6 +38,7 @@
 
 
 -(void)viewLocationInMapsTo:(CLLocationCoordinate2D)regionCenter;
+-(void)viewLocationInMapsFromHostelTo:(CLLocationCoordinate2D)toLocationCoordinate;
 
 @end
 

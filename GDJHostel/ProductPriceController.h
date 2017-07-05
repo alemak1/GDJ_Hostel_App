@@ -17,7 +17,8 @@
 
 @property NSString* currentCurrencyCode;
 
-@property AssortedProductCategory currentAssortedProductCategory;
+-(void)setCurrentAssortedProductCategory:(AssortedProductCategory)assortedProductCategory;
+-(AssortedProductCategory)getCurrentAssortedProductCategory;
 
 @end
 

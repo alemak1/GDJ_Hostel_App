@@ -17,7 +17,11 @@
 
 @property AnnotationManager* annotationManager;
 
-@property NSMutableArray<SeoulLocationAnnotation*>* selectedAnnotations;
+@property SeoulLocationAnnotation* selectedAnnotation;
+
+
+
+
 
 @end
 
@@ -29,16 +33,12 @@ BOOL _seeNameOnly = true;
 -(void)viewWillAppear:(BOOL)animated{
     
     
-    /** Initialize set for user-selected annotations **/
     
-    self.selectedAnnotations = [[NSMutableArray alloc] init];
     
     /** Set table view delegate and register table view cells **/
     
     [self.tableView setDelegate:self];
     
-    [self.tableView setAllowsMultipleSelection:YES];
-    [self.tableView setAllowsMultipleSelectionDuringEditing:YES];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"TableViewCell"];
     
@@ -60,14 +60,16 @@ BOOL _seeNameOnly = true;
 
 -(void)viewDidLoad{
     
-    
+    /** Possible use in future iOS tutorials:
+     
     UIBarButtonItem* backToMenu = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonSystemItemRewind target:self action:@selector(dismissNavigationController)];
     
-    UIBarButtonItem*viewAddressButton = [[UIBarButtonItem alloc]initWithTitle:@"See Name Only" style:UIBarButtonItemStylePlain target:self action:@selector(reloadTableViewToShowAddresses)];
+    UIBarButtonItem*viewAddressButton = [[UIBarButtonItem alloc]initWithTitle:@"See Full Description" style:UIBarButtonItemStylePlain target:self action:@selector(reloadTableViewToShowAddresses)];
     
 
     self.navigationItem.leftBarButtonItem = backToMenu;
     self.navigationItem.rightBarButtonItem = viewAddressButton;
+     **/
     
 }
 
@@ -113,38 +115,17 @@ BOOL _seeNameOnly = true;
 #pragma mark *********** TABLEVIEW DELEGATE METHODS
 
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    SeoulLocationAnnotation* annotation = [self.annotationManager getAnnotationForIndexPath:indexPath];
-    
-    [self.selectedAnnotations removeObject:annotation];
-    
-}
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     SeoulLocationAnnotation* annotation = [self.annotationManager getAnnotationForIndexPath:indexPath];
     
-    [self.selectedAnnotations addObject:annotation];
     
-    NSString* title = annotation.title;
+    self.selectedAnnotation = annotation;
+}
 
-    NSString* address = annotation.address;
-    NSString* imageFileName = annotation.imageFilePath;
-    
-    CGFloat longitude = annotation.coordinate.longitude;
-    CGFloat latitude = annotation.coordinate.latitude;
-   
-    
-    NSLog(@"You selected %@ on %@, at latitude: %f, longitude: %f. The corresponding image filename is: %@",title,address, latitude,longitude,imageFileName);
-    
-    //TODO: Add the selected annotation to a map view; perform segue; (use the prepare segue method to access the map view of the destination controller or another stored property (i.e. an array of annotations)
-    
-    //TODO: allow multiple selection on the table possibly
-    
-    
-    
-    
+
+-(SeoulLocationAnnotation *)getUserSelectedAnnotation{
+    return self.selectedAnnotation;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -238,5 +219,13 @@ BOOL _seeNameOnly = true;
     return cellString;
 }
 
+
+-(BOOL)canOnlySeeNameForTableViewCells{
+    return _seeNameOnly;
+}
+
+-(void)setCanOnlySeeNameForTableViewCells:(BOOL)canOnlySeeNameForTableViewCells{
+    _seeNameOnly = canOnlySeeNameForTableViewCells;
+}
 
 @end

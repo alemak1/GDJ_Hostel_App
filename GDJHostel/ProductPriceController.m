@@ -17,11 +17,6 @@
 @interface ProductPriceController ()
 
 
-
-
-
-
-
 @property NSDictionary* currencyExchangeData;
 @property NSURLSession* apiRequestSession;
 @property (readonly) double currentExchangeRate;
@@ -31,6 +26,8 @@
 @end
 
 @implementation ProductPriceController
+
+AssortedProductCategory _currentAssortedProductCategory = 0;
 
 static void* ProductPriceControllerContext = &ProductPriceControllerContext;
 static void* CurrencyCodeContext = &CurrencyCodeContext;
@@ -136,8 +133,19 @@ static void* CurrencyCodeContext = &CurrencyCodeContext;
     
     [self setProductPriceWithKRWPrice:productPrice];
     
-    self.currentAssortedProductCategory = (AssortedProductCategory)indexPath.row;
     
+    [self setCurrentAssortedProductCategory:(AssortedProductCategory)indexPath.row];
+}
+
+
+
+
+-(void)setCurrentAssortedProductCategory:(AssortedProductCategory)assortedProductCategory{
+    _currentAssortedProductCategory = assortedProductCategory;
+}
+
+-(AssortedProductCategory)getCurrentAssortedProductCategory{
+    return _currentAssortedProductCategory;
 }
 
 #pragma mark NSURL SESSION/NSURL DATA TASK UTILITY FUNCTIONS

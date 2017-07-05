@@ -178,8 +178,6 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     
     UIViewController* nextViewController;
     
-    UIStoryboard* storyBoardA = [UIStoryboard storyboardWithName:@"StoryboardA" bundle:nil];
-    
     UIStoryboard* mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                             
     switch (self.currentNextViewController) {
@@ -187,7 +185,8 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
             nextViewController = [self getNavigationControllerForTouristLocationTableViewController];
             break;
         case TO_HOSTEL_DIRECTIONS_CONTROLLER:
-            nextViewController = [self getToHostelDirectionsController];            break;
+            nextViewController = [self getToHostelDirectionsController];
+            break;
         case LOCATION_SEARCH_CONTROLLER:
             nextViewController = [self getLocationSearchController];
             break;
@@ -212,13 +211,21 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
 
 - (UINavigationController*) getNavigationControllerForTouristLocationTableViewController{
     
+   
+    UIStoryboard* storyboardB = [UIStoryboard storyboardWithName:@"StoryboardB" bundle:nil];
     
-    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:[[TouristLocationTableViewController alloc] init]];
+    NSString* storyboardIdentifier = @"TouristLocationTableViewNavigationController";
     
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+        
+        storyboardIdentifier = @"TouristLocationTableViewNavigationController_iPad";
+        
+    }
+    
+    UINavigationController* nextViewController = [storyboardB instantiateViewControllerWithIdentifier:storyboardIdentifier];
+    
+    return nextViewController;
 
-    return navigationController;
-
-    return nil;
 }
 
 -(NSString*)getNextViewControllerTitleFor:(VALID_NEXT_VIEW_CONTROLLER)validNextViewController{

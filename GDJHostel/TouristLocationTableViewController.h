@@ -11,8 +11,17 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "SeoulLocationAnnotation+HelperMethods.h"
 
 @interface TouristLocationTableViewController : UITableViewController
+
+
+-(void) reloadTableViewToShowAddresses;
+
+-(SeoulLocationAnnotation*)getUserSelectedAnnotation;
+
+@property BOOL canOnlySeeNameForTableViewCells;
+
 
 @end
 
