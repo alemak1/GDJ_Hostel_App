@@ -68,6 +68,8 @@
             return @"Guanghuamun and Gyeongbok Palace";
         case NATIONAL_PALACE_MUSEUM:
             return @"National Palace Museum";
+        case WORLD_CUP_STADIUM:
+            return @"World Cup Stadium (Perimeter)";
         default:
             return nil;
     }
@@ -101,6 +103,9 @@
                 break;
             case NATIONAL_PALACE_MUSEUM:
                 fileName = @"NationalPalaceMuseum";
+                break;
+            case WORLD_CUP_STADIUM:
+                fileName = @"WorldCupStadium";
                 break;
             default:
                 break;

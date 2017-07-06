@@ -100,6 +100,7 @@
 		BD829AFB1F0E43DE00C54427 /* DLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = BD829AFA1F0E43DE00C54427 /* DLinkedList.m */; };
 		BD829AFD1F0E50FE00C54427 /* Gwanghuamun.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD829AFC1F0E50FE00C54427 /* Gwanghuamun.plist */; };
 		BD829AFF1F0E55A900C54427 /* NationalPalaceMuseum.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD829AFE1F0E55A900C54427 /* NationalPalaceMuseum.plist */; };
+		BD829B011F0E64C600C54427 /* WorldCupStadium.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD829B001F0E64C600C54427 /* WorldCupStadium.plist */; };
 		BD902CDA1EFD31F600DD1034 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CD91EFD31F600DD1034 /* main.m */; };
 		BD902CDD1EFD31F600DD1034 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CDC1EFD31F600DD1034 /* AppDelegate.m */; };
 		BD902CE01EFD31F600DD1034 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CDF1EFD31F600DD1034 /* ViewController.m */; };
@@ -278,6 +279,7 @@
 		BD829AFA1F0E43DE00C54427 /* DLinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLinkedList.m; sourceTree = "<group>"; };
 		BD829AFC1F0E50FE00C54427 /* Gwanghuamun.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Gwanghuamun.plist; sourceTree = "<group>"; };
 		BD829AFE1F0E55A900C54427 /* NationalPalaceMuseum.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NationalPalaceMuseum.plist; sourceTree = "<group>"; };
+		BD829B001F0E64C600C54427 /* WorldCupStadium.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WorldCupStadium.plist; sourceTree = "<group>"; };
 		BD902CD51EFD31F600DD1034 /* GDJHostel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDJHostel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD902CD91EFD31F600DD1034 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BD902CDB1EFD31F600DD1034 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -582,6 +584,7 @@
 				BD2E8E9B1F0BD9CA003D9C9B /* PetraeusBuilding.plist */,
 				BD829AFC1F0E50FE00C54427 /* Gwanghuamun.plist */,
 				BD829AFE1F0E55A900C54427 /* NationalPalaceMuseum.plist */,
+				BD829B001F0E64C600C54427 /* WorldCupStadium.plist */,
 			);
 			name = plists;
 			sourceTree = "<group>";
@@ -820,6 +823,7 @@
 				BD34C1D61F079DBB00CD0DD3 /* LottoHotel.plist in Resources */,
 				BD305CE01F0BB44300F0CC7B /* KoreanWarExhibitRoom2.plist in Resources */,
 				BD305BB71EFF8CB500F9F2B9 /* transportation-3.caf in Resources */,
+				BD829B011F0E64C600C54427 /* WorldCupStadium.plist in Resources */,
 				BD305BB51EFF8CB500F9F2B9 /* transportation-1.caf in Resources */,
 				BD5C3EC61EFD53FC00616400 /* Seoul.geojson in Resources */,
 				BD2B782D1F0737BD00C33184 /* path2.plist in Resources */,
