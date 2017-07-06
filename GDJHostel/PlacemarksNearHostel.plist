@@ -508,17 +508,339 @@
 	</dict>
 	<dict>
 		<key>imagefilepath</key>
-		<string></string>
+		<string>rotary_grinding_mill</string>
 		<key>subtitle</key>
-		<string></string>
+		<string>Relic near National Folk Museum</string>
 		<key>type</key>
-		<integer>0</integer>
+		<integer>14</integer>
 		<key>location</key>
-		<string>{,}</string>
+		<string>{37.5806,126.9797}</string>
 		<key>address</key>
-		<string></string>
+		<string>Gwanghuamun</string>
 		<key>title</key>
-		<string></string>
+		<string>Rotary Grinding Mill</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>rotary_grinding_mill</string>
+		<key>subtitle</key>
+		<string>Relic near National Folk Museum</string>
+		<key>type</key>
+		<integer>14</integer>
+		<key>location</key>
+		<string>{37.5804,126.9706}</string>
+		<key>address</key>
+		<string>Gwanghuamun</string>
+		<key>title</key>
+		<string>The Epitaph, Statues of Scholar and Stone Objects of Gen. Nam Oh-Seong&apos;s Grave</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>print_shop</string>
+		<key>subtitle</key>
+		<string>Relic near National Folk Museum</string>
+		<key>type</key>
+		<integer>14</integer>
+		<key>location</key>
+		<string>{37.5811,126.9797}</string>
+		<key>address</key>
+		<string>Gwanghuamun</string>
+		<key>title</key>
+		<string>The Print Shop</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>ochondaek</string>
+		<key>subtitle</key>
+		<string>Relic near National Folk Museum</string>
+		<key>type</key>
+		<integer>14</integer>
+		<key>location</key>
+		<string>{37.5806,126.9790}</string>
+		<key>address</key>
+		<string>Gwanghuamun</string>
+		<key>title</key>
+		<string>Ochondaek</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>1970_model_street</string>
+		<key>subtitle</key>
+		<string>Relic near National Folk Museum</string>
+		<key>type</key>
+		<integer>14</integer>
+		<key>location</key>
+		<string>{37.5811,126.9798}</string>
+		<key>address</key>
+		<string>Gwanghuamun</string>
+		<key>title</key>
+		<string>1970s-80s Era Korean Model Street</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>bambo_war_store</string>
+		<key>subtitle</key>
+		<string>Relic near National Folk Museum</string>
+		<key>type</key>
+		<integer>14</integer>
+		<key>location</key>
+		<string>{37.5810,126.9797}</string>
+		<key>address</key>
+		<string>Gwanghuamun</string>
+		<key>title</key>
+		<string>Bamboo Ware Store, Herbal Medicine Store, Korean Hat Store</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>national_folk_museum</string>
+		<key>subtitle</key>
+		<string>Relic near National Folk Museum</string>
+		<key>type</key>
+		<integer>14</integer>
+		<key>location</key>
+		<string>{37.5815,126.9784}</string>
+		<key>address</key>
+		<string>Gwanghuamun</string>
+		<key>title</key>
+		<string>National Folk Museum</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>seoul_education_museum</string>
+		<key>subtitle</key>
+		<string>A small museum about Seoul culture and history</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5796,126.9832}</string>
+		<key>address</key>
+		<string>In BukChon Old Street Area</string>
+		<key>title</key>
+		<string>Seoul Education Museum</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>bukchon_exhibit_room</string>
+		<key>subtitle</key>
+		<string>A small exhibit about the historic street of BukChon.</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5796,126.9826}</string>
+		<key>address</key>
+		<string>In BukChon Old Street Area</string>
+		<key>title</key>
+		<string>Bukchon Exhibit Room</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>jongdeok_library</string>
+		<key>subtitle</key>
+		<string>A library in the BukChon Old Street Area with cafeteria and outdoor sitting area.</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5797,126.9826}</string>
+		<key>address</key>
+		<string>In BukChon Old Street Area</string>
+		<key>title</key>
+		<string>Jongdeok Library</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>gagosipo_gallery</string>
+		<key>subtitle</key>
+		<string>A small art gallery in BukChon Old Street Are</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5803,126.9820}</string>
+		<key>address</key>
+		<string>In BukChon Old Street Area</string>
+		<key>title</key>
+		<string>Gagosipo Gallery</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>gagosipo_gallery</string>
+		<key>subtitle</key>
+		<string>A small art gallery in BukChon Old Street Are</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5803,126.9820}</string>
+		<key>address</key>
+		<string>In BukChon Old Street Area</string>
+		<key>title</key>
+		<string>Gagosipo Gallery</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>seoul_education_museum</string>
+		<key>subtitle</key>
+		<string>A small museum near Gwanghuamun.</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5796,126.9832}</string>
+		<key>address</key>
+		<string>A museum near Gwanghuamun.</string>
+		<key>title</key>
+		<string>Seoul Education Museum</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>national_museum_of_korean_culture</string>
+		<key>subtitle</key>
+		<string>A small museum near Gwanghuamun.</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5736,126.9775}</string>
+		<key>address</key>
+		<string>A museum near Gwanghuamun.</string>
+		<key>title</key>
+		<string>National Museum of Korean Culture</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>temple_byeomnyeknsa</string>
+		<key>subtitle</key>
+		<string>A Buddhist temple near the eastern wall of Gwanghuamun.</string>
+		<key>type</key>
+		<integer>14</integer>
+		<key>location</key>
+		<string>{37.5736,126.9775}</string>
+		<key>address</key>
+		<string>A Buddhist temple near the eastern wall of Gwanghuamun.</string>
+		<key>title</key>
+		<string>Temple Byeomnyeknsa</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>temple_byeomnyeknsa</string>
+		<key>subtitle</key>
+		<string>A small art gallery near the eastern wall of Gwanghuamun.</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5774, 126.9798}</string>
+		<key>address</key>
+		<string>A small art gallery near the eastern wall of Gwanghuamun.</string>
+		<key>title</key>
+		<string>Gallery Hyundai</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>barakat_sculpture_museum</string>
+		<key>subtitle</key>
+		<string>A small art gallery near the eastern wall of Gwanghuamun.</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5811,126.9805}</string>
+		<key>address</key>
+		<string>A small art gallery near the eastern wall of Gwanghuamun.</string>
+		<key>title</key>
+		<string>Barakat Sculpture Museum</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>gallery_hakgojae</string>
+		<key>subtitle</key>
+		<string>A small art gallery near the eastern wall of Gwanghuamun.</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5803,126.9802}</string>
+		<key>address</key>
+		<string>A small art gallery near the eastern wall of Gwanghuamun.</string>
+		<key>title</key>
+		<string>Gallery HakGojae</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>seum_artspace</string>
+		<key>subtitle</key>
+		<string>A small art gallery near the eastern wall of Gwanghuamun.</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5800,126.9801}</string>
+		<key>address</key>
+		<string>A small art gallery near the eastern wall of Gwanghuamun.</string>
+		<key>title</key>
+		<string>Seum Artspace</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>seum_artspace</string>
+		<key>subtitle</key>
+		<string>A museum/education center about South Korean presidents.</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5800,126.9801}</string>
+		<key>address</key>
+		<string>Located on the northwestern corner of Gwanghuamen, outside the old city wall.</string>
+		<key>title</key>
+		<string>Cheongwadae Sarangchae</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>seum_artspace</string>
+		<key>subtitle</key>
+		<string>An art museum located towards the inside of small inroad, close to the western side of Gwanghuamun.</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5774,126.9737}</string>
+		<key>address</key>
+		<string>Located on the western sid of Gwanghuamen, outside the old city wall.</string>
+		<key>title</key>
+		<string>Daemlim Museum</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>seum_artspace</string>
+		<key>subtitle</key>
+		<string>An art museum located towards the inside of small inroad, close to the western side of Gwanghuamun.</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5761,126.9745}</string>
+		<key>address</key>
+		<string>Located inside Gwanghuamun, adjacent to the western flank of the main palace.</string>
+		<key>title</key>
+		<string>National Palace Museum</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>kumho_museum_art</string>
+		<key>subtitle</key>
+		<string>An art museum located on the eastern side of Gwanghuamun.</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5774,126.9798}</string>
+		<key>address</key>
+		<string>Located on the eastern side of Gwanghuamun.</string>
+		<key>title</key>
+		<string>Kumho Museum of Art</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>national_folk_musem</string>
+		<key>subtitle</key>
+		<string>A museum featuring exhibits about Korean prehistory and history.</string>
+		<key>type</key>
+		<integer>13</integer>
+		<key>location</key>
+		<string>{37.5815,126.9784}</string>
+		<key>address</key>
+		<string>Located inside Gwanghuamun, on the northeast side of the complex.</string>
+		<key>title</key>
+		<string>National Folk Museum</string>
 	</dict>
 </array>
 </plist>

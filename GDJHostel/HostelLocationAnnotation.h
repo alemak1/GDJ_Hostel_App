@@ -30,8 +30,8 @@ typedef NS_ENUM(NSUInteger, SeoulLocationType) {
     NearHostelLocationBankATM,
     TouristAttractionStreetMarket,
     TouristAttractionShoppingArea,
-    TouristAttractionMuseum,
-    TouristAttractionTemple,
+    TouristAttractionMuseumLibrary,
+    TouristAttractionTempleMonumentRelic,
     TouristAttractionWarMemorial,
     TouristAttractionTower,
     LAST_LOCATION_TYPE_INDEX

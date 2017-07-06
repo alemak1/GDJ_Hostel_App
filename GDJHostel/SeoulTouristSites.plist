@@ -1045,5 +1045,113 @@ The mall also has a rest area called Herb Plaza, where shoppers can take a rest 
 		<key>midCoord</key>
 		<string>{37.5354,126.9784}</string>
 	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>ochondaek</string>
+		<key>category</key>
+		<integer>13</integer>
+		<key>specialNote</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string></string>
+		<key>webAddress</key>
+		<string>https://english.visitkorea.or.kr/</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>The house is known as ochondaek since the 11th descendant of Nango, Nam Yongjin, from Wangu-1ri married Yi of Jareong from Ochon-ri. While dismantling the house, an inscription indicating the year (1848) the house was built was found.</string>
+		<key>name</key>
+		<string>Ochondaek</string>
+		<key>title</key>
+		<string>Ochondaek</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5800,126.9780}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5810,126.9795}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5810,126.9780}</string>
+		<key>midCoord</key>
+		<string>{37.5806,126.9790}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>print_shop</string>
+		<key>category</key>
+		<integer>13</integer>
+		<key>specialNote</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string></string>
+		<key>webAddress</key>
+		<string>https://english.visitkorea.or.kr/</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>An old print shop.</string>
+		<key>name</key>
+		<string>Old Print Shop</string>
+		<key>title</key>
+		<string>Old Print Shop</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5810,126.9796}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5812,126.9798}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5812,126.9796}</string>
+		<key>midCoord</key>
+		<string>{37.5811,126.9797}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>rotary_grinding_mill</string>
+		<key>category</key>
+		<integer>13</integer>
+		<key>specialNote</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string></string>
+		<key>webAddress</key>
+		<string>https://english.visitkorea.or.kr/</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>The house is known as ochondaek since the 11th descendant of Nango, Nam Yongjin, from Wangu-1ri married Yi of Jareong from Ochon-ri. While dismantling the house, an inscription indicating the year (1848) the house was built was found.</string>
+		<key>name</key>
+		<string>Old Print Shop</string>
+		<key>title</key>
+		<string>Old Print Shop</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5810,126.9796}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5812,126.9798}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5812,126.9796}</string>
+		<key>midCoord</key>
+		<string>{37.5811,126.9797}</string>
+	</dict>
 </array>
 </plist>

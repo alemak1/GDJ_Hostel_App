@@ -31,6 +31,7 @@ typedef enum TouristSiteCategory{
     SEOUL_TOWER,
     YANGGU_COUNTY,
     KOREAN_WAR_MEMORIAL,
+    GWANGHUAMUN,
     TOURIST_SITE_CATEGORY_END_INDEX
 }TouristSiteCategory;
 

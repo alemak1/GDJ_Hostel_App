@@ -39,10 +39,10 @@
             return @"Cosmetics and Skin Care";
         case TouristAttractionTower:
             return @"Radio Towers";
-        case TouristAttractionMuseum:
-            return @"Museums";
-        case TouristAttractionTemple:
-            return @"Temples";
+        case TouristAttractionMuseumLibrary:
+            return @"Museums and Libraries";
+        case TouristAttractionTempleMonumentRelic:
+            return @"Temples, Monu";
         case TouristAttractionWarMemorial:
             return @"Korean War Memorial";
         case TouristAttractionShoppingArea:
@@ -80,9 +80,9 @@
             return @"piggyBankA";
         case TouristAttractionTower:
             return @"towerA";
-        case TouristAttractionMuseum:
+        case TouristAttractionMuseumLibrary:
             return @"paintingA";
-        case TouristAttractionTemple:
+        case TouristAttractionTempleMonumentRelic:
             return @"templeA";
         case TouristAttractionWarMemorial:
             return @"tankA";
@@ -123,9 +123,9 @@
             return [UIColor lightGrayColor];
         case TouristAttractionTower:
             return [UIColor darkGrayColor];
-        case TouristAttractionMuseum:
+        case TouristAttractionMuseumLibrary:
             return [UIColor brownColor];
-        case TouristAttractionTemple:
+        case TouristAttractionTempleMonumentRelic:
             return [UIColor redColor];
         case TouristAttractionWarMemorial:
             return [UIColor grayColor];
