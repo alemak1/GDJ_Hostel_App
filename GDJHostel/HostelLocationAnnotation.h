@@ -34,6 +34,7 @@ typedef NS_ENUM(NSUInteger, SeoulLocationType) {
     TouristAttractionTempleMonumentRelic,
     TouristAttractionWarMemorial,
     TouristAttractionTower,
+    TouristAttractionTheaterMovie,
     LAST_LOCATION_TYPE_INDEX
     
     

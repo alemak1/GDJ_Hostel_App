@@ -96,6 +96,10 @@
 		BD6847711F010070004732FB /* ImageManagerB.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6847701F010070004732FB /* ImageManagerB.m */; };
 		BD7670DC1F02037000918A20 /* TouristSiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA9F1EFFE80900C0E540 /* TouristSiteManager.m */; };
 		BD7C35491F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BD7C35481F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.m */; };
+		BD829AF81F0E420100C54427 /* DLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD829AF71F0E420100C54427 /* DLinkedNode.m */; };
+		BD829AFB1F0E43DE00C54427 /* DLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = BD829AFA1F0E43DE00C54427 /* DLinkedList.m */; };
+		BD829AFD1F0E50FE00C54427 /* Gwanghuamun.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD829AFC1F0E50FE00C54427 /* Gwanghuamun.plist */; };
+		BD829AFF1F0E55A900C54427 /* NationalPalaceMuseum.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD829AFE1F0E55A900C54427 /* NationalPalaceMuseum.plist */; };
 		BD902CDA1EFD31F600DD1034 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CD91EFD31F600DD1034 /* main.m */; };
 		BD902CDD1EFD31F600DD1034 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CDC1EFD31F600DD1034 /* AppDelegate.m */; };
 		BD902CE01EFD31F600DD1034 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD902CDF1EFD31F600DD1034 /* ViewController.m */; };
@@ -268,6 +272,12 @@
 		BD7C35471F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKDirectionsRequest+HelperMethods.h"; sourceTree = "<group>"; };
 		BD7C35481F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKDirectionsRequest+HelperMethods.m"; sourceTree = "<group>"; };
 		BD7C354A1F08A515009FD8F8 /* TransportationMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransportationMode.h; sourceTree = "<group>"; };
+		BD829AF61F0E41F300C54427 /* DLinkedNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLinkedNode.h; sourceTree = "<group>"; };
+		BD829AF71F0E420100C54427 /* DLinkedNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLinkedNode.m; sourceTree = "<group>"; };
+		BD829AF91F0E43D400C54427 /* DLinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLinkedList.h; sourceTree = "<group>"; };
+		BD829AFA1F0E43DE00C54427 /* DLinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLinkedList.m; sourceTree = "<group>"; };
+		BD829AFC1F0E50FE00C54427 /* Gwanghuamun.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Gwanghuamun.plist; sourceTree = "<group>"; };
+		BD829AFE1F0E55A900C54427 /* NationalPalaceMuseum.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NationalPalaceMuseum.plist; sourceTree = "<group>"; };
 		BD902CD51EFD31F600DD1034 /* GDJHostel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDJHostel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD902CD91EFD31F600DD1034 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BD902CDB1EFD31F600DD1034 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -417,6 +427,8 @@
 		BD3844B01EFE52C800F2E981 /* NavigationAidControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BD829AF51F0E41D800C54427 /* GwanghuamunNavigator */,
+				BD829AF41F0E41CA00C54427 /* New Group */,
 				BD2E8E9D1F0BDB29003D9C9B /* WarMemorialNavigator */,
 				BD2D62C21F0A9B9400231365 /* TouristLocationTableViewController */,
 				BD7C35461F089B79009FD8F8 /* PolygonMapControllers */,
@@ -568,6 +580,8 @@
 				BD305CE71F0BC56800F0CC7B /* WarHistoryExhibit2.plist */,
 				BD305CE91F0BCCEE00F0CC7B /* WeddingHall.plist */,
 				BD2E8E9B1F0BD9CA003D9C9B /* PetraeusBuilding.plist */,
+				BD829AFC1F0E50FE00C54427 /* Gwanghuamun.plist */,
+				BD829AFE1F0E55A900C54427 /* NationalPalaceMuseum.plist */,
 			);
 			name = plists;
 			sourceTree = "<group>";
@@ -594,6 +608,24 @@
 				BD34C1DB1F07A8D300CD0DD3 /* PolygonMapController.m */,
 			);
 			name = PolygonMapControllers;
+			sourceTree = "<group>";
+		};
+		BD829AF41F0E41CA00C54427 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		BD829AF51F0E41D800C54427 /* GwanghuamunNavigator */ = {
+			isa = PBXGroup;
+			children = (
+				BD829AF61F0E41F300C54427 /* DLinkedNode.h */,
+				BD829AF71F0E420100C54427 /* DLinkedNode.m */,
+				BD829AF91F0E43D400C54427 /* DLinkedList.h */,
+				BD829AFA1F0E43DE00C54427 /* DLinkedList.m */,
+			);
+			name = GwanghuamunNavigator;
 			sourceTree = "<group>";
 		};
 		BD902CCC1EFD31F600DD1034 = {
@@ -772,6 +804,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD829AFF1F0E55A900C54427 /* NationalPalaceMuseum.plist in Resources */,
 				BD902CE81EFD31F600DD1034 /* LaunchScreen.storyboard in Resources */,
 				BD305CEA1F0BCCEE00F0CC7B /* WeddingHall.plist in Resources */,
 				BD305BB81EFF8CB500F9F2B9 /* transportation-4.caf in Resources */,
@@ -809,6 +842,7 @@
 				BD902CF01EFD325100DD1034 /* HostelArea.plist in Resources */,
 				BD305CE41F0BBBA700F0CC7B /* KoreanWarMemorialCircleRegions.plist in Resources */,
 				BD305CD31F0B9B2100F0CC7B /* KoreanWarExhibitRoom3.plist in Resources */,
+				BD829AFD1F0E50FE00C54427 /* Gwanghuamun.plist in Resources */,
 				BD305CE61F0BC2B300F0CC7B /* WarHistoryExhibit.plist in Resources */,
 				BD14B0AD1F0732490024668D /* path1.plist in Resources */,
 				BD305CE81F0BC56800F0CC7B /* WarHistoryExhibit2.plist in Resources */,
@@ -857,6 +891,7 @@
 				BD34C1DE1F07A8E200CD0DD3 /* PolygonSelectionController.m in Sources */,
 				BDFBFBA41F03E41400185F47 /* WeatherForecastSite.m in Sources */,
 				BD5C3EBC1EFD4BA000616400 /* HostelAreaMapViewController.m in Sources */,
+				BD829AF81F0E420100C54427 /* DLinkedNode.m in Sources */,
 				BDE3BA281F07F58700DFDEF4 /* ContactInfoController.m in Sources */,
 				BD27B12E1F0250B700059152 /* TouristSiteCategorySelectionController.m in Sources */,
 				BDE3BA371F08033F00DFDEF4 /* HeaderViewConfiguration.m in Sources */,
@@ -883,6 +918,7 @@
 				BD2B78331F074CAF00C33184 /* HostelAreaMapOptionsController.m in Sources */,
 				BD6847711F010070004732FB /* ImageManagerB.m in Sources */,
 				BDFBFBA71F03E51C00185F47 /* WFSManager.m in Sources */,
+				BD829AFB1F0E43DE00C54427 /* DLinkedList.m in Sources */,
 				BD902CDA1EFD31F600DD1034 /* main.m in Sources */,
 				BD554C931F090FFF00B43C8C /* ProductPriceController.m in Sources */,
 				BDE1E97A1F0CDE67009F132E /* KoreanProduct.m in Sources */,

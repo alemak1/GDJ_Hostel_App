@@ -842,5 +842,271 @@
 		<key>title</key>
 		<string>National Folk Museum</string>
 	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>national_security_pavilion</string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>15</integer>
+		<key>location</key>
+		<string></string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string>PKM-357 National Security Pavilion</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>war_history_room_2</string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>15</integer>
+		<key>location</key>
+		<string>{37.5370,126.9765}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string>War History Room 2</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>Hwaseong Fortress</string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>15</integer>
+		<key>location</key>
+		<string>{37.5371,126.9765}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string>Hwaseong Fortress</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>war_history_room_2</string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>15</integer>
+		<key>location</key>
+		<string>{37.5371,126.9766}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string>War History Room 2</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>war_history_room_2</string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>15</integer>
+		<key>location</key>
+		<string>{37.5373,126.9772}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string>Memorial Hall</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>war_memorial_of_korea</string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>15</integer>
+		<key>location</key>
+		<string>{37.5365,126.9772}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string>War Memorial of Korea (Main Entrance)</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>patrol_boat</string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>15</integer>
+		<key>location</key>
+		<string>{37.5359,126.9782}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string>Restored Patrol Boat (War Memorial)</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>mk30_naval_gun</string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>15</integer>
+		<key>location</key>
+		<string>{37.5365,126.9782}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string>MK-30 Naval Gun</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>mk30_naval_gun</string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>15</integer>
+		<key>location</key>
+		<string>{37.5357,126.9785}</string>
+		<key>address</key>
+		<string></string>
+		<key>title</key>
+		<string>C-46 Commando Transport</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>b52_bomber</string>
+		<key>subtitle</key>
+		<string>National Security Pavilion</string>
+		<key>type</key>
+		<integer>15</integer>
+		<key>location</key>
+		<string>{37.5354,126.9784}</string>
+		<key>address</key>
+		<string>8-3 Yongsandong1ga</string>
+		<key>title</key>
+		<string>B-52 Bomber</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string></string>
+		<key>subtitle</key>
+		<string></string>
+		<key>type</key>
+		<integer>15</integer>
+		<key>location</key>
+		<string>{37.5368,126.9768}</string>
+		<key>address</key>
+		<string>National Security Pavilion (War Memorial of Korea)</string>
+		<key>title</key>
+		<string>Children&apos;s Museum (War Memorial of Korea)</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>coffeenamu</string>
+		<key>subtitle</key>
+		<string>War Memorial of Korea</string>
+		<key>type</key>
+		<integer>1</integer>
+		<key>location</key>
+		<string>{37.5369,126.9783}</string>
+		<key>address</key>
+		<string>Yongsandong1ga, Yongsan-gu</string>
+		<key>title</key>
+		<string>Coffenamu</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>coffeenamu</string>
+		<key>subtitle</key>
+		<string>Digital Media City</string>
+		<key>type</key>
+		<integer>1</integer>
+		<key>location</key>
+		<string>{37.5785,126.9008}</string>
+		<key>address</key>
+		<string>Digital Media City</string>
+		<key>title</key>
+		<string>Tom N Toms Coffee</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>coffeenamu</string>
+		<key>subtitle</key>
+		<string>Digital Media City</string>
+		<key>type</key>
+		<integer>8</integer>
+		<key>location</key>
+		<string>{37.5777,126.9006}</string>
+		<key>address</key>
+		<string>Digital Media City</string>
+		<key>title</key>
+		<string>Deuxville Building</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>samho_garden</string>
+		<key>subtitle</key>
+		<string>Digital Media City</string>
+		<key>type</key>
+		<integer>8</integer>
+		<key>location</key>
+		<string>{37.5805,126.8980}</string>
+		<key>address</key>
+		<string>Digital Media City</string>
+		<key>title</key>
+		<string>Samho Garden</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>samsung_retail_dmc</string>
+		<key>subtitle</key>
+		<string>Digital Media City</string>
+		<key>type</key>
+		<integer>5</integer>
+		<key>location</key>
+		<string>{37.5811,126.8973}</string>
+		<key>address</key>
+		<string>Digital Media City</string>
+		<key>title</key>
+		<string>Samsung Retail Outlet</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>world_cup_stadium</string>
+		<key>subtitle</key>
+		<string>World Cup Stadium</string>
+		<key>type</key>
+		<integer>17</integer>
+		<key>location</key>
+		<string>{37.5693,126.8988}</string>
+		<key>address</key>
+		<string>World Cup Stadium</string>
+		<key>title</key>
+		<string>World Cup Stadium Imax</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>entirely_new_war</string>
+		<key>subtitle</key>
+		<string>War Memorial of Korea</string>
+		<key>type</key>
+		<integer>17</integer>
+		<key>location</key>
+		<string>{37.5371,126.9765}</string>
+		<key>address</key>
+		<string>War Memorial of Korea</string>
+		<key>title</key>
+		<string>War Film Exhibit (An Entirely New War)</string>
+	</dict>
+	<dict>
+		<key>imagefilepath</key>
+		<string>slam_eagle</string>
+		<key>subtitle</key>
+		<string>War Memorial of Korea</string>
+		<key>type</key>
+		<integer>17</integer>
+		<key>location</key>
+		<string>{37.5367,126.9781}</string>
+		<key>address</key>
+		<string>War Memorial of Korea</string>
+		<key>title</key>
+		<string>3D Movie Exhibit (F-15 Slam Eagle)</string>
+	</dict>
 </array>
 </plist>

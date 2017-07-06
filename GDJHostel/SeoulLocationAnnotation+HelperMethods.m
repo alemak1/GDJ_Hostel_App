@@ -42,13 +42,15 @@
         case TouristAttractionMuseumLibrary:
             return @"Museums and Libraries";
         case TouristAttractionTempleMonumentRelic:
-            return @"Temples, Monu";
+            return @"Temples, Monuments, & Historical Sites";
         case TouristAttractionWarMemorial:
             return @"Korean War Memorial";
         case TouristAttractionShoppingArea:
             return @"Shopping Area";
         case TouristAttractionStreetMarket:
             return @"Night Market";
+        case TouristAttractionTheaterMovie:
+            return @"Movies and Theaters";
         default:
             return nil;
     }
@@ -90,6 +92,8 @@
             return @"shoppingA";
         case TouristAttractionStreetMarket:
             return @"streetStandA";
+        case TouristAttractionTheaterMovie:
+            return @"tvD";
         default:
             return nil;
     }
@@ -133,6 +137,8 @@
             return [UIColor blueColor];
         case TouristAttractionStreetMarket:
             return [UIColor yellowColor];
+        case TouristAttractionTheaterMovie:
+            return [UIColor greenColor];
         default:
             return nil;
     }

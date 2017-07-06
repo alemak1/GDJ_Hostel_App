@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>National Palace Museum</string>
+	<key>boundary</key>
+	<array>
+		<string>{37.5761,126.9745}</string>
+		<string>{37.5763,126.9745}</string>
+		<string>{37.5769,126.9744}</string>
+		<string>{37.5771,126.9750}</string>
+		<string>{37.5771,126.9758}</string>
+		<string>{37.5761,126.9759}</string>
+	</array>
+</dict>
+</plist>

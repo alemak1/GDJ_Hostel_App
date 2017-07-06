@@ -64,6 +64,10 @@
             return @"Korean War Memorial (Main Building)";
         case PETRAEUS_BUILDING:
             return @"Petraeus Building Complex";
+        case GUANGHUAMUN:
+            return @"Guanghuamun and Gyeongbok Palace";
+        case NATIONAL_PALACE_MUSEUM:
+            return @"National Palace Museum";
         default:
             return nil;
     }
@@ -91,6 +95,12 @@
                 break;
             case PETRAEUS_BUILDING:
                 fileName = @"PetraeusBuilding";
+                break;
+            case GUANGHUAMUN:
+                fileName = @"Gwanghuamun";
+                break;
+            case NATIONAL_PALACE_MUSEUM:
+                fileName = @"NationalPalaceMuseum";
                 break;
             default:
                 break;

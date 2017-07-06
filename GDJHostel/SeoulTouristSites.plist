@@ -1083,7 +1083,7 @@ The mall also has a rest area called Herb Plaza, where shoppers can take a rest 
 	</dict>
 	<dict>
 		<key>imagePath</key>
-		<string>print_shop</string>
+		<string>korean_street</string>
 		<key>category</key>
 		<integer>13</integer>
 		<key>specialNote</key>
@@ -1101,25 +1101,25 @@ The mall also has a rest area called Herb Plaza, where shoppers can take a rest 
 		<key>admissionFee</key>
 		<integer>0</integer>
 		<key>description</key>
-		<string>An old print shop.</string>
+		<string>This part of the recreated past representes Korean cultures from the 70s to the 80s.  A soup shop, barber shop, coffee shop, comic book shop, photo studio and others are filled with props to replicate the past.</string>
 		<key>name</key>
-		<string>Old Print Shop</string>
+		<string>1970s-80s KoreanStreet</string>
 		<key>title</key>
-		<string>Old Print Shop</string>
+		<string>1970s-80s Korean Street</string>
 		<key>boundary</key>
 		<array/>
 		<key>overlayBottomLeftCoord</key>
-		<string>{37.5810,126.9796}</string>
+		<string>{37.5810,126.9790}</string>
 		<key>overlayTopRightCoord</key>
-		<string>{37.5812,126.9798}</string>
+		<string>{37.5815,126.9800}</string>
 		<key>overlayTopLeftCoord</key>
-		<string>{37.5812,126.9796}</string>
+		<string>{37.5815,126.9800}</string>
 		<key>midCoord</key>
-		<string>{37.5811,126.9797}</string>
+		<string>{37.5811,126.9798}</string>
 	</dict>
 	<dict>
 		<key>imagePath</key>
-		<string>rotary_grinding_mill</string>
+		<string>national_folk_museum</string>
 		<key>category</key>
 		<integer>13</integer>
 		<key>specialNote</key>
@@ -1139,19 +1139,127 @@ The mall also has a rest area called Herb Plaza, where shoppers can take a rest 
 		<key>description</key>
 		<string>The house is known as ochondaek since the 11th descendant of Nango, Nam Yongjin, from Wangu-1ri married Yi of Jareong from Ochon-ri. While dismantling the house, an inscription indicating the year (1848) the house was built was found.</string>
 		<key>name</key>
-		<string>Old Print Shop</string>
+		<string>National Folk Museum</string>
 		<key>title</key>
-		<string>Old Print Shop</string>
+		<string>National Folk Museum</string>
 		<key>boundary</key>
 		<array/>
 		<key>overlayBottomLeftCoord</key>
-		<string>{37.5810,126.9796}</string>
+		<string>{37.5790,126.9790}</string>
 		<key>overlayTopRightCoord</key>
-		<string>{37.5812,126.9798}</string>
+		<string>{37.5810,126.9799}</string>
 		<key>overlayTopLeftCoord</key>
-		<string>{37.5812,126.9796}</string>
+		<string>{37.5810,126.9790}</string>
 		<key>midCoord</key>
-		<string>{37.5811,126.9797}</string>
+		<string>{37.5799,126.9797}}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>korean_president_house</string>
+		<key>category</key>
+		<integer>13</integer>
+		<key>specialNote</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string></string>
+		<key>webAddress</key>
+		<string>https://english.visitkorea.or.kr/</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Heavily guarded with security guards, the South Korean president&apos;s mansion can be viewed from the northwest corner of the Gwanghuamun Complex.  Although visitors are not allowed to enter, they can enjoy a good view of the building premises.</string>
+		<key>name</key>
+		<string>President&apos;s Residence</string>
+		<key>title</key>
+		<string>President&apos;s Residence</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string></string>
+		<key>overlayTopRightCoord</key>
+		<string></string>
+		<key>overlayTopLeftCoord</key>
+		<string></string>
+		<key>midCoord</key>
+		<string>{37.5835,126.9753}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>palace</string>
+		<key>category</key>
+		<integer>13</integer>
+		<key>specialNote</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string></string>
+		<key>webAddress</key>
+		<string>https://english.visitkorea.or.kr/</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Heavily guarded with security guards, the South Korean president&apos;s mansion can be viewed from the northwest corner of the Gwanghuamun Complex.  Although visitors are not allowed to enter, they can enjoy a good view of the building premises.</string>
+		<key>name</key>
+		<string>Palace</string>
+		<key>title</key>
+		<string>Palce</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string></string>
+		<key>overlayTopRightCoord</key>
+		<string></string>
+		<key>overlayTopLeftCoord</key>
+		<string></string>
+		<key>midCoord</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>national_palace_museum</string>
+		<key>category</key>
+		<integer>13</integer>
+		<key>specialNote</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string></string>
+		<key>webAddress</key>
+		<string>https://english.visitkorea.or.kr/</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string></string>
+		<key>name</key>
+		<string>National Palace Museum</string>
+		<key>title</key>
+		<string>National Palace Museum</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5763,126.9745}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5769,126.9746}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5769,126.9744}</string>
+		<key>midCoord</key>
+		<string>{37.5761,126.9745}</string>
 	</dict>
 </array>
 </plist>
