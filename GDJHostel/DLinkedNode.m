@@ -29,6 +29,9 @@
     return self;
 }
 
+
+
+
 -(void)setNextLinkedNode:(DLinkedNode*)nextLinkedNode{
     _nextLinkedNode = nextLinkedNode;
 }
@@ -46,6 +49,10 @@
     return _previousLinkedNode;
 }
 
+-(CLLocation*)getLocation{
+    
+    return [[CLLocation alloc] initWithLatitude:self.coordinate.latitude longitude:self.coordinate.longitude];
+}
 
 
 @end

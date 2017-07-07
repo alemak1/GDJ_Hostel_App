@@ -109,6 +109,8 @@
 		BD902CE81EFD31F600DD1034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD902CE61EFD31F600DD1034 /* LaunchScreen.storyboard */; };
 		BD902CF01EFD325100DD1034 /* HostelArea.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD902CEF1EFD325100DD1034 /* HostelArea.plist */; };
 		BDA32EE21EFF39DB0087BF19 /* KoreanAudioPhraseController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA32EE11EFF39DB0087BF19 /* KoreanAudioPhraseController.m */; };
+		BDAA41E11F0F545A0021CE79 /* OperatingDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = BDAA41E01F0F545A0021CE79 /* OperatingDateTime.m */; };
+		BDAA420A1F0F77060021CE79 /* TouristSiteTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BDAA42081F0F77060021CE79 /* TouristSiteTracker.xcdatamodeld */; };
 		BDE1E97A1F0CDE67009F132E /* KoreanProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE1E9791F0CDE67009F132E /* KoreanProduct.m */; };
 		BDE1E97D1F0CF1EE009F132E /* KoreanProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE1E97C1F0CF1EE009F132E /* KoreanProductCell.m */; };
 		BDE1E97F1F0CFD43009F132E /* ProductSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE1E97E1F0CFD43009F132E /* ProductSearchController.m */; };
@@ -295,6 +297,9 @@
 		BDA32EE11EFF39DB0087BF19 /* KoreanAudioPhraseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KoreanAudioPhraseController.m; sourceTree = "<group>"; };
 		BDA32F051EFF45850087BF19 /* AudioController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
 		BDA32F061EFF45910087BF19 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
+		BDAA41DF1F0F544B0021CE79 /* OperatingDateTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperatingDateTime.h; sourceTree = "<group>"; };
+		BDAA41E01F0F545A0021CE79 /* OperatingDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatingDateTime.m; sourceTree = "<group>"; };
+		BDAA42091F0F77060021CE79 /* TouristSiteTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TouristSiteTracker.xcdatamodel; sourceTree = "<group>"; };
 		BDE1E9791F0CDE67009F132E /* KoreanProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KoreanProduct.m; sourceTree = "<group>"; };
 		BDE1E97B1F0CF1C7009F132E /* KoreanProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KoreanProductCell.h; sourceTree = "<group>"; };
 		BDE1E97C1F0CF1EE009F132E /* KoreanProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KoreanProductCell.m; sourceTree = "<group>"; };
@@ -355,6 +360,8 @@
 				BD31A5AD1F038E0600C018DB /* TouristSiteDetailInformationController.m */,
 				BD31A5AF1F03931200C018DB /* SeoulTourismNavigationController.h */,
 				BD31A5B01F03932100C018DB /* SeoulTourismNavigationController.m */,
+				BDAA41DF1F0F544B0021CE79 /* OperatingDateTime.h */,
+				BDAA41E01F0F545A0021CE79 /* OperatingDateTime.m */,
 			);
 			name = TouristSitesCollectionController;
 			sourceTree = "<group>";
@@ -429,7 +436,7 @@
 		BD3844B01EFE52C800F2E981 /* NavigationAidControllers */ = {
 			isa = PBXGroup;
 			children = (
-				BD829AF51F0E41D800C54427 /* GwanghuamunNavigator */,
+				BD829AF51F0E41D800C54427 /* DLinkedList */,
 				BD829AF41F0E41CA00C54427 /* New Group */,
 				BD2E8E9D1F0BDB29003D9C9B /* WarMemorialNavigator */,
 				BD2D62C21F0A9B9400231365 /* TouristLocationTableViewController */,
@@ -620,7 +627,7 @@
 			name = "New Group";
 			sourceTree = "<group>";
 		};
-		BD829AF51F0E41D800C54427 /* GwanghuamunNavigator */ = {
+		BD829AF51F0E41D800C54427 /* DLinkedList */ = {
 			isa = PBXGroup;
 			children = (
 				BD829AF61F0E41F300C54427 /* DLinkedNode.h */,
@@ -628,7 +635,7 @@
 				BD829AF91F0E43D400C54427 /* DLinkedList.h */,
 				BD829AFA1F0E43DE00C54427 /* DLinkedList.m */,
 			);
-			name = GwanghuamunNavigator;
+			name = DLinkedList;
 			sourceTree = "<group>";
 		};
 		BD902CCC1EFD31F600DD1034 = {
@@ -670,6 +677,7 @@
 				BD902CDF1EFD31F600DD1034 /* ViewController.m */,
 				BD902CDB1EFD31F600DD1034 /* AppDelegate.h */,
 				BD902CDC1EFD31F600DD1034 /* AppDelegate.m */,
+				BDAA42081F0F77060021CE79 /* TouristSiteTracker.xcdatamodeld */,
 				BD5C3EC91EFD579100616400 /* StoryboardA.storyboard */,
 				BD554C8E1F090FBF00B43C8C /* StoryboardB.storyboard */,
 				BD902CE11EFD31F600DD1034 /* Main.storyboard */,
@@ -883,6 +891,7 @@
 				BD2CAA911EFFCD6200C0E540 /* HostelCollectionController.m in Sources */,
 				BDF55EBD1F036906003FC663 /* NSString+HelperMethods.m in Sources */,
 				BD3844AC1EFE4FD300F2E981 /* HostelLocationAnnotationView.m in Sources */,
+				BDAA420A1F0F77060021CE79 /* TouristSiteTracker.xcdatamodeld in Sources */,
 				BD3A9C7D1F02839E006D1CD8 /* AppLocationManager.m in Sources */,
 				BD30C5171EFDDCE70032FE64 /* HostelInformationController.m in Sources */,
 				BD3151141F00C844002332B8 /* TouristSiteCollectionViewController.m in Sources */,
@@ -914,6 +923,7 @@
 				BDE1E97F1F0CFD43009F132E /* ProductSearchController.m in Sources */,
 				BD2DCCAE1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m in Sources */,
 				BD2EA7721EFFC28F00A8572B /* ContactScrollViewController.m in Sources */,
+				BDAA41E11F0F545A0021CE79 /* OperatingDateTime.m in Sources */,
 				BD2E8EA01F0BDC3A003D9C9B /* WarMemorialNavigationController.m in Sources */,
 				BD30C51A1EFDE5240032FE64 /* MenuComponent.m in Sources */,
 				BD2DF30E1F060643005BAD8B /* WeatherDetailController.m in Sources */,
@@ -1098,6 +1108,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BDAA42081F0F77060021CE79 /* TouristSiteTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BDAA42091F0F77060021CE79 /* TouristSiteTracker.xcdatamodel */,
+			);
+			currentVersion = BDAA42091F0F77060021CE79 /* TouristSiteTracker.xcdatamodel */;
+			path = TouristSiteTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BD902CCD1EFD31F600DD1034 /* Project object */;
 }

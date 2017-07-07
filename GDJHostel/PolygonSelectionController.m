@@ -10,6 +10,8 @@
 #import "PolygonSelectionController.h"
 #import "PolygonMapController.h"
 #import "BoundaryOverlay.h"
+#import "DLinkedList.h"
+
 
 @interface PolygonSelectionController ()
 
@@ -115,6 +117,15 @@
         NSLog(@"Preparing to initialize boundary overaly with path %@",fileName);
         
         BoundaryOverlay* polygonOverlay = [[BoundaryOverlay alloc] initWithFilename:fileName];
+        
+        //Create Doubly-Linked List here
+        DLinkedList* linkedList = [[DLinkedList alloc] initWithFileType2:fileName];
+        
+        [linkedList traverseListWithFunction:^(DLinkedNode* node){
+        
+            NSLog(@"Traversed node %@, with coordinates lat: %f, long: %f",[node name], [node coordinate].latitude, [node coordinate].longitude);
+        
+        }];
         
         
         [self.polygonDictionary setObject:polygonOverlay forKey:numberIndex];

@@ -519,13 +519,16 @@ int backgroundSessionIndex = 0;
     for(int i = 0; i < numberOfForecastDays; i++){
         
        runningDate = [NSDate dateWithTimeInterval:(i*3600*24) sinceDate:runningDate];
+        
+        /** The DarkSky API requires a UNIX-formatted date for its endpdoint **/
         NSTimeInterval UNIXFormattedRunningDate = [runningDate timeIntervalSince1970];
         
         NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
-        [numberFormatter setMaximumFractionDigits:0];
+        [numberFormatter setMaximumFractionDigits:4];
         
         NSString* runningDateString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:UNIXFormattedRunningDate]];
-        
+    
+
         NSString* nextURLString = [self.currentRequestURI stringByAppendingString:runningDateString];
         
         NSURL* nextURL = [NSURL URLWithString:nextURLString];

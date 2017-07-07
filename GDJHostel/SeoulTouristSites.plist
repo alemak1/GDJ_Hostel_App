@@ -1261,5 +1261,119 @@ The mall also has a rest area called Herb Plaza, where shoppers can take a rest 
 		<key>midCoord</key>
 		<string>{37.5761,126.9745}</string>
 	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>namdaemun_market</string>
+		<key>category</key>
+		<integer>3</integer>
+		<key>specialNote</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string>21, Namdaemunsijang 4-gil, Jung-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>https://english.visitkorea.or.kr/</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Opened in 1964, Namdaemun Market is the largest traditional market in Korea with shops selling various goods. All products are sold at affordable prices and the stores in this area also function as wholesale markets.  Most of the goods are made directly by the storeowners. Namdaemun Market is even open overnight, from 11:00pm to 4:00am, and is crowded with retailers from all over the country. When day breaks, the site of busy shoppers bustling around the market creates a unique scene that attracts tourists worldwide. 
+</string>
+		<key>name</key>
+		<string>Namdaemun Market</string>
+		<key>title</key>
+		<string>Namdaemun Market</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5590122,126.9751583}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5597772,126.9757693}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5597942,126.9751903}</string>
+		<key>midCoord</key>
+		<string>{37.5591828,126.9754805}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>namdaemun_market</string>
+		<key>category</key>
+		<integer>3</integer>
+		<key>specialNote</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string>21, Namdaemunsijang 4-gil, Jung-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>https://english.visitkorea.or.kr/</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Opened in 1964, Namdaemun Market is the largest traditional market in Korea with shops selling various goods. All products are sold at affordable prices and the stores in this area also function as wholesale markets.  Most of the goods are made directly by the storeowners. Namdaemun Market is even open overnight, from 11:00pm to 4:00am, and is crowded with retailers from all over the country. When day breaks, the site of busy shoppers bustling around the market creates a unique scene that attracts tourists worldwide. 
+</string>
+		<key>name</key>
+		<string>Namdaemun Market</string>
+		<key>title</key>
+		<string>Namdaemun Market</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5590122,126.9751583}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5597772,126.9757693}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5597942,126.9751903}</string>
+		<key>midCoord</key>
+		<string>{37.5591828,126.9754805}</string>
+	</dict>
+	<dict>
+		<key>imagePath</key>
+		<string>lotte_outlets</string>
+		<key>category</key>
+		<integer>3</integer>
+		<key>specialNote</key>
+		<string></string>
+		<key>physicalAddress</key>
+		<string>405, Hangang-daero, Yongsan-gu, Seoul
+</string>
+		<key>webAddress</key>
+		<string>https://english.visitkorea.or.kr/</string>
+		<key>daysClosed</key>
+		<array/>
+		<key>closingTime</key>
+		<integer>-1</integer>
+		<key>openingTime</key>
+		<integer>-1</integer>
+		<key>admissionFee</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Seoul Station Branch offers more than 140 famous brands at reasonable prices. Connected to Seoul&apos;s major transportation hub - Seoul Station, the outlet provides a convenient shopping experience in the heart of Seoul.
+</string>
+		<key>name</key>
+		<string>Lotte Outlets</string>
+		<key>title</key>
+		<string>Lotte Outlets</string>
+		<key>boundary</key>
+		<array/>
+		<key>overlayBottomLeftCoord</key>
+		<string>{37.5491452,126.9680733}</string>
+		<key>overlayTopRightCoord</key>
+		<string>{37.5491452,126.9683513}</string>
+		<key>overlayTopLeftCoord</key>
+		<string>{37.5491452,126.9680733}</string>
+		<key>midCoord</key>
+		<string>{37.5490687,126.9682771}</string>
+	</dict>
 </array>
 </plist>

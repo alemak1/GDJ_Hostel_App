@@ -7,8 +7,15 @@
 //
 
 #import "DLinkedList.h"
+#import "AppLocationManager.h"
 
-/**
+@interface DLinkedList ()
+
+@property DLinkedNode* rootNode;
+
+
+@end
+
 @implementation DLinkedList
 
 -(instancetype)initWithFileName:(NSString*)fileName{
@@ -22,106 +29,171 @@
         NSArray* boundaryArray = [NSArray arrayWithContentsOfFile:path];
         
         
-        NSInteger boundaryPoints = [boundaryArray count];
-        
-        CLLocationCoordinate2D* temporaryBoundaryArray = calloc(sizeof(CLLocationCoordinate2D), boundaryPoints);
-
-        
-        /** Initialize the temporary boundary array with coordinate determined from the array **/
-
-/** 
- 
-        DLinkedNode* currentNode;
-        
-        for(int i = 0; i < boundaryPoints; i++){
-            
-           CGPoint rootPoint = CGPointFromString(boundaryArray[0]);
-            
-            CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(rootPoint.x, rootPoint.y);
-            
-            temporaryBoundaryArray[i] = coordinate;
-            /**
-            if(i == 0){
-                currentNode = [[DLinkedNode alloc] initWithCoordinate:temporaryBoundaryArray[i] andWithName:[NSString stringWithFormat:@"Node-%d",i]];
-                
-                [currentNode setNextLinkedNode: [[DLinkedNode alloc] initWithCoordinate:temporaryBoundaryArray[boundaryPoints-1]] andWithName:[NSString stringWithFormat:@"Node-%i",i];
-                 
-                [currentNode setPreviousLinkedNode:nil];
-                
-            }
-            
-
-        }
-        **/
-    /**
-        
-        for(int i = 0; i < boundaryPoints; i++){
-            
-            
-            DLinkedNode* previousNode;
-            DLinkedNode* nextNode;
-            DLinkedNode* currentNode;
-            
-            if(i == 0){
-                
-                currentNode = [[DLinkedNode alloc] initWithCoordinate:temporaryBoundaryArray[i] andWithName:[NSString stringWithFormat:@"Node-%i",i]];
-                
-                _rootNode = currentNode;
-                
-                 previousNode = [[DLinkedNode alloc] initWithCoordinate:temporaryBoundaryArray[boundaryPoints-1] andWithName:[NSString stringWithFormat:@"Node-%i",i]];
-                
-                 nextNode = [[DLinkedNode alloc] initWithCoordinate:temporaryBoundaryArray[i+1] andWithName:[NSString stringWithFormat:@"Node-%i",i]];
-                
-               
-                
-            } else if (i == boundaryPoints-1){
-                
-                currentNode = [[DLinkedNode alloc] initWithCoordinate:temporaryBoundaryArray[i] andWithName:[NSString stringWithFormat:@"Node-%i",i]];
-                
-                
-                previousNode = [[DLinkedNode alloc] initWithCoordinate:temporaryBoundaryArray[boundaryPoints-1] andWithName:[NSString stringWithFormat:@"Node-%i",i]];
-                
-                nextNode = [[DLinkedNode alloc] initWithCoordinate:temporaryBoundaryArray[i+1] andWithName:[NSString stringWithFormat:@"Node-%i",i]];
-                
-                
-            } else {
-               /**
-                currentNode = [self getCurrentLastNodeInNextDirection:_rootNode];
-                
-                previousNode = [[DLinkedNode alloc] initWithCoordinate:temporaryBoundaryArray[i-1] andWithName:[NSString stringWithFormat:@"Node-%i",i]];
-                
-                nextNode = [[DLinkedNode alloc] initWithCoordinate:temporaryBoundaryArray[i+1] andWithName:[NSString stringWithFormat:@"Node-%i",i]];
-                
-                **/
-            
-            /**
-            }
-            
-            [_rootNode setPreviousLinkedNode:previousNode];
-            [_rootNode setNextLinkedNode:nextNode];
-            
-        }
-       
-        
+        [self createLinkedListWithBoundaryArray:boundaryArray];
         
     }
     
     return self;
 }
-**/
+
+-(instancetype)initWithFileType2:(NSString*)fileName{
     
-/**
+    self = [super init];
+    
+    if(self){
+        
+        NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
+        
+        NSDictionary* configurationDict = [NSDictionary dictionaryWithContentsOfFile:path];
+        
+        NSArray* boundaryArray = configurationDict[@"boundary"];
+        
+        [self createLinkedListWithBoundaryArray:boundaryArray];
+        
+    }
+    
+    return self;
+}
+
+
+
+
+-(void)createLinkedListWithBoundaryArray:(NSArray*)boundaryArray{
+    
+    NSInteger boundaryPoints = [boundaryArray count];
+    
+    CLLocationCoordinate2D* temporaryBoundaryArray = calloc(sizeof(CLLocationCoordinate2D), boundaryPoints);
+    
+    
+    
+    DLinkedNode* currentNode;
+    DLinkedNode* nextNode;
+    
+    for(int i = 0; i < boundaryPoints; i++){
+        
+        CGPoint rootPoint = CGPointFromString(boundaryArray[0]);
+        
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(rootPoint.x, rootPoint.y);
+        
+        temporaryBoundaryArray[i] = coordinate;
+        
+        /** First initialize the root node and set it equal to its next node **/
+        
+        if(i == 0){
+            currentNode = [[DLinkedNode alloc] initWithCoordinate:temporaryBoundaryArray[i] andWithName:[NSString stringWithFormat:@"Node-%d",i]];
+            
+            nextNode = [[DLinkedNode alloc] initWithCoordinate:temporaryBoundaryArray[i+1] andWithName:[NSString stringWithFormat:@"Node-%i",i]];
+            
+            _rootNode = currentNode;
+            
+            /** Afer the root node has been initialized, the current node is always the next node down the chain from the rootnode **/
+        } else {
+            
+            
+            currentNode = [self getCurrentLastNodeInNextDirection:_rootNode];
+            
+            /** Once we traverse to the last node, the next node is the roote node, and it's previous node is set to the current node **/
+            
+            if(i < boundaryPoints-1){
+                
+                nextNode = [[DLinkedNode alloc] initWithCoordinate:temporaryBoundaryArray[i+1] andWithName:[NSString stringWithFormat:@"Node-%i",i]];
+            } else {
+                nextNode = _rootNode;
+                [_rootNode setPreviousLinkedNode:currentNode];
+            }
+            
+            
+        }
+        
+        [currentNode setNextLinkedNode:nextNode];
+        [nextNode setPreviousLinkedNode:currentNode];
+        
+        
+        
+    }
+    
+    
+}
+
+
+
 -(CLLocationCoordinate2D)getClosestLocationToUser{
     
-}
-
--(CLLocationCoordinate2D)getFarthestLocationToUser{
+    CLLocation* userLocation = [[UserLocationManager sharedLocationManager] getLastUpdatedUserLocation];
     
     
+    return [self getClosestLocationToLocation:userLocation];
 }
-**/
 
-    /**
+
+
+-(CLLocationCoordinate2D)getClosestLocationToLocation:(CLLocation*)location{
+    
+
+    DLinkedNode* currentNode = _rootNode;
+    
+    BOOL isClosestNode = NO;
+    
+    while(!isClosestNode){
+        
+        
+        DLinkedNode* nextNode = [currentNode nextLinkedNode];
+        DLinkedNode* previousNode = [currentNode previousLinkedNode];
+        
+        CLLocation* nextLocation = [nextNode getLocation];
+        CLLocation* previousLocation = [previousNode getLocation];
+        CLLocation* currentLocation = [currentNode getLocation];
+        
+        CLLocationDistance distanceToCurrentLoc = [location distanceFromLocation:currentLocation];
+        CLLocationDistance distanceToNextLoc = [location distanceFromLocation:nextLocation];
+        CLLocationDistance distanceToPreviousLoc = [location distanceFromLocation:previousLocation];
+        
+        
+        if(distanceToCurrentLoc < distanceToNextLoc && distanceToCurrentLoc < distanceToPreviousLoc){
+            
+            isClosestNode = YES;
+        } else {
+            
+            
+            if(distanceToPreviousLoc < distanceToCurrentLoc && distanceToPreviousLoc < distanceToNextLoc){
+                currentNode = previousNode;
+            }
+            
+            
+            if(distanceToNextLoc < distanceToCurrentLoc && distanceToNextLoc < distanceToPreviousLoc){
+                currentNode = nextNode;
+            }
+            
+            
+        }
+        
+    }
+    
+    return [currentNode coordinate];
+    
+}
+
+
+
+
+
+-(void)traverseListWithFunction:(void(^)(DLinkedNode* node))someFunction{
+    
+    DLinkedNode* currentNode = _rootNode;
+    
+    someFunction(currentNode);
+    
+    currentNode = [currentNode nextLinkedNode];
+    
+    while(currentNode != _rootNode){
+        
+        someFunction(currentNode);
+
+        currentNode = [currentNode nextLinkedNode];
+    }
+}
+
+    
 -(DLinkedNode*)getCurrentLastNodeInNextDirection:(DLinkedNode*)node{
     
     if(node == nil){
@@ -136,6 +208,6 @@
     return node;
     
 }
-**/
 
-//@end
+
+@end

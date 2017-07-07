@@ -24,6 +24,8 @@
 
 -(instancetype)initWithCoordinate:(CLLocationCoordinate2D)coordinate andWithName:(NSString*)name;
 
+-(CLLocation*)getLocation;
+
 
 
 @end

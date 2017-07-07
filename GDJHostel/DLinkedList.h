@@ -17,8 +17,11 @@
 @interface DLinkedList : NSObject
 
 
-@property DLinkedNode* rootNode;
+-(instancetype)initWithFileType2:(NSString*)fileName;
 
+-(CLLocationCoordinate2D)getClosestLocationToUser;
+
+-(void)traverseListWithFunction:(void(^)(DLinkedNode* node))someFunction;
 
 
 @end
