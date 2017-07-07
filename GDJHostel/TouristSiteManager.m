@@ -143,6 +143,24 @@ NSArray* _touristSiteDictArray;
 }
 
 
+
+- (NSArray<TouristSiteConfiguration*>*)getArrayForMaxAdmissionFee:(CGFloat)maxAdmissionFee andMaxDistance:(CGFloat)maxDistanceFromUser andForCategory:(TouristSiteCategory)touristSiteCategory{
+    
+    
+    return [self.configurationArray filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(TouristSiteConfiguration* configurationObject, NSDictionary *bindings) {
+        
+        BOOL admissionFeeCondition = [configurationObject admissionFee] <= maxAdmissionFee;
+        BOOL distanceCondition = [configurationObject distanceFromUser] < maxDistanceFromUser;
+        BOOL siteCategoryConditon = [configurationObject touristSiteCategory] == touristSiteCategory;
+        
+        return (distanceCondition && siteCategoryConditon && admissionFeeCondition);
+        
+    }]];
+    
+}
+
+
+
 - (NSArray<TouristSiteConfiguration*>*)getArrayForMaximumTravelingTime:(CGFloat)maxTravelingTime andMaxDistance:(CGFloat)maxDistanceFromUser andForCategory:(TouristSiteCategory)touristSiteCategory{
     
     

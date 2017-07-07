@@ -30,6 +30,8 @@
 
 /** Site filtering functions **/
 
+- (NSArray<TouristSiteConfiguration*>*)getArrayForMaxAdmissionFee:(CGFloat)maxAdmissionFee andMaxDistance:(CGFloat)maxDistanceFromUser andForCategory:(TouristSiteCategory)touristSiteCategory;
+
 - (NSArray<TouristSiteConfiguration*>*)getArrayForMaximumTravelingTime:(CGFloat)maxTravelingTime andMaxDistance:(CGFloat)maxDistanceFromUser andForCategory:(TouristSiteCategory)touristSiteCategory;
 
 - (NSArray<TouristSiteConfiguration*>*)getArrayForMaximumTravelingTime:(CGFloat)maxTravelingTime;

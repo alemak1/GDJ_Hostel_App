@@ -25,14 +25,15 @@
 - (IBAction)performSiteSearchWithSpecifiedFilterCriteria:(UIButton *)sender;
 
 @property TouristSiteCategory selectedSiteCategory;
-@property double selectedTravelTimeInSeconds;
+@property double selectedAdmissionFee;
 @property double selectedMaxDistance;
 
 - (IBAction)didChangeSelectedDistance:(UISlider *)sender;
 
-- (IBAction)didChangeSelectedTime:(UISlider *)sender;
+- (IBAction)didChangeSelectedPrice:(UIStepper *)sender;
 
-@property (weak, nonatomic) IBOutlet UISlider *travelTimeFilterSlider;
+@property (weak, nonatomic) IBOutlet UIStepper *admissionFeeStepper;
+
 
 
 @end
@@ -126,7 +127,7 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
      
-        self.filteredSiteManager = [self.siteManager getArrayForMaximumTravelingTime:self.selectedTravelTimeInSeconds andMaxDistance:self.selectedMaxDistance andForCategory:self.selectedSiteCategory];
+        self.filteredSiteManager = [self.siteManager getArrayForMaxAdmissionFee:self.selectedAdmissionFee andMaxDistance:self.selectedMaxDistance andForCategory:self.selectedSiteCategory];
     
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -199,8 +200,10 @@
     self.selectedMaxDistance = [self.distanceFilterSlider value];
 }
 
-- (IBAction)didChangeSelectedTime:(UISlider *)sender {
+- (IBAction)didChangeSelectedPrice:(UIStepper *)sender {
     
-    self.selectedTravelTimeInSeconds = [self.travelTimeFilterSlider value];
+    self.selectedAdmissionFee = [self.admissionFeeStepper value];
 }
+
+
 @end
