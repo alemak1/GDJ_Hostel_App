@@ -11,7 +11,7 @@
 #import "MenuComponent.h"
 #import "AppLocationManager.h"
 
-#import "OperatingDateTime.h"
+#import "TouristSiteManager.h"
 
 @interface HostelInformationController ()
 
@@ -34,51 +34,41 @@
     
     [userLocationManager setPresentingViewControllerTo:self];
     
-    NSDate* chuseok2018 = [OperatingDateTime chuseokDateForGregorianYear:2018];
-    NSDate* seoullal2018 = [OperatingDateTime seoullalDateForGregorianYear:2018];
+    [userLocationManager requestAuthorizationAndStartUpdates];
     
-    NSLog(@"2018 date for chuseok: %@",[chuseok2018 description]);
-    NSLog(@"2018 date for seoullal: %@",[seoullal2018 description]);
+    TouristSiteManager* siteManager = [[TouristSiteManager alloc] initWithFileName:@"SeoulTouristSites"];
 
-    /** This hypothetical tourist site is open from Feb. 15 to Mar. 25 **/
-    NSDictionary* operatingHoursDictionary = [NSDictionary dictionaryWithObjectsAndKeys:@"{46800,61200}",@"sundayOperatingRange",@"{46800,61200}",@"mondayOperatingRange",@"{46800,61200}",@"tuesdayOperatingRange",@"{46800,61200}",@"wednesdayOperatingRange",@"{46800,61200}",@"thursdayOperatingRange",@"{46800,61200}",@"fridayOperatingRange",@"{46800,61200}",@"saturdayOperatingRange", nil];
-    
-    OperatingDateTime* touristSiteODT = [[OperatingDateTime alloc] initWithStartingMonth:2 andWithStartingDay:15 andWithEndingMonth:3 andWithEndingDay:25 andWithOperatingHoursDictionary:operatingHoursDictionary];
-    
-    NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    
-    NSDateComponents* components1 = [[NSDateComponents alloc] init];
-    [components1 setMonth:1];
-    [components1 setDay:20];
-    
-    NSDate* testDate1 = [gregorian dateFromComponents:components1];
-    
-    NSDateComponents* components2 = [[NSDateComponents alloc] init];
-    [components2 setMonth:2];
-    [components2 setDay:25];
-    [components2 setHour:14];
-    [components2 setMinute:23];
-    
-    NSDate* testDate2 = [gregorian dateFromComponents:components2];
-    
-    if(![touristSiteODT isWithinOperatingDayRange:testDate1]){
-        NSLog(@"Test Date 1 is invalid!");
-    };
     
     
-    if([touristSiteODT isWithinOperatingDayRange:testDate2]){
-        NSLog(@"Test Date 2 is valid!");
+    __block CLLocation* userLocation = [userLocationManager getLastUpdatedUserLocation];
+    
+    if(userLocation == nil){
         
-        if(![touristSiteODT isWithinOperatingHourRange:testDate2]){
-            NSLog(@"Test Date 2 is not within the operating hourss for the tourist site");
-        } else {
-            NSLog(@"Test Date 2 is within the operating hours for the tourist site!");
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 6.00*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        
+            userLocation = [userLocationManager getLastUpdatedUserLocation];
+
+        
+            NSLog(@"The user location after 6.00 secondss is lat: %f, long: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
             
-            NSInteger timeUntilClosingInSeconds = [touristSiteODT timeUntilClosingInSeconds:testDate2];
             
-            NSLog(@"The time until closing in seconds is %ld",(long)timeUntilClosingInSeconds);
-        }
+            TouristSiteConfiguration* site = [siteManager getTouristSiteClosestToUser];
+            
+            NSLog(@"The tourist site closest to the user is: %@",[site title]);
+            
+            NSArray* closeSitesArray = [siteManager getArrayForTouristSiteCategory:KOREAN_WAR_MEMORIAL];
+            
+
+            NSLog(@"The museums are:");
+            
+            for (TouristSiteConfiguration*site in closeSitesArray) {
+                NSLog(@"Name: %@",site.title);
+            }
+        });
     }
+    
+    
+    
     
 
     

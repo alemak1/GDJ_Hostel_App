@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "TouristSiteConfiguration.h"
 #import "NSString+HelperMethods.h"
+#import "AppLocationManager.h"
+#import "MKDirectionsRequest+HelperMethods.h"
 
 @interface TouristSiteConfiguration ()
 
@@ -315,45 +317,55 @@ CLLocation* _lastUpdatedUserLocation;
     //TODO: get user's current location to calculate the distance to the site
     CLLocation* touristSiteLocation = [[CLLocation alloc] initWithLatitude:self.midCoordinate.latitude longitude:self.midCoordinate.longitude];
     
-    CLLocationDistance distanceInMeters = [_lastUpdatedUserLocation distanceFromLocation:touristSiteLocation];
+    CLLocation* userLocation = [[UserLocationManager sharedLocationManager] getLastUpdatedUserLocation];
     
-    return distanceInMeters/1000;
+    CLLocationDistance distanceInMeters = [userLocation distanceFromLocation:touristSiteLocation];
+    
+    return distanceInMeters;
 }
 
 -(CGFloat)travelingTimeFromUserLocation{
     //TODO: get the user's current location to calculate the distance to the site
     
-    MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc] init];
+    /** Get a direcctions request from the user's current location  **/
+    
+    MKDirectionsRequest *directionsRequest = [MKDirectionsRequest getDirectionsRequestToDestinationWithCoordinate:CLLocationCoordinate2DMake(self.midCoordinate.latitude, self.midCoordinate.longitude) andWithTransportationMode:TRANSIT];
+    
     directionsRequest.transportType = MKDirectionsTransportTypeAny;
     
-
-    MKPlacemark* userLocationPlacemark = [[MKPlacemark alloc] initWithCoordinate: CLLocationCoordinate2DMake(_lastUpdatedUserLocation.coordinate.latitude, _lastUpdatedUserLocation.coordinate.longitude)];
-    
-    MKMapItem* userLocationMapItem = [[MKMapItem alloc] initWithPlacemark:userLocationPlacemark];
-    
-    [directionsRequest setSource:userLocationMapItem];
-    
-    MKPlacemark* touristSitePlacemark = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(self.midCoordinate.latitude, self.midCoordinate.longitude)];
-    MKMapItem* touristSiteMapItem = [[MKMapItem alloc] initWithPlacemark:touristSitePlacemark];
-    
-    [directionsRequest setDestination: touristSiteMapItem];
     
     MKDirections *routeDirections = [[MKDirections alloc] initWithRequest:directionsRequest];
     
     
+    
     __block MKRoute* routeToTouristSite = nil;
+    
+    __block NSTimeInterval travelTime = 0;
     
     [routeDirections calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse * routeResponse, NSError *routeError) {
         if (routeError) {
+            
             NSLog(@"Error: failed to calculate directions to tourist site %@",[routeError description]);
+            
+            CLLocation* userLocation = [[UserLocationManager sharedLocationManager] getLastUpdatedUserLocation];
+            
+            CLLocation* destinationLocation = [[CLLocation alloc] initWithLatitude:self.midCoordinate.latitude longitude:self.midCoordinate.longitude];
+            
+            CLLocationDistance distanceToLocation = [userLocation distanceFromLocation:destinationLocation];
+            
+            /** Use an average travel time of 30 m/s to compute an average travel time **/
+            travelTime = distanceToLocation/50.0;
+            NSLog(@"Estimated travel time of %f used",travelTime);
+            
         } else {
-            // The code doesn't request alternate routes, so add the single calculated route to
-            // a previously declared MKRoute property called walkingRoute.
             routeToTouristSite = routeResponse.routes[0];
         }
     }];
 
-    NSTimeInterval travelTime = [routeToTouristSite expectedTravelTime];
+    
+    if(routeToTouristSite){
+        travelTime = [routeToTouristSite expectedTravelTime];
+    }
     
     return travelTime;
 }

@@ -147,6 +147,7 @@ static UserLocationManager* mySharedLocationManager;
     } else { // We do have authorization.
         // Start the standard location service.
         [self startUpdatingLocation];
+        [self setAllowsBackgroundLocationUpdates:YES];
     }
 }
 
@@ -234,10 +235,16 @@ static UserLocationManager* mySharedLocationManager;
 // The system delivered a new location.
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     
+    
     // Work around a bug in MapKit where user location is not initially zoomed to.
-    if (oldLocation == nil) {
+    if (oldLocation == nil && oldLocation != newLocation) {
+        
         
         _lastUpdatedUserLocation = newLocation;
+        
+        /**
+        NSLog(@"The newLocation is lat: %f, long: %f",_lastUpdatedUserLocation.coordinate.latitude,_lastUpdatedUserLocation.coordinate.longitude);
+         **/
         
         NSDictionary* userInfoDict = [NSDictionary dictionaryWithObjectsAndKeys:newLocation,@"userLocation", nil];
         

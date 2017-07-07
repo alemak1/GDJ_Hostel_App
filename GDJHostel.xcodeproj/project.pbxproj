@@ -23,6 +23,7 @@
 		BD2CAA9B1EFFE59800C0E540 /* TouristSiteConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA9A1EFFE59800C0E540 /* TouristSiteConfiguration.m */; };
 		BD2CAA9D1EFFE7D700C0E540 /* SeoulTouristSites.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD2CAA9C1EFFE7D700C0E540 /* SeoulTouristSites.plist */; };
 		BD2D62C51F0A9BD300231365 /* AnnotationMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2D62C41F0A9BD300231365 /* AnnotationMapViewController.m */; };
+		BD2D92461F0FE17A00A24A4C /* TouristSiteFilterController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2D92451F0FE17A00A24A4C /* TouristSiteFilterController.m */; };
 		BD2DCCAE1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2DCCAD1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m */; };
 		BD2DF30E1F060643005BAD8B /* WeatherDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2DF30D1F060643005BAD8B /* WeatherDetailController.m */; };
 		BD2E8E9C1F0BD9CA003D9C9B /* PetraeusBuilding.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD2E8E9B1F0BD9CA003D9C9B /* PetraeusBuilding.plist */; };
@@ -162,6 +163,8 @@
 		BD2CAA9F1EFFE80900C0E540 /* TouristSiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristSiteManager.m; sourceTree = "<group>"; };
 		BD2D62C31F0A9BC700231365 /* AnnotationMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnnotationMapViewController.h; sourceTree = "<group>"; };
 		BD2D62C41F0A9BD300231365 /* AnnotationMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationMapViewController.m; sourceTree = "<group>"; };
+		BD2D92441F0FE14E00A24A4C /* TouristSiteFilterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristSiteFilterController.h; sourceTree = "<group>"; };
+		BD2D92451F0FE17A00A24A4C /* TouristSiteFilterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristSiteFilterController.m; sourceTree = "<group>"; };
 		BD2DCCAC1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CurrencyHelperMethods.h"; sourceTree = "<group>"; };
 		BD2DCCAD1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CurrencyHelperMethods.m"; sourceTree = "<group>"; };
 		BD2DCCAF1F092A8000EA8FDF /* CurrencyType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrencyType.h; sourceTree = "<group>"; };
@@ -362,6 +365,8 @@
 				BD31A5B01F03932100C018DB /* SeoulTourismNavigationController.m */,
 				BDAA41DF1F0F544B0021CE79 /* OperatingDateTime.h */,
 				BDAA41E01F0F545A0021CE79 /* OperatingDateTime.m */,
+				BD2D92441F0FE14E00A24A4C /* TouristSiteFilterController.h */,
+				BD2D92451F0FE17A00A24A4C /* TouristSiteFilterController.m */,
 			);
 			name = TouristSitesCollectionController;
 			sourceTree = "<group>";
@@ -925,6 +930,7 @@
 				BD2EA7721EFFC28F00A8572B /* ContactScrollViewController.m in Sources */,
 				BDAA41E11F0F545A0021CE79 /* OperatingDateTime.m in Sources */,
 				BD2E8EA01F0BDC3A003D9C9B /* WarMemorialNavigationController.m in Sources */,
+				BD2D92461F0FE17A00A24A4C /* TouristSiteFilterController.m in Sources */,
 				BD30C51A1EFDE5240032FE64 /* MenuComponent.m in Sources */,
 				BD2DF30E1F060643005BAD8B /* WeatherDetailController.m in Sources */,
 				BD2D62C51F0A9BD300231365 /* AnnotationMapViewController.m in Sources */,

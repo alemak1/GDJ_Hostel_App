@@ -25,6 +25,20 @@
 -(TouristSiteConfiguration*)getConfigurationObjectFromMasterArray:(NSInteger)index;
 -(TouristSiteConfiguration*)getConfigurationForRegionIdentifier:(NSString*)regionIdentifier;
 
+-(TouristSiteConfiguration*) getTouristSiteClosestToUser;
+
+
+/** Site filtering functions **/
+
+- (NSArray<TouristSiteConfiguration*>*)getArrayForMaximumTravelingTime:(CGFloat)maxTravelingTime andMaxDistance:(CGFloat)maxDistanceFromUser andForCategory:(TouristSiteCategory)touristSiteCategory;
+
+- (NSArray<TouristSiteConfiguration*>*)getArrayForMaximumTravelingTime:(CGFloat)maxTravelingTime;
+
+- (NSArray<TouristSiteConfiguration*>*)getArrayForMaximumDistanceFromUser:(CGFloat)maximumDistanceFromUser;
+
+- (NSArray<TouristSiteConfiguration*>*)getArrayForTouristSiteCategory:(TouristSiteCategory)touristSiteCategory;
+
+
 -(NSArray<CLRegion*>*)getRegionsForAllTouristLocations;
 
 -(void) filterForTouristSiteCategory:(TouristSiteCategory)category;

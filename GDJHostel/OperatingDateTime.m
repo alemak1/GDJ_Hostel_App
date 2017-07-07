@@ -17,9 +17,11 @@
 @property (atomic) NSInteger endingOperatingMonth;
 @property (atomic) NSInteger endingOperatingDay;
 
+@property (atomic) BOOL hasOrdinalWeekdayRule;
+@property NSInteger** ordinalWeekdayNumbers;
 
 @property NSRange* weekdayOperatingHours;
-
+@property BOOL* hasOvernightHoursArray;
 
 @end
 
@@ -34,6 +36,35 @@
 @synthesize endingOperatingMonth = _endingOperatingMonth;
 
 
+-(instancetype)initWithOperatingHoursDictionary:(NSDictionary*)operatingHoursDictionary{
+    
+    self = [super init];
+    
+    if(self){
+        
+    NSString* openingMonthDayString = [operatingHoursDictionary valueForKey:@"openingMonthDayInfo"];
+        
+    CGPoint pOpening = CGPointFromString(openingMonthDayString);
+        
+        _startingOperatingMonth = pOpening.x;
+        _startingOperatingDay = pOpening.y;
+        
+    NSString* closingMonthDayString = [operatingHoursDictionary valueForKey:@"closingMonthDayInfo"];
+
+    CGPoint pClosing = CGPointFromString(closingMonthDayString);
+
+        _endingOperatingMonth = pClosing.x;
+        _endingOperatingDay = pClosing.y;
+        
+    [self initializeRangeArrayWithConfigurationDict:operatingHoursDictionary];
+    [self initializeOvernightHoursBooleanArray:operatingHoursDictionary];
+
+    
+
+    }
+    
+    return self;
+}
 
 
 
@@ -50,68 +81,169 @@
         _endingOperatingDay = endingDay;
         
         
-        /** By default, each day**/
-        
-        NSLog(@"Allocating memory for array of NSRange structs");
-        
-        _weekdayOperatingHours = calloc(sizeof(NSRange), 7);
-        
-        NSLog(@"Preparing to perform array initialization...");
+        [self initializeRangeArrayWithConfigurationDict:operatingHoursDictionary];
+        [self initializeOvernightHoursBooleanArray:operatingHoursDictionary];
+    }
+    
+    return self;
+    
+}
 
+-(void)configureOrdinalWeekdayRule:(NSDictionary*)operatingHoursDictionary{
+    
+    _hasOrdinalWeekdayRule = [[operatingHoursDictionary valueForKey:@"hasOrdinalWeekdayRule"] boolValue];
+    
+    
+    /**
+    if(_hasOrdinalWeekdayRule){
+        
+        _ordinalWeekdayNumbers = calloc(sizeof(NSInteger*), 7);
+        
+        
+        NSArray* openOrdinalDays;
+        
         for(int i = 0; i < 7; i++){
-            
             WEEKDAY weekDay = (WEEKDAY)i;
+
+            _ordinalWeekdayNumbers[i] = calloc(sizeof(NSInteger), 4);
+
+            typedef initializeArray = (void(^)(NSArray<NSNumber*>*openOrdinalDays,NSInteger*array));
             
-            NSString* operatingRangeString;
+            (void(^)(NSArray<NSNumber *>*openOrdinalDays,NSInteger*array)) initializeOrdinalArray= ^(NSArray<NSNumber*>*openOrdinalDays,NSInteger*array){
+            
+            };
             
             switch (weekDay) {
                 case WKDAY_SUNDAY:
-                    operatingRangeString = [operatingHoursDictionary valueForKey:@"sundayOperatingRange"];
-                    NSLog(@"OperatingRangeString for Sunday: %@",operatingRangeString);
+                    openOrdinalDays = [operatingHoursDictionary valueForKey:@"openSundayDays"];
+                    for (NSNumber*openDay in openOrdinalDays) {
+                        if([openDay integerValue] == 0){
+                            
+                        }
+                    }
                     break;
                 case WKDAY_MONDAY:
-                    operatingRangeString = [operatingHoursDictionary valueForKey:@"mondayOperatingRange"];
-                     NSLog(@"OperatingRangeString for Monday: %@",operatingRangeString);
+
                     break;
                 case WKDAY_TUESDAY:
-                    operatingRangeString = [operatingHoursDictionary valueForKey:@"tuesdayOperatingRange"];
-                     NSLog(@"OperatingRangeString for Tuesday: %@",operatingRangeString);
+
                     break;
                 case WKDAY_WEDNESDAY:
-                   operatingRangeString = [operatingHoursDictionary valueForKey:@"wednesdayOperatingRange"];
-                     NSLog(@"OperatingRangeString for Wednesday: %@",operatingRangeString);
+
                     break;
                 case WKDAY_THURSDAY:
-                    operatingRangeString = [operatingHoursDictionary valueForKey:@"thursdayOperatingRange"];
-                     NSLog(@"OperatingRangeString for Thursday: %@",operatingRangeString);
+
                     break;
                 case WKDAY_FRIDAY:
-                    operatingRangeString = [operatingHoursDictionary valueForKey:@"fridayOperatingRange"];
-                     NSLog(@"OperatingRangeString for Friday: %@",operatingRangeString);
+
                     break;
                 case WKDAY_SATURDAY:
-                    operatingRangeString = [operatingHoursDictionary valueForKey:@"saturdayOperatingRange"];
-                     NSLog(@"OperatingRangeString for Saturday: %@",operatingRangeString);
+
                     break;
                 default:
                     break;
             }
             
-            NSRange operatingRange = NSRangeFromString(operatingRangeString);
-            
-            _weekdayOperatingHours[i] = operatingRange;
-            
-            NSLog(@"For given day, the range location is %d, and the length is %d", _weekdayOperatingHours[i].location, _weekdayOperatingHours[i].length);
-            
-            NSLog(@"Finished loading array with operaing hour ranges for each integer day");
 
             
         }
-         
+    }
+     
+     **/
+}
+
+-(void) initializeOvernightHoursBooleanArray:(NSDictionary*)operatingHoursDictionary{
+    
+    
+    _hasOvernightHoursArray = calloc(sizeof(BOOL), 7);
+    
+    for(int i = 0; i < 7; i++){
+        
+        
+        WEEKDAY weekDay = (WEEKDAY)i;
+        
+        BOOL hasOvernightOperatingHours;
+        
+        switch (weekDay) {
+            case WKDAY_SUNDAY:
+                hasOvernightOperatingHours = [operatingHoursDictionary valueForKey:@"sundayOvernightOperatingHours"];
+                break;
+            case WKDAY_MONDAY:
+                hasOvernightOperatingHours = [operatingHoursDictionary valueForKey:@"mondayOvernightOperatingHours"];
+                break;
+            case WKDAY_TUESDAY:
+                hasOvernightOperatingHours = [operatingHoursDictionary valueForKey:@"tuesdayOvernightOperatingHours"];
+                break;
+            case WKDAY_WEDNESDAY:
+                hasOvernightOperatingHours = [operatingHoursDictionary valueForKey:@"wednesdayOvernightOperatingHours"];
+                break;
+            case WKDAY_THURSDAY:
+                hasOvernightOperatingHours = [operatingHoursDictionary valueForKey:@"thursdayOvernightOperatingHours"];
+                break;
+            case WKDAY_FRIDAY:
+                hasOvernightOperatingHours = [operatingHoursDictionary valueForKey:@"fridayOvernightOperatingHours"];
+                break;
+            case WKDAY_SATURDAY:
+                hasOvernightOperatingHours = [operatingHoursDictionary valueForKey:@"saturdayOvernightOperatingHours"];
+                break;
+            default:
+                break;
+        }
+        
+        _hasOvernightHoursArray[i] = hasOvernightOperatingHours;
         
     }
     
-    return self;
+    
+}
+
+-(void)initializeRangeArrayWithConfigurationDict:(NSDictionary*)operatingHoursDictionary{
+    
+    /** By default, each day**/
+    
+    _weekdayOperatingHours = calloc(sizeof(NSRange), 7);
+    
+    
+    for(int i = 0; i < 7; i++){
+        
+        
+        WEEKDAY weekDay = (WEEKDAY)i;
+        
+        NSString* operatingRangeString;
+        
+        switch (weekDay) {
+            case WKDAY_SUNDAY:
+                operatingRangeString = [operatingHoursDictionary valueForKey:@"sundayOperatingRange"];
+                break;
+            case WKDAY_MONDAY:
+                operatingRangeString = [operatingHoursDictionary valueForKey:@"mondayOperatingRange"];
+                break;
+            case WKDAY_TUESDAY:
+                operatingRangeString = [operatingHoursDictionary valueForKey:@"tuesdayOperatingRange"];
+                break;
+            case WKDAY_WEDNESDAY:
+                operatingRangeString = [operatingHoursDictionary valueForKey:@"wednesdayOperatingRange"];
+                break;
+            case WKDAY_THURSDAY:
+                operatingRangeString = [operatingHoursDictionary valueForKey:@"thursdayOperatingRange"];
+                break;
+            case WKDAY_FRIDAY:
+                operatingRangeString = [operatingHoursDictionary valueForKey:@"fridayOperatingRange"];
+                break;
+            case WKDAY_SATURDAY:
+                operatingRangeString = [operatingHoursDictionary valueForKey:@"saturdayOperatingRange"];
+                break;
+            default:
+                break;
+        }
+        
+        NSRange operatingRange = NSRangeFromString(operatingRangeString);
+        
+        _weekdayOperatingHours[i] = operatingRange;
+       
+        
+        
+    }
     
 }
 
@@ -129,6 +261,7 @@
     
 }
 
+/** Peform boolean check to make sure date is within operating hours before executing this function **/
 
 -(NSInteger)timeUntilClosingInSeconds:(NSDate*)date{
     
@@ -141,14 +274,37 @@
     NSInteger seconds = [components second];
     NSInteger timeOfDateInSeconds = secondsFromHour + secondsFromMinute + seconds;
     
+
     
     WEEKDAY weekday = (WEEKDAY)([components weekday] - 1);
     
+    WEEKDAY previousWeekday = [self getPreviousWeekday:weekday];
+    
+    
     NSRange operatingRange = self.weekdayOperatingHours[weekday];
+    
+    /** Some shopping centers have operating hours from late evening of a given day until the early hours of the next day **/
+    
+    NSInteger secondsPastMidnight;
+    
+    if([self hasOvernightOperatingHoursOn:previousWeekday]){
+        
+        NSRange previousDayOperatinRange = self.weekdayOperatingHours[previousWeekday];
+        
+        secondsPastMidnight = previousDayOperatinRange.location + operatingRange.length - 24*3600;
+        
+        if(timeOfDateInSeconds < secondsPastMidnight){
+            
+            return secondsPastMidnight - timeOfDateInSeconds;
+        }
+        
+    }
     
     return operatingRange.length - (timeOfDateInSeconds - operatingRange.location);
     
 }
+
+/** Peform boolean check to make sure date is within operating hours before executing this function **/
 
 -(NSInteger)timeUntilOpeningInSeconds:(NSDate*)date{
     
@@ -159,14 +315,16 @@
     NSInteger secondsFromHour = [components hour]*3600;
     NSInteger secondsFromMinute = [components minute]*60;
     NSInteger seconds = [components second];
+    
     NSInteger timeOfDateInSeconds = secondsFromHour + secondsFromMinute + seconds;
     
     
     WEEKDAY weekday = (WEEKDAY)([components weekday] - 1);
     
     NSRange operatingRange = self.weekdayOperatingHours[weekday];
-    
-    return operatingRange.length - (timeOfDateInSeconds - operatingRange.location);
+        
+   
+    return operatingRange.location - timeOfDateInSeconds;
     
 }
  
@@ -189,7 +347,27 @@
     
     NSRange operatingRange = self.weekdayOperatingHours[weekday];
     
-    return (timeOfDateInSeconds - operatingRange.location) <= operatingRange.length;
+
+    BOOL isWithinOperatingHoursRange;
+    
+    if([self hasOvernightOperatingHoursOn:weekday]){
+    
+       
+        NSInteger secondsPastMidnight = operatingRange.location + operatingRange.length - 24*3600;
+        
+        if(timeOfDateInSeconds < secondsPastMidnight){
+            
+            isWithinOperatingHoursRange = YES;
+        }
+        
+    } else {
+        
+        
+         return (timeOfDateInSeconds - operatingRange.location) <= operatingRange.length;
+
+    }
+    
+    return isWithinOperatingHoursRange;
 }
 
 
@@ -204,6 +382,7 @@
     if(self.startingOperatingMonth <= 0 || self.endingOperatingMonth <= 0){
         return YES;
     }
+    
     
     
     /** The date provided by the user is broken into month, day, and year components **/
@@ -253,7 +432,22 @@
     return YES;
 }
 
+-(BOOL) hasOvernightOperatingHoursOn:(WEEKDAY)weekday{
+    
+    return self.hasOvernightHoursArray[weekday];
+    
+}
 
+
+-(WEEKDAY)getPreviousWeekday:(WEEKDAY)weekday{
+    
+    if(weekday == WKDAY_SUNDAY){
+        return WKDAY_SATURDAY;
+    }
+    
+    return weekday-1;
+    
+}
 
 
 /** Assumes the Korean New Year falls on the same date as the Chiense New Year; this assumption is generally true, but once in a while a 1-day discrepancy occurs **/

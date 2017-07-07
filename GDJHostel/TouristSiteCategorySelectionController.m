@@ -10,6 +10,7 @@
 #import "TouristSiteCategorySelectionController.h"
 #import "TouristSiteCollectionViewController.h"
 #import "TouristSiteDetailInformationController.h"
+#import "TouristSiteFilterController.h"
 #import "AppLocationManager.h"
 
 @interface TouristSiteCategorySelectionController ()
@@ -20,6 +21,9 @@
 - (IBAction)returnToMainMenu:(UIBarButtonItem *)sender;
 
 @property TouristSiteConfiguration* selectedTouristSiteConfiguration;
+
+
+
 
 @end
 
@@ -402,6 +406,23 @@
     
 
 }
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if([segue.identifier isEqualToString:@"showTouristSiteSearchSegue"]){
+        
+        TouristFilterController* filterController = (TouristFilterController*)segue.destinationViewController;
+        
+        filterController.siteManager = self.siteManager;
+    }
+}
+
+
+
+
+
+
 
 - (IBAction)returnToMainMenu:(UIBarButtonItem *)sender {
     

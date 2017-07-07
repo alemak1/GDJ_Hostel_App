@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "TouristSiteManager.h"
 #import "TouristSiteConfiguration.h"
+#import "AppLocationManager.h"
+
 
 @interface TouristSiteManager ()
 
@@ -31,7 +33,7 @@ NSArray* _touristSiteDictArray;
     self = [super init];
     
     if(self){
-        NSString* path = [[NSBundle mainBundle] pathForResource:@"SeoulTouristSites" ofType:@"plist"];
+        NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
         
         _touristSiteDictArray = [NSArray arrayWithContentsOfFile:path];
         
@@ -59,7 +61,7 @@ NSArray* _touristSiteDictArray;
     self = [super init];
     
     if(self){
-        NSString* path = [[NSBundle mainBundle] pathForResource:@"SeoulTouristSites" ofType:@"plist"];
+        NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
     
         _touristSiteDictArray = [NSArray arrayWithContentsOfFile:path];
         
@@ -141,6 +143,23 @@ NSArray* _touristSiteDictArray;
 }
 
 
+- (NSArray<TouristSiteConfiguration*>*)getArrayForMaximumTravelingTime:(CGFloat)maxTravelingTime andMaxDistance:(CGFloat)maxDistanceFromUser andForCategory:(TouristSiteCategory)touristSiteCategory{
+    
+    
+    return [self.configurationArray filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(TouristSiteConfiguration* configurationObject, NSDictionary *bindings) {
+        
+       BOOL travelTimeCondition = [configurationObject travelingTimeFromUserLocation] < maxTravelingTime;
+        BOOL distanceCondition = [configurationObject distanceFromUser] < maxDistanceFromUser;
+        BOOL siteCategoryConditon = [configurationObject touristSiteCategory] == touristSiteCategory;
+
+        return (distanceCondition && siteCategoryConditon && travelTimeCondition);
+        
+    }]];
+    
+}
+
+
+
 - (NSArray<TouristSiteConfiguration*>*)getArrayForMaximumTravelingTime:(CGFloat)maxTravelingTime{
     
     
@@ -203,6 +222,47 @@ NSArray* _touristSiteDictArray;
    
     return [NSArray arrayWithArray:regionArray];
 }
+
+
+-(TouristSiteConfiguration*) getTouristSiteClosestToUser{
+    
+
+    CLLocation* userLocation = [[UserLocationManager sharedLocationManager] getLastUpdatedUserLocation];
+    
+    NSLog(@"The user's current location is latitude: %f, longitude: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
+
+    
+     TouristSiteConfiguration* closestSiteConfiguration;
+    
+     CLLocationDistance maxDistance = 0;
+    
+    
+    for(TouristSiteConfiguration* siteConfiguration in self.configurationArray){
+        
+        
+            CLLocation* siteLocation = [[CLLocation alloc] initWithLatitude:siteConfiguration.midCoordinate.latitude longitude:siteConfiguration.midCoordinate.longitude];
+            
+            CLLocationDistance distanceToLocation = [userLocation distanceFromLocation:siteLocation];
+            NSLog(@"The distance to site %@ is %f meters",siteConfiguration.title,distanceToLocation);
+            
+            if(distanceToLocation > maxDistance){
+                maxDistance = distanceToLocation;
+                closestSiteConfiguration = siteConfiguration;
+            }
+    
+        
+    
+
+    }
+    
+    
+    
+    
+    return closestSiteConfiguration;
+}
+
+    
+
 
 
 @end
