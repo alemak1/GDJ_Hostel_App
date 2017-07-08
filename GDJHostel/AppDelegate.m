@@ -14,6 +14,8 @@
 #import "TouristSiteCollectionViewController.h"
 #import "HostelFlowLayout.h"
 
+
+
 @interface AppDelegate ()
 
 typedef enum TESTABLE_VIEWCONTROLLERS{
@@ -45,6 +47,8 @@ static BOOL willInitiateFromStoryBoard = false;
         
         [self.window makeKeyAndVisible];
     }
+    
+    
     
     return YES;
 }
@@ -123,7 +127,7 @@ static BOOL willInitiateFromStoryBoard = false;
     // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
     @synchronized (self) {
         if (_persistentContainer == nil) {
-            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"TouristSiteTracker"];
+            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"VisitedSiteTracker"];
             [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
                 if (error != nil) {
                     // Replace this implementation with code to handle the error appropriately.

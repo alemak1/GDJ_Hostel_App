@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="VisitedSite" representedClassName="VisitedSite" syncable="YES">
-        <attribute name="dateEntered" attributeType="Date" minDateTimeInterval="521182140" usesScalarValueType="NO" syncable="YES"/>
+    <entity name="VisitedTouristSite" representedClassName="VisitedTouristSite" syncable="YES" codeGenerationType="class">
+        <attribute name="dateEntered" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="dateExited" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="regionIdentifier" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="VisitedSite" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="VisitedTouristSite" positionX="-54" positionY="-9" width="128" height="90"/>
     </elements>
 </model>

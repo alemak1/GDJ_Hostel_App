@@ -12,6 +12,8 @@
 #import "AppLocationManager.h"
 
 #import "TouristSiteManager.h"
+#import "VisitedSiteCache.h"
+#import "VisitedSite.h"
 
 @interface HostelInformationController ()
 
@@ -24,6 +26,20 @@
 @end
 
 @implementation HostelInformationController
+
+-(void)saveVisitedSiteCache:(VisitedSiteCache*)visitedSiteCache key:(NSString*)key{
+    NSData* encodedObject = [NSKeyedArchiver archivedDataWithRootObject:visitedSiteCache];
+    
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:encodedObject forKey:key];
+}
+
+-(VisitedSiteCache*)loadVisitedCacheWithKey:(NSString*)key{
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSData* encodedObject = [defaults objectForKey:key];
+    VisitedSiteCache* cache = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    return cache;
+}
 
 -(void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
@@ -39,38 +55,11 @@
     TouristSiteManager* siteManager = [[TouristSiteManager alloc] initWithFileName:@"SeoulTouristSites"];
 
     
-    
-    __block CLLocation* userLocation = [userLocationManager getLastUpdatedUserLocation];
-    
-    if(userLocation == nil){
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 6.00*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        
-            userLocation = [userLocationManager getLastUpdatedUserLocation];
-
-        
-            NSLog(@"The user location after 6.00 secondss is lat: %f, long: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
-            
-            
-            TouristSiteConfiguration* site = [siteManager getTouristSiteClosestToUser];
-            
-            NSLog(@"The tourist site closest to the user is: %@",[site title]);
-            
-            NSArray* closeSitesArray = [siteManager getArrayForTouristSiteCategory:KOREAN_WAR_MEMORIAL];
-            
-
-            NSLog(@"The museums are:");
-            
-            for (TouristSiteConfiguration*site in closeSitesArray) {
-                NSLog(@"Name: %@",site.title);
-            }
-        });
-    }
+ 
     
     
     
     
-
     
 }
 
@@ -98,7 +87,7 @@
     self.menuComponent = [[MenuComponent alloc] initMenuWithFrame:desiredMenuFrame
                     targetView:self.view
                     direction:menuDirectionRightToLeft
-                    options:@[@"About Hostel", @"Explore Nearby", @"Contact Info", @"Seoul Tourism",@"Weather",@"Survival Korean", @"Product Prices",@"Monitored Regions",@"Acknowledgements"]
+                    options:@[@"About Hostel", @"Explore Nearby", @"Visited Sites", @"Seoul Tourism",@"Weather",@"Survival Korean", @"Product Prices",@"Monitored Regions",@"Seoul Image Galleries"]
                     optionImages:@[@"informationB", @"compassB", @"contactPhoneB", @"templeB",@"cloudyA",@"chatA", @"shoppingCartB",@"mapAddressB",@"trophyB"]];
 
 }
@@ -156,8 +145,9 @@
                 requestedViewController = [self getMonitoredRegionsControllerFromStoryboard];
                 break;
             case 8:
-                //Acknowledgements
-                requestedViewController = [storyBoardA instantiateViewControllerWithIdentifier:@"DirectionsMenuController"];
+                //Seoul Picture Gallery
+                requestedViewController = [self getSeoulFlickrSearchController];
+                
                 NSLog(@"You selected option %d",(int)selectedOptionIndex);
 
                 break;
@@ -174,6 +164,23 @@
     [self.menuComponent resetMenuView:[self traitCollection]];
 }
 
+
+-(UIViewController*)getSeoulFlickrSearchController{
+    
+    UIStoryboard* storyboardB = [UIStoryboard storyboardWithName:@"StoryboardB" bundle:nil];
+    
+    
+    NSString *storyBoardIdentifier = @"SeoulFlickrSearchController_iPad";
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        storyBoardIdentifier = @"SeoulFlickrSearchController";
+    }
+    
+    
+    return [storyboardB instantiateViewControllerWithIdentifier:storyBoardIdentifier];
+    
+}
 
 -(UIViewController*)getMonitoredRegionsControllerFromStoryboard{
     
@@ -217,3 +224,38 @@
 }
 
 @end
+
+
+/**
+ 
+ 
+ 
+ 
+ __block CLLocation* userLocation = [userLocationManager getLastUpdatedUserLocation];
+ 
+ if(userLocation == nil){
+ 
+ dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 6.00*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+ 
+ userLocation = [userLocationManager getLastUpdatedUserLocation];
+ 
+ 
+ NSLog(@"The user location after 6.00 secondss is lat: %f, long: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
+ 
+ 
+ TouristSiteConfiguration* site = [siteManager getTouristSiteClosestToUser];
+ 
+ NSLog(@"The tourist site closest to the user is: %@",[site title]);
+ 
+ NSArray* closeSitesArray = [siteManager getArrayForTouristSiteCategory:KOREAN_WAR_MEMORIAL];
+ 
+ 
+ NSLog(@"The museums are:");
+ 
+ for (TouristSiteConfiguration*site in closeSitesArray) {
+ NSLog(@"Name: %@",site.title);
+ }
+ });
+ }
+ 
+**/

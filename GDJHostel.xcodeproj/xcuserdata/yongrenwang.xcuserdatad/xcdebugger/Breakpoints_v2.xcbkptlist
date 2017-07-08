@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GDJHostel/TouristSiteConfiguration.m"
-            timestampString = "521132705.238052"
+            timestampString = "521186062.682785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "-initWithFilename:"
             landmarkType = "7">
          </BreakpointContent>
