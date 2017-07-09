@@ -8,12 +8,14 @@
 
 
 #import "MenuComponent.h"
+#import <SpriteKit/SpriteKit.h>
 
 @interface MenuComponent ()
 
 @property (nonatomic, strong) UIView *menuView;
 @property (nonatomic, strong) UIImageView *backgroundView;
 @property (nonatomic, strong) UIImageView *logoImageView;
+@property (nonatomic,strong) SKView* planeSpriteView;
 
 @property (nonatomic, strong) UIView *targetView;
 @property (nonatomic, strong) UITableView *optionsTableView;
@@ -153,14 +155,23 @@
     [self.optionsTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.menuView addSubview:self.optionsTableView];
     
-    CGRect logoFrame = CGRectMake(menuFrameWidth*0.10, menuFrameHeight*0.05, 120, 120);
-    self.logoImageView = [[UIImageView alloc] initWithFrame:logoFrame];
-    self.logoImageView.image = [UIImage imageNamed:@"smiley120"];
-    self.logoImageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.menuView addSubview:self.logoImageView];
+    CGRect logoFrame = CGRectMake(menuFrameWidth*0.17, menuFrameHeight*0.05, 150, 150);
+    
+  
     
     [self.optionsTableView setDelegate:self];
     [self.optionsTableView setDataSource:self];
+    
+    self.planeSpriteView = [[SKView alloc] initWithFrame:logoFrame];
+    
+    SKScene* planeScene = [[SKScene alloc] initWithSize:self.planeSpriteView.bounds.size];
+   
+    
+    [self configurePlaneScene:planeScene];
+    
+    [self.menuView addSubview: self.planeSpriteView];
+    [ self.planeSpriteView presentScene:planeScene];
+
     
     
 }
@@ -228,6 +239,7 @@
     
     BOOL CW_RH = (horizontalSC == UIUserInterfaceSizeClassCompact && verticalSC == UIUserInterfaceSizeClassRegular);
     
+    BOOL RW_CH = (horizontalSC == UIUserInterfaceSizeClassRegular && verticalSC == UIUserInterfaceSizeClassCompact);
     
     CGFloat menuFrameWidth = CGRectGetWidth(self.menuFrame);
     CGFloat menuFrameHeight = CGRectGetHeight(self.menuFrame);
@@ -244,12 +256,22 @@
         
         [self.optionsTableView setContentSize:CGSizeMake(self.menuFrame.size.width, menuFrameHeight*4)];
         
-        logoFrame = CGRectMake(menuFrameWidth*0.10, menuFrameHeight*0.02, 80, 80);
+        logoFrame = CGRectMake(menuFrameWidth*0.20, menuFrameHeight*0.005, 150, 100);
         [self.optionsTableView setScrollEnabled:YES];
     }
     
     if(CW_RH){
         //Not yet implemented
+    }
+    
+    if(RW_CH){
+        self.optionsTableView = [[UITableView alloc] initWithFrame:CGRectMake(menuFrameWidth*0.01, menuFrameHeight*0.15, self.menuFrame.size.width, menuFrameHeight*4) style:UITableViewStylePlain];
+        
+        
+        [self.optionsTableView setContentSize:CGSizeMake(self.menuFrame.size.width, menuFrameHeight*4)];
+        
+        logoFrame = CGRectMake(menuFrameWidth*0.20, menuFrameHeight*0.005, 150, 100);
+        [self.optionsTableView setScrollEnabled:YES];
     }
 
     
@@ -258,10 +280,18 @@
     [self.menuView addSubview:self.optionsTableView];
     
     
-    self.logoImageView = [[UIImageView alloc] initWithFrame:logoFrame];
-    self.logoImageView.image = [UIImage imageNamed:@"smiley120"];
-    self.logoImageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.menuView addSubview:self.logoImageView];
+    self.planeSpriteView = [[SKView alloc] initWithFrame:logoFrame];
+    
+    SKScene* planeScene = [[SKScene alloc] initWithSize:logoFrame.size];
+
+    [self configurePlaneScene:planeScene];
+    
+    
+    [self.menuView addSubview:self.planeSpriteView];
+    
+    [ self.planeSpriteView presentScene:planeScene];
+
+    
     
     [self.optionsTableView setDelegate:self];
     [self.optionsTableView setDataSource:self];
@@ -417,6 +447,34 @@
     
     // Indicate that the menu is not shown.
     self.isMenuShown = NO;
+}
+
+
+-(void)configurePlaneScene:(SKScene*)planeScene{
+    
+    [planeScene setAnchorPoint:CGPointMake(0.5, 0.5)];
+    [planeScene setBackgroundColor:[UIColor colorWithRed:232/255.0 green:140.0/255.0 blue:140.0/255.0 alpha:1.0]];
+    SKTexture* planeTexture = [SKTexture textureWithImageNamed:@"planeYellow1"];
+    SKSpriteNode* planeSprite = [[SKSpriteNode alloc] initWithTexture:planeTexture];
+    
+    [planeSprite setAnchorPoint:CGPointMake(0.5, 0.5)];
+    [planeSprite setPosition:CGPointMake(0.0, 0.0)];
+    [planeSprite setZPosition:0.00];
+    
+    SKAction* flightAction = [SKAction animateWithTextures:[NSArray arrayWithObjects:[SKTexture textureWithImageNamed:@"planeYellow1"],[SKTexture textureWithImageNamed:@"planeYellow2"],[SKTexture textureWithImageNamed:@"planeYellow3"], nil] timePerFrame:0.20];
+    
+    SKAction* repeatingFlight = [SKAction repeatActionForever:flightAction];
+    
+    [planeSprite runAction:repeatingFlight];
+    
+    [planeScene addChild:planeSprite];
+    
+    SKSpriteNode* cloudSprite = [SKSpriteNode spriteNodeWithTexture:[SKTexture textureWithImageNamed:@"cloud1"]];
+    [cloudSprite setAnchorPoint:CGPointMake(0.5, 0.5)];
+    [cloudSprite setPosition:CGPointMake(0.0, -10)];
+    [cloudSprite setZPosition:-5];
+    [cloudSprite setScale:0.5];
+    [planeScene addChild:cloudSprite];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

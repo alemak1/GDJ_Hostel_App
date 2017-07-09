@@ -177,10 +177,23 @@ NSOperationQueue* _operationQueue;
                     
                 }
                 
-                completion([[FlickrSearchResults alloc] initWithSearchTerm:searchTerm andWithSearchResults:flickrPhotoArray],nil);
+                FlickrSearchResults* flickrSearchResults = [[FlickrSearchResults alloc] initWithSearchTerm:searchTerm andWithSearchResults:flickrPhotoArray];
+                
+                NSLog(@"The following FlickrSearchResults object was obtained via the callback method %@",[flickrSearchResults description]);
+                
+                
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    
+                    completion(flickrSearchResults,nil);
+
+                }];
+                
 
                 
-               
+                
+                
+
+                
                
                 
             } @catch (NSException *exception) {

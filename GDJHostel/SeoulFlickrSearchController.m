@@ -9,13 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "SeoulFlickrSearchController.h"
 #import "FlickrPhoto.h"
-#import "FlickrSearchResults.h"
 #import "FlickrHelper.h"
 #import "FlickrPhotoCell.h"
 
 @interface SeoulFlickSearchController () <UICollectionViewDelegateFlowLayout>
 
-@property NSMutableOrderedSet<FlickrSearchResults*>* searches;
 @property (readonly) FlickrHelper* flickrHelper;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *seeNextImageGallery;
@@ -46,7 +44,6 @@ FlickrHelper* _flickrHelper;
 
 -(void)viewDidLoad{
   
-    
     
     
     
@@ -88,6 +85,7 @@ FlickrHelper* _flickrHelper;
 
     cell.imageView.image = flickrPhoto.thumbnail;
     
+    cell.outletImageView.image = flickrPhoto.thumbnail;
     
     cell.backgroundColor = [UIColor blueColor];
     
@@ -134,8 +132,12 @@ FlickrHelper* _flickrHelper;
             
             self.searchIndex++;
             
+            NSLog(@"The searches array for search term %@ contains FlickSearchResults %@",[[self.searches firstObject] searchTerm],[[self.searches firstObject] searchResults]);
             
             dispatch_async(dispatch_get_main_queue(), ^{
+                
+                NSLog(@"The searches array for search term %@ contains FlickSearchResults %@",[[self.searches firstObject] searchTerm],[[self.searches firstObject] searchResults]);
+
             
                 [self.collectionView reloadData];
                 

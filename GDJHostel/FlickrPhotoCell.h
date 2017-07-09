@@ -14,7 +14,10 @@
 
 @interface FlickrPhotoCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property UIImageView* imageView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *outletImageView;
+
 
 @end
 

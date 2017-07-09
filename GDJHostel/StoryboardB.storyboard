@@ -659,7 +659,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8V-IA-kFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="SXR-SI-mhK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4123.125" y="-1302.4647887323945"/>
+            <point key="canvasLocation" x="4846.875" y="-1303.125"/>
         </scene>
         <!--Tourist Location Table View Controller-->
         <scene sceneID="jBZ-Yp-5lO">
@@ -917,6 +917,71 @@
             </objects>
             <point key="canvasLocation" x="324" y="-533"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A0U-4M-RDt">
+            <objects>
+                <navigationController id="ZDS-Jc-X7h" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TCE-0A-CyV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t6W-vd-jkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686" y="-880"/>
+        </scene>
+        <!--Flickr Progress Controller-->
+        <scene sceneID="iCc-GH-ih2">
+            <objects>
+                <viewController id="ugI-M2-2np" customClass="FlickrProgressController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fh4-uW-J3O"/>
+                        <viewControllerLayoutGuide type="bottom" id="13Z-UK-M6K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Z2-9x-dqA">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Wct-Rs-QaP">
+                                <rect key="frame" x="482" y="354" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="70O-iT-yRp"/>
+                                    <constraint firstAttribute="width" constant="60" id="jpf-Gc-rkT"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XgX-6l-qh9">
+                                <rect key="frame" x="349" y="171" width="333" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Perform Search">
+                                            <attributes>
+                                                <font key="NSFont" size="36" name=".SFNSText"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="performSearch:" destination="ugI-M2-2np" eventType="touchUpInside" id="dAQ-jf-syy"/>
+                                    <segue destination="hw2-zG-xXx" kind="show" identifier="showFlickrPhotosSegue" id="KiS-ZW-USb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wct-Rs-QaP" firstAttribute="centerY" secondItem="2Z2-9x-dqA" secondAttribute="centerY" id="FW2-hI-dMH"/>
+                            <constraint firstItem="Wct-Rs-QaP" firstAttribute="centerX" secondItem="2Z2-9x-dqA" secondAttribute="centerX" id="cbV-4D-RjS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="q1c-S4-kuv"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Wct-Rs-QaP" id="EZZ-Ko-JRQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l9c-2L-Gcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2318" y="-916"/>
+        </scene>
         <!--Seoul Flick Search Controller-->
         <scene sceneID="uYJ-CK-ne9">
             <objects>
@@ -953,36 +1018,20 @@
                                     <constraint firstItem="Nzq-h9-nQV" firstAttribute="leading" secondItem="R7g-5a-ewh" secondAttribute="leading" id="uH3-uW-QEg"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="imageView" destination="Nzq-h9-nQV" id="fnv-aZ-fym"/>
+                                    <outlet property="outletImageView" destination="Nzq-h9-nQV" id="fhN-HI-9m4"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
                             <outlet property="dataSource" destination="hw2-zG-xXx" id="FOI-hF-bMV"/>
                             <outlet property="delegate" destination="hw2-zG-xXx" id="csE-dW-hCg"/>
-                            <outlet property="prefetchDataSource" destination="hw2-zG-xXx" id="MdE-J7-HD2"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="FGL-PW-ViZ">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="MFZ-cd-OFE">
-                            <connections>
-                                <segue destination="Bf7-kF-xhS" kind="unwind" unwindAction="unwindBackToHostelIndexPage:" id="oEa-MG-10Z"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="See Next Gallery" id="mvH-0e-eMb">
-                            <connections>
-                                <action selector="getNextGallery:" destination="hw2-zG-xXx" id="4Rf-YZ-dgd"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="seeNextImageGallery" destination="mvH-0e-eMb" id="z7r-la-yLz"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="FGL-PW-ViZ"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="777-zS-zbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Bf7-kF-xhS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2342" y="-1068"/>
+            <point key="canvasLocation" x="2417" y="-1389"/>
         </scene>
         <!--Annotation Map View Controller-->
         <scene sceneID="cOn-gi-tFJ">
@@ -1932,7 +1981,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aq-33-SBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3856.875" y="-1234.8591549295775"/>
+            <point key="canvasLocation" x="4580.859375" y="-1235.15625"/>
         </scene>
         <!--Tourist LocationTB Navigation Controller-->
         <scene sceneID="Oqx-Jy-I9X">
@@ -1970,22 +2019,22 @@
             </objects>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="NUB-ie-UON">
+        <scene sceneID="6hP-Ed-GxD">
             <objects>
-                <navigationController storyboardIdentifier="SeoulFlickrSearchController" automaticallyAdjustsScrollViewInsets="NO" id="Ijd-Uo-mCJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SeoulFlickrSearchController" automaticallyAdjustsScrollViewInsets="NO" id="RHl-iU-IRO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pVr-Xr-WWZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bj5-ia-Tcw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hw2-zG-xXx" kind="relationship" relationship="rootViewController" id="HNM-7G-Uzc"/>
+                        <segue destination="ugI-M2-2np" kind="relationship" relationship="rootViewController" id="4uP-Ym-8HS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="93D-OW-YmL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oAL-xj-UD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1354" y="-1025"/>
+            <point key="canvasLocation" x="1621" y="-1069"/>
         </scene>
     </scenes>
     <resources>

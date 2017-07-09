@@ -37,6 +37,19 @@
 
 static void* HostelAreaMapControllerContext = &HostelAreaMapControllerContext;
 
+-(void)viewWillLayoutSubviews{
+    
+    [self addObserver:self forKeyPath:@"mapRegion" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
+    
+    [self addObserver:self forKeyPath:@"annotationSourceFilePath" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
+    
+    /** The Map Region centers around the hostel **/
+    
+    self.annotationManager = [[AnnotationManager alloc] initWithFilename:self.annotationSourceFilePath];
+    
+
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
@@ -44,47 +57,49 @@ static void* HostelAreaMapControllerContext = &HostelAreaMapControllerContext;
     [self.mapView setDelegate:self];
     
    
-    /** The Map Region centers around the hostel **/
+  
+    
 
-    
-    self.mapView.region = self.mapRegion;
-    
-    self.annotationManager = [[AnnotationManager alloc] initWithFilename:self.annotationSourceFilePath];
-    
-    
-    [self.mapView addAnnotations:[self.annotationManager getAllAnnotations]];
-    
     
     
 }
 
+-(void)viewDidLoad{
+    
+
+
+}
+
+-(void)dealloc{
+    [self removeObserver:self forKeyPath:@"mapRegion"];
+    [self removeObserver:self forKeyPath:@"annotationSourceFilePath"];
+}
 
 
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    /**
-    if([keyPath isEqualToString:@"selectedOptions"]){
+
+    if([keyPath isEqualToString:@"mapRegion"]){
         
-        [self.mapView removeAnnotations:self.mapView.annotations];
-        
-        for (NSNumber* option in self.selectedOptions) {
-            
-            SeoulLocationType locationType = (SeoulLocationType)[option integerValue];
-            
-            NSLog(@"Adding annotations for locationType %d",locationType);
-            
-            [self.mapView addAnnotations:[self.annotationManager getAnnotationsOfType:locationType]];
-            
-        }
+        self.mapView.region = self.mapRegion;
+
         
     }
-     **/
+    
+    if([keyPath isEqualToString:@"annotationSourceFilePath"]){
+        
+        
+        [self.mapView addAnnotations:[self.annotationManager getAllAnnotations]];
+
+    }
+
+     
 }
 
 
--(void)viewDidLoad{
+//-(void)viewDidLoad{
     
-    [super viewDidLoad];
+    //[super viewDidLoad];
     
     /**
     if(self.selectedOptions.count > 0){
@@ -102,7 +117,7 @@ static void* HostelAreaMapControllerContext = &HostelAreaMapControllerContext;
      
      **/
    
-}
+//}
 
 
 

@@ -11,8 +11,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "FlickrSearchResults.h"
 
 @interface SeoulFlickSearchController : UICollectionViewController
+
+
+@property NSMutableOrderedSet<FlickrSearchResults*>* searches;
+
 
 @end
 

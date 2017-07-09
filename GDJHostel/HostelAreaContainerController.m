@@ -13,29 +13,51 @@
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
+@property (readonly) HostelAreaMapViewController*hostelAreaMapViewController;
+
 @end
 
 @implementation HostelAreaContainerController
 
+//BOOL _parentViewHasLoaded = false;
+
 -(void)viewWillLayoutSubviews{
     
+   
+    [self addObserver:self forKeyPath:@"hostelAreaMapViewController" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial context:nil];
     
-    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    HostelAreaMapViewController* hostelAreaMapViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"HostelAreaAnnotationSurveyController"];
+   // _parentViewHasLoaded = YES;
     
-    hostelAreaMapViewController.annotationSourceFilePath = self.annotationSourceFilePath;
+    self.hostelAreaMapViewController.annotationSourceFilePath = self.annotationSourceFilePath;
+    self.hostelAreaMapViewController.mapRegion = self.mapRegion;
     
-    hostelAreaMapViewController.mapRegion = self.mapRegion;
     
-    [self addChildViewController:hostelAreaMapViewController];
     
-    [self.containerView addSubview:hostelAreaMapViewController.view];
     
-    hostelAreaMapViewController.view.frame = self.containerView.frame;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
     
-    [hostelAreaMapViewController didMoveToParentViewController:self];
+   // [self performSegueWithIdentifier:@"embedHostelAreaMapViewController" sender:nil];
+
     
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    
+    if([keyPath isEqualToString:@"hostelAreaMapViewController"]){
+        
+        self.hostelAreaMapViewController.annotationSourceFilePath = self.annotationSourceFilePath;
+        self.hostelAreaMapViewController.mapRegion = self.mapRegion;
+        
+        
+    }
+    
+}
+
+-(void)dealloc{
+    [self removeObserver:self forKeyPath:@"hostelAreaMapViewController"];
 }
 
 
@@ -44,5 +66,56 @@
     
 }
 
+
+-(HostelAreaMapViewController *)hostelAreaMapViewController{
+    
+    HostelAreaMapViewController* hostelAreaMapViewController = (HostelAreaMapViewController*)[self.childViewControllers firstObject];
+    
+    return hostelAreaMapViewController;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if([segue.identifier isEqualToString:@"embedHostelAreaMapViewController"]){
+        
+        /**
+        NSLog(@"Preparing to embed the HostelAreaMapViewController...");
+
+        NSString* debugMessage1 = @"Parent view has loaded, so segue will be performed";
+        NSString* debugMessage2 = @"Parent view has NOT loaded, so segue will NOT be performed";
+        
+        NSString* debugMessage = _parentViewHasLoaded ? debugMessage1 : debugMessage2;
+        
+        NSLog(@"Debug message: %@",debugMessage);
+        **/
+        
+        
+        HostelAreaMapViewController* hostelAreaMapViewController = segue.destinationViewController;
+        
+        hostelAreaMapViewController.annotationSourceFilePath = self.annotationSourceFilePath;
+        hostelAreaMapViewController.mapRegion = self.mapRegion;
+    }
+}
+
+
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    /**
+    if([identifier isEqualToString:@"embedHostelAreaMapViewController"]){
+        
+        NSString* debugMessage1 = @"Parent view has loaded, so segue will be performed";
+        NSString* debugMessage2 = @"Parent view has NOT loaded, so segue will NOT be performed";
+        
+        NSString* debugMessage = _parentViewHasLoaded ? debugMessage1 : debugMessage2;
+        
+        NSLog(@"Debug message: %@",debugMessage);
+
+        return _parentViewHasLoaded ? YES: NO;
+        
+    }
+    
+    return NO;
+     **/
+    return YES;
+}
 
 @end

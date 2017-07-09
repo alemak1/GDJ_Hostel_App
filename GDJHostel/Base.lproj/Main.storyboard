@@ -20,11 +20,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="454.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aAw-tV-A29">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="454.5"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="4K6-pU-qWv"/>
                                 </connections>
@@ -243,7 +243,7 @@
                     <navigationItem key="navigationItem" id="YOi-SR-4JC">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="OC5-hZ-QB8">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NIq-ca-Zk1">
-                                <rect key="frame" x="224" y="7" width="170" height="30"/>
+                                <rect key="frame" x="134" y="7" width="170" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Directions Options Menu"/>
                                 <connections>
@@ -882,6 +882,9 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08i-EA-pj7">
                                 <rect key="frame" x="0.0" y="113.5" width="320" height="454.5"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="embed" identifier="embedHostelAreaMapViewController" id="SW1-gi-1PS"/>
+                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -909,7 +912,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emN-Gc-ch2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1358" y="-268"/>
+            <point key="canvasLocation" x="1313" y="-330"/>
         </scene>
         <!--FeatureViewController-->
         <scene sceneID="Pl1-PK-KTM">
@@ -3390,7 +3393,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCi-fu-QJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="615" y="-361.26760563380282"/>
+            <point key="canvasLocation" x="501" y="-614"/>
         </scene>
     </scenes>
     <resources>
