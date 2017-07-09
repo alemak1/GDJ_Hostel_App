@@ -11,9 +11,8 @@
 #import "NSString+HelperMethods.h"
 #import "AppLocationManager.h"
 #import "MKDirectionsRequest+HelperMethods.h"
-#import "VisitationPeriod.h"
 
-@interface TouristSiteConfiguration ()
+@interface TouristSiteConfiguration () <NSCoding>
 
 @property (readonly) NSDate* currentDateForKorea;
 @property (readonly) NSTimeInterval currentDateForKoreaInSeconds;
@@ -21,7 +20,7 @@
 @property (readonly) NSTimeInterval openingTimeInSeconds;
 @property (readonly) NSTimeInterval closingTimeInSeconds;
 
-@property NSMutableArray<VisitationPeriod*>* visitationPeriods;
+
 
 @end
 
@@ -41,6 +40,22 @@
 NSUInteger _numberOfDaysClosed = 0;
 CLLocation* _lastUpdatedUserLocation;
 
+
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    
+    if(self = [super init]){
+        
+    }
+    
+    return self;
+    
+}
+
+-(void)encodeWithCoder:(NSCoder *)aCoder{
+    
+    
+}
 
 
 /** Tourist Objects can also be initialized from file directly, with the initializer implementation overriding that of the base class **/
@@ -128,7 +143,6 @@ CLLocation* _lastUpdatedUserLocation;
         }
        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUserLocation:) name:@"userLocationDidUpdateNotification" object:nil];
-        
         
         
     }

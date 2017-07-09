@@ -24,7 +24,7 @@
 
 NSOperationQueue* _operationQueue;
 
--(void)searchFlickrForTerm:(NSString*)searchTerm andWithCompletionHandler:(void(^)(FlickSearchResults* flickrSearchResults, NSError*error))completion{
+-(void)searchFlickrForTerm:(NSString*)searchTerm andWithCompletionHandler:(void(^)(FlickrSearchResults* flickrSearchResults, NSError*error))completion{
     
     
     NSURL* searchURL = [self getFlickrSearchURLForSearchTerm:searchTerm];
@@ -128,8 +128,10 @@ NSOperationQueue* _operationQueue;
                 
                 NSDictionary* photosContainer = [resultsDictionary valueForKey:@"photos"];
                 
+                
                 NSArray* photosReceived = [photosContainer valueForKey:@"photo"];
 
+                
                 if(!photosContainer || !photosReceived){
                     NSError* apiError = [NSError errorWithDomain:@"FlickrSearch" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"Unknown API respons",NSLocalizedFailureReasonErrorKey, nil]];
                     
@@ -146,7 +148,7 @@ NSOperationQueue* _operationQueue;
                 for (NSDictionary*photoObjectDict in photosReceived) {
                     
                     NSString* photoID = [photoObjectDict valueForKey:@"id"];
-                    NSInteger farm = [photoObjectDict valueForKey:@"farm"];
+                    NSInteger farm = [[photoObjectDict valueForKey:@"farm"] integerValue];
                     NSString* server = [photoObjectDict valueForKey:@"server"];
                     NSString* secret = [photoObjectDict valueForKey:@"secret"];
                     
@@ -157,6 +159,8 @@ NSOperationQueue* _operationQueue;
                         
                         
                         NSURL* url = [flickrPhoto getFlickrImageURLWithSize:nil];
+                        
+                        
                         NSData* imageData = [NSData dataWithContentsOfURL:url];
                         
                         if(!url || !imageData){
@@ -164,16 +168,19 @@ NSOperationQueue* _operationQueue;
                         } else {
                             flickrPhoto.thumbnail = [UIImage imageWithData:imageData];
                             [flickrPhotoArray addObject:flickrPhoto];
+                            
+                            
                         }
                     }
                     
-                    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    
-                        completion([[FlickSearchResults alloc] initWithSearchTerm:searchTerm andWithSearchResults:flickrPhotoArray],nil);
-                    }];
+                   
                     
                 }
                 
+                completion([[FlickrSearchResults alloc] initWithSearchTerm:searchTerm andWithSearchResults:flickrPhotoArray],nil);
+
+                
+               
                
                 
             } @catch (NSException *exception) {

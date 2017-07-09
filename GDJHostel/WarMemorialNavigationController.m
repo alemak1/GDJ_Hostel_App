@@ -24,27 +24,34 @@
 
 @implementation WarMemorialNavigationController
 
+@synthesize annotationsFileSource = _annotationsFileSource;
+@synthesize polygonOverlayFileSources = _polygonOverlayFileSources;
+@synthesize annotationViewImagePath = _annotationViewImagePath;
+@synthesize mapCoordinateRegion = _mapCoordinateRegion;
 
 -(void)viewWillLayoutSubviews{
     
     [self.mapView setDelegate:self];
     [self.mapView removeOverlays:self.mapView.overlays];
-    
+    [self.mapView removeAnnotations:self.mapView.annotations];
     
     [self loadWarMemorialAnnotationsArray];
     
+    [self loadAnnotations];
     
-  
+    
+    [self loadPolygonOverlays];
+    
+    /** [self loadCircleOverlays]; **/
+    
+    
     
 }
 
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    [self loadAnnotations];
-    [self loadPolygonOverlays];
-    [self loadCircleOverlays];
-    
+ 
     [self setMapRegion];
 }
 
@@ -55,22 +62,62 @@
 
 #pragma makr ****** MKMapViewDelegate Methods
 
-/**
+
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     
-    return nil;
+    MKAnnotationView* view = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MapAnnotation"];
+    
+    
+    view.image = [UIImage imageNamed:self.annotationViewImagePath];
+    
+    return view;
 }
  
- **/
+
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
     
     //Set the label and the image view with annotation objects description text and image path respectively
     
-    //view.annotation.title
     
-    //use the title to filter the im
+    WarMemorialAnnotation* annotation = [self getWarMemorialAnnotationForAnnotationView:view];
+    
+    
+  
+    
+    NSString* labelString = annotation.title;
+    
+
+    NSDictionary* attributedStringDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Futura-Bold" size:30.0],NSFontAttributeName,[UIColor greenColor],NSForegroundColorAttributeName, nil];
+    
+    
+    NSMutableAttributedString* attributedString = [[NSMutableAttributedString alloc] initWithString:labelString attributes:attributedStringDict];
+    
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+        
+        NSString* descriptionText = @" / ";
+        descriptionText = [descriptionText stringByAppendingString:annotation.subtitle];
+        
+        NSDictionary* descriptionTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Futura-Medium" size:20.0],NSFontAttributeName,[UIColor greenColor],NSForegroundColorAttributeName, nil];
+        
+        NSAttributedString* attributedDescriptionString = [[NSAttributedString alloc] initWithString:descriptionText attributes:descriptionTextAttributes];
+        
+        [attributedString insertAttributedString:attributedDescriptionString atIndex:[labelString length]];
+        
+    }
+    
+    
+    
+    [self.annotationLabel setAdjustsFontSizeToFitWidth:YES];
+    [self.annotationLabel setMinimumScaleFactor:0.50];
+    [self.annotationLabel setNumberOfLines:0];
+    
+    [self.annotationLabel setAttributedText:attributedString];
+    
+    [self.annotationImageView setImage:[UIImage imageNamed:annotation.imagePath]];
+    
 }
+
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
     
@@ -79,11 +126,12 @@
         [circleView setStrokeColor:[UIColor redColor]];
         
         return circleView;
-    } else if([overlay isKindOfClass:[MKPolygon class]]){
+    } else if([overlay isKindOfClass:[MKPolyline class]]){
         
-        MKPolygonRenderer* polygonView = [[MKPolygonRenderer alloc] initWithOverlay:overlay];
+        MKPolylineRenderer* polygonView = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
         
-        [polygonView setStrokeColor:[UIColor blueColor]];
+        
+        [polygonView setStrokeColor:[UIColor greenColor]];
         
         return polygonView;
         
@@ -94,35 +142,31 @@
 
 
 -(void)loadWarMemorialAnnotationsArray{
-    NSString* path = [[NSBundle mainBundle] pathForResource:@"KoreanWarMemorialCircleRegions" ofType:@"plist"];
+    
+    self.annotationStore = [[NSMutableArray alloc] init];
+    
+    NSString* path = [[NSBundle mainBundle] pathForResource:self.annotationsFileSource ofType:@"plist"];
     
     NSArray* warMemorialDictArray = [NSArray arrayWithContentsOfFile:path];
     
     for(NSDictionary*dict in warMemorialDictArray){
         WarMemorialAnnotation* annotation = [[WarMemorialAnnotation alloc] initWithDict:dict];
         
-        
+
         [self.annotationStore addObject:annotation];
+        
+    
     }
     
+    
+    [self.mapView addAnnotations:self.annotationStore];
     
 }
 
 -(void) setMapRegion{
     
-    CLLocationCoordinate2D lowerRight = CLLocationCoordinate2DMake(37.5348, 126.9788);
-    CLLocationCoordinate2D upperRight = CLLocationCoordinate2DMake(37.5380, 126.9788);
-    CLLocationCoordinate2D upperLeft = CLLocationCoordinate2DMake(37.5380, 126.9755);
-    
-    CLLocationCoordinate2D mainEntrance = CLLocationCoordinate2DMake(37.5365, 126.9772);
-    
-    CLLocationDegrees latDifference = fabs(upperRight.latitude - lowerRight.latitude);
-    CLLocationDegrees longDifference = fabs(upperRight.longitude - upperLeft.longitude);
-    
-    MKCoordinateSpan span = MKCoordinateSpanMake(latDifference, longDifference);
-    MKCoordinateRegion region = MKCoordinateRegionMake(mainEntrance, span);
-    
-    [self.mapView setRegion:region];
+
+    [self.mapView setRegion:self.mapCoordinateRegion];
     
 }
 
@@ -139,7 +183,9 @@
         
         CLLocationCoordinate2D circleCenter = [annotation coordinate];
         
-        MKCircle* circleOverlay = [MKCircle circleWithCenterCoordinate:circleCenter radius:10.0];
+        MKCircle* circleOverlay = [MKCircle circleWithCenterCoordinate:circleCenter radius:30.0];
+        
+        NSLog(@"Adding circle overlay with description %@",[circleOverlay description]);
         
         [self.mapView addOverlay:circleOverlay];
     }
@@ -148,16 +194,21 @@
 
 -(void) loadPolygonOverlays{
     
-    [self loadPolygonOveralyWithFileName:@"WarMemorialMainBuilding"];
-    [self loadPolygonOveralyWithFileName:@"WeddingHall"];
+  
+    for(NSString* filePath in self.polygonOverlayFileSources){
+        [self loadPolygonOverlayWithFileName:filePath];
+    }
     
 }
 
 
-- (void) loadPolygonOveralyWithFileName:(NSString*)fileName{
+- (void) loadPolygonOverlayWithFileName:(NSString*)fileName{
+    
     NSString* mainBuildingPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
     
     NSDictionary* mainBuildingDict = [NSDictionary dictionaryWithContentsOfFile:mainBuildingPath];
+    
+    
     
     NSArray* pointsArray = mainBuildingDict[@"boundary"];
     
@@ -172,14 +223,39 @@
     
     MKPolyline* mainBuildingPolyline = [MKPolyline polylineWithCoordinates:pointsToUse count:pointsCount];
     
+    NSLog(@"Adding polyline with description: %@",[mainBuildingPolyline description]);
+    
     [self.mapView addOverlay:mainBuildingPolyline];
 }
 
 
 -(WarMemorialAnnotation*)getWarMemorialAnnotationForAnnotationView:(MKAnnotationView*)view{
     
+    for(WarMemorialAnnotation* warAnnotation in self.annotationStore){
+        
+        if(warAnnotation.title == view.annotation.title){
+            
+            return view.annotation;
+            
+        }
+        
+    }
+    
     return nil;
 }
+
+
+/** Getters and setters for exposed properties **/
+
+-(void)setAnnotationsFileSource:(NSString *)annotationsFileSource{
+    _annotationsFileSource = annotationsFileSource;
+}
+
+-(NSString*)annotationsFileSource{
+    return _annotationsFileSource;
+}
+
+
 
 
 @end

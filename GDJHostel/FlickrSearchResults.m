@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FlickrSearchResults.h"
 
-@implementation FlickSearchResults
+@implementation FlickrSearchResults
 
 -(instancetype)initWithSearchTerm:(NSString*)searchTerm andWithSearchResults:(NSMutableArray*)searchResults{
     

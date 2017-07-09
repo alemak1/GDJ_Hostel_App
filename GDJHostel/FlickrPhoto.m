@@ -36,7 +36,7 @@
         imageSize = size;
     }
     
-    NSString* urlString = [NSString stringWithFormat:@"https://farm%ld.staticflickr.com/%@/\(photoID)_%@_%@.jpg",(long)self.farm,self.server,self.photoID,imageSize, nil];
+    NSString* urlString = [NSString stringWithFormat:@"https://farm%ld.staticflickr.com/%@/%@_%@_%@.jpg",(long)self.farm,self.server,self.photoID,self.secret,imageSize, nil];
     
     NSURL* url = [NSURL URLWithString:urlString];
     

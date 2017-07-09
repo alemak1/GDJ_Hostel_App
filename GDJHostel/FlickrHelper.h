@@ -10,8 +10,14 @@
 #define FlickrHelper_h
 
 #import <Foundation/Foundation.h>
+#import "FlickrSearchResults.h"
 
 @interface FlickrHelper : NSObject
+
+-(void)searchFlickrForTerm:(NSString*)searchTerm andWithCompletionHandler:(void(^)(FlickrSearchResults* flickrSearchResults, NSError*error))completion;
+
+-(NSURL*)getFlickrSearchURLForSearchTerm:(NSString*)searchTerm;
+
 
 @end
 

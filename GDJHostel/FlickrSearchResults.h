@@ -14,7 +14,7 @@
 
 
 
-@interface FlickSearchResults : NSObject
+@interface FlickrSearchResults : NSObject
 
 @property NSString* searchTerm;
 @property NSMutableArray<FlickrPhoto*>*searchResults;

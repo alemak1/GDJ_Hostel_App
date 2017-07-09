@@ -1,26 +1,26 @@
 //
-//  WarMemorialNavigationController.h
+//  NavigationAidEntryController.h
 //  GDJHostel
 //
-//  Created by Aleksander Makedonski on 7/4/17.
+//  Created by Aleksander Makedonski on 7/9/17.
 //  Copyright © 2017 AlexMakedonski. All rights reserved.
 //
 
-#ifndef WarMemorialNavigationController_h
-#define WarMemorialNavigationController_h
+#ifndef NavigationAidEntryController_h
+#define NavigationAidEntryController_h
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <UIKit/UIKit.h>
 
-@interface WarMemorialNavigationController : UIViewController
-
+@interface NavigationAidEntryController : UINavigationController
 
 @property NSString* annotationsFileSource;
 @property NSArray<NSString*>* polygonOverlayFileSources;
 @property MKCoordinateRegion mapCoordinateRegion;
 @property NSString* annotationViewImagePath;
 
+
 @end
 
-#endif /* WarMemorialNavigationController_h */
+#endif /* NavigationAidEntryController_h */

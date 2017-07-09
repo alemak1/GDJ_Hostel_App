@@ -11,11 +11,19 @@
 #import "FlickrPhoto.h"
 #import "FlickrSearchResults.h"
 #import "FlickrHelper.h"
+#import "FlickrPhotoCell.h"
 
 @interface SeoulFlickSearchController () <UICollectionViewDelegateFlowLayout>
 
-@property NSMutableArray<FlickSearchResults*>* searches;
+@property NSMutableOrderedSet<FlickrSearchResults*>* searches;
 @property (readonly) FlickrHelper* flickrHelper;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *seeNextImageGallery;
+
+@property NSInteger searchIndex;
+
+- (IBAction)getNextGallery:(UIBarButtonItem *)sender;
+
 
 @end
 
@@ -23,10 +31,25 @@
 
 FlickrHelper* _flickrHelper;
 
+
+-(void)viewWillLayoutSubviews{
+    
+    self.searches = [[NSMutableOrderedSet alloc] init];
+    self.searchIndex = 0;
+    
+    [self.collectionView setDelegate:self];
+    [self.collectionView setDataSource:self];
+    
+    
+}
+
+
 -(void)viewDidLoad{
+  
     
     
-    NSLog(@"Flickr Helper Debug Info %@",[self.flickrHelper description]);
+    
+    
 }
 
 
@@ -51,15 +74,22 @@ FlickrHelper* _flickrHelper;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
     return [[self.searches objectAtIndex:section].searchResults count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FlickrCell" forIndexPath:indexPath];
+    NSLog(@"Getting cell for collection view...");
     
-    cell.backgroundColor = [UIColor orangeColor];
+    FlickrPhotoCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FlickrPhotoCell" forIndexPath:indexPath];
+    
+    FlickrPhoto* flickrPhoto = [self photoForIndexPath:indexPath];
+    
+
+    cell.imageView.image = flickrPhoto.thumbnail;
+    
+    
+    cell.backgroundColor = [UIColor blueColor];
     
     return cell;
 }
@@ -67,6 +97,7 @@ FlickrHelper* _flickrHelper;
 
 #pragma mark COLLECTIONVIEW DELEGATE METHODS 
 
+/**
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     return CGSizeMake(200, 300);
@@ -81,6 +112,111 @@ FlickrHelper* _flickrHelper;
     
     return UIEdgeInsetsMake(10, 20, 20, 10);
 }
+**/
+
+- (IBAction)getNextGallery:(UIBarButtonItem *)sender {
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        
+        [self.flickrHelper searchFlickrForTerm:@"Korea" andWithCompletionHandler:^(FlickrSearchResults* results, NSError*error){
+            
+            if(error){
+                NSLog(@"Error: an error occured while performing the search %@",[error localizedDescription]);
+            }
+            
+            if(!results){
+                NSLog(@"Error: no results obtained from search");
+            }
+            
+            
+            [self.searches insertObject:results atIndex:self.searchIndex];
+            
+            self.searchIndex++;
+            
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+            
+                [self.collectionView reloadData];
+                
+                
+              
+            });
+        
+            
+        }];
+        
+        
+        
+        
+    });
+    
+    
+
+}
 
 
 @end
+
+
+/**
+ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+ 
+ 
+ [self.flickrHelper searchFlickrForTerm:@"kimchi" andWithCompletionHandler:^(FlickSearchResults* results, NSError*error){
+ 
+ if(error){
+ NSLog(@"An error occured while performing the search %@",error);
+ }
+ 
+ if(!results){
+ NSLog(@"No results obtained from search");
+ }
+ 
+ NSLog(@"Flickr search results info %@",[results description]);
+ 
+ [self.searches addObject:results];
+ 
+ 
+ NSInteger numberOfSections = [self.searches count];
+ 
+ NSInteger numberOfRowsInSection1 = [[self.searches objectAtIndex:0].searchResults count];
+ 
+ NSLog(@"Number of Sections %d, Number of rows in section 1 is %d",numberOfSections,numberOfRowsInSection1);
+ 
+ }];
+ 
+ 
+ 
+ dispatch_async(dispatch_get_main_queue(), ^{
+ 
+ NSLog(@"Reloading collection view...");
+ [self.collectionView reloadData];
+ 
+ });
+ 
+ });
+ **/
+
+/**
+ dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 6*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+ 
+ NSLog(@"Reloading collection view...");
+ 
+ [self.collectionView reloadData];
+ 
+ for (FlickSearchResults*searchResults in self.searches) {
+ 
+ for(FlickrPhoto*photo in searchResults.searchResults){
+ NSLog(@"Flickr photo info %@",[photo description]);
+ 
+ NSURL*photoURL = [photo getFlickrImageURLWithSize:@"m"];
+ 
+ NSLog(@"The URL for this photo is %@",[photoURL absoluteString]);
+ 
+ 
+ }
+ }
+ });
+ **/
+

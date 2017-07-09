@@ -12,8 +12,7 @@
 #import "AppLocationManager.h"
 
 #import "TouristSiteManager.h"
-#import "VisitedSiteCache.h"
-#import "VisitedSite.h"
+#import "Visitation.h"
 
 @interface HostelInformationController ()
 
@@ -27,18 +26,21 @@
 
 @implementation HostelInformationController
 
--(void)saveVisitedSiteCache:(VisitedSiteCache*)visitedSiteCache key:(NSString*)key{
-    NSData* encodedObject = [NSKeyedArchiver archivedDataWithRootObject:visitedSiteCache];
+-(void)saveVisitation:(Visitation*)visitation key:(NSString*)key{
+    NSData* encodedObject = [NSKeyedArchiver archivedDataWithRootObject:visitation];
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:encodedObject forKey:key];
 }
 
--(VisitedSiteCache*)loadVisitedCacheWithKey:(NSString*)key{
+-(Visitation*)loadVisitationWithKey:(NSString*)key{
+    
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSData* encodedObject = [defaults objectForKey:key];
-    VisitedSiteCache* cache = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
-    return cache;
+    Visitation* visitation = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    
+    return visitation;
+    
 }
 
 -(void)viewWillLayoutSubviews{
@@ -52,13 +54,36 @@
     
     [userLocationManager requestAuthorizationAndStartUpdates];
     
+    /**
     TouristSiteManager* siteManager = [[TouristSiteManager alloc] initWithFileName:@"SeoulTouristSites"];
-
     
+    NSSet* set = [NSSet setWithArray:[siteManager getRegionsForAllTouristLocations]];
+    
+    [userLocationManager startMonitoringForRegions:set];
+    
+
+    for (CLRegion*region in [userLocationManager monitoredRegions]) {
+        Visitation* newVisitation = [[Visitation alloc] initWithRegionIdentifier:region.identifier];
+        
+        [self saveVisitation:newVisitation key:region.identifier];
+    }
  
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 4.00*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        
+        for (CLRegion*region in [userLocationManager monitoredRegions]) {
+            Visitation* visitation = [self loadVisitationWithKey:region.identifier];
+            
+            [visitation setExitTime:[NSDate date]];
+            
+            NSLog(@"The site was %@ visited for a period: %@",region.identifier,[visitation visitationTimeString]);
+            
+            
+        }
     
+    });
     
+    **/
     
     
 }
@@ -88,7 +113,7 @@
                     targetView:self.view
                     direction:menuDirectionRightToLeft
                     options:@[@"About Hostel", @"Explore Nearby", @"Visited Sites", @"Seoul Tourism",@"Weather",@"Survival Korean", @"Product Prices",@"Monitored Regions",@"Seoul Image Galleries"]
-                    optionImages:@[@"informationB", @"compassB", @"contactPhoneB", @"templeB",@"cloudyA",@"chatA", @"shoppingCartB",@"mapAddressB",@"trophyB"]];
+                    optionImages:@[@"informationB", @"compassB", @"paintingB", @"templeB",@"cloudyA",@"chatA", @"shoppingCartB",@"mapAddressB",@"tvA"]];
 
 }
 

@@ -22,6 +22,7 @@
 		BD2CAA981EFFDDB500C0E540 /* TouristSiteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA971EFFDDB500C0E540 /* TouristSiteCollectionViewCell.m */; };
 		BD2CAA9B1EFFE59800C0E540 /* TouristSiteConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA9A1EFFE59800C0E540 /* TouristSiteConfiguration.m */; };
 		BD2CAA9D1EFFE7D700C0E540 /* SeoulTouristSites.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD2CAA9C1EFFE7D700C0E540 /* SeoulTouristSites.plist */; };
+		BD2D23C21F1201F000ADE225 /* NavigationAidEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2D23C11F1201F000ADE225 /* NavigationAidEntryController.m */; };
 		BD2D62C51F0A9BD300231365 /* AnnotationMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2D62C41F0A9BD300231365 /* AnnotationMapViewController.m */; };
 		BD2D92461F0FE17A00A24A4C /* TouristSiteFilterController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2D92451F0FE17A00A24A4C /* TouristSiteFilterController.m */; };
 		BD2DCCAE1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2DCCAD1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m */; };
@@ -68,12 +69,11 @@
 		BD31A5AE1F038E0600C018DB /* TouristSiteDetailInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31A5AD1F038E0600C018DB /* TouristSiteDetailInformationController.m */; };
 		BD31A5B11F03932100C018DB /* SeoulTourismNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31A5B01F03932100C018DB /* SeoulTourismNavigationController.m */; };
 		BD31BC671F0A488100A23256 /* KoreanProducts.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD31BC661F0A488100A23256 /* KoreanProducts.plist */; };
-		BD31C59B1F10A095005A33CA /* VisitedSite.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31C59A1F10A095005A33CA /* VisitedSite.m */; };
-		BD31C5A11F10A56F005A33CA /* VisitedSiteCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31C5A01F10A56F005A33CA /* VisitedSiteCache.m */; };
 		BD31C5A51F10B3C0005A33CA /* FlickerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31C5A41F10B3C0005A33CA /* FlickerHelper.m */; };
 		BD31C5A81F10BE78005A33CA /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31C5A71F10BE78005A33CA /* FlickrPhoto.m */; };
 		BD31C5AB1F10C96B005A33CA /* FlickrSearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31C5AA1F10C96B005A33CA /* FlickrSearchResults.m */; };
 		BD31C5AE1F10CDF1005A33CA /* SeoulFlickrSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31C5AD1F10CDF1005A33CA /* SeoulFlickrSearchController.m */; };
+		BD31C5B11F10DC11005A33CA /* FlickrPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31C5B01F10DC11005A33CA /* FlickrPhotoCell.m */; };
 		BD3279401F00124F0007FD64 /* ParkRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD32793F1F00124F0007FD64 /* ParkRoute.plist */; };
 		BD335D8C1F0D328D00A0986A /* TouristLocationParentController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD335D8B1F0D328D00A0986A /* TouristLocationParentController.m */; };
 		BD34C1D61F079DBB00CD0DD3 /* LottoHotel.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD34C1D51F079DBB00CD0DD3 /* LottoHotel.plist */; };
@@ -103,6 +103,7 @@
 		BD6847711F010070004732FB /* ImageManagerB.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6847701F010070004732FB /* ImageManagerB.m */; };
 		BD7670DC1F02037000918A20 /* TouristSiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2CAA9F1EFFE80900C0E540 /* TouristSiteManager.m */; };
 		BD7C35491F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BD7C35481F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.m */; };
+		BD7FFFE81F11102E00F0334C /* Visitation.m in Sources */ = {isa = PBXBuildFile; fileRef = BD7FFFE71F11102E00F0334C /* Visitation.m */; };
 		BD829AF81F0E420100C54427 /* DLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD829AF71F0E420100C54427 /* DLinkedNode.m */; };
 		BD829AFB1F0E43DE00C54427 /* DLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = BD829AFA1F0E43DE00C54427 /* DLinkedList.m */; };
 		BD829AFD1F0E50FE00C54427 /* Gwanghuamun.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD829AFC1F0E50FE00C54427 /* Gwanghuamun.plist */; };
@@ -166,6 +167,8 @@
 		BD2CAA9C1EFFE7D700C0E540 /* SeoulTouristSites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SeoulTouristSites.plist; sourceTree = "<group>"; };
 		BD2CAA9E1EFFE7FF00C0E540 /* TouristSiteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristSiteManager.h; sourceTree = "<group>"; };
 		BD2CAA9F1EFFE80900C0E540 /* TouristSiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristSiteManager.m; sourceTree = "<group>"; };
+		BD2D23C01F1201E100ADE225 /* NavigationAidEntryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationAidEntryController.h; sourceTree = "<group>"; };
+		BD2D23C11F1201F000ADE225 /* NavigationAidEntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationAidEntryController.m; sourceTree = "<group>"; };
 		BD2D62C31F0A9BC700231365 /* AnnotationMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnnotationMapViewController.h; sourceTree = "<group>"; };
 		BD2D62C41F0A9BD300231365 /* AnnotationMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationMapViewController.m; sourceTree = "<group>"; };
 		BD2D92441F0FE14E00A24A4C /* TouristSiteFilterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristSiteFilterController.h; sourceTree = "<group>"; };
@@ -232,10 +235,6 @@
 		BD31A5AF1F03931200C018DB /* SeoulTourismNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoulTourismNavigationController.h; sourceTree = "<group>"; };
 		BD31A5B01F03932100C018DB /* SeoulTourismNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeoulTourismNavigationController.m; sourceTree = "<group>"; };
 		BD31BC661F0A488100A23256 /* KoreanProducts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KoreanProducts.plist; sourceTree = "<group>"; };
-		BD31C5991F10A079005A33CA /* VisitedSite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitedSite.h; sourceTree = "<group>"; };
-		BD31C59A1F10A095005A33CA /* VisitedSite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitedSite.m; sourceTree = "<group>"; };
-		BD31C59F1F10A561005A33CA /* VisitedSiteCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitedSiteCache.h; sourceTree = "<group>"; };
-		BD31C5A01F10A56F005A33CA /* VisitedSiteCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitedSiteCache.m; sourceTree = "<group>"; };
 		BD31C5A31F10B3B1005A33CA /* FlickrHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrHelper.h; sourceTree = "<group>"; };
 		BD31C5A41F10B3C0005A33CA /* FlickerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickerHelper.m; sourceTree = "<group>"; };
 		BD31C5A61F10BE68005A33CA /* FlickrPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrPhoto.h; sourceTree = "<group>"; };
@@ -244,6 +243,8 @@
 		BD31C5AA1F10C96B005A33CA /* FlickrSearchResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrSearchResults.m; sourceTree = "<group>"; };
 		BD31C5AC1F10CDD9005A33CA /* SeoulFlickrSearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoulFlickrSearchController.h; sourceTree = "<group>"; };
 		BD31C5AD1F10CDF1005A33CA /* SeoulFlickrSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeoulFlickrSearchController.m; sourceTree = "<group>"; };
+		BD31C5AF1F10DC03005A33CA /* FlickrPhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrPhotoCell.h; sourceTree = "<group>"; };
+		BD31C5B01F10DC11005A33CA /* FlickrPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoCell.m; sourceTree = "<group>"; };
 		BD32793F1F00124F0007FD64 /* ParkRoute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ParkRoute.plist; sourceTree = "<group>"; };
 		BD32E41D1F03A83F00F847B3 /* DayOfWeek.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DayOfWeek.h; sourceTree = "<group>"; };
 		BD335D8B1F0D328D00A0986A /* TouristLocationParentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristLocationParentController.m; sourceTree = "<group>"; };
@@ -295,6 +296,8 @@
 		BD7C35471F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKDirectionsRequest+HelperMethods.h"; sourceTree = "<group>"; };
 		BD7C35481F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKDirectionsRequest+HelperMethods.m"; sourceTree = "<group>"; };
 		BD7C354A1F08A515009FD8F8 /* TransportationMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransportationMode.h; sourceTree = "<group>"; };
+		BD7FFFE61F11102400F0334C /* Visitation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Visitation.h; sourceTree = "<group>"; };
+		BD7FFFE71F11102E00F0334C /* Visitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Visitation.m; sourceTree = "<group>"; };
 		BD829AF61F0E41F300C54427 /* DLinkedNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLinkedNode.h; sourceTree = "<group>"; };
 		BD829AF71F0E420100C54427 /* DLinkedNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLinkedNode.m; sourceTree = "<group>"; };
 		BD829AF91F0E43D400C54427 /* DLinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLinkedList.h; sourceTree = "<group>"; };
@@ -383,10 +386,8 @@
 				BDAA41E01F0F545A0021CE79 /* OperatingDateTime.m */,
 				BD2D92441F0FE14E00A24A4C /* TouristSiteFilterController.h */,
 				BD2D92451F0FE17A00A24A4C /* TouristSiteFilterController.m */,
-				BD31C5991F10A079005A33CA /* VisitedSite.h */,
-				BD31C59A1F10A095005A33CA /* VisitedSite.m */,
-				BD31C59F1F10A561005A33CA /* VisitedSiteCache.h */,
-				BD31C5A01F10A56F005A33CA /* VisitedSiteCache.m */,
+				BD7FFFE61F11102400F0334C /* Visitation.h */,
+				BD7FFFE71F11102E00F0334C /* Visitation.m */,
 			);
 			name = TouristSitesCollectionController;
 			sourceTree = "<group>";
@@ -411,6 +412,8 @@
 				BD2E8E9F1F0BDC3A003D9C9B /* WarMemorialNavigationController.m */,
 				BD2E8EA11F0BDEE8003D9C9B /* WarMemorialAnnotation.h */,
 				BD2E8EA21F0BDEF6003D9C9B /* WarMemorialAnnotation.m */,
+				BD2D23C01F1201E100ADE225 /* NavigationAidEntryController.h */,
+				BD2D23C11F1201F000ADE225 /* NavigationAidEntryController.m */,
 			);
 			name = WarMemorialNavigator;
 			sourceTree = "<group>";
@@ -469,6 +472,8 @@
 				BD31C5AA1F10C96B005A33CA /* FlickrSearchResults.m */,
 				BD31C5AC1F10CDD9005A33CA /* SeoulFlickrSearchController.h */,
 				BD31C5AD1F10CDF1005A33CA /* SeoulFlickrSearchController.m */,
+				BD31C5AF1F10DC03005A33CA /* FlickrPhotoCell.h */,
+				BD31C5B01F10DC11005A33CA /* FlickrPhotoCell.m */,
 			);
 			name = Flickr;
 			sourceTree = "<group>";
@@ -698,8 +703,8 @@
 		BD902CD71EFD31F600DD1034 /* GDJHostel */ = {
 			isa = PBXGroup;
 			children = (
-				BD31C5A21F10B3A2005A33CA /* Flickr */,
 				BD3CB85E1F09EBEB0002A275 /* EntryPointViewController */,
+				BD31C5A21F10B3A2005A33CA /* Flickr */,
 				BD3CB85F1F0A243E0002A275 /* MonitoredRegionsController */,
 				BD554C901F090FD300B43C8C /* ProductPriceController */,
 				BDE3BA211F07EE3D00DFDEF4 /* WebviewController */,
@@ -912,9 +917,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD305CDA1F0BA8CA00F0CC7B /* BikeRoutePoint.h in Sources */,
+				BD31C5B11F10DC11005A33CA /* FlickrPhotoCell.m in Sources */,
 				BD305CD91F0BA88500F0CC7B /* BikeRouteMapController.m in Sources */,
 				BD7670DC1F02037000918A20 /* TouristSiteManager.m in Sources */,
 				BDF2348C1F0021BA00E9ED63 /* HostelCollectionViewCell.m in Sources */,
+				BD7FFFE81F11102E00F0334C /* Visitation.m in Sources */,
 				BD312E021F01517B00FB90E3 /* UIView+HelperMethods.m in Sources */,
 				BDF2348B1F00216600E9ED63 /* AudioController.m in Sources */,
 				BD335D8C1F0D328D00A0986A /* TouristLocationParentController.m in Sources */,
@@ -954,6 +961,7 @@
 				BD3844AF1EFE526300F2E981 /* LocationSearchController.m in Sources */,
 				BD7C35491F08A148009FD8F8 /* MKDirectionsRequest+HelperMethods.m in Sources */,
 				BD2C30E41F0543400087BBA6 /* WeatherConfiguration.m in Sources */,
+				BD2D23C21F1201F000ADE225 /* NavigationAidEntryController.m in Sources */,
 				BDE3BA2D1F07FBBC00DFDEF4 /* TouristLocationTableViewController.m in Sources */,
 				BD2CAA981EFFDDB500C0E540 /* TouristSiteCollectionViewCell.m in Sources */,
 				BD68476C1F00F102004732FB /* ImageManager.m in Sources */,
@@ -961,7 +969,6 @@
 				BD3154EB1F03BF23002B3388 /* WeatherDisplayController.m in Sources */,
 				BD2B78301F073BDB00C33184 /* AnnotationManager.m in Sources */,
 				BD554C971F0922D500B43C8C /* ProductPriceDisplayController.m in Sources */,
-				BD31C5A11F10A56F005A33CA /* VisitedSiteCache.m in Sources */,
 				BDE1E97F1F0CFD43009F132E /* ProductSearchController.m in Sources */,
 				BD2DCCAE1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m in Sources */,
 				BD31C5AE1F10CDF1005A33CA /* SeoulFlickrSearchController.m in Sources */,
@@ -987,7 +994,6 @@
 				BD5C3EC41EFD516E00616400 /* OverlayConfiguration.m in Sources */,
 				BD31A5B11F03932100C018DB /* SeoulTourismNavigationController.m in Sources */,
 				BDE1E97D1F0CF1EE009F132E /* KoreanProductCell.m in Sources */,
-				BD31C59B1F10A095005A33CA /* VisitedSite.m in Sources */,
 				BDA32EE21EFF39DB0087BF19 /* KoreanAudioPhraseController.m in Sources */,
 				BDFBFBA11F03D57700185F47 /* WeatherForecastCollectionController.m in Sources */,
 			);

@@ -12,7 +12,6 @@
 
 #import <CoreLocation/CoreLocation.h>
 #import "AppLocationManager.h"
-#import "VisitedSite.h"
 
 
 /** Additional functionality: user can opt to monitor for notifications when close to a tourist area (a detail view for the iste can be presented); also, the user can be notified when within a given distance from the hostel **/

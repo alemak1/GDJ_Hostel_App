@@ -15,6 +15,7 @@
 #import "MKDirectionsRequest+HelperMethods.h"
 #import "WarMemorialNavigationController.h"
 #import "DestinationCategory.h"
+#import "NavigationAidEntryController.h"
 
 /**
 #import "TouristLocationSelectionNavigationController.h"
@@ -24,6 +25,15 @@
 
 @interface DirectionsMenuController ()
 
+
+typedef enum NAVIGATION_AID_AREA{
+    WAR_MEMORIAL_NAV_AREA,
+    WORLD_CUP_STADIUM_NAV_AREA,
+    SEOUL_TOWER_NAV_AREA,
+    NAVIGATION_AID_AREA_END_INDEX
+}NAVIGATION_AID_AREA;
+
+
 typedef enum VALID_NEXT_VIEW_CONTROLLER{
     TOURIST_LOCATION_TABLEVIEW_CONTROLLER = 0,
     LOCATION_SEARCH_CONTROLLER,
@@ -32,7 +42,9 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     HOSTEL_LOCAL_AREA_MAP_CONTROLLER,
     BIKING_JOGGING_ROUTE_CONTROLLER,
     POLYGON_NAVIGATION_CONTROLLER,
-    WAR_MEMORIAL_NAVIGATION_CONTROLLER,
+    NAVIGATION_AID_CONTROLLER_WAR_MEMORIAL,
+    NAVIGATION_AID_CONTROLLER_WORLD_CUP_STADIUM,
+    NAVIGATION_AID_CONTROLLER_SEOUL_TOWER,
     LAST_VIEW_CONTROLLER,
 }VALID_NEXT_VIEW_CONTROLLER;
 
@@ -198,8 +210,14 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
         case POLYGON_NAVIGATION_CONTROLLER:
             nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"PolygonNavigationController"];
             break;
-        case WAR_MEMORIAL_NAVIGATION_CONTROLLER:
-            nextViewController = [self getWarMemorialNavigationController];
+        case NAVIGATION_AID_CONTROLLER_WAR_MEMORIAL:
+            nextViewController = [self getNavigationAidControllerForArea:WAR_MEMORIAL_NAV_AREA];
+            break;
+        case NAVIGATION_AID_CONTROLLER_SEOUL_TOWER:
+            nextViewController = [self getNavigationAidControllerForArea:SEOUL_TOWER_NAV_AREA];
+            break;
+        case NAVIGATION_AID_CONTROLLER_WORLD_CUP_STADIUM:
+            nextViewController = [self getNavigationAidControllerForArea:SEOUL_TOWER_NAV_AREA];
             break;
         case TO_AIRPORT_DIRECTIONS_CONTROLLER:
             nextViewController = [self getToAirportDirectionsController];
@@ -237,7 +255,7 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     
     switch (validNextViewController) {
         case TOURIST_LOCATION_TABLEVIEW_CONTROLLER:
-            return @"List of Recommended Places";
+            return @"Mapo-gu (Recommended Locations)";
         case LOCATION_SEARCH_CONTROLLER:
             return @"Search for Locations Nearby";
         case HOSTEL_LOCAL_AREA_MAP_CONTROLLER:
@@ -246,8 +264,12 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
             return @"Sight-Seeing Routes";
         case POLYGON_NAVIGATION_CONTROLLER:
             return @"Local Building, Park, and Site Regions";
-        case WAR_MEMORIAL_NAVIGATION_CONTROLLER:
+        case NAVIGATION_AID_CONTROLLER_WAR_MEMORIAL:
             return @"War Memorial Navigation Aid";
+        case NAVIGATION_AID_CONTROLLER_WORLD_CUP_STADIUM:
+            return @"World Cup Stadium Navigation Aid";
+        case NAVIGATION_AID_CONTROLLER_SEOUL_TOWER:
+            return @"Seoul Tower Navigation Aid";
         case TO_SEOUL_STATION_DIRECTIONS_CONTROLLER:
             return @"Directions to Seoul Station";
         case TO_AIRPORT_DIRECTIONS_CONTROLLER:
@@ -261,7 +283,7 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
 
 
 
--(WarMemorialNavigationController*) getWarMemorialNavigationController{
+-(NavigationAidEntryController*) getNavigationAidControllerForArea:(NAVIGATION_AID_AREA)navigationAidArea{
     
     
     
@@ -275,9 +297,50 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
         
     }
     
-    WarMemorialNavigationController* nextViewController = [storyboardB instantiateViewControllerWithIdentifier:storyboardIdentifier];
+    NavigationAidEntryController* nextViewController = [storyboardB instantiateViewControllerWithIdentifier:storyboardIdentifier];
+    
+    [self configureNavigationAidController:nextViewController andForNavigationAidArea:navigationAidArea];
     
     return nextViewController;
+}
+
+
+-(void) configureNavigationAidController:(NavigationAidEntryController*)nextViewController andForNavigationAidArea:(NAVIGATION_AID_AREA)navigationAidArea{
+    
+    
+    switch (navigationAidArea) {
+        case WAR_MEMORIAL_NAV_AREA:
+            
+            nextViewController.annotationsFileSource = @"KoreanWarMemorialCircleRegions";
+            nextViewController.annotationViewImagePath = @"tankA";
+            nextViewController.polygonOverlayFileSources = [NSArray arrayWithObjects:@"WarMemorialMainBuilding",@"WeddingHall", nil];
+            nextViewController.mapCoordinateRegion = [self getWarMemorialMapRegion];
+            break;
+        case WORLD_CUP_STADIUM_NAV_AREA:
+            break;
+        case SEOUL_TOWER_NAV_AREA:
+            break;
+        default:
+            break;
+    }
+    
+}
+
+-(MKCoordinateRegion)getWarMemorialMapRegion{
+    
+    CLLocationCoordinate2D lowerRight = CLLocationCoordinate2DMake(37.5348, 126.9788);
+    CLLocationCoordinate2D upperRight = CLLocationCoordinate2DMake(37.5380, 126.9788);
+    CLLocationCoordinate2D upperLeft = CLLocationCoordinate2DMake(37.5380, 126.9755);
+    
+    CLLocationCoordinate2D warMemorialMainEntrance = CLLocationCoordinate2DMake(37.5365, 126.9772);
+    
+    CLLocationDegrees latDifference = fabs(upperRight.latitude - lowerRight.latitude);
+    CLLocationDegrees longDifference = fabs(upperRight.longitude - upperLeft.longitude);
+    
+    MKCoordinateSpan warMemorialSpan = MKCoordinateSpanMake(latDifference, longDifference);
+    MKCoordinateRegion warMemorialRegion = MKCoordinateRegionMake(warMemorialMainEntrance, warMemorialSpan);
+    
+    return warMemorialRegion;
 }
 
 -(LocationSearchController*)getLocationSearchController{
