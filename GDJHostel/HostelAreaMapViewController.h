@@ -17,7 +17,10 @@
 
 @interface HostelAreaMapViewController : UIViewController<MKMapViewDelegate>
 
-@property (nonatomic, strong) NSMutableArray<NSNumber*> *selectedOptions;
+
+@property MKCoordinateRegion mapRegion;
+@property NSString* annotationSourceFilePath;
+
 
 @end
 

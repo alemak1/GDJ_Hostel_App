@@ -11,9 +11,17 @@
 #import "HostelAreaMapViewController.h"
 #import "HostelLocationAnnotation.h"
 #import "SeoulLocationAnnotation+HelperMethods.h"
+#import "DirectionsMenuController.h"
 
 @implementation HostelAreaMapOptionsController
 
+static void* SelectedOptionsContext = &SelectedOptionsContext;
+
+-(void)viewWillLayoutSubviews{
+    
+
+
+}
 
 -(void)viewDidLoad{
     [self.tableView setDelegate:self];
@@ -23,13 +31,12 @@
     [self.tableView setAllowsMultipleSelection:YES];
     [self.tableView setAllowsSelectionDuringEditing:YES];
     
-    UINavigationController* navigationController = (UINavigationController*)self.presentingViewController.presentedViewController;
     
+   
     
-    HostelAreaMapViewController* hostelAreaMapController = [[navigationController viewControllers] firstObject];
-    
-    hostelAreaMapController.selectedOptions = [[NSMutableArray alloc] init];
 }
+
+
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
@@ -47,30 +54,29 @@
     
     NSString* title = [SeoulLocationAnnotation getTitleForLocationType:indexPath.row];
     
-    [cell.textLabel setAttributedText:[[NSAttributedString alloc] initWithString:title attributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Futura-Medium" size:20.0],NSFontAttributeName, nil]]];
+    [cell.textLabel setAttributedText:[[NSAttributedString alloc] initWithString:title attributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Futura-Medium" size:17.0],NSFontAttributeName, nil]]];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UINavigationController* navigationController = (UINavigationController*)self.presentingViewController.presentedViewController;
+    /**
+    DirectionsMenuController* directionsMenuController = (DirectionsMenuController*)self.presentingViewController;
     
+    [directionsMenuController.selectedOptions addObject:[NSNumber numberWithInt:indexPath.row]];
+     **/
     
-    HostelAreaMapViewController* hostelAreaMapController = [[navigationController viewControllers] firstObject];
-    
-    [hostelAreaMapController.selectedOptions addObject:[NSNumber numberWithInteger:indexPath.row]];
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    /**
+    DirectionsMenuController* directionsMenuController = (DirectionsMenuController*)self.presentingViewController;
     
-    UINavigationController* navigationController = (UINavigationController*)self.presentingViewController.presentedViewController;
+    [directionsMenuController.selectedOptions removeObject:[NSNumber numberWithInt:indexPath.row]];
+     **/
     
-    
-    HostelAreaMapViewController* hostelAreaMapController = [[navigationController viewControllers] firstObject];
-    
-    [hostelAreaMapController.selectedOptions removeObject:[NSNumber numberWithInteger:indexPath.row]];
 }
     
 

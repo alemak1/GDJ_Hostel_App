@@ -16,6 +16,8 @@
 #import "WarMemorialNavigationController.h"
 #import "DestinationCategory.h"
 #import "NavigationAidEntryController.h"
+#import "HostelAreaNavigationController.h"
+#import "TouristLocationTBNavigationController.h"
 
 /**
 #import "TouristLocationSelectionNavigationController.h"
@@ -33,13 +35,22 @@ typedef enum NAVIGATION_AID_AREA{
     NAVIGATION_AID_AREA_END_INDEX
 }NAVIGATION_AID_AREA;
 
+typedef enum ANNOTATION_LOCAL_AREA{
+    MAPOGU,
+    ITAEWON,
+    INSADONG
+}ANNOTATION_LOCAL_AREA;
 
 typedef enum VALID_NEXT_VIEW_CONTROLLER{
-    TOURIST_LOCATION_TABLEVIEW_CONTROLLER = 0,
+    MAPOGU_LOCATION_TABLEVIEW_CONTROLLER = 0,
+    ITAEWON_LOCATION_TABLEVIEW_CONTROLLER,
+    INSADONG_LOCATION_TABLEVIEW_CONTROLLER,
     LOCATION_SEARCH_CONTROLLER,
     TO_AIRPORT_DIRECTIONS_CONTROLLER,
     TO_SEOUL_STATION_DIRECTIONS_CONTROLLER,
-    HOSTEL_LOCAL_AREA_MAP_CONTROLLER,
+    MAPOGU_LOCAL_AREA_MAPVIEW,
+    ITAEWON_LOCAL_AREA_MAPVIEW,
+    INSADONG_LOCAL_AREA_MAPVIEW,
     BIKING_JOGGING_ROUTE_CONTROLLER,
     POLYGON_NAVIGATION_CONTROLLER,
     NAVIGATION_AID_CONTROLLER_WAR_MEMORIAL,
@@ -77,13 +88,8 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    
-}
 
--(void)viewDidLoad{
-    
-}
+
 
 #pragma mark UIPICKER VIEW DELEGATE AND DATASOURCE METHODS
 
@@ -195,14 +201,26 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     UIStoryboard* mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                             
     switch (self.currentNextViewController) {
-        case TOURIST_LOCATION_TABLEVIEW_CONTROLLER:
-            nextViewController = [self getNavigationControllerForTouristLocationTableViewController];
+        case MAPOGU_LOCATION_TABLEVIEW_CONTROLLER:
+            nextViewController = [self getNavigationControllerForTouristLocationTableViewControllerWith:MAPOGU];
+            break;
+        case ITAEWON_LOCATION_TABLEVIEW_CONTROLLER:
+            nextViewController = [self getNavigationControllerForTouristLocationTableViewControllerWith:ITAEWON];
+            break;
+        case INSADONG_LOCATION_TABLEVIEW_CONTROLLER:
+            nextViewController = [self getNavigationControllerForTouristLocationTableViewControllerWith:INSADONG];
             break;
         case LOCATION_SEARCH_CONTROLLER:
             nextViewController = [self getLocationSearchController];
             break;
-        case HOSTEL_LOCAL_AREA_MAP_CONTROLLER:
-            nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HostelAreaNavigationController"];
+        case MAPOGU_LOCAL_AREA_MAPVIEW:
+            nextViewController = [self getLocalAreaAnnotationController:MAPOGU];
+            break;
+        case ITAEWON_LOCAL_AREA_MAPVIEW:
+            nextViewController = [self getLocalAreaAnnotationController:ITAEWON];
+            break;
+        case INSADONG_LOCAL_AREA_MAPVIEW:
+            nextViewController = [self getLocalAreaAnnotationController:INSADONG];
             break;
         case BIKING_JOGGING_ROUTE_CONTROLLER:
             nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"BikeRouteNavigationController"];
@@ -232,7 +250,46 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
     [self showViewController:nextViewController sender:nil];
 }
 
-- (UINavigationController*) getNavigationControllerForTouristLocationTableViewController{
+
+- (UINavigationController*) getLocalAreaAnnotationController:(ANNOTATION_LOCAL_AREA)annotationLocalArea{
+    
+    UIStoryboard* mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    
+     HostelAreaNavigationController* nextViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HostelAreaNavigationController"];
+    
+    [self configureHostelAreaAnnotationControllerForViewController:nextViewController andForAnnotationArea:annotationLocalArea];
+    
+    return nextViewController;
+}
+
+
+-(void) configureHostelAreaAnnotationControllerForViewController:(HostelAreaNavigationController*)nextViewController andForAnnotationArea:(ANNOTATION_LOCAL_AREA)annotationLocalArea{
+    
+    switch (annotationLocalArea) {
+        case MAPOGU:
+            nextViewController.annotationSourceFilePath = @"PlacemarksNearHostel";
+            nextViewController.mapRegion = [self getMapoguMapRegion];
+            break;
+        case ITAEWON:
+            break;
+        case INSADONG:
+            break;
+        default:
+            break;
+    }
+    
+}
+
+-(MKCoordinateRegion) getMapoguMapRegion{
+    
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.01, 0.01);
+    
+    return MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.5416277, 126.9507303), span);
+    
+}
+
+- (UINavigationController*) getNavigationControllerForTouristLocationTableViewControllerWith:(ANNOTATION_LOCAL_AREA)annotationArea{
     
    
     UIStoryboard* storyboardB = [UIStoryboard storyboardWithName:@"StoryboardB" bundle:nil];
@@ -245,21 +302,47 @@ typedef enum VALID_NEXT_VIEW_CONTROLLER{
         
     }
     
-    UINavigationController* nextViewController = [storyboardB instantiateViewControllerWithIdentifier:storyboardIdentifier];
+    TouristLocationTBNavigationController* nextViewController = [storyboardB instantiateViewControllerWithIdentifier:storyboardIdentifier];
+    
+    [self configureTouristLocationTableViewControllerFor:nextViewController andFor:annotationArea];
     
     return nextViewController;
 
 }
 
+
+-(void)configureTouristLocationTableViewControllerFor:(TouristLocationTBNavigationController*)nextViewController andFor:(ANNOTATION_LOCAL_AREA)annotationLocalArea{
+    
+    switch (annotationLocalArea) {
+        case MAPOGU:
+            nextViewController.annotationFilePath = @"PlacemarksNearHostel";
+            break;
+        case ITAEWON:
+            break;
+        case INSADONG:
+            break;
+        default:
+            break;
+    }
+}
+
 -(NSString*)getNextViewControllerTitleFor:(VALID_NEXT_VIEW_CONTROLLER)validNextViewController{
     
     switch (validNextViewController) {
-        case TOURIST_LOCATION_TABLEVIEW_CONTROLLER:
+        case MAPOGU_LOCATION_TABLEVIEW_CONTROLLER:
             return @"Mapo-gu (Recommended Locations)";
+        case ITAEWON_LOCATION_TABLEVIEW_CONTROLLER:
+            return @"Itaewon (Recommended Locations)";
+        case INSADONG_LOCATION_TABLEVIEW_CONTROLLER:
+            return @"Insadong (Recommended Locations)";
         case LOCATION_SEARCH_CONTROLLER:
             return @"Search for Locations Nearby";
-        case HOSTEL_LOCAL_AREA_MAP_CONTROLLER:
-            return @"View the Local Area";
+        case MAPOGU_LOCAL_AREA_MAPVIEW:
+            return @"View the Mapo-gu Area";
+        case ITAEWON_LOCAL_AREA_MAPVIEW:
+            return @"View the Itaewon Area";
+        case INSADONG_LOCAL_AREA_MAPVIEW:
+            return @"View the Insadong Area";
         case BIKING_JOGGING_ROUTE_CONTROLLER:
             return @"Sight-Seeing Routes";
         case POLYGON_NAVIGATION_CONTROLLER:

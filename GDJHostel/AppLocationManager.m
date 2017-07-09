@@ -165,11 +165,30 @@ static UserLocationManager* mySharedLocationManager;
 }
 
 -(void)startMonitoringForSingleRegion:(CLRegion*)region{
-    [region setNotifyOnExit:YES];
-    [region setNotifyOnEntry:YES];
     
-    [self startMonitoringForRegion:region];
     
+    if([CLLocationManager isMonitoringAvailableForClass:[CLCircularRegion class]]){
+    
+        if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways){
+            
+            [self requestStateForRegion:region];
+            
+            
+            NSLog(@"App has started monitoring region %@",[region identifier]);
+            
+            [region setNotifyOnExit:YES];
+            [region setNotifyOnEntry:YES];
+            
+            [self startMonitoringForRegion:region];
+            
+        } else {
+            NSLog(@"Authorization has been denied for region monitoring");
+            [self requestAlwaysAuthorization];
+        }
+       
+    } else {
+        NSLog(@"Your device hardware does not support region monitoring...");
+    }
 }
 
 -(void)stopMonitoringForSingleRegion:(CLRegion*)region{
@@ -219,6 +238,8 @@ static UserLocationManager* mySharedLocationManager;
         
         // Start the standard location service.
         [self startUpdatingLocation];
+        
+        
     }
     
     
@@ -294,8 +315,34 @@ static UserLocationManager* mySharedLocationManager;
 
 // The device exited a monitored region.
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
-    NSString *event = [NSString stringWithFormat:@"didExitRegion %@ at %@", region.identifier, [NSDate date]];
-    NSLog(@"%s %@", __PRETTY_FUNCTION__, event);
+    NSString* siteName = [region identifier];
+    
+    CLCircularRegion* circularRegion = (CLCircularRegion*)region;
+    
+    CLLocationDistance distanceToRegionCenter = [self getDistanceToRegionCenter:circularRegion.center];
+    
+    NSString* alertTitle = [NSString stringWithFormat:@"You have just left the regino  %@",siteName];
+    NSString* alertMessage = [NSString stringWithFormat:@"The tourst site %@ is %f meters away. Do you want directions to get there?",siteName,distanceToRegionCenter];
+    
+    
+    UIAlertController* alerController = [UIAlertController alertControllerWithTitle:alertTitle message:alertMessage preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* okayAction = [UIAlertAction actionWithTitle:@"Give me directions" style:UIAlertActionStyleDefault handler:^(UIAlertAction* alertAction){
+        
+        [self viewLocationInMapsTo:circularRegion.center];
+        
+        
+    }];
+    
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"No thanks" style:UIAlertActionStyleDefault handler:nil];
+    
+    
+    [alerController addAction:okayAction];
+    [alerController addAction:cancelAction];
+    
+    [self.currentPresentingViewController presentViewController:alerController animated:YES completion:nil];
+    
+
     
 }
 
@@ -322,6 +369,50 @@ static UserLocationManager* mySharedLocationManager;
     
 }
 
+-(void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region{
+    
+    if(state == CLRegionStateInside){
+        NSString* siteName = [region identifier];
+        
+        
+        NSString* alertTitle = [NSString stringWithFormat:@"You are currently inside the region  %@",siteName];
+        
+    
+        
+        UIAlertController* alerController = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* okayAction = [UIAlertAction actionWithTitle:@"Give me directions" style:UIAlertActionStyleDefault handler:^(UIAlertAction* alertAction){
+            
+            
+        }];
+        
+        
+        [alerController addAction:okayAction];
+        
+        [self.currentPresentingViewController presentViewController:alerController animated:YES completion:nil];
+        
+        
+    } else {
+        NSString* siteName = [region identifier];
+        
+        
+        NSString* alertTitle = [NSString stringWithFormat:@"You are currently NOT inside the region  %@",siteName];
+        
+        
+        
+        UIAlertController* alerController = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* okayAction = [UIAlertAction actionWithTitle:@"Give me directions" style:UIAlertActionStyleDefault handler:^(UIAlertAction* alertAction){
+            
+            
+        }];
+        
+        
+        [alerController addAction:okayAction];
+        
+        [self.currentPresentingViewController presentViewController:alerController animated:YES completion:nil];
+    }
+}
 
 -(void)viewLocationInMapsFromHostelTo:(CLLocationCoordinate2D)toLocationCoordinate{
     

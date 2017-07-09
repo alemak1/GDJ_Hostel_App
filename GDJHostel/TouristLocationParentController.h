@@ -14,6 +14,8 @@
 
 @interface TouristLocationParentController : UIViewController
 
+@property NSString* annotationFilePath;
+
 
 @end
 

@@ -15,6 +15,7 @@
 
 @interface TouristLocationTableViewController : UITableViewController
 
+@property NSString* annotationFilePath;
 
 -(void) reloadTableViewToShowAddresses;
 

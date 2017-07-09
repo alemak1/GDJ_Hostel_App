@@ -44,7 +44,7 @@ BOOL _seeNameOnly = true;
     
     /** Initialize placemark dictionary from plist file **/
     
-    self.annotationManager = [[AnnotationManager alloc] initWithFilename:@"PlacemarksNearHostel"];
+    self.annotationManager = [[AnnotationManager alloc] initWithFilename:self.annotationFilePath];
     
 }
 

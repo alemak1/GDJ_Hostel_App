@@ -36,9 +36,37 @@
 
 @implementation TouristLocationParentController
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self addObserver:self forKeyPath:@"touristLocationTableViewController" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial context:nil];
+}
+
+
+-(void)dealloc{
+    [self removeObserver:self forKeyPath:@"touristLocationTableViewController"];
+}
+
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    
+    if([keyPath isEqualToString:@"touristLocationTableViewController"]){
+        
+        TouristLocationTableViewController*tbController = (TouristLocationTableViewController*)[self.childViewControllers firstObject];
+        
+        tbController.annotationFilePath = self.annotationFilePath;
+        
+        [tbController.tableView reloadData];
+
+        
+    }
+}
+
 -(void)viewDidLoad{
     
+    
 }
+    
+
 
 - (IBAction)toggleDescriptionDetail:(UIBarButtonItem *)sender {
     

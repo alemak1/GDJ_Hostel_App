@@ -11,6 +11,7 @@
 #import "HostelAreaMapOptionsController.h"
 #import "AnnotationManager.h"
 #import "HostelLocationAnnotationView.h"
+#import "DirectionsMenuController.h"
 
 @interface HostelAreaMapViewController ()
 
@@ -42,42 +43,27 @@ static void* HostelAreaMapControllerContext = &HostelAreaMapControllerContext;
     
     [self.mapView setDelegate:self];
     
-    self.selectedOptions = [[NSMutableArray<NSNumber*> alloc] init];
    
     /** The Map Region centers around the hostel **/
+
     
-    MKCoordinateSpan span = MKCoordinateSpanMake(0.01, 0.01);
+    self.mapView.region = self.mapRegion;
     
-    MKCoordinateRegion region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.5416277, 126.9507303), span);
-    
-    self.mapView.region = region;
-    
-    self.annotationManager = [[AnnotationManager alloc] initWithFilename:@"PlacemarksNearHostel"];
+    self.annotationManager = [[AnnotationManager alloc] initWithFilename:self.annotationSourceFilePath];
     
     
     [self.mapView addAnnotations:[self.annotationManager getAllAnnotations]];
     
     
-     [self addObserver:self forKeyPath:@"selectedOptions" options:NSKeyValueObservingOptionNew |NSKeyValueObservingOptionOld context:HostelAreaMapControllerContext];
     
 }
 
--(void)viewDidLoad{
-    
-    [super viewDidLoad];
 
-    
-   
-}
 
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    
-    NSLog(@"Selected options changed: %@ ",[self.selectedOptions description]);
-    
-    if(context == HostelAreaMapControllerContext){
-        
-        NSLog(@"Removing annotations...");
+    /**
+    if([keyPath isEqualToString:@"selectedOptions"]){
         
         [self.mapView removeAnnotations:self.mapView.annotations];
         
@@ -88,39 +74,36 @@ static void* HostelAreaMapControllerContext = &HostelAreaMapControllerContext;
             NSLog(@"Adding annotations for locationType %d",locationType);
             
             [self.mapView addAnnotations:[self.annotationManager getAnnotationsOfType:locationType]];
-        
-        }
-        
-        
-    
-        
-        
-        NSNumber* changeKind = [change valueForKey:NSKeyValueChangeKindKey];
-        
-        if([changeKind integerValue] == NSKeyValueChangeInsertion){
-            NSIndexSet* insertedOptions = [change valueForKey:NSKeyValueChangeIndexesKey];
-            
-            NSLog(@"New options added");
-
-        }
-        
-        if([changeKind integerValue] == NSKeyValueChangeRemoval){
-            
-            NSIndexSet* removedOptions = [change valueForKey:NSKeyValueChangeIndexesKey];
-            
-            NSLog(@"Old options removed");
             
         }
-    
         
     }
+     **/
 }
 
 
--(void)viewDidDisappear:(BOOL)animated{
-    [self removeObserver:self forKeyPath:@"selectedOptions"];
-
+-(void)viewDidLoad{
+    
+    [super viewDidLoad];
+    
+    /**
+    if(self.selectedOptions.count > 0){
+   
+        [self.mapView removeAnnotations:self.mapView.annotations];
+    
+        for (NSNumber* option in self.selectedOptions) {
+        
+            SeoulLocationType locationType = (SeoulLocationType)[option integerValue];
+            
+            [self.mapView addAnnotations:[self.annotationManager getAnnotationsOfType:locationType]];
+        
+        }
+    }
+     
+     **/
+   
 }
+
 
 
 
@@ -153,16 +136,10 @@ static void* HostelAreaMapControllerContext = &HostelAreaMapControllerContext;
 }
 
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    if([segue.identifier isEqualToString:@"presentMapViewOptionsSegue"]){
-        
-        
-    }
-}
-
 - (IBAction)showAnnotationOptionsController:(UIBarButtonItem *)sender {
     
     [self performSegueWithIdentifier:@"presentMapViewOptionsSegue" sender:nil];
 }
+
+
 @end

@@ -25,6 +25,7 @@
 
 -(void)startMonitoringForRegions:(NSSet<CLRegion*>*)regions;
 -(void)stopMonitoringForRegions:(NSSet<CLRegion*>*)regions;
+
 -(void)startMonitoringForSingleRegion:(CLRegion*)region;
 -(void)stopMonitoringForSingleRegion:(CLRegion*)region;
 
@@ -33,6 +34,7 @@
 -(CLLocation*)getLastUpdatedUserLocation;
 
 -(void)setPresentingViewControllerTo:(UIViewController*)presentingViewController;
+
 -(BOOL)isBeingRegionMonitored:(NSString*)regionIdentifier;
 -(CLRegion*)getRegionWithIdentifier:(NSString*)regionIdentifier;
 

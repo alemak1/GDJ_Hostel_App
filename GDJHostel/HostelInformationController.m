@@ -54,6 +54,14 @@
     
     [userLocationManager requestAuthorizationAndStartUpdates];
     
+    CLCircularRegion* universityRegion = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(37.551600, 126.937900) radius:0.0 identifier:@"Sogang University"];
+    
+    CLCircularRegion* hostelRegion = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(37.5416277,126.9507303) radius:10.0 identifier:@"GDJ Hostel"];
+    
+    NSLog(@"Start monitoring for region %@",universityRegion.identifier);
+    
+    [userLocationManager startMonitoringForSingleRegion:universityRegion];
+    [userLocationManager startMonitoringForSingleRegion:hostelRegion];
     /**
     TouristSiteManager* siteManager = [[TouristSiteManager alloc] initWithFileName:@"SeoulTouristSites"];
     
