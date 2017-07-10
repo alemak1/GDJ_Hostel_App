@@ -2,9 +2,11 @@
 //  FlickrPhotoCell.m
 //  GDJHostel
 //
-//  Created by Aleksander Makedonski on 7/8/17.
+//  Created by Aleksander Makedonski on 7/10/17.
 //  Copyright © 2017 AlexMakedonski. All rights reserved.
 //
+
+#import <Foundation/Foundation.h>
 
 #import "FlickrPhotoCell.h"
 

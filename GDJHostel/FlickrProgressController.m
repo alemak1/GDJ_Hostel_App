@@ -6,6 +6,8 @@
 //  Copyright © 2017 AlexMakedonski. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 #import "FlickrProgressController.h"
 #import "SeoulFlickrSearchController.h"
 #import "FlickrSearchResults.h"
@@ -14,7 +16,7 @@
 @interface FlickrProgressController ()
 
 
-@property NSMutableOrderedSet<FlickrSearchResults*>* searches;
+@property FlickrSearchResults* searchResults;
 
 @property (readonly) FlickrHelper* flickrHelper;
 
@@ -34,19 +36,41 @@
 FlickrHelper* _flickrHelper;
 
 -(void)viewDidLoad{
-    
+ 
+    [self.activityIndicator setHidden:YES];
+    [self.activityIndicator setHidesWhenStopped:YES];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if([segue.identifier isEqualToString:@"showFlickrPhotosSegue"]){
         
+        
+        
         SeoulFlickSearchController* seoulFlickrSearchController = (SeoulFlickSearchController*)segue.destinationViewController;
         
-        seoulFlickrSearchController.searches = self.searches;
+        NSLog(@"Preparing for segue to SeoulFlickrSearchController....");
+        
+        
+        NSLog(@"The search results stored in the FlickProgressController is %@",[self.searchResults description]);
+        
+        seoulFlickrSearchController.searchResults = self.searchResults;
         
         
     }
+}
+
+
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    
+    if([identifier isEqualToString:@"showFlickrPhotosSegue"]){
+     
+        if(self.searchResults == nil){
+            return NO;
+        }
+    }
+    
+    return YES;
 }
 
 -(FlickrHelper *)flickrHelper{
@@ -60,10 +84,18 @@ FlickrHelper* _flickrHelper;
 
 
 - (IBAction)performSearch:(UIButton *)sender {
+    
+    NSLog(@"About to perform search....");
+    [self.activityIndicator setHidden:NO];
+    [self.activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    [self.activityIndicator startAnimating];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
+
+      
         
-        [self.flickrHelper searchFlickrForTerm:@"Korea" andWithCompletionHandler:^(FlickrSearchResults* results, NSError*error){
+        [self.flickrHelper searchFlickrForTerm:@"k-pop" andWithCompletionHandler:^(FlickrSearchResults* results, NSError*error){
             
             if(error){
                 NSLog(@"Error: an error occured while performing the search %@",[error localizedDescription]);
@@ -74,15 +106,15 @@ FlickrHelper* _flickrHelper;
             }
             
             
-            [self.searches insertObject:results atIndex:0];
+            self.searchResults = results;
             
+            NSLog(@"The search results stored in the FlickProgressController is %@",[self.searchResults description]);
             
-            NSLog(@"The searches array for search term %@ contains FlickSearchResults %@",[[self.searches firstObject] searchTerm],[[self.searches firstObject] searchResults]);
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                NSLog(@"The searches array for search term %@ contains FlickSearchResults %@",[[self.searches firstObject] searchTerm],[[self.searches firstObject] searchResults]);
-                
+               
+                [self.activityIndicator stopAnimating];
                 
                 [self performSegueWithIdentifier:@"showFlickrPhotosSegue" sender:nil];
                 
@@ -98,7 +130,7 @@ FlickrHelper* _flickrHelper;
         
     });
     
-
+    
     
     
 }

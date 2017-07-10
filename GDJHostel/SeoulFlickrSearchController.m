@@ -2,76 +2,56 @@
 //  SeoulFlickrSearchController.m
 //  GDJHostel
 //
-//  Created by Aleksander Makedonski on 7/8/17.
+//  Created by Aleksander Makedonski on 7/10/17.
 //  Copyright © 2017 AlexMakedonski. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+
 #import "SeoulFlickrSearchController.h"
 #import "FlickrPhoto.h"
-#import "FlickrHelper.h"
 #import "FlickrPhotoCell.h"
 
 @interface SeoulFlickSearchController () <UICollectionViewDelegateFlowLayout>
 
-@property (readonly) FlickrHelper* flickrHelper;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *seeNextImageGallery;
 
-@property NSInteger searchIndex;
 
-- (IBAction)getNextGallery:(UIBarButtonItem *)sender;
 
 
 @end
 
 @implementation SeoulFlickSearchController
 
-FlickrHelper* _flickrHelper;
 
 
 -(void)viewWillLayoutSubviews{
     
-    self.searches = [[NSMutableOrderedSet alloc] init];
-    self.searchIndex = 0;
     
     [self.collectionView setDelegate:self];
     [self.collectionView setDataSource:self];
     
-    
+
+ 
 }
 
-
--(void)viewDidLoad{
-  
-    
-    
-    
-}
 
 
 
 -(FlickrPhoto*)photoForIndexPath:(NSIndexPath*)indexPath{
-    return [[self.searches objectAtIndex:indexPath.section].searchResults objectAtIndex:indexPath.row];
-}
-
--(FlickrHelper *)flickrHelper{
-    if(_flickrHelper == nil){
-        _flickrHelper = [[FlickrHelper alloc] init];
-    }
     
-    return _flickrHelper;
+    return [self.searchResults.searchResults objectAtIndex:indexPath.row];
 }
 
 
 #pragma mark COLLECTIONVIEW DATASOURCE METHODS
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return [self.searches count];
+    return 1;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return [[self.searches objectAtIndex:section].searchResults count];
+    
+    return [self.searchResults.searchResults count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -82,8 +62,8 @@ FlickrHelper* _flickrHelper;
     
     FlickrPhoto* flickrPhoto = [self photoForIndexPath:indexPath];
     
-
-    cell.imageView.image = flickrPhoto.thumbnail;
+    
+   // cell.imageView.image = flickrPhoto.thumbnail;
     
     cell.outletImageView.image = flickrPhoto.thumbnail;
     
@@ -93,69 +73,22 @@ FlickrHelper* _flickrHelper;
 }
 
 
-#pragma mark COLLECTIONVIEW DELEGATE METHODS 
+#pragma mark COLLECTIONVIEW DELEGATE METHODS
 
 /**
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return CGSizeMake(200, 300);
-}
-
--(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
-    
-    return 30;
-}
-
--(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    
-    return UIEdgeInsetsMake(10, 20, 20, 10);
-}
-**/
-
-- (IBAction)getNextGallery:(UIBarButtonItem *)sender {
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        
-        [self.flickrHelper searchFlickrForTerm:@"Korea" andWithCompletionHandler:^(FlickrSearchResults* results, NSError*error){
-            
-            if(error){
-                NSLog(@"Error: an error occured while performing the search %@",[error localizedDescription]);
-            }
-            
-            if(!results){
-                NSLog(@"Error: no results obtained from search");
-            }
-            
-            
-            [self.searches insertObject:results atIndex:self.searchIndex];
-            
-            self.searchIndex++;
-            
-            NSLog(@"The searches array for search term %@ contains FlickSearchResults %@",[[self.searches firstObject] searchTerm],[[self.searches firstObject] searchResults]);
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                NSLog(@"The searches array for search term %@ contains FlickSearchResults %@",[[self.searches firstObject] searchTerm],[[self.searches firstObject] searchResults]);
-
-            
-                [self.collectionView reloadData];
-                
-                
-              
-            });
-        
-            
-        }];
-        
-        
-        
-        
-    });
-    
-    
-
-}
+ -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+ 
+ return CGSizeMake(200, 300);
+ }
+ -(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+ 
+ return 30;
+ }
+ -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+ 
+ return UIEdgeInsetsMake(10, 20, 20, 10);
+ }
+ **/
 
 
 @end
@@ -220,5 +153,5 @@ FlickrHelper* _flickrHelper;
  }
  }
  });
- **/
 
+**/

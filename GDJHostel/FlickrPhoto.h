@@ -2,12 +2,14 @@
 //  FlickrPhoto.h
 //  GDJHostel
 //
-//  Created by Aleksander Makedonski on 7/8/17.
+//  Created by Aleksander Makedonski on 7/10/17.
 //  Copyright © 2017 AlexMakedonski. All rights reserved.
 //
 
 #ifndef FlickrPhoto_h
 #define FlickrPhoto_h
+
+
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

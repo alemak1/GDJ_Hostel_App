@@ -2,14 +2,17 @@
 //  FlickrPhoto.m
 //  GDJHostel
 //
-//  Created by Aleksander Makedonski on 7/8/17.
+//  Created by Aleksander Makedonski on 7/10/17.
 //  Copyright © 2017 AlexMakedonski. All rights reserved.
 //
+
+
+
 
 #import "FlickrPhoto.h"
 
 
-@interface FlickrPhoto () 
+@interface FlickrPhoto ()
 
 @end
 
@@ -57,10 +60,10 @@
     NSURLRequest* loadRequest = [NSURLRequest requestWithURL:loadURL];
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:loadRequest completionHandler:^(NSData*data,NSURLResponse*response,NSError*error){
-    
+        
         if(error){
             dispatch_async(dispatch_get_main_queue(), ^{
-            
+                
                 completion(self,error);
             });
         }
@@ -81,7 +84,7 @@
             completion(self,nil);
         });
         
-    
+        
     }] resume];
     
 }

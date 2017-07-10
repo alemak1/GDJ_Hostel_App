@@ -1,10 +1,11 @@
 //
-//  FlickerHelper.m
+//  FlickrHelper.m
 //  GDJHostel
 //
-//  Created by Aleksander Makedonski on 7/8/17.
+//  Created by Aleksander Makedonski on 7/10/17.
 //  Copyright © 2017 AlexMakedonski. All rights reserved.
 //
+
 
 #import "FlickrHelper.h"
 #import "FlickrSearchResults.h"
@@ -34,7 +35,7 @@ NSOperationQueue* _operationQueue;
         NSError* apiError = [NSError errorWithDomain:@"FlickrSearch" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"Unknown API response",NSLocalizedFailureReasonErrorKey, nil]];
         
         
-            completion(nil,apiError);
+        completion(nil,apiError);
         
     } else {
         
@@ -43,8 +44,8 @@ NSOperationQueue* _operationQueue;
         NSURLSession* sharedSession = [NSURLSession sharedSession];
         
         [[sharedSession dataTaskWithRequest:searchRequest completionHandler:^(NSData*data, NSURLResponse*response, NSError*error){
-        
-        
+            
+            
             if(error){
                 NSError* apiError = [NSError errorWithDomain:@"FlickrSearch" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"Unknown API respons",NSLocalizedFailureReasonErrorKey, nil]];
                 
@@ -74,7 +75,7 @@ NSOperationQueue* _operationQueue;
                 NSError* error;
                 
                 NSDictionary* resultsDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-            
+                
                 
                 NSString* stat = [resultsDictionary valueForKey:@"stat"];
                 
@@ -98,7 +99,7 @@ NSOperationQueue* _operationQueue;
                     NSString* message = [resultsDictionary valueForKey:@"message"];
                     
                     if(message){
-    
+                        
                         
                         NSError* apiError = [NSError errorWithDomain:@"FlickrSearch" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:message,NSLocalizedFailureReasonErrorKey, nil]];
                         
@@ -130,7 +131,7 @@ NSOperationQueue* _operationQueue;
                 
                 
                 NSArray* photosReceived = [photosContainer valueForKey:@"photo"];
-
+                
                 
                 if(!photosContainer || !photosReceived){
                     NSError* apiError = [NSError errorWithDomain:@"FlickrSearch" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"Unknown API respons",NSLocalizedFailureReasonErrorKey, nil]];
@@ -173,7 +174,7 @@ NSOperationQueue* _operationQueue;
                         }
                     }
                     
-                   
+                    
                     
                 }
                 
@@ -182,19 +183,10 @@ NSOperationQueue* _operationQueue;
                 NSLog(@"The following FlickrSearchResults object was obtained via the callback method %@",[flickrSearchResults description]);
                 
                 
-                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    
-                    completion(flickrSearchResults,nil);
-
-                }];
-                
+                completion(flickrSearchResults,nil);
 
                 
-                
-                
 
-                
-               
                 
             } @catch (NSException *exception) {
                 
@@ -204,7 +196,7 @@ NSOperationQueue* _operationQueue;
             }
             
             
-        
+            
         }] resume];
     }
 }

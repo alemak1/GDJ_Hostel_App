@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD094C8C1F12F6E50085D9C9 /* FlickrPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD094C8B1F12F6E50085D9C9 /* FlickrPhotoCell.m */; };
+		BD094C8F1F12F71C0085D9C9 /* FlickrHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BD094C8E1F12F71C0085D9C9 /* FlickrHelper.m */; };
+		BD094C911F12F7640085D9C9 /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = BD094C901F12F7640085D9C9 /* FlickrPhoto.m */; };
+		BD094C941F12F7C60085D9C9 /* FlickrSearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = BD094C931F12F7C60085D9C9 /* FlickrSearchResults.m */; };
+		BD094C991F12FC850085D9C9 /* SeoulFlickrSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD094C961F12F83C0085D9C9 /* SeoulFlickrSearchController.m */; };
+		BD094C9A1F12FCDC0085D9C9 /* FlickrProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD094C881F12F6800085D9C9 /* FlickrProgressController.m */; };
 		BD1248891F04A8CA00B77F36 /* WeatherIconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1248881F04A8CA00B77F36 /* WeatherIconManager.m */; };
 		BD12488C1F04B4C100B77F36 /* WeatherCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD12488B1F04B4C100B77F36 /* WeatherCollectionCell.m */; };
 		BD14B0AB1F072E230024668D /* BikingRoutesController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD14B0AA1F072E230024668D /* BikingRoutesController.m */; };
@@ -70,8 +76,6 @@
 		BD31A5AE1F038E0600C018DB /* TouristSiteDetailInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31A5AD1F038E0600C018DB /* TouristSiteDetailInformationController.m */; };
 		BD31A5B11F03932100C018DB /* SeoulTourismNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31A5B01F03932100C018DB /* SeoulTourismNavigationController.m */; };
 		BD31BC671F0A488100A23256 /* KoreanProducts.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD31BC661F0A488100A23256 /* KoreanProducts.plist */; };
-		BD31C5A81F10BE78005A33CA /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31C5A71F10BE78005A33CA /* FlickrPhoto.m */; };
-		BD31C5AE1F10CDF1005A33CA /* SeoulFlickrSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31C5AD1F10CDF1005A33CA /* SeoulFlickrSearchController.m */; };
 		BD3279401F00124F0007FD64 /* ParkRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD32793F1F00124F0007FD64 /* ParkRoute.plist */; };
 		BD335D8C1F0D328D00A0986A /* TouristLocationParentController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD335D8B1F0D328D00A0986A /* TouristLocationParentController.m */; };
 		BD34C1D61F079DBB00CD0DD3 /* LottoHotel.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD34C1D51F079DBB00CD0DD3 /* LottoHotel.plist */; };
@@ -90,10 +94,6 @@
 		BD3D15EE1F121A9100910B4F /* HostelAreaNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3D15ED1F121A9100910B4F /* HostelAreaNavigationController.m */; };
 		BD3D15F11F1234B800910B4F /* HostelAreaContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3D15F01F1234B800910B4F /* HostelAreaContainerController.m */; };
 		BD3D15F41F124BB400910B4F /* TouristLocationTBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3D15F31F124BB400910B4F /* TouristLocationTBNavigationController.m */; };
-		BD3F14761F12F0E300EC07C3 /* FlickerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31C5A41F10B3C0005A33CA /* FlickerHelper.m */; };
-		BD3F14771F12F0F400EC07C3 /* FlickrSearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31C5AA1F10C96B005A33CA /* FlickrSearchResults.m */; };
-		BD3F14781F12F0FB00EC07C3 /* FlickrProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3F14741F12ED2800EC07C3 /* FlickrProgressController.m */; };
-		BD3F14791F12F10000EC07C3 /* FlickrPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD31C5B01F10DC11005A33CA /* FlickrPhotoCell.m */; };
 		BD554C8F1F090FBF00B43C8C /* StoryboardB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD554C8E1F090FBF00B43C8C /* StoryboardB.storyboard */; };
 		BD554C931F090FFF00B43C8C /* ProductPriceController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD554C921F090FFF00B43C8C /* ProductPriceController.m */; };
 		BD554C971F0922D500B43C8C /* ProductPriceDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD554C961F0922D500B43C8C /* ProductPriceDisplayController.m */; };
@@ -142,6 +142,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD094C871F12F66F0085D9C9 /* FlickrProgressController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrProgressController.h; sourceTree = "<group>"; };
+		BD094C881F12F6800085D9C9 /* FlickrProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrProgressController.m; sourceTree = "<group>"; };
+		BD094C8A1F12F6C80085D9C9 /* FlickrPhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrPhotoCell.h; sourceTree = "<group>"; };
+		BD094C8B1F12F6E50085D9C9 /* FlickrPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoCell.m; sourceTree = "<group>"; };
+		BD094C8D1F12F7110085D9C9 /* FlickrHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrHelper.h; sourceTree = "<group>"; };
+		BD094C8E1F12F71C0085D9C9 /* FlickrHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrHelper.m; sourceTree = "<group>"; };
+		BD094C901F12F7640085D9C9 /* FlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhoto.m; sourceTree = "<group>"; };
+		BD094C921F12F7940085D9C9 /* FlickrPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrPhoto.h; sourceTree = "<group>"; };
+		BD094C931F12F7C60085D9C9 /* FlickrSearchResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrSearchResults.m; sourceTree = "<group>"; };
+		BD094C951F12F7DC0085D9C9 /* FlickrSearchResults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrSearchResults.h; sourceTree = "<group>"; };
+		BD094C961F12F83C0085D9C9 /* SeoulFlickrSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeoulFlickrSearchController.m; sourceTree = "<group>"; };
+		BD094C981F12F8670085D9C9 /* SeoulFlickrSearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoulFlickrSearchController.h; sourceTree = "<group>"; };
 		BD1248871F04A8BC00B77F36 /* WeatherIconManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherIconManager.h; sourceTree = "<group>"; };
 		BD1248881F04A8CA00B77F36 /* WeatherIconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherIconManager.m; sourceTree = "<group>"; };
 		BD12488A1F04B1C400B77F36 /* WeatherCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCollectionCell.h; sourceTree = "<group>"; };
@@ -241,16 +253,6 @@
 		BD31A5AF1F03931200C018DB /* SeoulTourismNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoulTourismNavigationController.h; sourceTree = "<group>"; };
 		BD31A5B01F03932100C018DB /* SeoulTourismNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeoulTourismNavigationController.m; sourceTree = "<group>"; };
 		BD31BC661F0A488100A23256 /* KoreanProducts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KoreanProducts.plist; sourceTree = "<group>"; };
-		BD31C5A31F10B3B1005A33CA /* FlickrHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrHelper.h; sourceTree = "<group>"; };
-		BD31C5A41F10B3C0005A33CA /* FlickerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickerHelper.m; sourceTree = "<group>"; };
-		BD31C5A61F10BE68005A33CA /* FlickrPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrPhoto.h; sourceTree = "<group>"; };
-		BD31C5A71F10BE78005A33CA /* FlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhoto.m; sourceTree = "<group>"; };
-		BD31C5A91F10C87F005A33CA /* FlickrSearchResults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrSearchResults.h; sourceTree = "<group>"; };
-		BD31C5AA1F10C96B005A33CA /* FlickrSearchResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrSearchResults.m; sourceTree = "<group>"; };
-		BD31C5AC1F10CDD9005A33CA /* SeoulFlickrSearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoulFlickrSearchController.h; sourceTree = "<group>"; };
-		BD31C5AD1F10CDF1005A33CA /* SeoulFlickrSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeoulFlickrSearchController.m; sourceTree = "<group>"; };
-		BD31C5AF1F10DC03005A33CA /* FlickrPhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrPhotoCell.h; sourceTree = "<group>"; };
-		BD31C5B01F10DC11005A33CA /* FlickrPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoCell.m; sourceTree = "<group>"; };
 		BD32793F1F00124F0007FD64 /* ParkRoute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ParkRoute.plist; sourceTree = "<group>"; };
 		BD32E41D1F03A83F00F847B3 /* DayOfWeek.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DayOfWeek.h; sourceTree = "<group>"; };
 		BD335D8B1F0D328D00A0986A /* TouristLocationParentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristLocationParentController.m; sourceTree = "<group>"; };
@@ -285,8 +287,6 @@
 		BD3D15F01F1234B800910B4F /* HostelAreaContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelAreaContainerController.m; sourceTree = "<group>"; };
 		BD3D15F21F124BA400910B4F /* TouristLocationTBNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristLocationTBNavigationController.h; sourceTree = "<group>"; };
 		BD3D15F31F124BB400910B4F /* TouristLocationTBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristLocationTBNavigationController.m; sourceTree = "<group>"; };
-		BD3F14731F12ED1B00EC07C3 /* FlickrProgressController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrProgressController.h; sourceTree = "<group>"; };
-		BD3F14741F12ED2800EC07C3 /* FlickrProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrProgressController.m; sourceTree = "<group>"; };
 		BD554C8E1F090FBF00B43C8C /* StoryboardB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryboardB.storyboard; sourceTree = "<group>"; };
 		BD554C911F090FE600B43C8C /* ProductPriceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductPriceController.h; sourceTree = "<group>"; };
 		BD554C921F090FFF00B43C8C /* ProductPriceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductPriceController.m; sourceTree = "<group>"; };
@@ -481,18 +481,18 @@
 		BD31C5A21F10B3A2005A33CA /* Flickr */ = {
 			isa = PBXGroup;
 			children = (
-				BD31C5A31F10B3B1005A33CA /* FlickrHelper.h */,
-				BD31C5A41F10B3C0005A33CA /* FlickerHelper.m */,
-				BD31C5A61F10BE68005A33CA /* FlickrPhoto.h */,
-				BD31C5A71F10BE78005A33CA /* FlickrPhoto.m */,
-				BD31C5A91F10C87F005A33CA /* FlickrSearchResults.h */,
-				BD31C5AA1F10C96B005A33CA /* FlickrSearchResults.m */,
-				BD31C5AC1F10CDD9005A33CA /* SeoulFlickrSearchController.h */,
-				BD31C5AD1F10CDF1005A33CA /* SeoulFlickrSearchController.m */,
-				BD31C5AF1F10DC03005A33CA /* FlickrPhotoCell.h */,
-				BD31C5B01F10DC11005A33CA /* FlickrPhotoCell.m */,
-				BD3F14731F12ED1B00EC07C3 /* FlickrProgressController.h */,
-				BD3F14741F12ED2800EC07C3 /* FlickrProgressController.m */,
+				BD094C871F12F66F0085D9C9 /* FlickrProgressController.h */,
+				BD094C881F12F6800085D9C9 /* FlickrProgressController.m */,
+				BD094C8A1F12F6C80085D9C9 /* FlickrPhotoCell.h */,
+				BD094C8B1F12F6E50085D9C9 /* FlickrPhotoCell.m */,
+				BD094C8D1F12F7110085D9C9 /* FlickrHelper.h */,
+				BD094C8E1F12F71C0085D9C9 /* FlickrHelper.m */,
+				BD094C901F12F7640085D9C9 /* FlickrPhoto.m */,
+				BD094C921F12F7940085D9C9 /* FlickrPhoto.h */,
+				BD094C931F12F7C60085D9C9 /* FlickrSearchResults.m */,
+				BD094C951F12F7DC0085D9C9 /* FlickrSearchResults.h */,
+				BD094C961F12F83C0085D9C9 /* SeoulFlickrSearchController.m */,
+				BD094C981F12F8670085D9C9 /* SeoulFlickrSearchController.h */,
 			);
 			name = Flickr;
 			sourceTree = "<group>";
@@ -940,16 +940,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD3F14771F12F0F400EC07C3 /* FlickrSearchResults.m in Sources */,
-				BD3F14791F12F10000EC07C3 /* FlickrPhotoCell.m in Sources */,
-				BD3F14761F12F0E300EC07C3 /* FlickerHelper.m in Sources */,
-				BD3F14781F12F0FB00EC07C3 /* FlickrProgressController.m in Sources */,
+				BD094C9A1F12FCDC0085D9C9 /* FlickrProgressController.m in Sources */,
+				BD094C991F12FC850085D9C9 /* SeoulFlickrSearchController.m in Sources */,
+				BD094C941F12F7C60085D9C9 /* FlickrSearchResults.m in Sources */,
 				BD3D15F41F124BB400910B4F /* TouristLocationTBNavigationController.m in Sources */,
+				BD094C8C1F12F6E50085D9C9 /* FlickrPhotoCell.m in Sources */,
 				BD305CDA1F0BA8CA00F0CC7B /* BikeRoutePoint.h in Sources */,
 				BD305CD91F0BA88500F0CC7B /* BikeRouteMapController.m in Sources */,
 				BD7670DC1F02037000918A20 /* TouristSiteManager.m in Sources */,
 				BDF2348C1F0021BA00E9ED63 /* HostelCollectionViewCell.m in Sources */,
 				BD7FFFE81F11102E00F0334C /* Visitation.m in Sources */,
+				BD094C8F1F12F71C0085D9C9 /* FlickrHelper.m in Sources */,
 				BD312E021F01517B00FB90E3 /* UIView+HelperMethods.m in Sources */,
 				BDF2348B1F00216600E9ED63 /* AudioController.m in Sources */,
 				BD335D8C1F0D328D00A0986A /* TouristLocationParentController.m in Sources */,
@@ -999,7 +1000,6 @@
 				BDE1E97F1F0CFD43009F132E /* ProductSearchController.m in Sources */,
 				BD2DCCAE1F092A6600EA8FDF /* NSString+CurrencyHelperMethods.m in Sources */,
 				BD3D15F11F1234B800910B4F /* HostelAreaContainerController.m in Sources */,
-				BD31C5AE1F10CDF1005A33CA /* SeoulFlickrSearchController.m in Sources */,
 				BD2EA7721EFFC28F00A8572B /* ContactScrollViewController.m in Sources */,
 				BDAA41E11F0F545A0021CE79 /* OperatingDateTime.m in Sources */,
 				BD3D15EE1F121A9100910B4F /* HostelAreaNavigationController.m in Sources */,
@@ -1012,10 +1012,10 @@
 				BD2B78331F074CAF00C33184 /* HostelAreaMapOptionsController.m in Sources */,
 				BD6847711F010070004732FB /* ImageManagerB.m in Sources */,
 				BDFBFBA71F03E51C00185F47 /* WFSManager.m in Sources */,
-				BD31C5A81F10BE78005A33CA /* FlickrPhoto.m in Sources */,
 				BD829AFB1F0E43DE00C54427 /* DLinkedList.m in Sources */,
 				BD902CDA1EFD31F600DD1034 /* main.m in Sources */,
 				BD554C931F090FFF00B43C8C /* ProductPriceController.m in Sources */,
+				BD094C911F12F7640085D9C9 /* FlickrPhoto.m in Sources */,
 				BDE1E97A1F0CDE67009F132E /* KoreanProduct.m in Sources */,
 				BDE3BA2B1F07F66300DFDEF4 /* UIViewController+HelperMethods.m in Sources */,
 				BD34C1DC1F07A8D300CD0DD3 /* PolygonMapController.m in Sources */,
