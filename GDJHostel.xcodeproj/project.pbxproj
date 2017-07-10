@@ -95,6 +95,7 @@
 		BD3D15EE1F121A9100910B4F /* HostelAreaNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3D15ED1F121A9100910B4F /* HostelAreaNavigationController.m */; };
 		BD3D15F11F1234B800910B4F /* HostelAreaContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3D15F01F1234B800910B4F /* HostelAreaContainerController.m */; };
 		BD3D15F41F124BB400910B4F /* TouristLocationTBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3D15F31F124BB400910B4F /* TouristLocationTBNavigationController.m */; };
+		BD42AC361F1359FE008D819E /* UIColor+HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BD42AC351F1359FE008D819E /* UIColor+HelperMethods.m */; };
 		BD554C8F1F090FBF00B43C8C /* StoryboardB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD554C8E1F090FBF00B43C8C /* StoryboardB.storyboard */; };
 		BD554C931F090FFF00B43C8C /* ProductPriceController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD554C921F090FFF00B43C8C /* ProductPriceController.m */; };
 		BD554C971F0922D500B43C8C /* ProductPriceDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD554C961F0922D500B43C8C /* ProductPriceDisplayController.m */; };
@@ -289,6 +290,8 @@
 		BD3D15F01F1234B800910B4F /* HostelAreaContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelAreaContainerController.m; sourceTree = "<group>"; };
 		BD3D15F21F124BA400910B4F /* TouristLocationTBNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristLocationTBNavigationController.h; sourceTree = "<group>"; };
 		BD3D15F31F124BB400910B4F /* TouristLocationTBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristLocationTBNavigationController.m; sourceTree = "<group>"; };
+		BD42AC341F1359FE008D819E /* UIColor+HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HelperMethods.h"; sourceTree = "<group>"; };
+		BD42AC351F1359FE008D819E /* UIColor+HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HelperMethods.m"; sourceTree = "<group>"; };
 		BD554C8E1F090FBF00B43C8C /* StoryboardB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryboardB.storyboard; sourceTree = "<group>"; };
 		BD554C911F090FE600B43C8C /* ProductPriceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductPriceController.h; sourceTree = "<group>"; };
 		BD554C921F090FFF00B43C8C /* ProductPriceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductPriceController.m; sourceTree = "<group>"; };
@@ -538,6 +541,8 @@
 				BD1248881F04A8CA00B77F36 /* WeatherIconManager.m */,
 				BDE3BA291F07F66300DFDEF4 /* UIViewController+HelperMethods.h */,
 				BDE3BA2A1F07F66300DFDEF4 /* UIViewController+HelperMethods.m */,
+				BD42AC341F1359FE008D819E /* UIColor+HelperMethods.h */,
+				BD42AC351F1359FE008D819E /* UIColor+HelperMethods.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1022,6 +1027,7 @@
 				BD094C911F12F7640085D9C9 /* FlickrPhoto.m in Sources */,
 				BDE1E97A1F0CDE67009F132E /* KoreanProduct.m in Sources */,
 				BDE3BA2B1F07F66300DFDEF4 /* UIViewController+HelperMethods.m in Sources */,
+				BD42AC361F1359FE008D819E /* UIColor+HelperMethods.m in Sources */,
 				BD34C1DC1F07A8D300CD0DD3 /* PolygonMapController.m in Sources */,
 				BD5C3EC41EFD516E00616400 /* OverlayConfiguration.m in Sources */,
 				BD31A5B11F03932100C018DB /* SeoulTourismNavigationController.m in Sources */,

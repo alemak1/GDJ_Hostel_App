@@ -8,12 +8,16 @@
 
 
 #import "MenuComponent.h"
+#import <MapKit/MapKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import "UIColor+HelperMethods.h"
 
 @interface MenuComponent ()
 
 @property (nonatomic, strong) UIView *menuView;
 @property (nonatomic, strong) UIImageView *backgroundView;
+
+
 @property (nonatomic, strong) UIImageView *logoImageView;
 @property (nonatomic,strong) SKView* planeSpriteView;
 
@@ -52,7 +56,12 @@
         self.menuOptions = options;
         self.menuOptionImages = optionImages;
         
+        //Set initial background image as temporary transition in order to allow asynchronous loading of the map image
         [self setupBackgroundView];
+        
+        //Load the map image and cache the images for both portrait and landscape orientations
+        [self loadMapSnaptIntoBackgroundView];
+        [self preloadSnapshotForAlternateDeviceOrientation];
         
         // Setup the menu view.
         [self setupMenuView];
@@ -83,6 +92,116 @@
     return self;
 }
 
+
+-(void) loadMapSnaptIntoBackgroundView{
+    
+    /**
+    if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait && self.cachedPortraitImage != nil){
+        
+        NSLog(@"Main image (portrait mode) has already been preloaded, aborting preload in the MenuComponent class initialization");
+        
+        return;
+    }
+    if(([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) && self.cachedLandscapeImage != nil){
+        
+         NSLog(@"Main image (landscape mode) has already been preloaded, aborting preload in the MenuComponent class initialization");
+        
+        return;
+    }
+    **/
+    
+    
+    MKMapSnapshotOptions* snapShotOptions = [[MKMapSnapshotOptions alloc] init];
+    
+    [snapShotOptions setRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.542103, 126.9433582), MKCoordinateSpanMake(10.0,10.0))];
+    [snapShotOptions setMapType:MKMapTypeSatelliteFlyover];
+    [snapShotOptions setShowsPointsOfInterest:NO];
+    [snapShotOptions setSize:self.backgroundView.frame.size];
+    
+    MKMapSnapshotter* snapShotter = [[MKMapSnapshotter alloc] initWithOptions:snapShotOptions];
+    
+    [snapShotter startWithCompletionHandler:^(MKMapSnapshot* snapShot, NSError* error){
+        
+        if(error){
+            NSLog(@"Error: snapshotter object failed to capture map image with error: %@",[error localizedDescription]);
+            return;
+        }
+        
+        if(!snapShot){
+            NSLog(@"Error: no shapshot available.");
+            return;
+        }
+        
+        self.backgroundView.image = [snapShot image];
+        
+        if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait){
+            self.cachedPortraitImage = [snapShot image];
+        }
+        if([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight){
+            self.cachedLandscapeImage = [snapShot image];
+        }
+        
+        
+    }];
+}
+
+-(void)preloadSnapshotForAlternateDeviceOrientation{
+    
+    /**
+    if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait && self.cachedLandscapeImage != nil){
+        
+         NSLog(@"Alternate cached image (landscape mode for device in portrait orientation) has already been preloaded, aborting preload in the MenuComponent class initialization");
+        
+        return;
+    }
+    if(([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) && self.cachedPortraitImage != nil){
+        
+        NSLog(@"Alternate cached image (portrait mode for device in landscape orientation) has already been preloaded, aborting preload in the MenuComponent class initialization");
+
+        return;
+    }
+    
+    **/
+    
+    
+    MKMapSnapshotOptions* snapShotOptions = [[MKMapSnapshotOptions alloc] init];
+    
+    CGFloat width = self.backgroundView.frame.size.height;
+    CGFloat height = self.backgroundView.frame.size.width;
+    CGSize alternateSize = CGSizeMake(width, height);
+    
+    [snapShotOptions setRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.542103, 126.9433582), MKCoordinateSpanMake(10.0,10.0))];
+    [snapShotOptions setMapType:MKMapTypeSatelliteFlyover];
+    [snapShotOptions setShowsPointsOfInterest:NO];
+    [snapShotOptions setSize:alternateSize];
+    
+    
+    MKMapSnapshotter* snapShotter = [[MKMapSnapshotter alloc] initWithOptions:snapShotOptions];
+    
+    [snapShotter startWithCompletionHandler:^(MKMapSnapshot* snapShot, NSError* error){
+        
+        if(error){
+            NSLog(@"Error: snapshotter object failed to capture map image with error: %@",[error localizedDescription]);
+            return;
+        }
+        
+        if(!snapShot){
+            NSLog(@"Error: no shapshot available.");
+            return;
+        }
+        
+        
+        if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait){
+            self.cachedLandscapeImage = [snapShot image];
+        }
+        if([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight){
+            self.cachedPortraitImage = [snapShot image];
+        }
+        
+        
+    }];
+}
+
 -(void)setupMenuView{
     if (self.menuDirection == menuDirectionLeftToRight) {
         self.menuInitialFrame = CGRectMake(-self.menuFrame.size.width+20,
@@ -98,14 +217,33 @@
     }
     
     self.menuView = [[UIView alloc] initWithFrame:self.menuInitialFrame];
-    [self.menuView setBackgroundColor:[UIColor colorWithRed:232.0/255.0 green:140.0/255.0 blue:140.0/255.0 alpha:1.0]];
+    [self.menuView setBackgroundColor:[UIColor skyBlueColor]];
     [self.targetView addSubview:self.menuView];
 }
 
 
 -(void)setupBackgroundView{
     self.backgroundView = [[UIImageView alloc] initWithFrame:self.targetView.frame];
-    self.backgroundView.image = [UIImage imageNamed:@"Lobby_1"];
+    
+    
+    UIImage* backgroundImage = [UIImage imageNamed:@"north_seoul_tower"];
+    
+    /**
+    if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait){
+        
+        backgroundImage = self.cachedPortraitImage != nil ? self.cachedPortraitImage : [UIImage imageNamed:@"north_seoul_tower"];
+    }
+    
+    
+    if([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft){
+        
+         backgroundImage = self.cachedLandscapeImage != nil ? self.cachedLandscapeImage : [UIImage imageNamed:@"north_seoul_tower"];
+        
+    }
+    **/
+    
+    self.backgroundView.image =  backgroundImage;
+    
     self.backgroundView.contentMode = UIViewContentModeScaleAspectFill;
     [self.backgroundView setAlpha:1.0];
     [self.targetView addSubview:self.backgroundView];
@@ -115,11 +253,11 @@
     
     CGRect labelFrame = CGRectMake(bgWidth*0.10, bgHeight*0.001, bgWidth*0.80, bgHeight*.40);
     UILabel* titleLabel = [[UILabel alloc] initWithFrame:labelFrame];
-    titleLabel.text = @"Please come in. Swipe from the right...";
+    titleLabel.text = @"Preparing for landing in Seoul. Swipe from the right...";
     titleLabel.font = [UIFont fontWithName:@"Futura-CondensedExtraBold" size:30.0];
-    titleLabel.textColor = [UIColor yellowColor];
-    titleLabel.shadowColor = [UIColor blackColor];
-    titleLabel.shadowOffset = CGSizeMake(10., 10.0);
+    titleLabel.textColor = [UIColor koreanRed];
+    titleLabel.shadowColor = [UIColor koreanBlue];
+    titleLabel.shadowOffset = CGSizeMake(2.0, 2.0);
     titleLabel.numberOfLines = 0;
     titleLabel.adjustsFontSizeToFitWidth = true;
     [self.backgroundView addSubview:titleLabel];
@@ -132,11 +270,12 @@
     NSDate* today = [NSDate date];
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"KST"]];
-    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterLongStyle];
     NSString* localDateString = [dateFormatter stringFromDate:today];
     
     [timeLabel setText:localDateString];
     [timeLabel setFont:[UIFont fontWithName:@"Futura-CondensedMedium" size:30.0]];
+    [timeLabel setTextColor:[UIColor koreanRed]];
     [timeLabel setNumberOfLines:1];
     [timeLabel setAdjustsFontSizeToFitWidth:YES];
     [timeLabel setMinimumScaleFactor:0.50];
@@ -194,7 +333,7 @@
         }
         
         self.menuView = [[UIView alloc] initWithFrame:self.menuInitialFrame];
-        [self.menuView setBackgroundColor:[UIColor colorWithRed:232.0/255.0 green:140.0/255.0 blue:140.0/255.0 alpha:1.0]];
+        [self.menuView setBackgroundColor:[UIColor skyBlueColor]];
         [self.targetView addSubview:self.menuView];
     
     // Setup the options table view.
@@ -224,6 +363,13 @@
 -(void)resetOptionsTableView:(UITraitCollection*)newTraitCollection{
     
     NSLog(@"Resetting the options table view...");
+    
+    if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait){
+        self.backgroundView.image = self.cachedPortraitImage;
+    }
+    if([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight){
+        self.backgroundView.image = self.cachedLandscapeImage;
+    }
     
     //Remove the options table view from the superview
     [self.optionsTableView removeFromSuperview];
@@ -305,7 +451,7 @@
     self.tableSettings = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                           [UIFont fontWithName:@"Futura-CondensedMedium" size:30.0], @"font",
             [NSNumber numberWithInt:NSTextAlignmentLeft], @"textAlignment",
-            [UIColor colorWithRed:245.0/255.0 green:231.0/255.0 blue:143.0/255.0 alpha:1.00], @"textColor",
+            [UIColor koreanBlue], @"textColor",
             [NSNumber numberWithInt:UITableViewCellSelectionStyleGray], @"selectionStyle",
                           nil];
     
@@ -320,7 +466,7 @@
         self.tableSettings = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
             [UIFont fontWithName:@"Futura-CondensedMedium" size:25.0], @"font",
             [NSNumber numberWithInt:NSTextAlignmentLeft], @"textAlignment",
-            [UIColor colorWithRed:245.0/255.0 green:231.0/255.0 blue:143.0/255.0 alpha:1.00], @"textColor",
+            [UIColor koreanBlue], @"textColor",
             [NSNumber numberWithInt:UITableViewCellSelectionStyleGray], @"selectionStyle",
                               nil];
     }
@@ -453,7 +599,7 @@
 -(void)configurePlaneScene:(SKScene*)planeScene{
     
     [planeScene setAnchorPoint:CGPointMake(0.5, 0.5)];
-    [planeScene setBackgroundColor:[UIColor colorWithRed:232/255.0 green:140.0/255.0 blue:140.0/255.0 alpha:1.0]];
+    [planeScene setBackgroundColor:[UIColor skyBlueColor]];
     SKTexture* planeTexture = [SKTexture textureWithImageNamed:@"planeYellow1"];
     SKSpriteNode* planeSprite = [[SKSpriteNode alloc] initWithTexture:planeTexture];
     

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
+
 #import "HostelInformationController.h"
-#import "MenuComponent.h"
 #import "AppLocationManager.h"
 
 #import "TouristSiteManager.h"
@@ -16,8 +17,8 @@
 
 @interface HostelInformationController ()
 
-@property (nonatomic, strong) MenuComponent *menuComponent;
 @property UIImageView* backgroundImageView;
+@property UIImageView* seoulTowerImageView;
 
 - (void)showMenu:(UIGestureRecognizer *)gestureRecognizer;
 
@@ -93,7 +94,7 @@
     
     **/
     
-    
+ 
 }
 
 
@@ -109,6 +110,12 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    
+    
+    self.seoulTowerImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    [self.seoulTowerImageView setImage:[UIImage imageNamed:@"north_seoul_tower"]];
+    [self.view addSubview:self.seoulTowerImageView];
+    
    
     UISwipeGestureRecognizer *showMenuGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showMenu:)];
     
@@ -120,8 +127,15 @@
     self.menuComponent = [[MenuComponent alloc] initMenuWithFrame:desiredMenuFrame
                     targetView:self.view
                     direction:menuDirectionRightToLeft
-                    options:@[@"About Hostel", @"Explore Nearby", @"Visited Sites", @"Seoul Tourism",@"Weather",@"Survival Korean", @"Product Prices",@"Monitored Regions",@"Image Galleries"]
+                    options:@[@"About the App", @"Explore Nearby", @"Visited Sites", @"Seoul Tourism",@"Weather",@"Survival Korean", @"Product Prices",@"Monitored Regions",@"Image Galleries"]
                     optionImages:@[@"informationB", @"compassB", @"city1", @"templeB",@"cloudyA",@"chatA", @"shoppingCartB",@"mapAddressB",@"paintingB"]];
+    
+    
+    /** Code deprecated since we are not preloaded the satellite images in the app delegate:
+     
+    self.menuComponent.cachedLandscapeImage = self.cachedLandscapeImage;
+    self.menuComponent.cachedPortraitImage = self.cachedPortraitImage;
+     **/
 
 }
 

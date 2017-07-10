@@ -10,6 +10,7 @@
 #import "SeoulFlickrSearchController.h"
 #import "FlickrPhoto.h"
 #import "FlickrPhotoCell.h"
+#import "UIColor+HelperMethods.h"
 
 @interface SeoulFlickSearchController () <UICollectionViewDelegateFlowLayout>
 
@@ -64,11 +65,10 @@
     FlickrPhoto* flickrPhoto = [self photoForIndexPath:indexPath];
     
     
-   // cell.imageView.image = flickrPhoto.thumbnail;
     
     cell.outletImageView.image = flickrPhoto.thumbnail;
     
-    cell.backgroundColor = [UIColor blueColor];
+    cell.backgroundColor = [UIColor skyBlueColor];
     
     
     

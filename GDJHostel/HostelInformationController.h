@@ -12,8 +12,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "MenuComponent.h"
+
 @interface HostelInformationController : UIViewController
 
+@property (nonatomic, strong) MenuComponent *menuComponent;
+@property UIImage* cachedLandscapeImage;
+@property UIImage* cachedPortraitImage;
 
 @end
 

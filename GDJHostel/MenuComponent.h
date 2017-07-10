@@ -31,6 +31,9 @@ typedef enum MenuDirectionOptionTypes{
 -(void)resetOptionsTableView:(UITraitCollection*)newTraitCollection;
 -(void)resetMenuView:(UITraitCollection*)newTraitCollection;
 
+@property (nonatomic,strong) UIImage* cachedPortraitImage;
+@property (nonatomic,strong) UIImage* cachedLandscapeImage;
+
 
 @end
 

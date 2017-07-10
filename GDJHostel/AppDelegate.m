@@ -6,6 +6,8 @@
 //  Copyright © 2017 AlexMakedonski. All rights reserved.
 //
 
+#import <MapKit/MapKit.h>
+
 #import "AppDelegate.h"
 
 #import "HostelInformationController.h"
@@ -13,7 +15,7 @@
 #import "HostelCollectionController.h"
 #import "TouristSiteCollectionViewController.h"
 #import "HostelFlowLayout.h"
-
+#import "HostelInformationController.h"
 
 
 @interface AppDelegate ()
@@ -24,6 +26,11 @@ typedef enum TESTABLE_VIEWCONTROLLERS{
     HOSTEL_COLLECTION_CONTROLLER,
     TOURIST_SITE_COLLECTION_VIEW_CONTROLLER
 } TESTABLE_VIEWCONTROLLERS;
+
+@property UIImage* cachedLandscapeImage;
+@property UIImage* cachedPortraitImage;
+
+@property (readonly) HostelInformationController* hostelInformationController;
 
 @end
 
@@ -42,6 +49,7 @@ static BOOL willInitiateFromStoryBoard = false;
         UIViewController* rootViewController = [self getTestableViewController:HOSTEL_INFORMATION_CONTROLLER];
         
         [self.window setRootViewController:rootViewController];
+        
         
         NSLog(@"RootViewController has been set to %@",[rootViewController description]);
         
@@ -165,5 +173,111 @@ static BOOL willInitiateFromStoryBoard = false;
 }
 
 
+
+-(void) preloadSnapshotForPrimaryDeviceOrientation{
+    MKMapSnapshotOptions* snapShotOptions = [[MKMapSnapshotOptions alloc] init];
+    
+    [snapShotOptions setRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.542103, 126.9433582), MKCoordinateSpanMake(10.0,10.0))];
+    [snapShotOptions setMapType:MKMapTypeSatelliteFlyover];
+    [snapShotOptions setShowsPointsOfInterest:NO];
+    [snapShotOptions setSize:[[UIScreen mainScreen] bounds].size];
+    
+    MKMapSnapshotter* snapShotter = [[MKMapSnapshotter alloc] initWithOptions:snapShotOptions];
+    
+    [snapShotter startWithCompletionHandler:^(MKMapSnapshot* snapShot, NSError* error){
+        
+        if(error){
+            NSLog(@"Error: snapshotter object failed to capture map image with error: %@",[error localizedDescription]);
+            return;
+        }
+        
+        if(!snapShot){
+            NSLog(@"Error: no shapshot available.");
+            return;
+        }
+        
+        
+        if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait){
+            self.cachedPortraitImage = [snapShot image];
+           
+            if(self.hostelInformationController){
+                
+                self.hostelInformationController.cachedPortraitImage = [snapShot image];
+            }
+            
+        }
+        if([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight){
+            self.cachedLandscapeImage = [snapShot image];
+            
+            if(self.hostelInformationController){
+                
+                self.hostelInformationController.cachedLandscapeImage = [snapShot image];
+            }
+        }
+        
+        
+        NSLog(@"Snapshot image obtained for primary device orientation %@",[[snapShot image] description]);
+        
+    }];
+}
+
+-(void)preloadSnapshotForAlternateDeviceOrientation{
+    
+    MKMapSnapshotOptions* snapShotOptions = [[MKMapSnapshotOptions alloc] init];
+    
+    CGFloat width = [[UIScreen mainScreen] bounds].size.height;
+    CGFloat height = [[UIScreen mainScreen] bounds].size.width;
+    
+    CGSize alternateSize = CGSizeMake(width, height);
+    
+    [snapShotOptions setRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.542103, 126.9433582), MKCoordinateSpanMake(10.0,10.0))];
+    [snapShotOptions setMapType:MKMapTypeSatelliteFlyover];
+    [snapShotOptions setShowsPointsOfInterest:NO];
+    [snapShotOptions setSize:alternateSize];
+    
+    
+    MKMapSnapshotter* snapShotter = [[MKMapSnapshotter alloc] initWithOptions:snapShotOptions];
+    
+    [snapShotter startWithCompletionHandler:^(MKMapSnapshot* snapShot, NSError* error){
+        
+        if(error){
+            NSLog(@"Error: snapshotter object failed to capture map image with error: %@",[error localizedDescription]);
+            return;
+        }
+        
+        if(!snapShot){
+            NSLog(@"Error: no shapshot available.");
+            return;
+        }
+        
+        
+        if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait){
+            self.cachedLandscapeImage = [snapShot image];
+            
+            if(self.hostelInformationController){
+                
+                self.hostelInformationController.cachedLandscapeImage = [snapShot image];
+            }
+        }
+        if([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight){
+            self.cachedPortraitImage = [snapShot image];
+            
+            if(self.hostelInformationController){
+                
+                self.hostelInformationController.cachedPortraitImage = [snapShot image];
+            }
+        }
+        
+         NSLog(@"Snapshot image obtained for alternate device orientation %@",[[snapShot image] description]);
+    }];
+}
+
+
+-(HostelInformationController *)hostelInformationController{
+    
+    HostelInformationController* hostelInformationController = (HostelInformationController*)self.window.rootViewController;
+    
+    return hostelInformationController;
+}
 
 @end

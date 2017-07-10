@@ -12,6 +12,7 @@
 #import "SeoulFlickrSearchController.h"
 #import "FlickrSearchResults.h"
 #import "FlickrHelper.h"
+#import "UIColor+HelperMethods.h"
 
 @interface FlickrProgressController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -229,10 +230,10 @@ BOOL isLoading = false;
     
     NSString* searchTerm = [self getSearchTermForIndexPath:indexPath];
     
-    [cell setBackgroundColor:[UIColor colorWithRed:238/255.0 green:156/255.0 blue:147/255.0 alpha:1.00]];
+    [cell setBackgroundColor:[UIColor skyBlueColor]];
     
     
-    NSDictionary* attributesDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Futura-Medium" size:15.0],NSFontAttributeName,[UIColor yellowColor],NSForegroundColorAttributeName, nil];
+    NSDictionary* attributesDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Futura-Medium" size:15.0],NSFontAttributeName,[UIColor koreanBlue],NSForegroundColorAttributeName, nil];
     
     NSAttributedString* attributedTitle = [[NSAttributedString alloc] initWithString:searchTerm attributes:attributesDict];
 
@@ -254,11 +255,11 @@ BOOL isLoading = false;
     NSString* titleString = [self getSectionKeyPathForSectionKey:section];
     
     
-    NSDictionary* attributesDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Futura-Bold" size:25.0],NSFontAttributeName,[UIColor yellowColor],NSForegroundColorAttributeName, nil];
+    NSDictionary* attributesDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Futura-Bold" size:25.0],NSFontAttributeName,[UIColor koreanRed],NSForegroundColorAttributeName, nil];
     
     NSAttributedString* attributedTitle = [[NSAttributedString alloc] initWithString:titleString attributes:attributesDict];
 
-    [labelView setBackgroundColor:[UIColor colorWithRed:238/255.0 green:156/255.0 blue:147/255.0 alpha:1.00]];
+    [labelView setBackgroundColor:[UIColor skyBlueColor]];
     
     [labelView setAttributedText:attributedTitle];
     
