@@ -13,6 +13,7 @@
 		BD094C941F12F7C60085D9C9 /* FlickrSearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = BD094C931F12F7C60085D9C9 /* FlickrSearchResults.m */; };
 		BD094C991F12FC850085D9C9 /* SeoulFlickrSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD094C961F12F83C0085D9C9 /* SeoulFlickrSearchController.m */; };
 		BD094C9A1F12FCDC0085D9C9 /* FlickrProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD094C881F12F6800085D9C9 /* FlickrProgressController.m */; };
+		BD094C9C1F130D050085D9C9 /* FlickrSearchTerms.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD094C9B1F130D050085D9C9 /* FlickrSearchTerms.plist */; };
 		BD1248891F04A8CA00B77F36 /* WeatherIconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1248881F04A8CA00B77F36 /* WeatherIconManager.m */; };
 		BD12488C1F04B4C100B77F36 /* WeatherCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD12488B1F04B4C100B77F36 /* WeatherCollectionCell.m */; };
 		BD14B0AB1F072E230024668D /* BikingRoutesController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD14B0AA1F072E230024668D /* BikingRoutesController.m */; };
@@ -154,6 +155,7 @@
 		BD094C951F12F7DC0085D9C9 /* FlickrSearchResults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrSearchResults.h; sourceTree = "<group>"; };
 		BD094C961F12F83C0085D9C9 /* SeoulFlickrSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeoulFlickrSearchController.m; sourceTree = "<group>"; };
 		BD094C981F12F8670085D9C9 /* SeoulFlickrSearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoulFlickrSearchController.h; sourceTree = "<group>"; };
+		BD094C9B1F130D050085D9C9 /* FlickrSearchTerms.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FlickrSearchTerms.plist; sourceTree = "<group>"; };
 		BD1248871F04A8BC00B77F36 /* WeatherIconManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherIconManager.h; sourceTree = "<group>"; };
 		BD1248881F04A8CA00B77F36 /* WeatherIconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherIconManager.m; sourceTree = "<group>"; };
 		BD12488A1F04B1C400B77F36 /* WeatherCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCollectionCell.h; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 				BD094C951F12F7DC0085D9C9 /* FlickrSearchResults.h */,
 				BD094C961F12F83C0085D9C9 /* SeoulFlickrSearchController.m */,
 				BD094C981F12F8670085D9C9 /* SeoulFlickrSearchController.h */,
+				BD094C9B1F130D050085D9C9 /* FlickrSearchTerms.plist */,
 			);
 			name = Flickr;
 			sourceTree = "<group>";
@@ -910,6 +913,7 @@
 				BD2CAA9D1EFFE7D700C0E540 /* SeoulTouristSites.plist in Resources */,
 				BD3279401F00124F0007FD64 /* ParkRoute.plist in Resources */,
 				BD305BB41EFF8CB500F9F2B9 /* transportation-0.caf in Resources */,
+				BD094C9C1F130D050085D9C9 /* FlickrSearchTerms.plist in Resources */,
 				BD31BC671F0A488100A23256 /* KoreanProducts.plist in Resources */,
 				BD305BBB1EFF8CB500F9F2B9 /* transportation-7.caf in Resources */,
 				BD554C8F1F090FBF00B43C8C /* StoryboardB.storyboard in Resources */,

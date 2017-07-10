@@ -120,8 +120,8 @@
     self.menuComponent = [[MenuComponent alloc] initMenuWithFrame:desiredMenuFrame
                     targetView:self.view
                     direction:menuDirectionRightToLeft
-                    options:@[@"About Hostel", @"Explore Nearby", @"Visited Sites", @"Seoul Tourism",@"Weather",@"Survival Korean", @"Product Prices",@"Monitored Regions",@"Seoul Image Galleries"]
-                    optionImages:@[@"informationB", @"compassB", @"paintingB", @"templeB",@"cloudyA",@"chatA", @"shoppingCartB",@"mapAddressB",@"tvA"]];
+                    options:@[@"About Hostel", @"Explore Nearby", @"Visited Sites", @"Seoul Tourism",@"Weather",@"Survival Korean", @"Product Prices",@"Monitored Regions",@"Image Galleries"]
+                    optionImages:@[@"informationB", @"compassB", @"city1", @"templeB",@"cloudyA",@"chatA", @"shoppingCartB",@"mapAddressB",@"paintingB"]];
 
 }
 

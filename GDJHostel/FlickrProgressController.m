@@ -13,18 +13,31 @@
 #import "FlickrSearchResults.h"
 #import "FlickrHelper.h"
 
-@interface FlickrProgressController ()
+@interface FlickrProgressController () <UITableViewDelegate,UITableViewDataSource>
 
+
+typedef enum SectionKey{
+    KOREAN_DRAMAS,
+    K_POP_BANDS,
+    K_POP_STARS,
+    FOOD,
+    NUMBER_OF_SECTIONS_FOR_KOREAN_SEARCH_TERMS
+}SectionKey;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property FlickrSearchResults* searchResults;
 
 @property (readonly) FlickrHelper* flickrHelper;
 
+@property NSDictionary* flickrSearchTermsDictionary;
+@property NSString* selectedSearchTerm;
 
 - (IBAction)performSearch:(UIButton *)sender;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
+- (IBAction)dismissCurrentViewController:(UIBarButtonItem *)sender;
 
 @end
 
@@ -35,17 +48,36 @@
 
 FlickrHelper* _flickrHelper;
 
+BOOL isLoading = false;
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"FlickrSearchTerms" ofType:@"plist"];
+    
+    self.flickrSearchTermsDictionary = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+}
+
+
 -(void)viewDidLoad{
  
+    
     [self.activityIndicator setHidden:YES];
     [self.activityIndicator setHidesWhenStopped:YES];
+    
+    [self.tableView setHidden:NO];
+    [self.tableView reloadData];
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"TableViewCell"];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if([segue.identifier isEqualToString:@"showFlickrPhotosSegue"]){
         
-        
+        if(isLoading){
+            return;
+        }
         
         SeoulFlickSearchController* seoulFlickrSearchController = (SeoulFlickSearchController*)segue.destinationViewController;
         
@@ -56,15 +88,23 @@ FlickrHelper* _flickrHelper;
         
         seoulFlickrSearchController.searchResults = self.searchResults;
         
+        [self.tableView setHidden:NO];
+        
         
     }
 }
+
 
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
     
     if([identifier isEqualToString:@"showFlickrPhotosSegue"]){
      
+        
+        if(isLoading){
+            return NO;
+        }
+        
         if(self.searchResults == nil){
             return NO;
         }
@@ -85,17 +125,38 @@ FlickrHelper* _flickrHelper;
 
 - (IBAction)performSearch:(UIButton *)sender {
     
+    
+    isLoading = true;
+
+
+    if(self.selectedSearchTerm == nil){
+        
+        
+        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"No item selected!" message:@"Select a search item in order to view the image gallery!" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* okay = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        
+        [alertController addAction:okay];
+        
+        [self showViewController:alertController sender:nil];
+        
+        return;
+    }
+    
+
+
     NSLog(@"About to perform search....");
+    [self.tableView setHidden:YES];
     [self.activityIndicator setHidden:NO];
     [self.activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
     [self.activityIndicator startAnimating];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-
+        
       
         
-        [self.flickrHelper searchFlickrForTerm:@"k-pop" andWithCompletionHandler:^(FlickrSearchResults* results, NSError*error){
+        [self.flickrHelper searchFlickrForTerm:self.selectedSearchTerm andWithCompletionHandler:^(FlickrSearchResults* results, NSError*error){
             
             if(error){
                 NSLog(@"Error: an error occured while performing the search %@",[error localizedDescription]);
@@ -108,13 +169,16 @@ FlickrHelper* _flickrHelper;
             
             self.searchResults = results;
             
-            NSLog(@"The search results stored in the FlickProgressController is %@",[self.searchResults description]);
-            
+    
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                
                 [self.activityIndicator stopAnimating];
+                
+                isLoading = false;
+                
+                self.selectedSearchTerm = nil;
                 
                 [self performSegueWithIdentifier:@"showFlickrPhotosSegue" sender:nil];
                 
@@ -135,5 +199,113 @@ FlickrHelper* _flickrHelper;
     
 }
 
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+ 
+    return NUMBER_OF_SECTIONS_FOR_KOREAN_SEARCH_TERMS;
+}
+
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    self.selectedSearchTerm = [self getSearchTermForIndexPath:indexPath];
+}
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    NSString* sectionKeyPath = [self getSectionKeyPathForSectionKey:(int)section];
+    
+    NSArray* searchTermsArray = [self.flickrSearchTermsDictionary valueForKey:sectionKeyPath];
+    
+    return [searchTermsArray count];
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"TableViewCell"];
+    
+    NSString* searchTerm = [self getSearchTermForIndexPath:indexPath];
+    
+    [cell setBackgroundColor:[UIColor colorWithRed:238/255.0 green:156/255.0 blue:147/255.0 alpha:1.00]];
+    
+    
+    NSDictionary* attributesDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Futura-Medium" size:15.0],NSFontAttributeName,[UIColor yellowColor],NSForegroundColorAttributeName, nil];
+    
+    NSAttributedString* attributedTitle = [[NSAttributedString alloc] initWithString:searchTerm attributes:attributesDict];
+
+    
+    
+    [cell.textLabel setAttributedText:attributedTitle];
+    
+    
+    return cell;
+
+}
+
+
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    UILabel* labelView = [[UILabel alloc] init];
+    
+    NSString* titleString = [self getSectionKeyPathForSectionKey:section];
+    
+    
+    NSDictionary* attributesDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Futura-Bold" size:25.0],NSFontAttributeName,[UIColor yellowColor],NSForegroundColorAttributeName, nil];
+    
+    NSAttributedString* attributedTitle = [[NSAttributedString alloc] initWithString:titleString attributes:attributesDict];
+
+    [labelView setBackgroundColor:[UIColor colorWithRed:238/255.0 green:156/255.0 blue:147/255.0 alpha:1.00]];
+    
+    [labelView setAttributedText:attributedTitle];
+    
+    return labelView;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    NSString* titleString = [self getSectionKeyPathForSectionKey:section];
+    
+    return titleString;
+    
+}
+
+-(NSString*)getSearchTermForIndexPath:(NSIndexPath*)indexPath{
+    
+    NSString* sectionKeyPath = [self getSectionKeyPathForSectionKey:(int)indexPath.section];
+    
+    NSArray* searchTermsArray = [self.flickrSearchTermsDictionary valueForKey:sectionKeyPath];
+    
+    return [searchTermsArray objectAtIndex:indexPath.row];
+}
+
+
+-(NSString*)getSectionKeyPathForSectionKey:(SectionKey)sectionKey{
+    switch (sectionKey) {
+        case K_POP_BANDS:
+            return @"K-Pop Groups";
+        case K_POP_STARS:
+            return @"K-Pop Stars";
+        case KOREAN_DRAMAS:
+            return @"Korean Dramas";
+        case FOOD:
+            return @"Food";
+        default:
+            return nil;
+    }
+    
+    return nil;
+}
+
+
+- (IBAction)dismissCurrentViewController:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+    
+    
+    }];
+}
 
 @end

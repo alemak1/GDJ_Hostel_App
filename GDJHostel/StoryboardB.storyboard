@@ -98,9 +98,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhx-p0-5Sr">
-                                <rect key="frame" x="153" y="94" width="108" height="30"/>
-                                <state key="normal" title="Perform Search"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uhx-p0-5Sr">
+                                <rect key="frame" x="41.666666666666657" y="94" width="331.33333333333337" height="43.333333333333343"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Choose an image gallery from below and click here!">
+                                            <attributes>
+                                                <color key="NSColor" red="0.9659712211" green="1" blue="0.42817059880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="24" name="Futura-MediumItalic"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="performSearch:" destination="1D1-dC-6fk" eventType="touchUpInside" id="lcN-qD-n9v"/>
                                     <segue destination="T9T-gO-8Da" kind="show" identifier="showFlickrPhotosSegue" id="VkK-KS-Wz5"/>
@@ -113,29 +122,52 @@
                                     <constraint firstAttribute="width" constant="60" id="hqz-tN-LPs"/>
                                 </constraints>
                             </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f9J-Vc-G9d">
+                                <rect key="frame" x="41.333333333333343" y="177.33333333333337" width="331.33333333333337" height="441.33333333333326"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.93137937780000002" green="0.61003148060000001" blue="0.57834213160000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.93137937780000002" green="0.61003148060000001" blue="0.57834213160000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1D1-dC-6fk" id="d8X-rL-wHi"/>
+                                    <outlet property="delegate" destination="1D1-dC-6fk" id="19r-TV-sEJ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.93137937780000002" green="0.61003148060000001" blue="0.57834213160000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.61176470588235299" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="f9J-Vc-G9d" firstAttribute="height" secondItem="QR4-Sp-WCC" secondAttribute="height" multiplier="0.6" id="1D7-g1-bjD"/>
+                            <constraint firstItem="uhx-p0-5Sr" firstAttribute="width" secondItem="QR4-Sp-WCC" secondAttribute="width" multiplier="0.8" id="2mH-lG-1u6"/>
+                            <constraint firstItem="f9J-Vc-G9d" firstAttribute="width" secondItem="QR4-Sp-WCC" secondAttribute="width" multiplier="0.8" id="CEZ-VB-hgA"/>
+                            <constraint firstItem="f9J-Vc-G9d" firstAttribute="centerY" secondItem="QR4-Sp-WCC" secondAttribute="centerY" constant="30" id="Chq-Hh-moH"/>
                             <constraint firstItem="uhx-p0-5Sr" firstAttribute="top" secondItem="N73-K4-tz3" secondAttribute="bottom" constant="30" id="Eh2-FR-tya"/>
+                            <constraint firstItem="f9J-Vc-G9d" firstAttribute="centerX" secondItem="QR4-Sp-WCC" secondAttribute="centerX" id="bqM-ir-0g5"/>
                             <constraint firstItem="uhx-p0-5Sr" firstAttribute="centerX" secondItem="QR4-Sp-WCC" secondAttribute="centerX" id="kQG-iU-xbH"/>
                             <constraint firstItem="hHk-nv-WQV" firstAttribute="centerX" secondItem="QR4-Sp-WCC" secondAttribute="centerX" id="pRf-TI-ld9"/>
                             <constraint firstItem="hHk-nv-WQV" firstAttribute="centerY" secondItem="QR4-Sp-WCC" secondAttribute="centerY" id="stC-8P-lnl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="QWW-JQ-WOL"/>
+                    <navigationItem key="navigationItem" id="QWW-JQ-WOL">
+                        <barButtonItem key="leftBarButtonItem" title="Main Menu" id="Zdc-bK-vQA">
+                            <connections>
+                                <segue destination="zNI-z7-Yyp" kind="unwind" unwindAction="unwindBackToHostelIndexPage:" id="KGP-tX-36I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="hHk-nv-WQV" id="IxA-uB-Ei3"/>
+                        <outlet property="tableView" destination="f9J-Vc-G9d" id="no4-nE-vjU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ap3-HL-eRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zNI-z7-Yyp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2690" y="-1546"/>
+            <point key="canvasLocation" x="2667" y="-1568"/>
         </scene>
         <!--Seoul Flick Search Controller-->
         <scene sceneID="SJ8-Aw-ufK">
             <objects>
                 <collectionViewController id="T9T-gO-8Da" customClass="SeoulFlickSearchController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="P7G-kg-RDP">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="P7G-kg-RDP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93137937780000002" green="0.61003148060000001" blue="0.57834213160000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -174,10 +206,22 @@
                             <outlet property="delegate" destination="T9T-gO-8Da" id="N3d-dv-3FS"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="E45-u4-0lA">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="vEN-7c-0w7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iaa-gG-ZjL">
+                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="dismissViewController:" destination="T9T-gO-8Da" eventType="touchUpInside" id="3gv-C3-45u"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lw4-d8-H5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3564" y="-1520"/>
+            <point key="canvasLocation" x="2667" y="-1546"/>
         </scene>
         <!--Product Price Display Controller-->
         <scene sceneID="VDo-6r-Z13">

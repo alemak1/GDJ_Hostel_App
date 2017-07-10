@@ -16,6 +16,7 @@
 
 
 
+- (IBAction)dismissViewController:(UIButton *)sender;
 
 
 @end
@@ -69,6 +70,9 @@
     
     cell.backgroundColor = [UIColor blueColor];
     
+    
+    
+    
     return cell;
 }
 
@@ -91,6 +95,13 @@
  **/
 
 
+- (IBAction)dismissViewController:(UIButton *)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+
+
+
+}
 @end
 
 
