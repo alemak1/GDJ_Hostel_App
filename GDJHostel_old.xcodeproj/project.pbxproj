@@ -283,6 +283,7 @@
 		BD3D15F01F1234B800910B4F /* HostelAreaContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostelAreaContainerController.m; sourceTree = "<group>"; };
 		BD3D15F21F124BA400910B4F /* TouristLocationTBNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouristLocationTBNavigationController.h; sourceTree = "<group>"; };
 		BD3D15F31F124BB400910B4F /* TouristLocationTBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristLocationTBNavigationController.m; sourceTree = "<group>"; };
+		BD4172E21F164C45008D7732 /* GDJHostel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = GDJHostel.entitlements; path = ../../GDJHostel_redo/GDJHostel/GDJHostel.entitlements; sourceTree = "<group>"; };
 		BD42AC341F1359FE008D819E /* UIColor+HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HelperMethods.h"; sourceTree = "<group>"; };
 		BD42AC351F1359FE008D819E /* UIColor+HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HelperMethods.m"; sourceTree = "<group>"; };
 		BD554C8E1F090FBF00B43C8C /* StoryboardB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryboardB.storyboard; sourceTree = "<group>"; };
@@ -764,6 +765,7 @@
 				BD902CDB1EFD31F600DD1034 /* AppDelegate.h */,
 				BD902CDC1EFD31F600DD1034 /* AppDelegate.m */,
 				BD5C3EC91EFD579100616400 /* StoryboardA.storyboard */,
+				BD4172E21F164C45008D7732 /* GDJHostel.entitlements */,
 				BD554C8E1F090FBF00B43C8C /* StoryboardB.storyboard */,
 				BD902CE11EFD31F600DD1034 /* Main.storyboard */,
 				BD902CE41EFD31F600DD1034 /* Assets.xcassets */,
@@ -877,7 +879,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BD902CD01EFD31F600DD1034 /* Build configuration list for PBXProject "GDJHostel" */;
+			buildConfigurationList = BD902CD01EFD31F600DD1034 /* Build configuration list for PBXProject "GDJHostel_old" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1193,7 +1195,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BD902CD01EFD31F600DD1034 /* Build configuration list for PBXProject "GDJHostel" */ = {
+		BD902CD01EFD31F600DD1034 /* Build configuration list for PBXProject "GDJHostel_old" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BD902CEA1EFD31F600DD1034 /* Debug */,
